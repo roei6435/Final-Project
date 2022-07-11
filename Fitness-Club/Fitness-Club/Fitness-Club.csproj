@@ -223,16 +223,62 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addMember.Designer.cs">
+      <DependentUpon>addMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAndUpdateFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteAndUpdateFrom.Designer.cs">
+      <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMembers.Designer.cs">
+      <DependentUpon>FormMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manuAadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manuAadmin.Designer.cs">
+      <DependentUpon>manuAadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paymentsFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paymentsFrom.Designer.cs">
+      <DependentUpon>paymentsFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThemColor.cs" />
+    <EmbeddedResource Include="addMember.resx">
+      <DependentUpon>addMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAndUpdateFrom.resx">
+      <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMembers.resx">
+      <DependentUpon>FormMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manuAadmin.resx">
+      <DependentUpon>manuAadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paymentsFrom.resx">
+      <DependentUpon>paymentsFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -20,7 +20,7 @@ namespace Fitness_Club
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-            
+            textBox2.UseSystemPasswordChar = true;
             picBoxUser.Image = Properties.Resources.user2;
             panel1.BackColor = Color.FromArgb(78, 184, 206);
             textBox1.ForeColor = Color.FromArgb(78,184,206);

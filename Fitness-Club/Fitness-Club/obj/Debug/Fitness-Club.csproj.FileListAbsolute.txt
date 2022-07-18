@@ -48,3 +48,4 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.DeleteAndUpdateFrom.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.FormMembers.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.paymentsFrom.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Resources.FormsLogin.ForgetPassword.resources

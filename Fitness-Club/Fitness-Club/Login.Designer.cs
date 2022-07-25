@@ -37,7 +37,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblForgotPass = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -76,6 +76,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -95,6 +96,7 @@
             // 
             this.btnRes.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnRes.BorderThickness = 1;
+            this.btnRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRes.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.btnRes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -103,7 +105,7 @@
             this.btnRes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.btnRes.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnRes.Location = new System.Drawing.Point(604, 472);
+            this.btnRes.Location = new System.Drawing.Point(604, 464);
             this.btnRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRes.Name = "btnRes";
             this.btnRes.Size = new System.Drawing.Size(429, 55);
@@ -160,23 +162,26 @@
             this.lblTitle.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblTitle.Location = new System.Drawing.Point(94, 20);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(339, 120);
+            this.lblTitle.Size = new System.Drawing.Size(330, 118);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Hello,\r\nWellcome back\r\n";
             // 
-            // label1
+            // lblForgotPass
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(751, 534);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 28);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Forgot passwod?";
+            this.lblForgotPass.AutoSize = true;
+            this.lblForgotPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblForgotPass.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPass.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblForgotPass.Location = new System.Drawing.Point(739, 535);
+            this.lblForgotPass.Name = "lblForgotPass";
+            this.lblForgotPass.Size = new System.Drawing.Size(185, 31);
+            this.lblForgotPass.TabIndex = 13;
+            this.lblForgotPass.Text = "Forgot password";
+            this.lblForgotPass.Click += new System.EventHandler(this.lblForgotPass_Click);
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,6 +196,7 @@
             // 
             // btnMaximize
             // 
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,6 +211,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +230,8 @@
             this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(736, 322);
+            this.guna2ToggleSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(736, 336);
             this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
             this.guna2ToggleSwitch1.Size = new System.Drawing.Size(68, 32);
             this.guna2ToggleSwitch1.TabIndex = 34;
@@ -236,7 +244,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(605, 322);
+            this.label5.Location = new System.Drawing.Point(605, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(209, 32);
             this.label5.TabIndex = 35;
@@ -298,6 +306,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(980, 260);
@@ -320,7 +329,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnMaximize);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblForgotPass);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -366,7 +375,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblForgotPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button button3;

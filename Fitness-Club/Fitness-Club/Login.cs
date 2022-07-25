@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness_Club.Resources.FormsLogin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Fitness_Club
 {
@@ -92,6 +96,13 @@ namespace Fitness_Club
         private void picBoxPass_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblForgotPass_Click(object sender, EventArgs e)
+        {
+            ForgetPassword fg = new ForgetPassword();
+            this.Hide();
+            fg.Show();
         }
     }
 }

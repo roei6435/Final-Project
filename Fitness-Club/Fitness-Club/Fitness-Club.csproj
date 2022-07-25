@@ -337,6 +337,12 @@
   <ItemGroup>
     <None Include="Resources\pass3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4829874_arrow_back_left_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4781857_arrow_arrows_back_direction_left_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

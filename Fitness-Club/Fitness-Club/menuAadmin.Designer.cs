@@ -109,6 +109,7 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Dock = System.Windows.Forms.DockStyle.Right;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -124,6 +125,7 @@
             // 
             // btnMaximize
             // 
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -139,6 +141,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -177,6 +180,7 @@
             // 
             // button6
             // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,6 +200,7 @@
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -215,6 +220,7 @@
             // 
             // btnPayments
             // 
+            this.btnPayments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPayments.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPayments.FlatAppearance.BorderSize = 0;
             this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -235,6 +241,7 @@
             // 
             // btnUpdateMem
             // 
+            this.btnUpdateMem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateMem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUpdateMem.FlatAppearance.BorderSize = 0;
             this.btnUpdateMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -255,6 +262,7 @@
             // 
             // btnAddMembers
             // 
+            this.btnAddMembers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddMembers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddMembers.FlatAppearance.BorderSize = 0;
             this.btnAddMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -275,6 +283,7 @@
             // 
             // btnMemers
             // 
+            this.btnMemers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMemers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMemers.FlatAppearance.BorderSize = 0;
             this.btnMemers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

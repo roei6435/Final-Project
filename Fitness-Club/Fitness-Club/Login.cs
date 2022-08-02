@@ -80,13 +80,6 @@ namespace Fitness_Club
             Application.Exit();
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                this.WindowState = FormWindowState.Maximized;
-            else
-                this.WindowState = FormWindowState.Normal;
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {

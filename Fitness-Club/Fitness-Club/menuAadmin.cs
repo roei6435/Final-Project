@@ -80,7 +80,7 @@ namespace Fitness_Club
             }
         }
           
-        private void openChildForm(Form childFrom,object btnSender)       //open the form selected
+        protected virtual void openChildForm(Form childFrom,object btnSender)       //open the form selected
         {
             if(activeForm!=null)
                 activeForm.Close();
@@ -164,6 +164,11 @@ namespace Fitness_Club
         private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

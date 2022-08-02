@@ -38,7 +38,6 @@
             this.btnSend = new Guna.UI2.WinForms.Guna2Button();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnReturnToHomeForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -47,6 +46,8 @@
             this.panelFields = new System.Windows.Forms.Panel();
             this.lblNotProper = new System.Windows.Forms.Label();
             this.panelCnfirm = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblChengeOk = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtBoxNewPassword = new System.Windows.Forms.TextBox();
@@ -63,14 +64,12 @@
             this.lblEmailSent2 = new System.Windows.Forms.Label();
             this.lblEmailSent = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblChengeOk = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelTitle.SuspendLayout();
             this.panelFields.SuspendLayout();
             this.panelCnfirm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxEmail
@@ -158,7 +157,6 @@
             // 
             this.panelTitle.BackColor = System.Drawing.Color.DodgerBlue;
             this.panelTitle.Controls.Add(this.button3);
-            this.panelTitle.Controls.Add(this.btnMaximize);
             this.panelTitle.Controls.Add(this.btnClose);
             this.panelTitle.Controls.Add(this.btnReturnToHomeForm);
             this.panelTitle.Controls.Add(this.lblTitle);
@@ -176,29 +174,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(979, 0);
+            this.button3.Location = new System.Drawing.Point(1033, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(54, 89);
             this.button3.TabIndex = 5;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(1033, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(54, 89);
-            this.btnMaximize.TabIndex = 4;
-            this.btnMaximize.Text = "o";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnClose
             // 
@@ -307,11 +289,37 @@
             this.panelCnfirm.Controls.Add(this.txtBoxConfirmPass);
             this.panelCnfirm.Controls.Add(this.panel4);
             this.panelCnfirm.Controls.Add(this.guna2Button4);
-            this.panelCnfirm.Location = new System.Drawing.Point(21, 199);
+            this.panelCnfirm.Location = new System.Drawing.Point(34, 183);
             this.panelCnfirm.Name = "panelCnfirm";
             this.panelCnfirm.Size = new System.Drawing.Size(550, 411);
             this.panelCnfirm.TabIndex = 39;
             this.panelCnfirm.Visible = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(468, 147);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 36);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 47;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // lblChengeOk
+            // 
+            this.lblChengeOk.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChengeOk.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblChengeOk.Location = new System.Drawing.Point(102, 54);
+            this.lblChengeOk.Name = "lblChengeOk";
+            this.lblChengeOk.Size = new System.Drawing.Size(368, 41);
+            this.lblChengeOk.TabIndex = 46;
+            this.lblChengeOk.Text = "start value";
+            this.lblChengeOk.Visible = false;
             // 
             // lblPassword
             // 
@@ -453,6 +461,7 @@
             this.txtBoxPassCode.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtBoxPassCode.Location = new System.Drawing.Point(191, 155);
             this.txtBoxPassCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxPassCode.MaxLength = 5;
             this.txtBoxPassCode.Name = "txtBoxPassCode";
             this.txtBoxPassCode.Size = new System.Drawing.Size(306, 31);
             this.txtBoxPassCode.TabIndex = 43;
@@ -476,7 +485,7 @@
             this.panelVer.Controls.Add(this.panel7);
             this.panelVer.Controls.Add(this.guna2Button1);
             this.panelVer.Controls.Add(this.btnVer);
-            this.panelVer.Location = new System.Drawing.Point(43, 105);
+            this.panelVer.Location = new System.Drawing.Point(98, 126);
             this.panelVer.Name = "panelVer";
             this.panelVer.Size = new System.Drawing.Size(527, 398);
             this.panelVer.TabIndex = 40;
@@ -516,32 +525,6 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // lblChengeOk
-            // 
-            this.lblChengeOk.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChengeOk.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblChengeOk.Location = new System.Drawing.Point(102, 54);
-            this.lblChengeOk.Name = "lblChengeOk";
-            this.lblChengeOk.Size = new System.Drawing.Size(368, 41);
-            this.lblChengeOk.TabIndex = 46;
-            this.lblChengeOk.Text = "start value";
-            this.lblChengeOk.Visible = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(468, 147);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 36);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 47;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
             // ForgetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -554,6 +537,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelTitle);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(751, 534);
             this.Name = "ForgetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -563,10 +547,10 @@
             this.panelFields.PerformLayout();
             this.panelCnfirm.ResumeLayout(false);
             this.panelCnfirm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panelVer.ResumeLayout(false);
             this.panelVer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -581,7 +565,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSend;
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnReturnToHomeForm;
         private System.Windows.Forms.Label lblTitle;

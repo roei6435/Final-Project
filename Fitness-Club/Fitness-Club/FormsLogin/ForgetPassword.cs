@@ -46,8 +46,6 @@ namespace Fitness_Club.Resources.FormsLogin
                 return "No white space";
             return "good!!";
             
-            
-
         }
         bool isEmail(string email)
         {
@@ -136,13 +134,6 @@ namespace Fitness_Club.Resources.FormsLogin
             Application.Exit();
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                this.WindowState = FormWindowState.Maximized;
-            else
-                this.WindowState = FormWindowState.Normal;
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -161,6 +152,8 @@ namespace Fitness_Club.Resources.FormsLogin
             txtBoxConfirmPass.UseSystemPasswordChar = false;
             txtBoxNewPassword.UseSystemPasswordChar = false;
         }
+
+
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {

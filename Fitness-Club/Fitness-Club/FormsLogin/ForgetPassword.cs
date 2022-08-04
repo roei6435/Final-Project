@@ -9,80 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
-using System.Data;
 using System.Data.SqlClient;
 
 
 
 namespace Fitness_Club.Resources.FormsLogin
 {
-    public partial class ForgetPassword : Form
+    public partial class ForgetPassword : LoginANDRegister
     {
 
-        public static string to, email,passcode;
  
         public ForgetPassword()
         {
             InitializeComponent();
         }
-        string strCon = "Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True";
-        
-        private string genratePasscode()
-        {
-            Random rnd = new Random();
-            passcode=rnd.Next(99999).ToString();
-            return passcode;
-        }
-
-        public string properPassword(string passwd)
-        {
-            if (passwd.Length < 8 || passwd.Length > 14)
-                return "Minimum 8 char and maximum 14 char";
-            else if (!passwd.Any(char.IsUpper))
-                return "Minimum One upper case";
-            else if (!passwd.Any(char.IsLower))
-                return "Atleast one lower case";
-            else if (passwd.Contains(" "))
-                return "No white space";
-            return "good!!";
-            
-        }
-        bool isEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-    
+       
+       
         private void btnSend_Click(object sender, EventArgs e)
         {
-
-                  
-            if (isEmail((txtBoxEmail.Text).ToString()))
+            if (isEmail(txtBoxEmail.Text))
             {
-                string fromMail = "roei6435@gmail.com";
-                string fromPassword = "szucuztaplqjtvet";
-                to = (txtBoxEmail.Text).ToString();
-                MailMessage message = new MailMessage();
-                message.From = new MailAddress(fromMail);
-                message.Subject = "Fitness-Club reset password";
-                message.To.Add(new MailAddress(to));
-                passcode = genratePasscode();
-                message.Body = "Enter this passcode " + passcode + " for to be continued ";
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                smtp.Port = 587;
-                smtp.Credentials = new NetworkCredential(fromMail, fromPassword);
-                smtp.EnableSsl = true;
-                try
-                {
-                    smtp.Send(message);
 
+                if (SendEmailPasscode(txtBoxEmail.Text))
+                {
                     lblEmailSent.Visible = true;
                     lblEmailSent2.Text = to;
                     lblEmailSent2.Visible = true;
@@ -90,21 +39,21 @@ namespace Fitness_Club.Resources.FormsLogin
                     panelVer.Location = new Point(560, 125);
                     panelVer.Visible = true;
                 }
-                catch (Exception ex)
+                else
                 {
-                    lblNotProper.Text = ex.ToString();
+                    lblNotProper.Text = "The email not proper, enter email again.";
                     lblNotProper.Visible = true;
                 }
-            }        
+             
+            }
             else
             {
                 lblNotProper.Text = "The email not proper, enter email again.";
-                lblNotProper.Visible = true;   
+                lblNotProper.Visible = true;
             }
-        
         }
 
-    
+
         private void btnVer_Click(object sender, EventArgs e)
         {
             if (passcode == (txtBoxPassCode.Text.ToString())){
@@ -153,7 +102,7 @@ namespace Fitness_Club.Resources.FormsLogin
             txtBoxNewPassword.UseSystemPasswordChar = false;
         }
 
-
+     
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
@@ -171,9 +120,9 @@ namespace Fitness_Club.Resources.FormsLogin
         private void guna2Button4_Click(object sender, EventArgs e)
         {
            
-            if (txtBoxConfirmPass.Text==txtBoxNewPassword.Text&&properPassword(txtBoxNewPassword.Text) =="good") 
+            if (txtBoxNewPassword.Text==txtBoxConfirmPass.Text && strongPassword(txtBoxNewPassword.Text)=="good") 
             {
-                //chenge password in dataBase
+               //update password in dataBase
                lblChengeOk.Text = "ok";
                lblChengeOk.Visible = true;
          
@@ -181,11 +130,15 @@ namespace Fitness_Club.Resources.FormsLogin
             else
             {
                 //try again
-                lblChengeOk.Text = properPassword(txtBoxNewPassword.Text);
+                if (txtBoxNewPassword.Text != txtBoxConfirmPass.Text)
+                    lblChengeOk.Text = strongPassword(txtBoxNewPassword.Text);
+                else
+                    lblChengeOk.Text = "Password not match!";
                 lblChengeOk.Visible = true;
-                txtBoxNewPassword.Text = "";
-                txtBoxConfirmPass.Text = "";
+
             }
         }
+
+     
     }
 }

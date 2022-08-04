@@ -8,21 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
 
 namespace Fitness_Club
 {
-    public partial class FormMembers : Form
+    public partial class FormMembers : LoginANDRegister
     {
 
 
-        private Form activeForm;
+       // private Form activeForm;
+        
         public FormMembers()
         {
             InitializeComponent();
                
         }
    
-        SqlConnection conn = new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
+       
 
         private void loadTheme()                                 //loading color
         {
@@ -44,98 +47,7 @@ namespace Fitness_Club
             loadTheme();
         }
 
-      
-        static private bool nameIsProper(String s)                    //is proper first/last name
-        {
-           
-           if (s.Length<2)return false;
-           char ind = s[0]; bool flag = false;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if(ind!=s[i])
-                    flag = true;
-                if ((s[i] <= '9' && s[i] >= '0') || s[i] == ' ')
-                    return false;
-            }   
-            if (flag)
-                return true; 
-            return false;
-        }
-        bool isEmail(string email)                                     //  is proper Email
-        {
-            string[] sub = email.Split('.');
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return (addr.Address == email) && sub[1] == "com" || sub[1] == "co";
-            }
-            catch
-            {
-                return false;
-            }
-        }
-        private bool emailExist(string email)              //chek if email exist in dataBase
-        {
-           
-            try
-            {
-               
-            string querry = "SELECT * FROM person WHERE email ='" + email + "'";
-            SqlDataAdapter adapter = new SqlDataAdapter(querry,conn);
-            DataTable dt = new DataTable(); 
-            adapter.Fill(dt);   
-            if(dt.Rows.Count > 0)
-               return true;
-            return false;   
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);    
-                return false;
-            }
-        }
-        private bool PhoneExist(string phone)
-        {        
-            try
-            {
-
-                string querry = "SELECT * FROM person WHERE phone ='" + phone + "'";
-                SqlDataAdapter adapter = new SqlDataAdapter(querry, conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                if (dt.Rows.Count > 0)
-                    return true;
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-
-        }           //check if phone exist in dataBase
-        static private bool phoneIsProper(String s)                    //is proper phone numbur
-        {
-            if (s.Length<10) return false;
-            for (int i = 0; i < s.Length; i++)
-                if (!(s[i] <= '9' && s[i] >= '0') || s[i] == ' ')
-                    return false;
-            return true;
-        }
-
-        public string strongPassword(string passwd)
-        {
-            if (passwd.Length < 8 || passwd.Length > 14)
-                return "Minimum 8 char and maximum 14 char";
-            else if (!passwd.Any(char.IsUpper))
-                return "Minimum One upper case";
-            else if (!passwd.Any(char.IsLower))
-                return "Atleast one lower case";
-            else if (passwd.Contains(" "))
-                return "No white space";
-            return "good";
-
-        }
-
+    
         private void viewPass_Click(object sender, EventArgs e)
         {
             txtBoxPassword.UseSystemPasswordChar = false;
@@ -221,9 +133,10 @@ namespace Fitness_Club
                 picBoxPassOk.Visible = true;
             }
         }
+
         private void btnNext_Click(object sender, EventArgs e)        
         {
-            if (step1.ForeColor == Color.White)
+            if (step1.ForeColor == Color.White)     //step1
             {
                 
                 //cheked feilds 
@@ -249,48 +162,42 @@ namespace Fitness_Club
                     step2.ForeColor = Color.White;
 
                 }    
-            }         //step1
-            else if(step2.ForeColor == Color.White)
+            }        
+            else if(step2.ForeColor == Color.White)        //step2
             {
                 //to check feilds gender and date born not null.
                 if (!radioButtonMale.Checked && !radioButtonFemale.Checked)
                     lblTitle.Text = "        Plese choose gender.";
                 else if (comboBoxDay.Text == "" || comboBoxMou.Text == "" || comboBoxYear.Text == "")
                     lblTitle.Text = "        Invalid date, try again.";
-                else   //go to penel3
+                else   //go to penel3--send passcode to email
                 {
+                    SendEmailPasscode(txtBoxEmail.Text);
                     panelVerS3.Visible = true;
                     panelStep2.Visible = false;
                     lblTitle.Visible = false;               
                     lblTitle2.Location = new Point(320, 55);
                     lblTitle2.Font = new Font("Segoe UI", 14.0f);
-                    lblTitle2.Text = "Verify your email: "+txtBoxEmail.Text+"\nusing the verification code we just sent";
+                    lblTitle2.Text = "Verification Passcode sent to email:\n" + txtBoxEmail.Text+"\nenter the verification code we just sent.";
                     lblTitle2.Visible = true;
                     step2.ForeColor = Color.DimGray;
                     step3.ForeColor = Color.White;
                 }
                     
-            }       //step2
+            }      
             else if(step3.ForeColor == Color.White)        //step3
             {
-                //check password same confirm password && password strong enough
-                if (strongPassword(txtBoxPassword.Text) != "good")
-                    lblTitle.Text = "    " + strongPassword(txtBoxPassword.Text);
-                else if (txtBoxPassword.Text != txtBoxConfirmPass.Text)
-                    lblTitle.Text = "   Password not Match, try again.";
-               else                           //Create a new person.
-                {
-                    panelStep3.Visible = false;
-                    lblTitle.Location = new Point(355, 85);
-                    lblTitle.Text = "        The registration was successful";
-                    panelStepsAndTitle.Location = new Point(550, 1);
-                    step3.ForeColor = Color.DimGray;
-                    step4.ForeColor = Color.White;
-                    picBocSucc.Visible = true;
-                    btnBack.Visible = false;
-                    btnNext.Visible = false;
+                if (passcode == (txtBoxPassCode.Text))
+                {   
+                    //crate parson,add to data base
+                   // Person p1=new Person()
+                    //sending email with password and completed registor
                 }
-                    
+                else
+                {
+                   lblTitle2.Text = "Passcode not match, try again";
+                }
+
 
             }
 
@@ -300,6 +207,8 @@ namespace Fitness_Club
         {
             if (step2.ForeColor == Color.White)     //return to panel stup1
             {
+                lblTitle2.Visible = false;
+                lblTitle.Visible = true;
                 panelStep1.Visible = true;
                 panelStep2.Visible = false;
                 btnBack.Visible = false;
@@ -309,6 +218,8 @@ namespace Fitness_Club
             }
             else if(step3.ForeColor == Color.White)      //return to penel 2
             {
+                lblTitle.Visible = true;
+                lblTitle2.Visible = false;
                 panelStep2.Visible = true;
                 panelStep3.Visible = false;
                 lblTitle.Text = "           Just a few more details...";
@@ -317,22 +228,7 @@ namespace Fitness_Club
             }
     
         }
-        public static string GetRandomPassword(int length)
-        {
-            const string chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-            StringBuilder sb = new StringBuilder();
-            Random rnd = new Random();
-
-            for (int i = 0; i < length; i++)
-            {
-                int index = rnd.Next(chars.Length);
-                sb.Append(chars[index]);
-            }
-
-            return sb.ToString();
-        }
-
+        
         private void txtBoxConfirmPass_TextChanged(object sender, EventArgs e)
         {
 
@@ -378,7 +274,7 @@ namespace Fitness_Club
             panelVerS3.Visible = false;
             btnBack.Visible = false;
             lblTitle2.Visible = false;
-            lblTitle.Text = "         Lat's start...";
+            lblTitle.Text = "                       Lat's start...";
             lblTitle.Visible = true;
             step3.ForeColor = Color.DimGray;
             step1.ForeColor = Color.White;

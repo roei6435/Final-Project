@@ -41,8 +41,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnReturnToHomeForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btmAdmin = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.lblAdmin = new System.Windows.Forms.Label();
             this.panelFields = new System.Windows.Forms.Panel();
             this.lblNotProper = new System.Windows.Forms.Label();
             this.panelCnfirm = new System.Windows.Forms.Panel();
@@ -78,11 +76,12 @@
             this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtBoxEmail.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxEmail.Location = new System.Drawing.Point(271, 125);
+            this.txtBoxEmail.Location = new System.Drawing.Point(253, 130);
             this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(287, 31);
             this.txtBoxEmail.TabIndex = 16;
+            this.txtBoxEmail.Text = "Roei6435@gmail.com";
             // 
             // panel1
             // 
@@ -97,7 +96,7 @@
             // 
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblEmail.Location = new System.Drawing.Point(99, 133);
+            this.lblEmail.Location = new System.Drawing.Point(91, 132);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(130, 32);
             this.lblEmail.TabIndex = 19;
@@ -109,7 +108,7 @@
             this.txtBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtBoxPhone.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxPhone.Location = new System.Drawing.Point(271, 201);
+            this.txtBoxPhone.Location = new System.Drawing.Point(254, 201);
             this.txtBoxPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxPhone.Name = "txtBoxPhone";
             this.txtBoxPhone.Size = new System.Drawing.Size(286, 31);
@@ -128,9 +127,9 @@
             // 
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblPhone.Location = new System.Drawing.Point(99, 201);
+            this.lblPhone.Location = new System.Drawing.Point(91, 201);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(166, 32);
+            this.lblPhone.Size = new System.Drawing.Size(165, 32);
             this.lblPhone.TabIndex = 22;
             this.lblPhone.Text = "Phone numbur";
             // 
@@ -223,32 +222,6 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Forgot Password";
             // 
-            // btmAdmin
-            // 
-            this.btmAdmin.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btmAdmin.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btmAdmin.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.btmAdmin.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.btmAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btmAdmin.Location = new System.Drawing.Point(340, 289);
-            this.btmAdmin.Name = "btmAdmin";
-            this.btmAdmin.Size = new System.Drawing.Size(68, 32);
-            this.btmAdmin.TabIndex = 6;
-            this.btmAdmin.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.btmAdmin.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.btmAdmin.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.btmAdmin.UncheckedState.InnerColor = System.Drawing.Color.White;
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAdmin.Location = new System.Drawing.Point(209, 289);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(209, 32);
-            this.lblAdmin.TabIndex = 33;
-            this.lblAdmin.Text = "I\'m admin";
-            // 
             // panelFields
             // 
             this.panelFields.Controls.Add(this.lblNotProper);
@@ -256,9 +229,7 @@
             this.panelFields.Controls.Add(this.panel1);
             this.panelFields.Controls.Add(this.txtBoxEmail);
             this.panelFields.Controls.Add(this.lblPhone);
-            this.panelFields.Controls.Add(this.btmAdmin);
             this.panelFields.Controls.Add(this.panel2);
-            this.panelFields.Controls.Add(this.lblAdmin);
             this.panelFields.Controls.Add(this.txtBoxPhone);
             this.panelFields.Controls.Add(this.btnSend);
             this.panelFields.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -351,6 +322,7 @@
             this.txtBoxNewPassword.Name = "txtBoxNewPassword";
             this.txtBoxNewPassword.Size = new System.Drawing.Size(286, 31);
             this.txtBoxNewPassword.TabIndex = 40;
+            this.txtBoxNewPassword.Text = "6435208Roei";
             this.txtBoxNewPassword.UseSystemPasswordChar = true;
             // 
             // lblConfirm
@@ -447,10 +419,10 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(192, 189);
+            this.panel7.Location = new System.Drawing.Point(268, 188);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(320, 1);
+            this.panel7.Size = new System.Drawing.Size(185, 1);
             this.panel7.TabIndex = 42;
             // 
             // txtBoxPassCode
@@ -459,18 +431,18 @@
             this.txtBoxPassCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxPassCode.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtBoxPassCode.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxPassCode.Location = new System.Drawing.Point(191, 155);
+            this.txtBoxPassCode.Location = new System.Drawing.Point(267, 154);
             this.txtBoxPassCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxPassCode.MaxLength = 5;
             this.txtBoxPassCode.Name = "txtBoxPassCode";
-            this.txtBoxPassCode.Size = new System.Drawing.Size(306, 31);
+            this.txtBoxPassCode.Size = new System.Drawing.Size(171, 31);
             this.txtBoxPassCode.TabIndex = 43;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(19, 158);
+            this.label2.Location = new System.Drawing.Point(95, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 32);
             this.label2.TabIndex = 44;
@@ -485,7 +457,7 @@
             this.panelVer.Controls.Add(this.panel7);
             this.panelVer.Controls.Add(this.guna2Button1);
             this.panelVer.Controls.Add(this.btnVer);
-            this.panelVer.Location = new System.Drawing.Point(98, 126);
+            this.panelVer.Location = new System.Drawing.Point(54, 167);
             this.panelVer.Name = "panelVer";
             this.panelVer.Size = new System.Drawing.Size(527, 398);
             this.panelVer.TabIndex = 40;
@@ -569,8 +541,6 @@
         private System.Windows.Forms.Button btnReturnToHomeForm;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch btmAdmin;
-        private System.Windows.Forms.Label lblAdmin;
         private System.Windows.Forms.Panel panelFields;
         private System.Windows.Forms.Panel panelCnfirm;
         private System.Windows.Forms.Label lblPassword;

@@ -85,13 +85,15 @@
             this.picBoxPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
             this.viewPass = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelStepsAndTitle = new System.Windows.Forms.Panel();
-            this.picBocSucc = new System.Windows.Forms.PictureBox();
             this.panelVerS3 = new System.Windows.Forms.Panel();
             this.lblCheckEmail = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxPassCode = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBocSucc = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelStep1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vOffPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassOk)).BeginInit();
@@ -111,8 +113,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewPass)).BeginInit();
             this.panelStepsAndTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBocSucc)).BeginInit();
             this.panelVerS3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBocSucc)).BeginInit();
             this.SuspendLayout();
             // 
             // panelStep1
@@ -138,7 +141,7 @@
             this.panelStep1.Controls.Add(this.lblFname);
             this.panelStep1.Controls.Add(this.txtBoxFname);
             this.panelStep1.Controls.Add(this.panel7);
-            this.panelStep1.Location = new System.Drawing.Point(298, 115);
+            this.panelStep1.Location = new System.Drawing.Point(355, 171);
             this.panelStep1.Name = "panelStep1";
             this.panelStep1.Size = new System.Drawing.Size(483, 217);
             this.panelStep1.TabIndex = 78;
@@ -421,7 +424,7 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitle.Location = new System.Drawing.Point(287, 55);
+            this.lblTitle.Location = new System.Drawing.Point(344, 111);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(648, 57);
             this.lblTitle.TabIndex = 80;
@@ -474,9 +477,9 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(577, 358);
+            this.btnNext.Location = new System.Drawing.Point(590, 441);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(260, 50);
+            this.btnNext.Size = new System.Drawing.Size(217, 50);
             this.btnNext.TabIndex = 83;
             this.btnNext.Text = "Next step";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -487,9 +490,9 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnBack.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnBack.Location = new System.Drawing.Point(251, 358);
+            this.btnBack.Location = new System.Drawing.Point(334, 441);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(260, 50);
+            this.btnBack.Size = new System.Drawing.Size(212, 50);
             this.btnBack.TabIndex = 84;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -741,7 +744,7 @@
             this.panelStep2.Controls.Add(this.label9);
             this.panelStep2.Controls.Add(this.SwitchAdmin);
             this.panelStep2.Controls.Add(this.label13);
-            this.panelStep2.Location = new System.Drawing.Point(248, 106);
+            this.panelStep2.Location = new System.Drawing.Point(309, 171);
             this.panelStep2.Name = "panelStep2";
             this.panelStep2.Size = new System.Drawing.Size(589, 246);
             this.panelStep2.TabIndex = 85;
@@ -878,7 +881,7 @@
             this.panelStep3.Controls.Add(this.lblConfirm);
             this.panelStep3.Controls.Add(this.txtBoxConfirmPass);
             this.panelStep3.Controls.Add(this.panel6);
-            this.panelStep3.Location = new System.Drawing.Point(248, 103);
+            this.panelStep3.Location = new System.Drawing.Point(294, 171);
             this.panelStep3.Name = "panelStep3";
             this.panelStep3.Size = new System.Drawing.Size(589, 246);
             this.panelStep3.TabIndex = 86;
@@ -963,21 +966,10 @@
             this.panelStepsAndTitle.Controls.Add(this.step2);
             this.panelStepsAndTitle.Controls.Add(this.step3);
             this.panelStepsAndTitle.Controls.Add(this.step4);
-            this.panelStepsAndTitle.Location = new System.Drawing.Point(466, 1);
+            this.panelStepsAndTitle.Location = new System.Drawing.Point(480, 34);
             this.panelStepsAndTitle.Name = "panelStepsAndTitle";
             this.panelStepsAndTitle.Size = new System.Drawing.Size(193, 60);
             this.panelStepsAndTitle.TabIndex = 87;
-            // 
-            // picBocSucc
-            // 
-            this.picBocSucc.Image = global::Fitness_Club.Properties.Resources.comm;
-            this.picBocSucc.Location = new System.Drawing.Point(-2, 399);
-            this.picBocSucc.Name = "picBocSucc";
-            this.picBocSucc.Size = new System.Drawing.Size(194, 205);
-            this.picBocSucc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBocSucc.TabIndex = 0;
-            this.picBocSucc.TabStop = false;
-            this.picBocSucc.Visible = false;
             // 
             // panelVerS3
             // 
@@ -985,7 +977,7 @@
             this.panelVerS3.Controls.Add(this.label4);
             this.panelVerS3.Controls.Add(this.txtBoxPassCode);
             this.panelVerS3.Controls.Add(this.panel4);
-            this.panelVerS3.Location = new System.Drawing.Point(248, 191);
+            this.panelVerS3.Location = new System.Drawing.Point(306, 245);
             this.panelVerS3.Name = "panelVerS3";
             this.panelVerS3.Size = new System.Drawing.Size(589, 161);
             this.panelVerS3.TabIndex = 88;
@@ -1039,19 +1031,53 @@
             // 
             this.lblTitle2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitle2.Location = new System.Drawing.Point(240, 46);
+            this.lblTitle2.Location = new System.Drawing.Point(250, 102);
             this.lblTitle2.Name = "lblTitle2";
             this.lblTitle2.Size = new System.Drawing.Size(648, 85);
             this.lblTitle2.TabIndex = 89;
             this.lblTitle2.Text = "ver";
             this.lblTitle2.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Fitness_Club.Properties.Resources.Registration1;
+            this.pictureBox1.Location = new System.Drawing.Point(943, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(439, 645);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 90;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBocSucc
+            // 
+            this.picBocSucc.Image = global::Fitness_Club.Properties.Resources.comm;
+            this.picBocSucc.Location = new System.Drawing.Point(-2, 399);
+            this.picBocSucc.Name = "picBocSucc";
+            this.picBocSucc.Size = new System.Drawing.Size(194, 205);
+            this.picBocSucc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBocSucc.TabIndex = 0;
+            this.picBocSucc.TabStop = false;
+            this.picBocSucc.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label5.Location = new System.Drawing.Point(976, 240);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(380, 45);
+            this.label5.TabIndex = 91;
+            this.label5.Text = "                     Registration";
+            // 
             // FormMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1018, 684);
+            this.ClientSize = new System.Drawing.Size(1303, 656);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitle2);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panelVerS3);
@@ -1087,9 +1113,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewPass)).EndInit();
             this.panelStepsAndTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBocSucc)).EndInit();
             this.panelVerS3.ResumeLayout(false);
             this.panelVerS3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBocSucc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1158,5 +1185,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblCheckEmail;
         private System.Windows.Forms.Label lblTitle2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

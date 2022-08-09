@@ -13,22 +13,21 @@ using System.IO;
 
 namespace Fitness_Club
 {
-    public partial class manuAadmin : Form
+    public partial class btnCalandar : Form
     {
 
         private Button currentButton;
         private Random random;
         private int tmp;
         private Form activeForm;
-        private bool sideBarExpand;
-        private bool membersCollapse;
+        private bool sideBarExpand=false;
+        private bool membersCollapse=true;
 
 
-        public manuAadmin()
+        public btnCalandar()
         {
             InitializeComponent();
             random = new Random();
-            btnReturnToHomeForm.Visible = false;
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -69,10 +68,11 @@ namespace Fitness_Club
                    panelLogo.BackColor = ThemColor.ChangeColorBrightness(color, -0.3f);
                     ThemColor.primaryColor=color;   
                     ThemColor.secondColor= ThemColor.ChangeColorBrightness(color, -0.3f);
-                    btnReturnToHomeForm.Visible = true;
+                    
                 }
             }   
         }
+
         private void DisableButton()
         {
             foreach(Control prvBtn in panelManu.Controls)
@@ -110,10 +110,7 @@ namespace Fitness_Club
             
         }
 
-        private void btnAddMembers_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormMembers(), sender);
-        }
+
 
         private void btnUpdateMem_Click(object sender, EventArgs e)
         {
@@ -139,7 +136,7 @@ namespace Fitness_Club
             panelTitle.BackColor = Color.FromArgb(0, 150, 136);
             //panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
-            btnReturnToHomeForm.Visible = false;
+          
         }
 
 
@@ -171,33 +168,9 @@ namespace Fitness_Club
 
 
         //home
-        private void picBoxEdit_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog od = new OpenFileDialog();
-            od.FileName = "";
-            od.Filter = "Supported Imeges|*.jpg;*.png";
-            if (od.ShowDialog() == DialogResult.OK)
-            {
-                profilePic.Load(od.FileName); 
-                btnSaveChenge.Visible = true;
-            }
 
-        }
 
-        private void btnSaveChenge_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(str);
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();   
-            var image =new ImageConverter().ConvertTo(profilePic.Image,typeof(Byte[]));
-            cmd.Parameters.AddWithValue("@image", image);
-            cmd.CommandText = "INSERT INTO images (img) VALUES(@image)";
-            if (cmd.ExecuteNonQuery() > 0)
-                MessageBox.Show("imge added");
-            else
-                MessageBox.Show("not");
-            con.Close();
-        }
+
 
 
         private void btnManuClose_Click(object sender, EventArgs e)
@@ -209,7 +182,10 @@ namespace Fitness_Club
         {
             if (sideBarExpand)
             {
+                
                 panelManu.Width -= 10;
+                btnSideManu.Image = Fitness_Club.Properties.Resources.manu2;
+                
                 if (panelManu.Width == panelManu.MinimumSize.Width)
                 {
                     sideBarExpand = false;
@@ -218,7 +194,10 @@ namespace Fitness_Club
             }
             else
             {
+               
+               
                 panelManu.Width += 10;
+                btnSideManu.Image = Fitness_Club.Properties.Resources.previous_arrow;
                 if (panelManu.Width == panelManu.MaximumSize.Width)
                 {
                     sideBarExpand = true;
@@ -227,17 +206,14 @@ namespace Fitness_Club
             }
         }
 
-        private void manuAadmin_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void MembersTimer_Tick(object sender, EventArgs e)
         {
             if (membersCollapse)
             {
-                btnUserMengement.Text = " User Management  ▲";
+                
                 membersContiener.Height += 10;
+                btnUserMengement.Text = "    Management  ▲";
                 if (membersContiener.Height == membersContiener.MaximumSize.Height)
                 {
                     membersCollapse = false;
@@ -246,9 +222,10 @@ namespace Fitness_Club
             }
             else
             {
-                btnUserMengement.Text = " User Management  ▼";
-                membersContiener.Height -= 10;  
-                if(membersContiener.Height== membersContiener.MinimumSize.Height)
+                
+                membersContiener.Height -= 10;
+                btnUserMengement.Text = "    Management  ▼";
+                if (membersContiener.Height== membersContiener.MinimumSize.Height)
                 {
                     membersCollapse=true;
                     MembersTimer.Stop();
@@ -262,23 +239,27 @@ namespace Fitness_Club
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
+            
             openChildForm(new FormMembers(), sender);
+           
         }
 
         private void btnUserMengement_Click(object sender, EventArgs e)
         {
-   
+            ActiveButton(btnAddUser);
+            openChildForm(new FormMembers(), sender);
+            if (!sideBarExpand)
+            {
+                panelManu.Width =panelManu.MaximumSize.Width;
+                sideBarExpand = true;
+            }
+                
             MembersTimer.Start();
 
 
         }
 
-        private void btnDsasboard_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            Reset();
-        }
+
 
         private void picBoxHome_Click(object sender, EventArgs e)
         {
@@ -286,5 +267,31 @@ namespace Fitness_Club
                 activeForm.Close();
             Reset();
         }
+
+        private void btnSideManu_Click(object sender, EventArgs e)
+        {
+            timerSideManu.Start();
+        }
+
+        private void btnMyAcc_Click(object sender, EventArgs e)           
+        {
+            if (!membersCollapse)
+            {
+                MembersTimer.Start();
+                btnUserMengement.BackColor =  btnSideManu.BackColor;
+                openChildForm(new MyAccount(), sender);
+            }
+                              
+            else
+                openChildForm(new MyAccount(), sender);
+
+        }
+
+        private void btnCalandar_Click(object sender, EventArgs e)
+        {
+           
+            openChildForm(new Calandar(), sender);
+        }
+
     }
 }

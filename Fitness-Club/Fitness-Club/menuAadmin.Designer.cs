@@ -34,31 +34,29 @@
             this.btnMyAcc = new System.Windows.Forms.Button();
             this.btnSideManu = new System.Windows.Forms.Button();
             this.membersContiener = new System.Windows.Forms.Panel();
+            this.btnTraning = new System.Windows.Forms.Button();
             this.btnAdmins = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnUserMengement = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnUpdateMem = new System.Windows.Forms.Button();
+            this.btnCalendar = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPayments = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.btnMemers = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.picBoxHome = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.penelHome = new System.Windows.Forms.Panel();
+            this.pictureInidcation = new System.Windows.Forms.PictureBox();
             this.timerSideManu = new System.Windows.Forms.Timer(this.components);
             this.MembersTimer = new System.Windows.Forms.Timer(this.components);
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.pictureInidcation = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTraning = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelManu.SuspendLayout();
             this.membersContiener.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -73,23 +71,21 @@
             // panelManu
             // 
             this.panelManu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelManu.Controls.Add(this.panel2);
-            this.panelManu.Controls.Add(this.panel1);
             this.panelManu.Controls.Add(this.btnMyAcc);
-            this.panelManu.Controls.Add(this.btnSideManu);
+            this.panelManu.Controls.Add(this.btnSettings);
             this.panelManu.Controls.Add(this.membersContiener);
-            this.panelManu.Controls.Add(this.button4);
-            this.panelManu.Controls.Add(this.btnUpdateMem);
+            this.panelManu.Controls.Add(this.btnSideManu);
+            this.panelManu.Controls.Add(this.btnCalendar);
             this.panelManu.Controls.Add(this.panelLogo);
-            this.panelManu.Controls.Add(this.btnPayments);
+            this.panelManu.Controls.Add(this.btnAbout);
             this.panelManu.Controls.Add(this.btnMemers);
             this.panelManu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.panelManu.Location = new System.Drawing.Point(0, 0);
             this.panelManu.Margin = new System.Windows.Forms.Padding(4);
-            this.panelManu.MaximumSize = new System.Drawing.Size(227, 657);
-            this.panelManu.MinimumSize = new System.Drawing.Size(55, 600);
+            this.panelManu.MaximumSize = new System.Drawing.Size(227, 800);
+            this.panelManu.MinimumSize = new System.Drawing.Size(75, 719);
             this.panelManu.Name = "panelManu";
-            this.panelManu.Size = new System.Drawing.Size(55, 657);
+            this.panelManu.Size = new System.Drawing.Size(75, 719);
             this.panelManu.TabIndex = 0;
             // 
             // btnMyAcc
@@ -101,7 +97,7 @@
             this.btnMyAcc.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnMyAcc.Image = global::Fitness_Club.Properties.Resources.usersMengment2;
             this.btnMyAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyAcc.Location = new System.Drawing.Point(-14, 146);
+            this.btnMyAcc.Location = new System.Drawing.Point(-6, 146);
             this.btnMyAcc.Margin = new System.Windows.Forms.Padding(4);
             this.btnMyAcc.Name = "btnMyAcc";
             this.btnMyAcc.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
@@ -121,7 +117,7 @@
             this.btnSideManu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSideManu.Image = global::Fitness_Club.Properties.Resources.manu2;
             this.btnSideManu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSideManu.Location = new System.Drawing.Point(-6, 78);
+            this.btnSideManu.Location = new System.Drawing.Point(2, 78);
             this.btnSideManu.Margin = new System.Windows.Forms.Padding(4);
             this.btnSideManu.Name = "btnSideManu";
             this.btnSideManu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
@@ -139,12 +135,32 @@
             this.membersContiener.Controls.Add(this.btnClients);
             this.membersContiener.Controls.Add(this.btnUserMengement);
             this.membersContiener.Controls.Add(this.btnAddUser);
-            this.membersContiener.Location = new System.Drawing.Point(0, 301);
-            this.membersContiener.MaximumSize = new System.Drawing.Size(252, 280);
-            this.membersContiener.MinimumSize = new System.Drawing.Size(255, 55);
+            this.membersContiener.Location = new System.Drawing.Point(8, 301);
+            this.membersContiener.MaximumSize = new System.Drawing.Size(255, 254);
+            this.membersContiener.MinimumSize = new System.Drawing.Size(255, 62);
             this.membersContiener.Name = "membersContiener";
-            this.membersContiener.Size = new System.Drawing.Size(255, 55);
+            this.membersContiener.Size = new System.Drawing.Size(255, 62);
             this.membersContiener.TabIndex = 88;
+            // 
+            // btnTraning
+            // 
+            this.btnTraning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnTraning.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTraning.FlatAppearance.BorderSize = 0;
+            this.btnTraning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraning.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnTraning.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnTraning.Image = global::Fitness_Club.Properties.Resources.swimmer;
+            this.btnTraning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTraning.Location = new System.Drawing.Point(-7, 200);
+            this.btnTraning.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTraning.Name = "btnTraning";
+            this.btnTraning.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnTraning.Size = new System.Drawing.Size(266, 58);
+            this.btnTraning.TabIndex = 10;
+            this.btnTraning.Text = "    Training classes";
+            this.btnTraning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTraning.UseVisualStyleBackColor = false;
             // 
             // btnAdmins
             // 
@@ -196,7 +212,7 @@
             this.btnUserMengement.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnUserMengement.Image = global::Fitness_Club.Properties.Resources._management_business_2;
             this.btnUserMengement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserMengement.Location = new System.Drawing.Point(-10, 0);
+            this.btnUserMengement.Location = new System.Drawing.Point(-3, 0);
             this.btnUserMengement.Margin = new System.Windows.Forms.Padding(4);
             this.btnUserMengement.Name = "btnUserMengement";
             this.btnUserMengement.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
@@ -228,45 +244,45 @@
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
-            // button4
+            // btnCalendar
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Image = global::Fitness_Club.Properties.Resources.calendar;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-7, 224);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(266, 70);
-            this.button4.TabIndex = 89;
-            this.button4.Text = "        Calendar";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnCalandar_Click);
+            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalendar.FlatAppearance.BorderSize = 0;
+            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalendar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnCalendar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCalendar.Image = global::Fitness_Club.Properties.Resources.calendar;
+            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendar.Location = new System.Drawing.Point(1, 224);
+            this.btnCalendar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnCalendar.Size = new System.Drawing.Size(266, 70);
+            this.btnCalendar.TabIndex = 89;
+            this.btnCalendar.Text = "        Calendar";
+            this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCalendar.UseVisualStyleBackColor = true;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalandar_Click);
             // 
-            // btnUpdateMem
+            // btnSettings
             // 
-            this.btnUpdateMem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdateMem.FlatAppearance.BorderSize = 0;
-            this.btnUpdateMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateMem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnUpdateMem.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUpdateMem.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateMem.Image")));
-            this.btnUpdateMem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateMem.Location = new System.Drawing.Point(-7, 423);
-            this.btnUpdateMem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdateMem.Name = "btnUpdateMem";
-            this.btnUpdateMem.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnUpdateMem.Size = new System.Drawing.Size(266, 70);
-            this.btnUpdateMem.TabIndex = 3;
-            this.btnUpdateMem.Text = "        Settings";
-            this.btnUpdateMem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdateMem.UseVisualStyleBackColor = true;
-            this.btnUpdateMem.Click += new System.EventHandler(this.btnUpdateMem_Click);
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(5, 423);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(266, 70);
+            this.btnSettings.TabIndex = 3;
+            this.btnSettings.Text = "        Settings";
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // panelLogo
             // 
@@ -282,10 +298,10 @@
             // 
             this.profilePic.Image = global::Fitness_Club.Properties.Resources.propile;
             this.profilePic.ImageRotate = 0F;
-            this.profilePic.Location = new System.Drawing.Point(0, 18);
+            this.profilePic.Location = new System.Drawing.Point(3, 13);
             this.profilePic.Name = "profilePic";
             this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profilePic.Size = new System.Drawing.Size(55, 50);
+            this.profilePic.Size = new System.Drawing.Size(69, 65);
             this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePic.TabIndex = 88;
             this.profilePic.TabStop = false;
@@ -294,31 +310,31 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(63, 18);
+            this.label1.Location = new System.Drawing.Point(81, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 57);
             this.label1.TabIndex = 88;
             this.label1.Text = "Roei ben david\r\n         admin\r\n";
             // 
-            // btnPayments
+            // btnAbout
             // 
-            this.btnPayments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPayments.FlatAppearance.BorderSize = 0;
-            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayments.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnPayments.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPayments.Image = ((System.Drawing.Image)(resources.GetObject("btnPayments.Image")));
-            this.btnPayments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPayments.Location = new System.Drawing.Point(-7, 360);
-            this.btnPayments.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPayments.Name = "btnPayments";
-            this.btnPayments.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnPayments.Size = new System.Drawing.Size(269, 70);
-            this.btnPayments.TabIndex = 4;
-            this.btnPayments.Text = "        About";
-            this.btnPayments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPayments.UseVisualStyleBackColor = true;
-            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.FlatAppearance.BorderSize = 0;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnAbout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
+            this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbout.Location = new System.Drawing.Point(5, 360);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnAbout.Size = new System.Drawing.Size(269, 70);
+            this.btnAbout.TabIndex = 4;
+            this.btnAbout.Text = "        About";
+            this.btnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnMemers
             // 
@@ -334,7 +350,7 @@
             this.btnMemers.Margin = new System.Windows.Forms.Padding(4);
             this.btnMemers.Name = "btnMemers";
             this.btnMemers.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnMemers.Size = new System.Drawing.Size(55, 76);
+            this.btnMemers.Size = new System.Drawing.Size(75, 76);
             this.btnMemers.TabIndex = 1;
             this.btnMemers.Text = "        Members";
             this.btnMemers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -345,7 +361,7 @@
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelTitle.Controls.Add(this.picBoxHome);
-            this.panelTitle.Controls.Add(this.button3);
+            this.panelTitle.Controls.Add(this.btnMinimize);
             this.panelTitle.Controls.Add(this.guna2PictureBox1);
             this.panelTitle.Controls.Add(this.btnClose);
             this.panelTitle.Controls.Add(this.lblTitle);
@@ -370,21 +386,21 @@
             this.picBoxHome.TabStop = false;
             this.picBoxHome.Click += new System.EventHandler(this.picBoxHome_Click);
             // 
-            // button3
+            // btnMinimize
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1104, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 76);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(1104, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(54, 76);
+            this.btnMinimize.TabIndex = 5;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // guna2PictureBox1
             // 
@@ -422,7 +438,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(589, 22);
+            this.lblTitle.Location = new System.Drawing.Point(541, 15);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(159, 38);
             this.lblTitle.TabIndex = 1;
@@ -434,11 +450,21 @@
             this.penelHome.AutoSize = true;
             this.penelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.penelHome.Controls.Add(this.pictureInidcation);
-            this.penelHome.Location = new System.Drawing.Point(55, 68);
+            this.penelHome.Location = new System.Drawing.Point(55, 76);
             this.penelHome.Margin = new System.Windows.Forms.Padding(0);
             this.penelHome.Name = "penelHome";
-            this.penelHome.Size = new System.Drawing.Size(1215, 1030);
+            this.penelHome.Size = new System.Drawing.Size(1212, 1069);
             this.penelHome.TabIndex = 0;
+            // 
+            // pictureInidcation
+            // 
+            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.Registration1;
+            this.pictureInidcation.Location = new System.Drawing.Point(851, 2);
+            this.pictureInidcation.Name = "pictureInidcation";
+            this.pictureInidcation.Size = new System.Drawing.Size(358, 630);
+            this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureInidcation.TabIndex = 91;
+            this.pictureInidcation.TabStop = false;
             // 
             // timerSideManu
             // 
@@ -459,60 +485,14 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
-            // pictureInidcation
-            // 
-            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.Registration1;
-            this.pictureInidcation.Location = new System.Drawing.Point(851, 2);
-            this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(358, 536);
-            this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureInidcation.TabIndex = 91;
-            this.pictureInidcation.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Location = new System.Drawing.Point(217, 78);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 540);
-            this.panel1.TabIndex = 92;
-            // 
-            // btnTraning
-            // 
-            this.btnTraning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnTraning.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTraning.FlatAppearance.BorderSize = 0;
-            this.btnTraning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraning.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnTraning.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTraning.Image = global::Fitness_Club.Properties.Resources.swimmer;
-            this.btnTraning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTraning.Location = new System.Drawing.Point(-7, 200);
-            this.btnTraning.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTraning.Name = "btnTraning";
-            this.btnTraning.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnTraning.Size = new System.Drawing.Size(266, 58);
-            this.btnTraning.TabIndex = 10;
-            this.btnTraning.Text = "    Training classes";
-            this.btnTraning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTraning.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel2.Location = new System.Drawing.Point(3, 77);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 10);
-            this.panel2.TabIndex = 93;
-            // 
             // btnCalandar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1264, 608);
-            this.Controls.Add(this.penelHome);
+            this.ClientSize = new System.Drawing.Size(1264, 694);
             this.Controls.Add(this.panelManu);
+            this.Controls.Add(this.penelHome);
             this.Controls.Add(this.panelTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -540,11 +520,11 @@
 
         private System.Windows.Forms.Panel panelManu;
         private System.Windows.Forms.Button btnUserMengement;
-        private System.Windows.Forms.Button btnPayments;
-        private System.Windows.Forms.Button btnUpdateMem;
+        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Panel penelHome;
@@ -558,14 +538,12 @@
         private System.Windows.Forms.Timer MembersTimer;
         private System.Windows.Forms.Button btnAdmins;
         private System.Windows.Forms.Button btnClients;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCalendar;
         private System.Windows.Forms.Button btnSideManu;
         private System.Windows.Forms.Button btnMyAcc;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private System.Windows.Forms.Button btnMemers;
         private System.Windows.Forms.PictureBox pictureInidcation;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTraning;
     }
 }

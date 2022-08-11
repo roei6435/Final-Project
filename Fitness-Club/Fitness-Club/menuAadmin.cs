@@ -112,29 +112,36 @@ namespace Fitness_Club
 
 
 
-        private void btnUpdateMem_Click(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
-            openChildForm(new DeleteAndUpdateFrom(), sender);
+            if (!membersCollapse)
+            {
+                MembersTimer.Start();
+                btnUserMengement.BackColor = btnSideManu.BackColor;
+                openChildForm(new DeleteAndUpdateFrom(), sender);
+            }
+            else
+                openChildForm(new DeleteAndUpdateFrom(), sender);
         }
 
-        private void btnPayments_Click(object sender, EventArgs e)
+        private void btnAbout_Click(object sender, EventArgs e)
         {
-            openChildForm(new paymentsFrom(), sender);
-        }
-
-        private void btnReturnToHomeForm_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            Reset();
+            if (!membersCollapse)
+            {
+                MembersTimer.Start();
+                btnUserMengement.BackColor = btnSideManu.BackColor;
+                openChildForm(new paymentsFrom(), sender);
+            }
+            else
+                openChildForm(new paymentsFrom(), sender);
         }
 
         private void Reset()
         {
             DisableButton();
-            lblTitle.Text = "HOME";
-            panelTitle.BackColor = Color.FromArgb(0, 150, 136);
-            //panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            lblTitle.Text = "Dashboard";
+            panelTitle.BackColor = Color.FromArgb(51, 51, 76);
+            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
           
         }
@@ -161,7 +168,7 @@ namespace Fitness_Club
         }
 
  
-        private void button3_Click(object sender, EventArgs e)
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
@@ -211,8 +218,10 @@ namespace Fitness_Club
         {
             if (membersCollapse)
             {
-                
+
                 membersContiener.Height += 10;
+                btnAbout.Location = new Point(5, 552);
+                btnSettings.Location = new Point(5, 608);
                 btnUserMengement.Text = "    Management  ▲";
                 if (membersContiener.Height == membersContiener.MaximumSize.Height)
                 {
@@ -223,6 +232,9 @@ namespace Fitness_Club
             else
             {
                 
+
+                btnAbout.Location = new Point(5, 360);
+                btnSettings.Location = new Point(5, 423);
                 membersContiener.Height -= 10;
                 btnUserMengement.Text = "    Management  ▼";
                 if (membersContiener.Height== membersContiener.MinimumSize.Height)
@@ -246,17 +258,18 @@ namespace Fitness_Club
 
         private void btnUserMengement_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnAddUser);
-            openChildForm(new FormMembers(), sender);
+
+            if (btnUserMengement.BackColor == Color.FromArgb(51, 51, 76))
+            {
+                ActiveButton(btnAddUser);
+                openChildForm(new FormMembers(), sender);
+                MembersTimer.Start();
+            }
             if (!sideBarExpand)
             {
                 panelManu.Width =panelManu.MaximumSize.Width;
                 sideBarExpand = true;
             }
-                
-            MembersTimer.Start();
-
-
         }
 
 
@@ -280,8 +293,7 @@ namespace Fitness_Club
                 MembersTimer.Start();
                 btnUserMengement.BackColor =  btnSideManu.BackColor;
                 openChildForm(new MyAccount(), sender);
-            }
-                              
+            }                     
             else
                 openChildForm(new MyAccount(), sender);
 
@@ -289,8 +301,14 @@ namespace Fitness_Club
 
         private void btnCalandar_Click(object sender, EventArgs e)
         {
-           
-            openChildForm(new Calandar(), sender);
+            if (!membersCollapse)
+            {
+                MembersTimer.Start();
+                btnUserMengement.BackColor = btnSideManu.BackColor;
+                openChildForm(new Calandar(), sender);
+            }
+            else
+                openChildForm(new Calandar(), sender);
         }
 
     }

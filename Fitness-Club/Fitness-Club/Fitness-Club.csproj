@@ -331,6 +331,12 @@
     <Compile Include="Calandar.Designer.cs">
       <DependentUpon>Calandar.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForm.Designer.cs">
+      <DependentUpon>EventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms-admin\addMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     </Compile>
     <EmbeddedResource Include="Calandar.resx">
       <DependentUpon>Calandar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventForm.resx">
+      <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms-admin\addMember.resx">
       <DependentUpon>addMember.cs</DependentUpon>
@@ -611,6 +620,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Registration1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard-pic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CALANDAR-PIC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CALANDAR-PIC2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashhhh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\callll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash5555.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firstScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registration11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pluss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ring.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

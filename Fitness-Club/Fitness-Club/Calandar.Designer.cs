@@ -41,14 +41,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblMonthNameAndYear = new System.Windows.Forms.Label();
             this.timerTranslate = new System.Windows.Forms.Timer(this.components);
+            this.pictureInidcation = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             this.SuspendLayout();
             // 
             // dayContainer
             // 
             this.dayContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.dayContainer.Location = new System.Drawing.Point(94, 122);
+            this.dayContainer.Location = new System.Drawing.Point(28, 124);
             this.dayContainer.Name = "dayContainer";
-            this.dayContainer.Size = new System.Drawing.Size(925, 566);
+            this.dayContainer.Size = new System.Drawing.Size(925, 464);
             this.dayContainer.TabIndex = 0;
             // 
             // btnNext
@@ -58,7 +60,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(803, 40);
+            this.btnNext.Location = new System.Drawing.Point(737, 42);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(216, 40);
             this.btnNext.TabIndex = 84;
@@ -73,7 +75,7 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(94, 34);
+            this.btnPrev.Location = new System.Drawing.Point(28, 36);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(216, 40);
             this.btnPrev.TabIndex = 85;
@@ -85,7 +87,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(232, 87);
+            this.label4.Location = new System.Drawing.Point(166, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 32);
             this.label4.TabIndex = 86;
@@ -95,7 +97,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(109, 87);
+            this.label1.Location = new System.Drawing.Point(43, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 32);
             this.label1.TabIndex = 87;
@@ -105,7 +107,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(902, 87);
+            this.label2.Location = new System.Drawing.Point(836, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 32);
             this.label2.TabIndex = 88;
@@ -115,7 +117,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(779, 87);
+            this.label3.Location = new System.Drawing.Point(713, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 32);
             this.label3.TabIndex = 89;
@@ -125,7 +127,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(634, 87);
+            this.label5.Location = new System.Drawing.Point(568, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 32);
             this.label5.TabIndex = 90;
@@ -135,7 +137,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(495, 87);
+            this.label6.Location = new System.Drawing.Point(429, 89);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 32);
             this.label6.TabIndex = 91;
@@ -145,7 +147,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(362, 87);
+            this.label7.Location = new System.Drawing.Point(296, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 32);
             this.label7.TabIndex = 92;
@@ -155,7 +157,7 @@
             // 
             this.lblMonthNameAndYear.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonthNameAndYear.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMonthNameAndYear.Location = new System.Drawing.Point(458, 34);
+            this.lblMonthNameAndYear.Location = new System.Drawing.Point(392, 36);
             this.lblMonthNameAndYear.Name = "lblMonthNameAndYear";
             this.lblMonthNameAndYear.Size = new System.Drawing.Size(261, 46);
             this.lblMonthNameAndYear.TabIndex = 93;
@@ -165,12 +167,23 @@
             // 
             this.timerTranslate.Tick += new System.EventHandler(this.timerTranslate_Tick);
             // 
+            // pictureInidcation
+            // 
+            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.callll;
+            this.pictureInidcation.Location = new System.Drawing.Point(978, -3);
+            this.pictureInidcation.Name = "pictureInidcation";
+            this.pictureInidcation.Size = new System.Drawing.Size(448, 669);
+            this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureInidcation.TabIndex = 101;
+            this.pictureInidcation.TabStop = false;
+            // 
             // Calandar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1330, 746);
+            this.ClientSize = new System.Drawing.Size(1401, 656);
+            this.Controls.Add(this.pictureInidcation);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblMonthNameAndYear);
             this.Controls.Add(this.label7);
@@ -186,6 +199,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calandar";
             this.Load += new System.EventHandler(this.Calandar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,5 +218,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblMonthNameAndYear;
         private System.Windows.Forms.Timer timerTranslate;
+        private System.Windows.Forms.PictureBox pictureInidcation;
     }
 }

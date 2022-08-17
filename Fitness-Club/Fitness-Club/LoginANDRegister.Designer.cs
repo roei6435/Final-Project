@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "LoginANDRegister";
             this.Text = "LoginANDRegister";
-          
+            this.Load += new System.EventHandler(this.LoginANDRegister_Load);
             this.ResumeLayout(false);
 
         }

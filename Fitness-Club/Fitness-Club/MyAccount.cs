@@ -17,6 +17,7 @@ namespace Fitness_Club
         public MyAccount()
         {
             InitializeComponent();
+            
         }
 
         string str = "Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True";
@@ -51,6 +52,11 @@ namespace Fitness_Club
                     MessageBox.Show("not");
                 con.Close();
             
+        }
+
+        private void MyAccount_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

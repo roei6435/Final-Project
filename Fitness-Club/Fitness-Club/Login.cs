@@ -17,6 +17,7 @@ namespace Fitness_Club
 {
     public partial class LogIn : Form
     {
+        public static SqlConnection static_conn=new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
         public LogIn()
         {
             InitializeComponent();
@@ -28,7 +29,9 @@ namespace Fitness_Club
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+       
+       
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

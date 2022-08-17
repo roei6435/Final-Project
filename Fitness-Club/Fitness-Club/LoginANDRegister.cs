@@ -141,6 +141,10 @@ namespace Fitness_Club
             return true;
         }
 
+        private void LoginANDRegister_Load(object sender, EventArgs e)
+        {
+
+        }
 
         protected string strongPassword(string passwd)
         {

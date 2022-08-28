@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5f58d9af-7941-4400-b6bd-0a2a67cba297": {
+      "ProjectGuid": "5f58d9af-7941-4400-b6bd-0a2a67cba297",
+      "DisplayName": "Server-F.C",
+      "ColorIndex": 0
+    },
+    "c440e466-bb04-4a4f-bd3d-cb8352014a6e": {
+      "ProjectGuid": "c440e466-bb04-4a4f-bd3d-cb8352014a6e",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

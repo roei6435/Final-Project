@@ -21,18 +21,51 @@ namespace Fitness_Club
         public EventForm()
         {
             InitializeComponent();
+           
         }
-       
+
+        private void loadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))        //if btn prv is button
+                {
+                    Button btn = (Button)btns;
+                    btns.BackColor = ThemColor.primaryColor;
+                    btns.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemColor.secondColor;
+                    lblAddEv.ForeColor = ThemColor.primaryColor;
+                    lblMyEvents.ForeColor = ThemColor.primaryColor;
+                }
+            }
+
+        }
+
         private void EventForm_Load(object sender, EventArgs e)
         {
-            eventCreted = false;
+            loadTheme();
             txtBoxDate.Text = fullDate;
-            for (int i = 0;i< FatchAllEventsForThisDayInList().Count;i++)             
-                lblEventslist.Text += FatchAllEventsForThisDayInList()[i]+'\n';
+            eventCreted = false;
+            List<List<string>> eventsList =FatchAllEventsForThisDayInList();
+            if (eventsList.Count > 0) {
+                lblMyEvents.Text+= fullDate;
+                lblEventslist.Text = "";
+                for (int i = 0; i < eventsList.Count; i++)
+                {
+                    string name=eventsList[i][0],time=eventsList[i][1]+"-"+eventsList[i][2],location=eventsList[i][3];
+                    name= char.ToUpper(name[0])+name.Substring(1);
+                    lblEventslist.Text += String.Format("{0,-12}{1,8}{2,12}\n\n", name, time,location);
+                }                
+                panelAllEvents.Visible = true;
+                panelAddEvent.Visible = false;
+            }
+          
+         
         }
-        private List<string> FatchAllEventsForThisDayInList()            //RETURN ALL EVENTS FOR THIS DAY IN LIST
+        private List<List<string>> FatchAllEventsForThisDayInList()            //RETURN ALL EVENTS FOR THIS DAY IN LIST
         {
-            List<string> eventsList = new List<string> { };
+            //List<string>  = new List<string> { };
+            List<List<string>> allEventsForThisDay = new List<List<string>>();
             try
             {
 
@@ -45,12 +78,12 @@ namespace Fitness_Club
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    eventsList.Add(dr.GetValue(2)+"");  
+                    allEventsForThisDay.Add(new List<string> { dr.GetValue(2) + "", dr.GetValue(4) + "", dr.GetValue(5) + "",dr.GetValue(6)+"" });  
                 }
                 dr.Dispose();
                 cmd.Dispose();
                 LogIn.static_conn.Close();
-                return eventsList;
+                return allEventsForThisDay;
             }
             catch (Exception ex)
             {
@@ -87,15 +120,17 @@ namespace Fitness_Club
     
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtBoxEvent.Text != "")
+            if (txtBoxEvent.Text != ""&& comboBoxHourFrom.SelectedIndex < comboBoxHourTo.SelectedIndex) //PROPER HOURS AND NAME
             {
                 eventCreted = InsertNewEventToDataBase();          //inserting event to database and chenge flag
                 this.Close();
             }
-            else
-                MessageBox.Show("Plese enter name for event");
+            else 
+                MessageBox.Show("Plese enter name and normal hours ");
+           
 
         }
+
 
     }
 }

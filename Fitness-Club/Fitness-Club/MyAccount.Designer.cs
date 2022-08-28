@@ -32,6 +32,7 @@
             this.lblProfilrPic = new System.Windows.Forms.Label();
             this.btnSaveChenge = new System.Windows.Forms.Button();
             this.panelStep1 = new System.Windows.Forms.Panel();
+            this.picBoxEditDatlis = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -39,12 +40,11 @@
             this.lblFname = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureInidcation = new System.Windows.Forms.PictureBox();
-            this.picBoxEditDatlis = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBoxEditPicPropfile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelStep1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditDatlis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditPicPropfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +87,20 @@
             this.panelStep1.Name = "panelStep1";
             this.panelStep1.Size = new System.Drawing.Size(311, 238);
             this.panelStep1.TabIndex = 97;
+            // 
+            // picBoxEditDatlis
+            // 
+            this.picBoxEditDatlis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxEditDatlis.Image = global::Fitness_Club.Properties.Resources.pen;
+            this.picBoxEditDatlis.ImageRotate = 0F;
+            this.picBoxEditDatlis.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditDatlis.InitialImage")));
+            this.picBoxEditDatlis.Location = new System.Drawing.Point(231, 8);
+            this.picBoxEditDatlis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxEditDatlis.Name = "picBoxEditDatlis";
+            this.picBoxEditDatlis.Size = new System.Drawing.Size(24, 28);
+            this.picBoxEditDatlis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxEditDatlis.TabIndex = 105;
+            this.picBoxEditDatlis.TabStop = false;
             // 
             // label1
             // 
@@ -151,26 +165,12 @@
             // pictureInidcation
             // 
             this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.man_workout_in_gym;
-            this.pictureInidcation.Location = new System.Drawing.Point(926, 3);
+            this.pictureInidcation.Location = new System.Drawing.Point(902, -2);
             this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(469, 653);
+            this.pictureInidcation.Size = new System.Drawing.Size(493, 658);
             this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureInidcation.TabIndex = 100;
             this.pictureInidcation.TabStop = false;
-            // 
-            // picBoxEditDatlis
-            // 
-            this.picBoxEditDatlis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxEditDatlis.Image = global::Fitness_Club.Properties.Resources.pen;
-            this.picBoxEditDatlis.ImageRotate = 0F;
-            this.picBoxEditDatlis.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditDatlis.InitialImage")));
-            this.picBoxEditDatlis.Location = new System.Drawing.Point(231, 8);
-            this.picBoxEditDatlis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxEditDatlis.Name = "picBoxEditDatlis";
-            this.picBoxEditDatlis.Size = new System.Drawing.Size(24, 28);
-            this.picBoxEditDatlis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxEditDatlis.TabIndex = 105;
-            this.picBoxEditDatlis.TabStop = false;
             // 
             // picBoxEditPicPropfile
             // 
@@ -216,8 +216,8 @@
             this.Text = "MyAccount";
             this.Load += new System.EventHandler(this.MyAccount_Load);
             this.panelStep1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditDatlis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditPicPropfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.ResumeLayout(false);

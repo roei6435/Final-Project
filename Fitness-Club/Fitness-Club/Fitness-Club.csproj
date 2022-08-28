@@ -374,11 +374,11 @@
     <Compile Include="LoginANDRegister.Designer.cs">
       <DependentUpon>LoginANDRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="menuAadmin.cs">
+    <Compile Include="Admin-Screen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menuAadmin.Designer.cs">
-      <DependentUpon>menuAadmin.cs</DependentUpon>
+    <Compile Include="Admin-Screen.Designer.cs">
+      <DependentUpon>Admin-Screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms-admin\paymentsFrom.cs">
       <SubType>Form</SubType>
@@ -438,8 +438,8 @@
     <EmbeddedResource Include="LoginANDRegister.resx">
       <DependentUpon>LoginANDRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menuAadmin.resx">
-      <DependentUpon>menuAadmin.cs</DependentUpon>
+    <EmbeddedResource Include="Admin-Screen.resx">
+      <DependentUpon>Admin-Screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms-admin\paymentsFrom.resx">
       <DependentUpon>paymentsFrom.cs</DependentUpon>
@@ -653,6 +653,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

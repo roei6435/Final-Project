@@ -13,8 +13,8 @@ namespace Fitness_Club
          public static Color secondColor  { get; set;}
 
 
-        public static List<string> ColorList = new List<string>() { "#343090",
-                                                                    "#5f59f7","#6592fd","#8c61ff"
+        public static List<string> ColorList = new List<string>() { "#A05A72",
+                                                                    "#DE7E70","#FFB565","#538BFF"
 
         };
         public static Color ChangeColorBrightness(Color color, float correctionFactor)

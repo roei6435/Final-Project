@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using ServiceStack;
 
 namespace Fitness_Club
 {
@@ -22,9 +25,12 @@ namespace Fitness_Club
         private Form activeForm;
         private bool sideBarExpand=false;
         private bool membersCollapse=true;
-        public static int static_userId = 1;
-        public AdminScreen()
+        public static int static_userId =1;
+        static string controller = "Dashboard#";
+        static string bdika = "";
+        public AdminScreen(int userId)
         {
+            static_userId = userId; 
             InitializeComponent();
             random = new Random();
             this.Text = string.Empty;
@@ -305,6 +311,67 @@ namespace Fitness_Club
         }    //open/close mengment members menu
 
         private void AdminScreen_Load(object sender, EventArgs e)
+        {
+            //The data is getting from the server, and it must be converted into a list of objects(persons)
+            List<Person> listP = new List<Person>();
+            string responseFromServer  = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
+
+            listP = ConvartDataToListObjects(responseFromServer);
+            btnUserStatistics.Text+=" "+listP.Count;
+            btnAdminsStatistics.Text+=" "+CountAdminsInSystem(listP);
+
+        }
+
+        private static List< Person> ConvartDataToListObjects(string data)
+        {
+            
+            List<Person> ListOfAllPerson = new List<Person>();
+            List<string> list = new List<string>();
+            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            for (int j = 0; j < list.Count ; j++)
+            {
+                List<string> invidualPerson = new List<string>();
+                invidualPerson = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+             
+                string userId, fName, lName, email, phone, dateBorn, dateRegistion;
+                bool gender, admin, isAuth, isBlocked;
+
+                userId = invidualPerson[0];               
+                fName = invidualPerson[1];
+                lName = invidualPerson[2];
+                email = invidualPerson[3];
+                phone = invidualPerson[4];
+                dateBorn = invidualPerson[5];
+                dateRegistion = invidualPerson[6];
+                gender = bool.Parse(invidualPerson[7]);
+                admin = bool.Parse(invidualPerson[8]);
+                isAuth = bool.Parse(invidualPerson[9]);
+                isBlocked = bool.Parse(invidualPerson[invidualPerson.Count-1]);     
+                Person p = new Person(userId, fName, lName, email, phone, dateBorn, dateRegistion, gender, admin, isAuth, isBlocked);
+                ListOfAllPerson.Add(p);
+                
+
+            }
+            return ListOfAllPerson;
+
+        }
+
+        int CountAdminsInSystem(List<Person> listOfPerson)
+        {
+            int count = 0;
+            foreach (Person person in listOfPerson)
+            {
+                if (person.IsAdmin)
+                    count++;    
+            }
+            return count;
+        }
+        private void btnUserStatistics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdminsStatistics_Click(object sender, EventArgs e)
         {
 
         }

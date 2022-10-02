@@ -22,14 +22,13 @@ namespace Fitness_Club
     public partial class LogIn : Form
 
     {
-        public static int port = 13000;
-        static public  IPAddress hostName = IPAddress.Parse("127.0.0.1");
+        
         static string controller = "login#";
 
         public static SqlConnection static_conn=new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
         public LogIn()
         {
-            HelloServerFromClient();
+            ConnectWithServer.HelloServerFromClient(); 
             InitializeComponent();
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -40,36 +39,7 @@ namespace Fitness_Club
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public static string callToServer(string contr, string funName,string input)
-        {
-           
-            
 
-                try
-                {
-                    TcpClient client = new TcpClient(hostName.ToString(), port);
-                    byte[] dataSendFromClient = Encoding.ASCII.GetBytes(contr+funName+input);  //converting string to bytes
-                    NetworkStream stream = client.GetStream();                 //netwwork stream-class for sending data
-                    stream.Write(dataSendFromClient, 0, dataSendFromClient.Length);
-                    byte[] byets = new byte[256];
-                    int i = stream.Read(byets, 0, byets.Length);           //Read the response from server.
-                    string responseFromSerever = Encoding.ASCII.GetString(byets, 0, i);
-                    stream.Close();
-                    client.Close();
-                    return responseFromSerever;
-
-                }
-                catch (Exception ex)
-                {
-                    return ex.Message;
-                }
-            
-        }
-
-        public static void HelloServerFromClient()
-        {
-           callToServer("TestServerRunning#","none#","hello from roei");
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -143,11 +113,11 @@ namespace Fitness_Club
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string admin = guna2ToggleSwitch1.Checked.ToString();
-            string response = callToServer(controller, "loginSuccsfully#", 
+            string response = ConnectWithServer.callToServer(controller, "loginSuccsfully#", 
                 textBox1.Text + "#" + textBox2.Text +'#'+ admin);
             if (response == "true" && admin== "True")
             {
-                AdminScreen adsc=new AdminScreen();
+                AdminScreen adsc = new AdminScreen(12);
                 adsc.Show();
                 this.Hide();
             }

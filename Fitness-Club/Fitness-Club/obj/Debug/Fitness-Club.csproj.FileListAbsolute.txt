@@ -75,3 +75,4 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.UserControlEmpty.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.AdminScreen.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.EventForm.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\bin\Debug\CircularProgressBar.xml

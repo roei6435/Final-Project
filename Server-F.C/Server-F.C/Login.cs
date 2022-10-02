@@ -15,33 +15,27 @@ namespace Server_F.C
 {
     internal class Login:Program
     {
-        public static SqlConnection conn = new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
+      
    
-
-
-
-
-       public static string loginSuccsfully(string email, string password,string admin)            //have user
+        //Check if user exist in system.
+       public static string loginSuccsfully(string email, string password,string admin)           
         {
             try
             {
 
                 conn.Open();            
-                String sql = "SELECT * from users where password = '"+password+"' AND email='"+email+"' AND admin='"+admin+"'";
+                String sql = "SELECT (userId) from users where password = '" + password+"' AND email='"+email+"' AND admin='"+admin+"'";
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sql;
-                //cmd.Parameters.AddWithValue("@email", email);
-                //cmd.Parameters.AddWithValue("@password", password);
                 SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
                 DataTable dataTable = new DataTable();
                 sda.Fill(dataTable);
                 if (dataTable.Rows.Count == 1)
                 {
-                  
-                    Console.WriteLine("login Succsfully.");
+                    
+                    Console.WriteLine($"User ID {dataTable.Rows[0][0].ToString()} has successfully logged into the system.");
                     conn.Close();
-                    return "true";
-                   
+                    return "true";                 
                 }
                 cmd.Dispose();
                 conn.Close();

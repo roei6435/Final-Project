@@ -6,3 +6,6 @@ C:\Users\roei6\Desktop\Final-Project\Server-F.C\Server-F.C\bin\Debug\Server-F.C.
 C:\Users\roei6\Desktop\Final-Project\Server-F.C\Server-F.C\bin\Debug\Server-F.C.pdb
 C:\Users\roei6\Desktop\Final-Project\Server-F.C\Server-F.C\obj\Debug\Server-F.C.exe
 C:\Users\roei6\Desktop\Final-Project\Server-F.C\Server-F.C\obj\Debug\Server-F.C.pdb
+C:\Users\roei6\Desktop\Final-Project\Server-F.C\Server-F.C\bin\Debug\Newtonsoft.Json.dll
+C:\Users\roei6\Desktop\Final-Project\Server-F.C\Server-F.C\bin\Debug\Newtonsoft.Json.xml
+C:\Users\roei6\Desktop\Final-Project\Server-F.C\Server-F.C\obj\Debug\Server-F.C.csproj.CopyComplete

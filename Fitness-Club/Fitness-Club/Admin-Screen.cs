@@ -310,33 +310,21 @@ namespace Fitness_Club
             }
         }    //open/close mengment members menu
 
-        private void AdminScreen_Load(object sender, EventArgs e)
+        private static List<Person> ConvartDataToListObjects(string data)
         {
-            //The data is getting from the server, and it must be converted into a list of objects(persons)
-            List<Person> listP = new List<Person>();
-            string responseFromServer  = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
 
-            listP = ConvartDataToListObjects(responseFromServer);
-            btnUserStatistics.Text+=" "+listP.Count;
-            btnAdminsStatistics.Text+=" "+CountAdminsInSystem(listP);
-
-        }
-
-        private static List< Person> ConvartDataToListObjects(string data)
-        {
-            
             List<Person> ListOfAllPerson = new List<Person>();
             List<string> list = new List<string>();
             list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
-            for (int j = 0; j < list.Count ; j++)
+            for (int j = 0; j < list.Count; j++)
             {
                 List<string> invidualPerson = new List<string>();
                 invidualPerson = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
-             
+
                 string userId, fName, lName, email, phone, dateBorn, dateRegistion;
                 bool gender, admin, isAuth, isBlocked;
 
-                userId = invidualPerson[0];               
+                userId = invidualPerson[0];
                 fName = invidualPerson[1];
                 lName = invidualPerson[2];
                 email = invidualPerson[3];
@@ -346,34 +334,136 @@ namespace Fitness_Club
                 gender = bool.Parse(invidualPerson[7]);
                 admin = bool.Parse(invidualPerson[8]);
                 isAuth = bool.Parse(invidualPerson[9]);
-                isBlocked = bool.Parse(invidualPerson[invidualPerson.Count-1]);     
+                isBlocked = bool.Parse(invidualPerson[invidualPerson.Count - 1]);
                 Person p = new Person(userId, fName, lName, email, phone, dateBorn, dateRegistion, gender, admin, isAuth, isBlocked);
                 ListOfAllPerson.Add(p);
-                
+
 
             }
             return ListOfAllPerson;
 
         }
 
-        int CountAdminsInSystem(List<Person> listOfPerson)
+        private void AdminScreen_Load(object sender, EventArgs e)
         {
-            int count = 0;
-            foreach (Person person in listOfPerson)
-            {
-                if (person.IsAdmin)
-                    count++;    
-            }
-            return count;
+            
+            //1.GET ALL DATA FROM SERVER IN FULL STRING.
+            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
+
+
+            //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
+            List<Person> listP = new List<Person>();
+            listP = ConvartDataToListObjects(responseFromServer);
+
+            //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
+            PersonList PL = new PersonList(listP);
+
+            //4.FETCH DATA RELEVANT TO DASHBOARD
+            lblTitleStatics.Text = "Registered users statistics ";
+            btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey)+"";
+            btnUserStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.userKey) + "";
+
+            //PUTTING THE INFORMATION IN THE APPROPRIATE PLACES ON THE SCREEN
+
+
+            //circule gender
+             circleGender.Value = PL.PercentageGenderForUserORAdmins(PL.userKey);
+            circleGender.Text=circleGender.Value+"%";
+            LblGenderData.Text= $"{circleGender.Value}% of the users is men,\n{100-circleGender.Value}% is women.";
+
+
+            //circule isBlocked
+            circularIsBlocked.Value = PL.PercentageIsBlockedForUser();
+            circularIsBlocked.Text=circularIsBlocked.Value+"%";
+
+            //circule email favorite users
+
+            string[] str = null;
+             str = PL.GetFavoriteEmailAndHowMatchPercent(PL.userKey).Split(' ');
+            circuleEmailPpoular.Value = int.Parse(str[1]);   //put percent.
+            circuleEmailPpoular.Text = str[1]+"%";
+            LblEmailFavData.Text = str[0] + " is the most popular email for users.";    //put name of most populer email.
+
+            //circule AVG ages users.
+            LblAVG.Text = PL.getAvgForListOfAdminsOrUsers(PL.userKey).ToString("0.#");
+            lblAvgData.Text = $"Average ages of\n {PL.userKey} system.";
+
+            //The most experienced userAndAdmin
+            lblMostExprinceTitle.Text = "The most experienced user";
+            lblLeastExprinceTitle.Text = "The least experienced user";
+            listP = PL.theMostAndLeastExperiencedUserOrAdmins(PL.userKey);
+            lblLeastExprince.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, registed to system in {listP[1].DateRegistion}.";
+            lblMostExprince.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, registed to system in {listP[0].DateRegistion}.";
+
+            //The most younger and older userAndAdmin
+            LblMostOlderTitle.Text = " The oldest user";
+            lblMostYoungerTitle.Text = " The younger user";
+            listP = PL.theMostOlderAndMostYoungerUserOrAdmin(PL.userKey);
+            lblMostYounger.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, is {PersonList.GetAge(listP[1].DateBorn).ToString("0")} years old. ";
+            LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
+
         }
+
+        private void DashboardAdminsStatics()
+        {
+            //1.GET ALL DATA FROM SERVER IN FULL STRING.
+            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
+
+
+            //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
+            List<Person> listP = new List<Person>();
+            listP = ConvartDataToListObjects(responseFromServer);
+
+            //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
+            PersonList PL = new PersonList(listP);
+
+            //4.FETCH DATA RELEVANT TO DASHBOARD
+            lblTitleStatics.Text = "Administrators statistics ";
+            btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey) + "";
+            btnUserStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.userKey) + "";
+
+            circleGender.Value = PL.PercentageGenderForUserORAdmins(PL.adminKey);
+            circleGender.Text = circleGender.Value + "%";
+            LblGenderData.Text = $"{circleGender.Value}% of the administrators is men, {100 - circleGender.Value}% is women.";
+
+            //circule email favorite administrators
+
+            string[] str = null;
+            str = PL.GetFavoriteEmailAndHowMatchPercent(PL.adminKey).Split(' ');
+            circuleEmailPpoular.Value = int.Parse(str[1]);   //put percent.
+            circuleEmailPpoular.Text = str[1] + "%";
+            LblEmailFavData.Text = str[0] + " is the most popular email for administrators.";    //put name of most populer email.
+
+            //circule AVG ages administrators.
+            LblAVG.Text = PL.getAvgForListOfAdminsOrUsers(PL.adminKey).ToString("0.#");
+            lblAvgData.Text = $"Average ages of administrator system.";
+
+            //The most experienced userAndAdmin
+            lblMostExprinceTitle.Text = "The most experienced administrator";
+            lblLeastExprinceTitle.Text = "The least experienced administrator";
+             listP = PL.theMostAndLeastExperiencedUserOrAdmins(PL.adminKey);
+            lblLeastExprince.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, registed to system in {listP[1].DateRegistion}.";
+            lblMostExprince.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, registed to system in {listP[0].DateRegistion}.";
+
+            //The most younger and older userAndAdmin
+            LblMostOlderTitle.Text = " The oldest administrator";
+            lblMostYoungerTitle.Text = " The younger administrator";
+            listP = PL.theMostOlderAndMostYoungerUserOrAdmin(PL.adminKey);
+            lblMostYounger.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, is {PersonList.GetAge(listP[1].DateBorn).ToString("0")} years old. ";
+            LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
+        }
+
+
+
+
         private void btnUserStatistics_Click(object sender, EventArgs e)
         {
-
+            AdminScreen_Load(sender, e);
         }
 
         private void btnAdminsStatistics_Click(object sender, EventArgs e)
         {
-
+            DashboardAdminsStatics();
         }
     }
 }

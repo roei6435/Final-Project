@@ -6,16 +6,7 @@ namespace Server_F.C
     internal class Dashboard
     {
         //FUNCTION FOR CONVARTION STRING TO BOOLEAN
-        private static string GetAge(string dateOfBirth)
-        {
-            DateTime dateOfBirth1 = Convert.ToDateTime(dateOfBirth);    
-            var today = DateTime.Today;
 
-            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
-            var b = (dateOfBirth1.Year * 100 + dateOfBirth1.Month) * 100 + dateOfBirth1.Day;
-
-            return ((a - b) / 10000).ToString();
-        }
         public static string Getgender(string flag)
         {
             if (flag== "True") return "male";
@@ -27,7 +18,7 @@ namespace Server_F.C
             else return "False";
         }
 
-        //Fetch from the database all relevant data from the users table, stored in a full key-separated string
+        //fetch from the database all relevant data from the users table, stored in a full key-separated string
         public static string getAllDataForAdminScreenInDahsboard()
         {
             string data ="";
@@ -61,7 +52,7 @@ namespace Server_F.C
 
                 }
 
-                Program.conn.Close();
+                Program.conn.Close();              
                 return data;
 
             }
@@ -69,7 +60,7 @@ namespace Server_F.C
             {
                 Program.conn.Close();
                 Console.WriteLine("from exption in function: " + err.Message);
-                return err.Message;
+                return null;
             }
         }
 

@@ -29,9 +29,10 @@ namespace Fitness_Club
                 byte[] dataSendFromClient = Encoding.ASCII.GetBytes(contr + funName + input);  //converting string to bytes
                 NetworkStream stream = client.GetStream();                 //netwwork stream-class for sending data
                 stream.Write(dataSendFromClient, 0, dataSendFromClient.Length);
-                byte[] byets = new byte[256];
-                int i = stream.Read(byets, 0, byets.Length);           //Read the response from server.
-                string responseFromSerever = Encoding.ASCII.GetString(byets, 0, i);
+
+
+                BinaryReader reader = new BinaryReader(client.GetStream()); //Read the response from server.
+                string responseFromSerever = reader.ReadString();
                 stream.Close();
                 client.Close();
                 return responseFromSerever;

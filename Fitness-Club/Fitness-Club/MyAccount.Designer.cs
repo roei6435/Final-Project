@@ -42,18 +42,20 @@
             this.pictureInidcation = new System.Windows.Forms.PictureBox();
             this.picBoxEditPicPropfile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelStep1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditDatlis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditPicPropfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblProfilrPic
             // 
             this.lblProfilrPic.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfilrPic.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblProfilrPic.Location = new System.Drawing.Point(249, 55);
+            this.lblProfilrPic.Location = new System.Drawing.Point(104, 20);
             this.lblProfilrPic.Name = "lblProfilrPic";
             this.lblProfilrPic.Size = new System.Drawing.Size(173, 41);
             this.lblProfilrPic.TabIndex = 96;
@@ -66,7 +68,7 @@
             this.btnSaveChenge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChenge.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnSaveChenge.ForeColor = System.Drawing.Color.White;
-            this.btnSaveChenge.Location = new System.Drawing.Point(233, 293);
+            this.btnSaveChenge.Location = new System.Drawing.Point(88, 258);
             this.btnSaveChenge.Name = "btnSaveChenge";
             this.btnSaveChenge.Size = new System.Drawing.Size(199, 35);
             this.btnSaveChenge.TabIndex = 93;
@@ -83,7 +85,7 @@
             this.panelStep1.Controls.Add(this.lblEmail);
             this.panelStep1.Controls.Add(this.lblLname);
             this.panelStep1.Controls.Add(this.lblFname);
-            this.panelStep1.Location = new System.Drawing.Point(517, 55);
+            this.panelStep1.Location = new System.Drawing.Point(372, 20);
             this.panelStep1.Name = "panelStep1";
             this.panelStep1.Size = new System.Drawing.Size(311, 238);
             this.panelStep1.TabIndex = 97;
@@ -156,7 +158,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(565, 305);
+            this.label6.Location = new System.Drawing.Point(420, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(226, 32);
             this.label6.TabIndex = 98;
@@ -165,9 +167,9 @@
             // pictureInidcation
             // 
             this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.man_workout_in_gym;
-            this.pictureInidcation.Location = new System.Drawing.Point(902, -2);
+            this.pictureInidcation.Location = new System.Drawing.Point(974, -2);
             this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(493, 658);
+            this.pictureInidcation.Size = new System.Drawing.Size(449, 653);
             this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureInidcation.TabIndex = 100;
             this.pictureInidcation.TabStop = false;
@@ -178,7 +180,7 @@
             this.picBoxEditPicPropfile.Image = global::Fitness_Club.Properties.Resources.pen;
             this.picBoxEditPicPropfile.ImageRotate = 0F;
             this.picBoxEditPicPropfile.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditPicPropfile.InitialImage")));
-            this.picBoxEditPicPropfile.Location = new System.Drawing.Point(398, 258);
+            this.picBoxEditPicPropfile.Location = new System.Drawing.Point(253, 223);
             this.picBoxEditPicPropfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picBoxEditPicPropfile.Name = "picBoxEditPicPropfile";
             this.picBoxEditPicPropfile.Size = new System.Drawing.Size(24, 28);
@@ -190,7 +192,7 @@
             // profilePic
             // 
             this.profilePic.ImageRotate = 0F;
-            this.profilePic.Location = new System.Drawing.Point(242, 99);
+            this.profilePic.Location = new System.Drawing.Point(97, 64);
             this.profilePic.Name = "profilePic";
             this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.profilePic.Size = new System.Drawing.Size(180, 178);
@@ -198,19 +200,28 @@
             this.profilePic.TabIndex = 94;
             this.profilePic.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(69)))), ((int)(((byte)(100)))));
+            this.panel1.Controls.Add(this.lblProfilrPic);
+            this.panel1.Controls.Add(this.btnSaveChenge);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.profilePic);
+            this.panel1.Controls.Add(this.panelStep1);
+            this.panel1.Controls.Add(this.picBoxEditPicPropfile);
+            this.panel1.Location = new System.Drawing.Point(130, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(747, 322);
+            this.panel1.TabIndex = 138;
+            // 
             // MyAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1391, 656);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureInidcation);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.panelStep1);
-            this.Controls.Add(this.lblProfilrPic);
-            this.Controls.Add(this.picBoxEditPicPropfile);
-            this.Controls.Add(this.profilePic);
-            this.Controls.Add(this.btnSaveChenge);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Name = "MyAccount";
             this.Text = "MyAccount";
@@ -220,6 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditPicPropfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -238,5 +250,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureInidcation;
+        private System.Windows.Forms.Panel panel1;
     }
 }

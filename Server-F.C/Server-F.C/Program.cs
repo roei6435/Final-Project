@@ -26,7 +26,12 @@ namespace Server_F.C
 
         static void Main(string[] args)
         {
-            openingTheServerToReceiveCalls();
+           openingTheServerToReceiveCalls();
+
+
+
+
+
             Console.ReadKey();
         }
 
@@ -79,17 +84,17 @@ namespace Server_F.C
                     {
                         if (funName == "getAllDataForAdminScreenInDahsboard")
                         {
-                            dataOutput = Dashboard.getAllDataForAdminScreenInDahsboard(); //RETURN ALL DATA
-                           
 
+                             dataOutput = Dashboard.getAllDataForAdminScreenInDahsboard(); //RETURN ALL DATA
                         }
                     }
                     else
                     {
                         dataOutput = "sabba";
                     }
-                    byte[] msg = Encoding.ASCII.GetBytes(dataOutput);
-                    stream.Write(msg, 0, msg.Length); // send to client
+
+                    BinaryWriter writer = new BinaryWriter(client.GetStream());
+                    writer.Write(dataOutput);
                     client.Close();
                     Console.WriteLine($"Request number {countReq} has ended");
                     Console.WriteLine("---------------------------------------------------------------");

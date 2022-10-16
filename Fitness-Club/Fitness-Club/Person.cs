@@ -22,7 +22,7 @@ namespace Fitness_Club
         private bool isBlocked;
         //  private int calId;
         // private var profilePic;
-
+        
 
 
         public Person()
@@ -54,6 +54,7 @@ namespace Fitness_Club
             //  this.calId = calId;
 
         }
+
 
         public string UserId
         {

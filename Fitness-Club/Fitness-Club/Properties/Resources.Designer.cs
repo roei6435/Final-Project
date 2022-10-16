@@ -253,6 +253,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrowsUPDWON {
+            get {
+                object obj = ResourceManager.GetObject("arrowsUPDWON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CALANDAR_PIC {
             get {
                 object obj = ResourceManager.GetObject("CALANDAR-PIC", resourceCulture);

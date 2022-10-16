@@ -33,6 +33,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.avgCircule = new CircularProgressBar.CircularProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +95,44 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // avgCircule
+            // 
+            this.avgCircule.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.avgCircule.AnimationSpeed = 500;
+            this.avgCircule.BackColor = System.Drawing.Color.Transparent;
+            this.avgCircule.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avgCircule.ForeColor = System.Drawing.Color.Gainsboro;
+            this.avgCircule.InnerColor = System.Drawing.Color.Transparent;
+            this.avgCircule.InnerMargin = 2;
+            this.avgCircule.InnerWidth = -1;
+            this.avgCircule.Location = new System.Drawing.Point(100, 281);
+            this.avgCircule.MarqueeAnimationSpeed = 2000;
+            this.avgCircule.Name = "avgCircule";
+            this.avgCircule.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
+            this.avgCircule.OuterMargin = -26;
+            this.avgCircule.OuterWidth = 26;
+            this.avgCircule.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
+            this.avgCircule.ProgressWidth = 12;
+            this.avgCircule.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avgCircule.Size = new System.Drawing.Size(135, 135);
+            this.avgCircule.StartAngle = 270;
+            this.avgCircule.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.avgCircule.SubscriptMargin = new System.Windows.Forms.Padding(0);
+            this.avgCircule.SubscriptText = "";
+            this.avgCircule.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.avgCircule.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.avgCircule.SuperscriptText = "";
+            this.avgCircule.TabIndex = 163;
+            this.avgCircule.Text = "27.8";
+            this.avgCircule.TextMargin = new System.Windows.Forms.Padding(0);
+            this.avgCircule.Value = 93;
+            // 
             // addMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(937, 590);
+            this.Controls.Add(this.avgCircule);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTitle);
@@ -120,5 +154,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private CircularProgressBar.CircularProgressBar avgCircule;
     }
 }

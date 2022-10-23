@@ -18,7 +18,7 @@ namespace Server_F.C
       
    
         //Check if user exist in system.
-       public static string loginSuccsfully(string email, string password,string admin)           
+       public static string tryLogIn(string email, string password,string admin)           
         {
             try
             {
@@ -33,14 +33,14 @@ namespace Server_F.C
                 if (dataTable.Rows.Count == 1)
                 {
                     
-                    Console.WriteLine($"User ID {dataTable.Rows[0][0].ToString()} has successfully logged into the system.");
+                    Console.WriteLine($"User ID {dataTable.Rows[0][0]} has successfully logged into the system.");
                     conn.Close();
-                    return "true";                 
+                    return "true "+ dataTable.Rows[0][0];      
                 }
                 cmd.Dispose();
                 conn.Close();
                 Console.WriteLine("Login feild.");
-                return "false";
+                return "false null";
             }
             catch (Exception ex)
             {

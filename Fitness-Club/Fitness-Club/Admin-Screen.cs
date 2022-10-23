@@ -25,10 +25,12 @@ namespace Fitness_Club
         private Form activeForm;
         private bool sideBarExpand=false;
         private bool membersCollapse=true;
-        public static int static_userId =1;
-        static string controller = "Dashboard#";
-        static string bdika = "";
-        public AdminScreen(int userId)
+        public static string static_userId;
+        public static string controller = "Dashboard#";
+        private Person userLogged = null;
+
+
+        public AdminScreen(string userId)
         {
             static_userId = userId; 
             InitializeComponent();
@@ -147,6 +149,8 @@ namespace Fitness_Club
         {
             if (activeForm != null)
                 activeForm.Close();
+            FetchUsersDataAndPutInDashboard();         //Raload data ralavnt again.
+            FetchDataUserById(static_userId);
             Reset();
         }         //return to dashboard
 
@@ -178,10 +182,10 @@ namespace Fitness_Club
             {
                 MembersTimer.Start();
                 btnUserMengement.BackColor = btnSideManu.BackColor;
-                openChildForm(new MyAccount(), sender);
+                openChildForm(new MyAccount(userLogged), sender);
             }
             else
-                openChildForm(new MyAccount(), sender);
+                openChildForm(new MyAccount(userLogged), sender);
 
         }         //open form my-account
 
@@ -310,78 +314,48 @@ namespace Fitness_Club
             }
         }    //open/close mengment members menu
 
-        private static List<Person> ConvartDataToListObjects(string data)
+   
+
+
+  
+        //Requast to the server.
+        private void FetchUsersDataAndPutInDashboard()
         {
 
-            List<Person> ListOfAllPerson = new List<Person>();
-            List<string> list = new List<string>();
-            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
-            for (int j = 0; j < list.Count; j++)
-            {
-                List<string> invidualPerson = new List<string>();
-                invidualPerson = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
-
-                string userId, fName, lName, email, phone, dateBorn, dateRegistion;
-                bool gender, admin, isAuth, isBlocked;
-
-                userId = invidualPerson[0];
-                fName = invidualPerson[1];
-                lName = invidualPerson[2];
-                email = invidualPerson[3];
-                phone = invidualPerson[4];
-                dateBorn = invidualPerson[5];
-                dateRegistion = invidualPerson[6];
-                gender = bool.Parse(invidualPerson[7]);
-                admin = bool.Parse(invidualPerson[8]);
-                isAuth = bool.Parse(invidualPerson[9]);
-                isBlocked = bool.Parse(invidualPerson[invidualPerson.Count - 1]);
-                Person p = new Person(userId, fName, lName, email, phone, dateBorn, dateRegistion, gender, admin, isAuth, isBlocked);
-                ListOfAllPerson.Add(p);
-
-
-            }
-            return ListOfAllPerson;
-
-        }
-
-        private void AdminScreen_Load(object sender, EventArgs e)
-        {
-            
-            //1.GET ALL DATA FROM SERVER IN FULL STRING.
             string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
 
 
             //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
             List<Person> listP = new List<Person>();
-            listP = ConvartDataToListObjects(responseFromServer);
+            listP =ConnectWithServer.ConvartDataToListObjects(responseFromServer);
 
             //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
 
+
             //4.FETCH DATA RELEVANT TO DASHBOARD
             lblTitleStatics.Text = "Registered users statistics ";
-            btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey)+"";
+            btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey) + "";
             btnUserStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.userKey) + "";
 
             //PUTTING THE INFORMATION IN THE APPROPRIATE PLACES ON THE SCREEN
 
 
             //circule gender
-             circleGender.Value = PL.PercentageGenderForUserORAdmins(PL.userKey);
-            circleGender.Text=circleGender.Value+"%";
-            LblGenderData.Text= $"{circleGender.Value}% of the users is men,\n{100-circleGender.Value}% is women.";
+            circleGender.Value = PL.PercentageGenderForUserORAdmins(PL.userKey);
+            circleGender.Text = circleGender.Value + "%";
+            LblGenderData.Text = $"{circleGender.Value}% of the users is men,\n{100 - circleGender.Value}% is women.";
 
 
             //circule isBlocked
             circularIsBlocked.Value = PL.PercentageIsBlockedForUser();
-            circularIsBlocked.Text=circularIsBlocked.Value+"%";
+            circularIsBlocked.Text = circularIsBlocked.Value + "%";
 
             //circule email favorite users
-
             string[] str = null;
-             str = PL.GetFavoriteEmailAndHowMatchPercent(PL.userKey).Split(' ');
+            str = PL.GetFavoriteEmailAndHowMatchPercent(PL.userKey).Split(' ');
             circuleEmailPpoular.Value = int.Parse(str[1]);   //put percent.
-            circuleEmailPpoular.Text = str[1]+"%";
+            circuleEmailPpoular.Text = str[1] + "%";
             LblEmailFavData.Text = str[0] + " is the most popular email for users.";    //put name of most populer email.
 
             //circule AVG ages users.
@@ -401,10 +375,9 @@ namespace Fitness_Club
             listP = PL.theMostOlderAndMostYoungerUserOrAdmin(PL.userKey);
             lblMostYounger.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, is {PersonList.GetAge(listP[1].DateBorn).ToString("0")} years old. ";
             LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
-
         }
 
-        private void DashboardAdminsStatics()
+        private void FetchAdminsDataAndPutInDashboard()
         {
             //1.GET ALL DATA FROM SERVER IN FULL STRING.
             string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
@@ -412,7 +385,7 @@ namespace Fitness_Club
 
             //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
             List<Person> listP = new List<Person>();
-            listP = ConvartDataToListObjects(responseFromServer);
+            listP =ConnectWithServer.ConvartDataToListObjects(responseFromServer);
 
             //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
@@ -441,7 +414,7 @@ namespace Fitness_Club
             //The most experienced userAndAdmin
             lblMostExprinceTitle.Text = "The most experienced administrator";
             lblLeastExprinceTitle.Text = "The least experienced administrator";
-             listP = PL.theMostAndLeastExperiencedUserOrAdmins(PL.adminKey);
+            listP = PL.theMostAndLeastExperiencedUserOrAdmins(PL.adminKey);
             lblLeastExprince.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, registed to system in {listP[1].DateRegistion}.";
             lblMostExprince.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, registed to system in {listP[0].DateRegistion}.";
 
@@ -453,17 +426,55 @@ namespace Fitness_Club
             LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
         }
 
+        private Person FetchDataUserById(string id)
+        {
+            //1.GET ALL DATA FROM SERVER IN FULL STRING.
+            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
+
+
+            //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
+            List<Person> listP = new List<Person>();
+            listP =ConnectWithServer.ConvartDataToListObjects(responseFromServer);
+
+            //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
+            PersonList PL = new PersonList(listP);
+
+            Person loggedUser = PL.findPersonById(id);
+            if (loggedUser.IsAdmin)
+                lblUserNameAndStatus.Text = loggedUser.FirstName + " " + loggedUser.LastName + "\n" + "administrator.";
+            else lblUserNameAndStatus.Text = loggedUser.FirstName + " " + loggedUser.LastName + "\n" + "user.";
+            profilePic.Image = loggedUser.ProfilePic;
+            return loggedUser;
+        }
+
+        private void AdminScreen_Load(object sender, EventArgs e)
+        {
+            userLogged=FetchDataUserById(static_userId);           //loading the data and putting on dashboard. 
+            FetchUsersDataAndPutInDashboard();
+
+        }
+
+
+
 
 
 
         private void btnUserStatistics_Click(object sender, EventArgs e)
         {
-            AdminScreen_Load(sender, e);
+            FetchUsersDataAndPutInDashboard();
+
         }
 
         private void btnAdminsStatistics_Click(object sender, EventArgs e)
         {
-            DashboardAdminsStatics();
+            FetchAdminsDataAndPutInDashboard();
+
         }
+
+        private void btnClassesStatistics_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

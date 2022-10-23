@@ -125,7 +125,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(347, 31);
             this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Shlomi@walla.com";
+            this.textBox1.Text = "lior18@gmail.com";
             this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -140,7 +140,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(276, 31);
             this.textBox2.TabIndex = 10;
-            this.textBox2.Text = "1234";
+            this.textBox2.Text = "789";
             this.textBox2.Click += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -225,6 +225,7 @@
             // 
             // guna2ToggleSwitch1
             // 
+            this.guna2ToggleSwitch1.Checked = true;
             this.guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White;

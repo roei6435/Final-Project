@@ -113,21 +113,24 @@ namespace Fitness_Club
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string admin = guna2ToggleSwitch1.Checked.ToString();
-            string response = ConnectWithServer.callToServer(controller, "loginSuccsfully#", 
+            string response = ConnectWithServer.callToServer(controller, "tryLogIn#", 
                 textBox1.Text + "#" + textBox2.Text +'#'+ admin);
-            if (response == "true" && admin== "True")
+            string [] splitResponse=response.Split(' ');    //[0]--login successfully?  //[1]-userId logged 
+
+
+            if (splitResponse[0] == "true" && admin== "True")
             {
-                AdminScreen adsc = new AdminScreen(12);
+                AdminScreen adsc = new AdminScreen(splitResponse[1]);
                 adsc.Show();
                 this.Hide();
             }
-            else if(response == "true" && admin == "False")
+            else if(splitResponse[0] == "true" && admin == "False")
             {
                 paymentsFrom pf=new paymentsFrom();
                 pf.Show();
                 this.Hide();
             }
-            else if (response == "false")
+            else if (splitResponse[0] == "false")
             {
                 lblLoginFeild.Text = "Incorrect email or password plese try again.";
                 lblLoginFeild.Visible = true;

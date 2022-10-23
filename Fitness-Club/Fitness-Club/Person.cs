@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +17,14 @@ namespace Fitness_Club
         // private string password;
         private string dateBorn;
         private string dateRegistion;
+        private Image profilePic;
         private bool gender;
         private bool admin;
         private bool isAuth;
         private bool isBlocked;
         //  private int calId;
-        // private var profilePic;
-        
+
+
 
 
         public Person()
@@ -37,7 +39,7 @@ namespace Fitness_Club
         }
         public Person(string userId, string fName, string lName, string email, string phone,
             string dateBorn, string dateRegistion, bool gender, bool admin,
-            bool isAuth, bool isBlocked)
+            bool isAuth, bool isBlocked,Image profilePic)
         {
             this.userId = userId;
             this.fName = fName;
@@ -47,6 +49,7 @@ namespace Fitness_Club
             //  this.password = password;   
             this.dateBorn = dateBorn;
             this.dateRegistion = dateRegistion;
+            this.profilePic = profilePic;
             this.gender = gender;
             this.admin = admin;
             this.isAuth = isAuth;
@@ -90,6 +93,11 @@ namespace Fitness_Club
         {
             get { return dateRegistion; }
             set { dateRegistion = value; }
+        }
+        public Image ProfilePic
+       { 
+            get { return profilePic; }
+            set { profilePic = value; }
         }
         public bool Gender
         {

@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Dashboard.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="myAccount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

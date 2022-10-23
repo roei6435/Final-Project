@@ -66,23 +66,23 @@
             this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblCircleGender = new System.Windows.Forms.Label();
             this.btnAdminsStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.panelStaticsCircule = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.LblAVG = new System.Windows.Forms.Label();
-            this.lblAvgData = new System.Windows.Forms.Label();
-            this.lblAvgAgesTitle = new System.Windows.Forms.Label();
-            this.LblEmailFavData = new System.Windows.Forms.Label();
-            this.LblGenderData = new System.Windows.Forms.Label();
-            this.lblIsBlockData = new System.Windows.Forms.Label();
-            this.lblTitleStatics = new System.Windows.Forms.Label();
-            this.lblEmailFav = new System.Windows.Forms.Label();
-            this.lblIsBlock = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.circleGender = new CircularProgressBar.CircularProgressBar();
-            this.circularIsBlocked = new CircularProgressBar.CircularProgressBar();
-            this.circuleEmailPpoular = new CircularProgressBar.CircularProgressBar();
             this.pictureInidcation = new System.Windows.Forms.PictureBox();
             this.timerSideManu = new System.Windows.Forms.Timer(this.components);
             this.MembersTimer = new System.Windows.Forms.Timer(this.components);
+            this.circuleEmailPpoular = new CircularProgressBar.CircularProgressBar();
+            this.circularIsBlocked = new CircularProgressBar.CircularProgressBar();
+            this.circleGender = new CircularProgressBar.CircularProgressBar();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblIsBlock = new System.Windows.Forms.Label();
+            this.lblEmailFav = new System.Windows.Forms.Label();
+            this.lblTitleStatics = new System.Windows.Forms.Label();
+            this.lblIsBlockData = new System.Windows.Forms.Label();
+            this.LblGenderData = new System.Windows.Forms.Label();
+            this.LblEmailFavData = new System.Windows.Forms.Label();
+            this.lblAvgAgesTitle = new System.Windows.Forms.Label();
+            this.lblAvgData = new System.Windows.Forms.Label();
+            this.LblAVG = new System.Windows.Forms.Label();
+            this.panelStaticsCircule = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.panelManu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -93,8 +93,8 @@
             this.penelHome.SuspendLayout();
             this.panelStatisicsData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
-            this.panelStaticsCircule.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
+            this.panelStaticsCircule.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelManu
@@ -128,7 +128,7 @@
             // 
             // profilePic
             // 
-            this.profilePic.Image = global::Fitness_Club.Properties.Resources.propile;
+            this.profilePic.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
             this.profilePic.ImageRotate = 0F;
             this.profilePic.Location = new System.Drawing.Point(3, 13);
             this.profilePic.Name = "profilePic";
@@ -513,6 +513,7 @@
             this.btnClassesStatistics.Text = "49";
             this.btnClassesStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnClassesStatistics.TextOffset = new System.Drawing.Point(-7, -5);
+            this.btnClassesStatistics.Click += new System.EventHandler(this.btnClassesStatistics_Click);
             // 
             // panelStatisicsData
             // 
@@ -675,205 +676,25 @@
             this.btnAdminsStatistics.TextOffset = new System.Drawing.Point(-7, -5);
             this.btnAdminsStatistics.Click += new System.EventHandler(this.btnAdminsStatistics_Click);
             // 
-            // panelStaticsCircule
+            // pictureInidcation
             // 
-            this.panelStaticsCircule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.panelStaticsCircule.BorderRadius = 30;
-            this.panelStaticsCircule.Controls.Add(this.LblAVG);
-            this.panelStaticsCircule.Controls.Add(this.lblAvgData);
-            this.panelStaticsCircule.Controls.Add(this.lblAvgAgesTitle);
-            this.panelStaticsCircule.Controls.Add(this.LblEmailFavData);
-            this.panelStaticsCircule.Controls.Add(this.LblGenderData);
-            this.panelStaticsCircule.Controls.Add(this.lblIsBlockData);
-            this.panelStaticsCircule.Controls.Add(this.lblTitleStatics);
-            this.panelStaticsCircule.Controls.Add(this.lblEmailFav);
-            this.panelStaticsCircule.Controls.Add(this.lblIsBlock);
-            this.panelStaticsCircule.Controls.Add(this.lblGender);
-            this.panelStaticsCircule.Controls.Add(this.circleGender);
-            this.panelStaticsCircule.Controls.Add(this.circularIsBlocked);
-            this.panelStaticsCircule.Controls.Add(this.circuleEmailPpoular);
-            this.panelStaticsCircule.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.FillColor3 = System.Drawing.Color.DarkSlateBlue;
-            this.panelStaticsCircule.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.Location = new System.Drawing.Point(31, 107);
-            this.panelStaticsCircule.Name = "panelStaticsCircule";
-            this.panelStaticsCircule.Size = new System.Drawing.Size(778, 329);
-            this.panelStaticsCircule.TabIndex = 140;
+            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.firstScreen;
+            this.pictureInidcation.Location = new System.Drawing.Point(815, 3);
+            this.pictureInidcation.Name = "pictureInidcation";
+            this.pictureInidcation.Size = new System.Drawing.Size(457, 653);
+            this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureInidcation.TabIndex = 91;
+            this.pictureInidcation.TabStop = false;
             // 
-            // LblAVG
+            // timerSideManu
             // 
-            this.LblAVG.BackColor = System.Drawing.Color.Transparent;
-            this.LblAVG.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.LblAVG.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblAVG.Location = new System.Drawing.Point(630, 133);
-            this.LblAVG.Name = "LblAVG";
-            this.LblAVG.Size = new System.Drawing.Size(104, 66);
-            this.LblAVG.TabIndex = 162;
-            this.LblAVG.Text = "27.4";
+            this.timerSideManu.Interval = 1;
+            this.timerSideManu.Tick += new System.EventHandler(this.timerSideMenu_Tick);
             // 
-            // lblAvgData
+            // MembersTimer
             // 
-            this.lblAvgData.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvgData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvgData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAvgData.Location = new System.Drawing.Point(616, 229);
-            this.lblAvgData.Name = "lblAvgData";
-            this.lblAvgData.Size = new System.Drawing.Size(155, 84);
-            this.lblAvgData.TabIndex = 161;
-            this.lblAvgData.Text = "Average age of system.";
-            // 
-            // lblAvgAgesTitle
-            // 
-            this.lblAvgAgesTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvgAgesTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvgAgesTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAvgAgesTitle.Location = new System.Drawing.Point(615, 61);
-            this.lblAvgAgesTitle.Name = "lblAvgAgesTitle";
-            this.lblAvgAgesTitle.Size = new System.Drawing.Size(158, 33);
-            this.lblAvgAgesTitle.TabIndex = 160;
-            this.lblAvgAgesTitle.Text = "Average ages";
-            // 
-            // LblEmailFavData
-            // 
-            this.LblEmailFavData.BackColor = System.Drawing.Color.Transparent;
-            this.LblEmailFavData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEmailFavData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblEmailFavData.Location = new System.Drawing.Point(436, 232);
-            this.LblEmailFavData.Name = "LblEmailFavData";
-            this.LblEmailFavData.Size = new System.Drawing.Size(163, 97);
-            this.LblEmailFavData.TabIndex = 159;
-            this.LblEmailFavData.Text = " is the most popular email for users.";
-            // 
-            // LblGenderData
-            // 
-            this.LblGenderData.BackColor = System.Drawing.Color.Transparent;
-            this.LblGenderData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblGenderData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblGenderData.Location = new System.Drawing.Point(14, 229);
-            this.LblGenderData.Name = "LblGenderData";
-            this.LblGenderData.Size = new System.Drawing.Size(185, 74);
-            this.LblGenderData.TabIndex = 158;
-            this.LblGenderData.Text = "Of the users is men,\r\n32% is women.\r\n";
-            // 
-            // lblIsBlockData
-            // 
-            this.lblIsBlockData.BackColor = System.Drawing.Color.Transparent;
-            this.lblIsBlockData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsBlockData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblIsBlockData.Location = new System.Drawing.Point(215, 229);
-            this.lblIsBlockData.Name = "lblIsBlockData";
-            this.lblIsBlockData.Size = new System.Drawing.Size(195, 84);
-            this.lblIsBlockData.TabIndex = 157;
-            this.lblIsBlockData.Text = "The percentage of people blocked from the system now.";
-            // 
-            // lblTitleStatics
-            // 
-            this.lblTitleStatics.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleStatics.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleStatics.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleStatics.Location = new System.Drawing.Point(211, 1);
-            this.lblTitleStatics.Name = "lblTitleStatics";
-            this.lblTitleStatics.Size = new System.Drawing.Size(487, 57);
-            this.lblTitleStatics.TabIndex = 155;
-            this.lblTitleStatics.Text = "Registered users statistics";
-            // 
-            // lblEmailFav
-            // 
-            this.lblEmailFav.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmailFav.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailFav.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblEmailFav.Location = new System.Drawing.Point(477, 58);
-            this.lblEmailFav.Name = "lblEmailFav";
-            this.lblEmailFav.Size = new System.Drawing.Size(85, 33);
-            this.lblEmailFav.TabIndex = 154;
-            this.lblEmailFav.Text = "Email";
-            // 
-            // lblIsBlock
-            // 
-            this.lblIsBlock.BackColor = System.Drawing.Color.Transparent;
-            this.lblIsBlock.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsBlock.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblIsBlock.Location = new System.Drawing.Point(244, 61);
-            this.lblIsBlock.Name = "lblIsBlock";
-            this.lblIsBlock.Size = new System.Drawing.Size(168, 33);
-            this.lblIsBlock.TabIndex = 153;
-            this.lblIsBlock.Text = "Blocked status";
-            // 
-            // lblGender
-            // 
-            this.lblGender.BackColor = System.Drawing.Color.Transparent;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblGender.Location = new System.Drawing.Point(61, 61);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(104, 33);
-            this.lblGender.TabIndex = 152;
-            this.lblGender.Text = "Gender";
-            // 
-            // circleGender
-            // 
-            this.circleGender.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circleGender.AnimationSpeed = 500;
-            this.circleGender.BackColor = System.Drawing.Color.Transparent;
-            this.circleGender.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circleGender.ForeColor = System.Drawing.Color.Gainsboro;
-            this.circleGender.InnerColor = System.Drawing.Color.Transparent;
-            this.circleGender.InnerMargin = 2;
-            this.circleGender.InnerWidth = -1;
-            this.circleGender.Location = new System.Drawing.Point(30, 94);
-            this.circleGender.MarqueeAnimationSpeed = 2000;
-            this.circleGender.Name = "circleGender";
-            this.circleGender.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
-            this.circleGender.OuterMargin = -26;
-            this.circleGender.OuterWidth = 26;
-            this.circleGender.ProgressColor = System.Drawing.Color.DodgerBlue;
-            this.circleGender.ProgressWidth = 12;
-            this.circleGender.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circleGender.Size = new System.Drawing.Size(135, 135);
-            this.circleGender.StartAngle = 270;
-            this.circleGender.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circleGender.SubscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circleGender.SubscriptText = "";
-            this.circleGender.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circleGender.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.circleGender.SuperscriptText = "";
-            this.circleGender.TabIndex = 142;
-            this.circleGender.Text = "68%";
-            this.circleGender.TextMargin = new System.Windows.Forms.Padding(0);
-            this.circleGender.Value = 68;
-            // 
-            // circularIsBlocked
-            // 
-            this.circularIsBlocked.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularIsBlocked.AnimationSpeed = 500;
-            this.circularIsBlocked.BackColor = System.Drawing.Color.Transparent;
-            this.circularIsBlocked.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsBlocked.ForeColor = System.Drawing.Color.Gainsboro;
-            this.circularIsBlocked.InnerColor = System.Drawing.Color.Transparent;
-            this.circularIsBlocked.InnerMargin = 2;
-            this.circularIsBlocked.InnerWidth = -1;
-            this.circularIsBlocked.Location = new System.Drawing.Point(234, 94);
-            this.circularIsBlocked.MarqueeAnimationSpeed = 2000;
-            this.circularIsBlocked.Name = "circularIsBlocked";
-            this.circularIsBlocked.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
-            this.circularIsBlocked.OuterMargin = -26;
-            this.circularIsBlocked.OuterWidth = 26;
-            this.circularIsBlocked.ProgressColor = System.Drawing.Color.Crimson;
-            this.circularIsBlocked.ProgressWidth = 12;
-            this.circularIsBlocked.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsBlocked.Size = new System.Drawing.Size(135, 135);
-            this.circularIsBlocked.StartAngle = 270;
-            this.circularIsBlocked.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsBlocked.SubscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circularIsBlocked.SubscriptText = "";
-            this.circularIsBlocked.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsBlocked.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.circularIsBlocked.SuperscriptText = "";
-            this.circularIsBlocked.TabIndex = 144;
-            this.circularIsBlocked.Text = "22%";
-            this.circularIsBlocked.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.circularIsBlocked.Value = 22;
+            this.MembersTimer.Interval = 1;
+            this.MembersTimer.Tick += new System.EventHandler(this.MembersTimer_Tick);
             // 
             // circuleEmailPpoular
             // 
@@ -907,25 +728,205 @@
             this.circuleEmailPpoular.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.circuleEmailPpoular.Value = 93;
             // 
-            // pictureInidcation
+            // circularIsBlocked
             // 
-            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.firstScreen;
-            this.pictureInidcation.Location = new System.Drawing.Point(827, 3);
-            this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(445, 653);
-            this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureInidcation.TabIndex = 91;
-            this.pictureInidcation.TabStop = false;
+            this.circularIsBlocked.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularIsBlocked.AnimationSpeed = 500;
+            this.circularIsBlocked.BackColor = System.Drawing.Color.Transparent;
+            this.circularIsBlocked.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularIsBlocked.ForeColor = System.Drawing.Color.Gainsboro;
+            this.circularIsBlocked.InnerColor = System.Drawing.Color.Transparent;
+            this.circularIsBlocked.InnerMargin = 2;
+            this.circularIsBlocked.InnerWidth = -1;
+            this.circularIsBlocked.Location = new System.Drawing.Point(234, 94);
+            this.circularIsBlocked.MarqueeAnimationSpeed = 2000;
+            this.circularIsBlocked.Name = "circularIsBlocked";
+            this.circularIsBlocked.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
+            this.circularIsBlocked.OuterMargin = -26;
+            this.circularIsBlocked.OuterWidth = 26;
+            this.circularIsBlocked.ProgressColor = System.Drawing.Color.Crimson;
+            this.circularIsBlocked.ProgressWidth = 12;
+            this.circularIsBlocked.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularIsBlocked.Size = new System.Drawing.Size(135, 135);
+            this.circularIsBlocked.StartAngle = 270;
+            this.circularIsBlocked.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularIsBlocked.SubscriptMargin = new System.Windows.Forms.Padding(0);
+            this.circularIsBlocked.SubscriptText = "";
+            this.circularIsBlocked.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularIsBlocked.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.circularIsBlocked.SuperscriptText = "";
+            this.circularIsBlocked.TabIndex = 144;
+            this.circularIsBlocked.Text = "22%";
+            this.circularIsBlocked.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.circularIsBlocked.Value = 22;
             // 
-            // timerSideManu
+            // circleGender
             // 
-            this.timerSideManu.Interval = 1;
-            this.timerSideManu.Tick += new System.EventHandler(this.timerSideMenu_Tick);
+            this.circleGender.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circleGender.AnimationSpeed = 500;
+            this.circleGender.BackColor = System.Drawing.Color.Transparent;
+            this.circleGender.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circleGender.ForeColor = System.Drawing.Color.Gainsboro;
+            this.circleGender.InnerColor = System.Drawing.Color.Transparent;
+            this.circleGender.InnerMargin = 2;
+            this.circleGender.InnerWidth = -1;
+            this.circleGender.Location = new System.Drawing.Point(30, 94);
+            this.circleGender.MarqueeAnimationSpeed = 2000;
+            this.circleGender.Name = "circleGender";
+            this.circleGender.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
+            this.circleGender.OuterMargin = -26;
+            this.circleGender.OuterWidth = 26;
+            this.circleGender.ProgressColor = System.Drawing.Color.DodgerBlue;
+            this.circleGender.ProgressWidth = 12;
+            this.circleGender.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circleGender.Size = new System.Drawing.Size(135, 135);
+            this.circleGender.StartAngle = 270;
+            this.circleGender.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circleGender.SubscriptMargin = new System.Windows.Forms.Padding(0);
+            this.circleGender.SubscriptText = "";
+            this.circleGender.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circleGender.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.circleGender.SuperscriptText = "";
+            this.circleGender.TabIndex = 142;
+            this.circleGender.Text = "68%";
+            this.circleGender.TextMargin = new System.Windows.Forms.Padding(0);
+            this.circleGender.Value = 68;
             // 
-            // MembersTimer
+            // lblGender
             // 
-            this.MembersTimer.Interval = 1;
-            this.MembersTimer.Tick += new System.EventHandler(this.MembersTimer_Tick);
+            this.lblGender.BackColor = System.Drawing.Color.Transparent;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblGender.Location = new System.Drawing.Point(61, 61);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(104, 33);
+            this.lblGender.TabIndex = 152;
+            this.lblGender.Text = "Gender";
+            // 
+            // lblIsBlock
+            // 
+            this.lblIsBlock.BackColor = System.Drawing.Color.Transparent;
+            this.lblIsBlock.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsBlock.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblIsBlock.Location = new System.Drawing.Point(244, 61);
+            this.lblIsBlock.Name = "lblIsBlock";
+            this.lblIsBlock.Size = new System.Drawing.Size(168, 33);
+            this.lblIsBlock.TabIndex = 153;
+            this.lblIsBlock.Text = "Blocked status";
+            // 
+            // lblEmailFav
+            // 
+            this.lblEmailFav.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmailFav.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailFav.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblEmailFav.Location = new System.Drawing.Point(477, 58);
+            this.lblEmailFav.Name = "lblEmailFav";
+            this.lblEmailFav.Size = new System.Drawing.Size(85, 33);
+            this.lblEmailFav.TabIndex = 154;
+            this.lblEmailFav.Text = "Email";
+            // 
+            // lblTitleStatics
+            // 
+            this.lblTitleStatics.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleStatics.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleStatics.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleStatics.Location = new System.Drawing.Point(135, 0);
+            this.lblTitleStatics.Name = "lblTitleStatics";
+            this.lblTitleStatics.Size = new System.Drawing.Size(532, 57);
+            this.lblTitleStatics.TabIndex = 155;
+            this.lblTitleStatics.Text = "Registered users statistics";
+            // 
+            // lblIsBlockData
+            // 
+            this.lblIsBlockData.BackColor = System.Drawing.Color.Transparent;
+            this.lblIsBlockData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsBlockData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblIsBlockData.Location = new System.Drawing.Point(215, 229);
+            this.lblIsBlockData.Name = "lblIsBlockData";
+            this.lblIsBlockData.Size = new System.Drawing.Size(195, 84);
+            this.lblIsBlockData.TabIndex = 157;
+            this.lblIsBlockData.Text = "The percentage of people blocked from the system now.";
+            // 
+            // LblGenderData
+            // 
+            this.LblGenderData.BackColor = System.Drawing.Color.Transparent;
+            this.LblGenderData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblGenderData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LblGenderData.Location = new System.Drawing.Point(14, 229);
+            this.LblGenderData.Name = "LblGenderData";
+            this.LblGenderData.Size = new System.Drawing.Size(185, 74);
+            this.LblGenderData.TabIndex = 158;
+            this.LblGenderData.Text = "Of the users is men,\r\n32% is women.\r\n";
+            // 
+            // LblEmailFavData
+            // 
+            this.LblEmailFavData.BackColor = System.Drawing.Color.Transparent;
+            this.LblEmailFavData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblEmailFavData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LblEmailFavData.Location = new System.Drawing.Point(436, 232);
+            this.LblEmailFavData.Name = "LblEmailFavData";
+            this.LblEmailFavData.Size = new System.Drawing.Size(163, 97);
+            this.LblEmailFavData.TabIndex = 159;
+            this.LblEmailFavData.Text = " is the most popular email for users.";
+            // 
+            // lblAvgAgesTitle
+            // 
+            this.lblAvgAgesTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvgAgesTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvgAgesTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblAvgAgesTitle.Location = new System.Drawing.Point(615, 61);
+            this.lblAvgAgesTitle.Name = "lblAvgAgesTitle";
+            this.lblAvgAgesTitle.Size = new System.Drawing.Size(158, 33);
+            this.lblAvgAgesTitle.TabIndex = 160;
+            this.lblAvgAgesTitle.Text = "Average ages";
+            // 
+            // lblAvgData
+            // 
+            this.lblAvgData.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvgData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvgData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblAvgData.Location = new System.Drawing.Point(616, 229);
+            this.lblAvgData.Name = "lblAvgData";
+            this.lblAvgData.Size = new System.Drawing.Size(155, 84);
+            this.lblAvgData.TabIndex = 161;
+            this.lblAvgData.Text = "Average age of system.";
+            // 
+            // LblAVG
+            // 
+            this.LblAVG.BackColor = System.Drawing.Color.Transparent;
+            this.LblAVG.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.LblAVG.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LblAVG.Location = new System.Drawing.Point(630, 133);
+            this.LblAVG.Name = "LblAVG";
+            this.LblAVG.Size = new System.Drawing.Size(104, 66);
+            this.LblAVG.TabIndex = 162;
+            this.LblAVG.Text = "27.4";
+            // 
+            // panelStaticsCircule
+            // 
+            this.panelStaticsCircule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.panelStaticsCircule.BorderRadius = 30;
+            this.panelStaticsCircule.Controls.Add(this.LblAVG);
+            this.panelStaticsCircule.Controls.Add(this.lblAvgData);
+            this.panelStaticsCircule.Controls.Add(this.lblAvgAgesTitle);
+            this.panelStaticsCircule.Controls.Add(this.LblEmailFavData);
+            this.panelStaticsCircule.Controls.Add(this.LblGenderData);
+            this.panelStaticsCircule.Controls.Add(this.lblIsBlockData);
+            this.panelStaticsCircule.Controls.Add(this.lblTitleStatics);
+            this.panelStaticsCircule.Controls.Add(this.lblEmailFav);
+            this.panelStaticsCircule.Controls.Add(this.lblIsBlock);
+            this.panelStaticsCircule.Controls.Add(this.lblGender);
+            this.panelStaticsCircule.Controls.Add(this.circleGender);
+            this.panelStaticsCircule.Controls.Add(this.circularIsBlocked);
+            this.panelStaticsCircule.Controls.Add(this.circuleEmailPpoular);
+            this.panelStaticsCircule.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsCircule.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsCircule.FillColor3 = System.Drawing.Color.DarkSlateBlue;
+            this.panelStaticsCircule.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsCircule.Location = new System.Drawing.Point(31, 107);
+            this.panelStaticsCircule.Name = "panelStaticsCircule";
+            this.panelStaticsCircule.Size = new System.Drawing.Size(778, 329);
+            this.panelStaticsCircule.TabIndex = 140;
             // 
             // AdminScreen
             // 
@@ -956,8 +957,8 @@
             this.penelHome.ResumeLayout(false);
             this.panelStatisicsData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
-            this.panelStaticsCircule.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
+            this.panelStaticsCircule.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -990,33 +991,33 @@
         private System.Windows.Forms.Button btnMyAcc;
         private System.Windows.Forms.PictureBox pictureInidcation;
         private System.Windows.Forms.Button btnTraning;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsCircule;
-        private CircularProgressBar.CircularProgressBar circleGender;
-        private CircularProgressBar.CircularProgressBar circularIsBlocked;
-        private CircularProgressBar.CircularProgressBar circuleEmailPpoular;
         private System.Windows.Forms.Label lblCircleGender;
-        private System.Windows.Forms.Label lblEmailFav;
-        private System.Windows.Forms.Label lblIsBlock;
-        private System.Windows.Forms.Label lblGender;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStatisicsData;
         private Guna.UI2.WinForms.Guna2Button btnUserStatistics;
         private Guna.UI2.WinForms.Guna2Button btnClassesStatistics;
         private Guna.UI2.WinForms.Guna2Button btnAdminsStatistics;
-        private System.Windows.Forms.Label lblTitleStatics;
         private Guna.UI2.WinForms.Guna2PictureBox arrowsPic;
         private System.Windows.Forms.Label lblMostExprince;
         private System.Windows.Forms.Label lblLeastExprince;
         private System.Windows.Forms.Label lblLeastExprinceTitle;
         private System.Windows.Forms.Label lblMostExprinceTitle;
-        private System.Windows.Forms.Label LblGenderData;
-        private System.Windows.Forms.Label lblIsBlockData;
-        private System.Windows.Forms.Label lblAvgData;
-        private System.Windows.Forms.Label lblAvgAgesTitle;
-        private System.Windows.Forms.Label LblEmailFavData;
-        private System.Windows.Forms.Label LblAVG;
         private System.Windows.Forms.Label LblMostOlder;
         private System.Windows.Forms.Label lblMostYounger;
         private System.Windows.Forms.Label lblMostYoungerTitle;
         private System.Windows.Forms.Label LblMostOlderTitle;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsCircule;
+        private System.Windows.Forms.Label LblAVG;
+        private System.Windows.Forms.Label lblAvgData;
+        private System.Windows.Forms.Label lblAvgAgesTitle;
+        private System.Windows.Forms.Label LblEmailFavData;
+        private System.Windows.Forms.Label LblGenderData;
+        private System.Windows.Forms.Label lblIsBlockData;
+        private System.Windows.Forms.Label lblTitleStatics;
+        private System.Windows.Forms.Label lblEmailFav;
+        private System.Windows.Forms.Label lblIsBlock;
+        private System.Windows.Forms.Label lblGender;
+        private CircularProgressBar.CircularProgressBar circleGender;
+        private CircularProgressBar.CircularProgressBar circularIsBlocked;
+        private CircularProgressBar.CircularProgressBar circuleEmailPpoular;
     }
 }

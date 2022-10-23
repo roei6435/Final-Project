@@ -16,6 +16,16 @@ namespace Fitness_Club
         {
             this.listP = listP;
         }
+
+        public Person findPersonById(string userId)
+        {
+            foreach (Person p in listP)
+            {
+                if (p.UserId == userId)
+                    return p;
+            }
+            return null;
+        }
         public bool checkIfKeyIsProper(string key)
         {
             if(key == adminKey || key== userKey) return true;
@@ -203,9 +213,6 @@ namespace Fitness_Club
             newList.Add(personMostOlder);
             newList.Add(personMostYounger);
             return newList;
-
-
-
         }
 
 

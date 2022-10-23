@@ -153,6 +153,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _birthdayt_icon {
+            get {
+                object obj = ResourceManager.GetObject("_birthdayt_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _management_business_ {
             get {
                 object obj = ResourceManager.GetObject("_management_business_", resourceCulture);
@@ -383,6 +393,26 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defult_pro_pic {
+            get {
+                object obj = ResourceManager.GetObject("defult-pro-pic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap defult_pro_pic2 {
+            get {
+                object obj = ResourceManager.GetObject("defult-pro-pic2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete {
             get {
                 object obj = ResourceManager.GetObject("Delete", resourceCulture);
@@ -426,6 +456,16 @@ namespace Fitness_Club.Properties {
         internal static System.Drawing.Bitmap firstScreen {
             get {
                 object obj = ResourceManager.GetObject("firstScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level {
+            get {
+                object obj = ResourceManager.GetObject("level", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

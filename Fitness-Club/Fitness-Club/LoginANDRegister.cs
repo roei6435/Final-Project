@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Mail;
 //using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Fitness_Club
 {
@@ -73,16 +74,16 @@ namespace Fitness_Club
                 }
 
         }                   //sending email
-        protected bool nameIsProper(String s)                    //to check if proper first/last name
+        public bool nameIsProper(String name)                    //to check if proper first/last name
         {
 
-            if (s.Length < 2) return false;
-            char ind = s[0]; bool flag = false;
-            for (int i = 0; i < s.Length; i++)
+            if (name.Length < 2) return false;
+            char ch = name[0]; bool flag = false;
+            for (int i = 0; i < name.Length; i++)
             {
-                if (ind != s[i])
+                if (ch != name[i])
                     flag = true;
-                if ((s[i] <= '9' && s[i] >= '0') || s[i] == ' ')
+                if ((name[i] <= '9' && name[i] >= '0') || name[i] == ' '|| name[i]==','|| name[i] == '.')
                     return false;
             }
             if (flag)
@@ -145,6 +146,23 @@ namespace Fitness_Club
         {
 
         }
+
+       
+        protected bool isDate(string date) 
+        {
+            try
+            {
+                DateTime dt = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                if (dt.Year < 1900|| dt.Year > DateTime.Now.Year-1) return false; 
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+           
+        }
+
 
         protected string strongPassword(string passwd)
         {

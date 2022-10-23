@@ -26,8 +26,8 @@ namespace Server_F.C
 
         static void Main(string[] args)
         {
-           openingTheServerToReceiveCalls();
-
+             openingTheServerToReceiveCalls();
+       
 
 
 
@@ -44,7 +44,7 @@ namespace Server_F.C
             {
                 byte[] bytes = new byte[256];
                 int i, countReq=0;
-                string dataOutput ="" ;
+                string dataOutput="" ;
                 string fullDataFromClient = "" ;
                 server.Start();
                 while (true)
@@ -69,30 +69,56 @@ namespace Server_F.C
                     // send data
                     if (controller == "ServerRunning")
                     {
-
                         Program.TestServer(fullDataFromClientInArry[fullDataFromClientInArry.Length - 1]);
                     }
                     else if (controller == "login")
                     {
-
+                        
                         string email = fullDataFromClientInArry[2],
                             password = fullDataFromClientInArry[3],
                             admin = fullDataFromClientInArry[fullDataFromClientInArry.Length - 1];
-                        dataOutput = Login.loginSuccsfully(email, password, admin);
+                        dataOutput = Login.tryLogIn(email, password, admin);
                     }
                     else if (controller == "Dashboard")
                     {
+                       
                         if (funName == "getAllDataForAdminScreenInDahsboard")
                         {
 
                              dataOutput = Dashboard.getAllDataForAdminScreenInDahsboard(); //RETURN ALL DATA
                         }
+                        else if(funName == "getDataForOnlyThisUserId")
+                        {
+                            string userId = fullDataFromClientInArry[2];
+                            dataOutput = Dashboard.getDataForOnlyThisUserId(userId); //RETURN Only one person
+                        }
                     }
-                    else
+                    else if (controller == "myAccount")
                     {
-                        dataOutput = "sabba";
-                    }
 
+                        if (funName == "editDetailsPersonById")
+                        {
+                            string userId = fullDataFromClientInArry[2],
+                            fname = fullDataFromClientInArry[3],
+                            lname = fullDataFromClientInArry[4],
+                            email = fullDataFromClientInArry[5],
+                            phone = fullDataFromClientInArry[6],
+                            dateBorn = fullDataFromClientInArry[7];
+                            dataOutput = myAccount.editDetailsPersonById(userId, fname, lname, email, phone, dateBorn);
+                        }
+                        else if (funName== "phoneExist")
+                        {
+                            string phone = fullDataFromClientInArry[2];
+                            dataOutput=myAccount.phoneExist(phone);
+                             
+                        }
+                        else if (funName == "emailExist")
+                        {
+                            string email = fullDataFromClientInArry[2];
+                            dataOutput = myAccount.emailExist(email);
+
+                        }
+                    }
                     BinaryWriter writer = new BinaryWriter(client.GetStream());
                     writer.Write(dataOutput);
                     client.Close();
@@ -109,23 +135,8 @@ namespace Server_F.C
         }
 
 
-        public static string convartDictionaryToString(Dictionary<string, string> dic)
-        {
-            string response = null;
-            foreach (KeyValuePair<string,string> i in dic)
-                response += i.Key + separationKey + i.Value + separationKey; 
-            return response;
-        }
-        
-        public static Dictionary<string,string> convartStringToDictionary(string fullString)
-        {
-            string[] fullStringInArray = fullString.Split(new string[] { separationKey }, StringSplitOptions.None);
-            Dictionary<string, string> dicResponse = new Dictionary<string, string>();
-            for(int i = 0; i<fullString.Length; i=i+2)
-              dicResponse.Add(fullStringInArray[i] + ':', fullStringInArray[i + 1]);
-            return dicResponse; 
-        }
 
+      
         static void saveLogInTextFile(string ip, string date)
         {
             FileStream file = new FileStream("loginList.txt", FileMode.Append);

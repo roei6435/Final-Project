@@ -30,11 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMembers));
             this.panelStep1 = new System.Windows.Forms.Panel();
+            this.vOffPass = new Guna.UI2.WinForms.Guna2PictureBox();
             this.comboBoxBefore = new System.Windows.Forms.ComboBox();
+            this.picBoxPassOk = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.vOffEmail = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxEmailOk = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.vOffLN = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxLnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblPhone = new System.Windows.Forms.Label();
+            this.picBoxFnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtBoxPhone = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.viFn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLname = new System.Windows.Forms.Label();
@@ -62,6 +70,8 @@
             this.panelStep2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBoxConfirmPass = new System.Windows.Forms.TextBox();
             this.lblConfirm = new System.Windows.Forms.Label();
@@ -69,6 +79,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblPassword = new System.Windows.Forms.Label();
             this.panelStep3 = new System.Windows.Forms.Panel();
+            this.picBoxConPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxConPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.viewPass = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelStepsAndTitle = new System.Windows.Forms.Panel();
             this.panelVerS3 = new System.Windows.Forms.Panel();
             this.lblCheckEmail = new System.Windows.Forms.Label();
@@ -77,34 +92,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picBoxConPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxConPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.viewPass = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxUser = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.vOffPass = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxPassOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.vOffEmail = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxEmailOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.vOffLN = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxLnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxFnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.viFn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelStep1.SuspendLayout();
-            this.panelStep2.SuspendLayout();
-            this.panelStep3.SuspendLayout();
-            this.panelStepsAndTitle.SuspendLayout();
-            this.panelVerS3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vOffPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassOk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vOffEmail)).BeginInit();
@@ -113,6 +101,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLnameOk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFnameOk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viFn)).BeginInit();
+            this.panelStep2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).BeginInit();
+            this.panelStep3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).BeginInit();
+            this.panelStepsAndTitle.SuspendLayout();
+            this.panelVerS3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelStep1
@@ -143,6 +143,21 @@
             this.panelStep1.Size = new System.Drawing.Size(483, 217);
             this.panelStep1.TabIndex = 78;
             // 
+            // vOffPass
+            // 
+            this.vOffPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.vOffPass.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.vOffPass.ImageRotate = 0F;
+            this.vOffPass.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.vOffPass.Location = new System.Drawing.Point(441, 176);
+            this.vOffPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.vOffPass.Name = "vOffPass";
+            this.vOffPass.Size = new System.Drawing.Size(31, 30);
+            this.vOffPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.vOffPass.TabIndex = 103;
+            this.vOffPass.TabStop = false;
+            this.vOffPass.Visible = false;
+            // 
             // comboBoxBefore
             // 
             this.comboBoxBefore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -161,6 +176,81 @@
             this.comboBoxBefore.TabIndex = 88;
             this.comboBoxBefore.Text = "050";
             // 
+            // picBoxPassOk
+            // 
+            this.picBoxPassOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxPassOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxPassOk.ImageRotate = 0F;
+            this.picBoxPassOk.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxPassOk.InitialImage")));
+            this.picBoxPassOk.Location = new System.Drawing.Point(441, 174);
+            this.picBoxPassOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxPassOk.Name = "picBoxPassOk";
+            this.picBoxPassOk.Size = new System.Drawing.Size(31, 30);
+            this.picBoxPassOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPassOk.TabIndex = 102;
+            this.picBoxPassOk.TabStop = false;
+            this.picBoxPassOk.Visible = false;
+            // 
+            // vOffEmail
+            // 
+            this.vOffEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.vOffEmail.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.vOffEmail.ImageRotate = 0F;
+            this.vOffEmail.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.vOffEmail.Location = new System.Drawing.Point(441, 132);
+            this.vOffEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.vOffEmail.Name = "vOffEmail";
+            this.vOffEmail.Size = new System.Drawing.Size(31, 30);
+            this.vOffEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.vOffEmail.TabIndex = 102;
+            this.vOffEmail.TabStop = false;
+            this.vOffEmail.Visible = false;
+            // 
+            // picBoxEmailOk
+            // 
+            this.picBoxEmailOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxEmailOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxEmailOk.ImageRotate = 0F;
+            this.picBoxEmailOk.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEmailOk.InitialImage")));
+            this.picBoxEmailOk.Location = new System.Drawing.Point(441, 127);
+            this.picBoxEmailOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxEmailOk.Name = "picBoxEmailOk";
+            this.picBoxEmailOk.Size = new System.Drawing.Size(31, 30);
+            this.picBoxEmailOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEmailOk.TabIndex = 101;
+            this.picBoxEmailOk.TabStop = false;
+            this.picBoxEmailOk.Visible = false;
+            // 
+            // vOffLN
+            // 
+            this.vOffLN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.vOffLN.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.vOffLN.ImageRotate = 0F;
+            this.vOffLN.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.vOffLN.Location = new System.Drawing.Point(441, 76);
+            this.vOffLN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.vOffLN.Name = "vOffLN";
+            this.vOffLN.Size = new System.Drawing.Size(31, 30);
+            this.vOffLN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.vOffLN.TabIndex = 101;
+            this.vOffLN.TabStop = false;
+            this.vOffLN.Visible = false;
+            // 
+            // picBoxLnameOk
+            // 
+            this.picBoxLnameOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxLnameOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxLnameOk.ImageRotate = 0F;
+            this.picBoxLnameOk.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxLnameOk.InitialImage")));
+            this.picBoxLnameOk.Location = new System.Drawing.Point(441, 76);
+            this.picBoxLnameOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxLnameOk.Name = "picBoxLnameOk";
+            this.picBoxLnameOk.Size = new System.Drawing.Size(31, 30);
+            this.picBoxLnameOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxLnameOk.TabIndex = 100;
+            this.picBoxLnameOk.TabStop = false;
+            this.picBoxLnameOk.Visible = false;
+            // 
             // lblPhone
             // 
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,6 +260,21 @@
             this.lblPhone.Size = new System.Drawing.Size(171, 32);
             this.lblPhone.TabIndex = 89;
             this.lblPhone.Text = "Phone";
+            // 
+            // picBoxFnameOk
+            // 
+            this.picBoxFnameOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxFnameOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxFnameOk.ImageRotate = 0F;
+            this.picBoxFnameOk.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxFnameOk.Location = new System.Drawing.Point(441, 20);
+            this.picBoxFnameOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxFnameOk.Name = "picBoxFnameOk";
+            this.picBoxFnameOk.Size = new System.Drawing.Size(31, 30);
+            this.picBoxFnameOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxFnameOk.TabIndex = 99;
+            this.picBoxFnameOk.TabStop = false;
+            this.picBoxFnameOk.Visible = false;
             // 
             // txtBoxPhone
             // 
@@ -204,6 +309,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 1);
             this.panel2.TabIndex = 87;
+            // 
+            // viFn
+            // 
+            this.viFn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viFn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.viFn.ImageRotate = 0F;
+            this.viFn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.viFn.Location = new System.Drawing.Point(441, 20);
+            this.viFn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.viFn.Name = "viFn";
+            this.viFn.Size = new System.Drawing.Size(31, 30);
+            this.viFn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.viFn.TabIndex = 100;
+            this.viFn.TabStop = false;
+            this.viFn.Visible = false;
             // 
             // txtBoxEmail
             // 
@@ -647,6 +767,34 @@
             this.label2.TabIndex = 102;
             this.label2.Text = "month";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.Image = global::Fitness_Club.Properties.Resources._9025667_gender_female_icon;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(181, 13);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 28);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 98;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // picBoxUser
+            // 
+            this.picBoxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxUser.Image = global::Fitness_Club.Properties.Resources._9042761_male_icon;
+            this.picBoxUser.ImageRotate = 0F;
+            this.picBoxUser.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxUser.InitialImage")));
+            this.picBoxUser.Location = new System.Drawing.Point(38, 13);
+            this.picBoxUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxUser.Name = "picBoxUser";
+            this.picBoxUser.Size = new System.Drawing.Size(40, 28);
+            this.picBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxUser.TabIndex = 97;
+            this.picBoxUser.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
@@ -736,6 +884,79 @@
             this.panelStep3.TabIndex = 86;
             this.panelStep3.Visible = false;
             // 
+            // picBoxConPassVOn
+            // 
+            this.picBoxConPassVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxConPassVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxConPassVOn.ImageRotate = 0F;
+            this.picBoxConPassVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxConPassVOn.Location = new System.Drawing.Point(451, 144);
+            this.picBoxConPassVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxConPassVOn.Name = "picBoxConPassVOn";
+            this.picBoxConPassVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxConPassVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxConPassVOn.TabIndex = 101;
+            this.picBoxConPassVOn.TabStop = false;
+            this.picBoxConPassVOn.Visible = false;
+            // 
+            // picBoxConPassVOff
+            // 
+            this.picBoxConPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxConPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.picBoxConPassVOff.ImageRotate = 0F;
+            this.picBoxConPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxConPassVOff.Location = new System.Drawing.Point(457, 149);
+            this.picBoxConPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxConPassVOff.Name = "picBoxConPassVOff";
+            this.picBoxConPassVOff.Size = new System.Drawing.Size(30, 30);
+            this.picBoxConPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxConPassVOff.TabIndex = 103;
+            this.picBoxConPassVOff.TabStop = false;
+            // 
+            // picBoxPassVOn
+            // 
+            this.picBoxPassVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxPassVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxPassVOn.ImageRotate = 0F;
+            this.picBoxPassVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxPassVOn.Location = new System.Drawing.Point(451, 64);
+            this.picBoxPassVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxPassVOn.Name = "picBoxPassVOn";
+            this.picBoxPassVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxPassVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPassVOn.TabIndex = 100;
+            this.picBoxPassVOn.TabStop = false;
+            this.picBoxPassVOn.Visible = false;
+            // 
+            // picBoxPassVOff
+            // 
+            this.picBoxPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.picBoxPassVOff.ImageRotate = 0F;
+            this.picBoxPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxPassVOff.Location = new System.Drawing.Point(457, 66);
+            this.picBoxPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxPassVOff.Name = "picBoxPassVOff";
+            this.picBoxPassVOff.Size = new System.Drawing.Size(30, 30);
+            this.picBoxPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPassVOff.TabIndex = 102;
+            this.picBoxPassVOff.TabStop = false;
+            // 
+            // viewPass
+            // 
+            this.viewPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewPass.Image = ((System.Drawing.Image)(resources.GetObject("viewPass.Image")));
+            this.viewPass.ImageRotate = 0F;
+            this.viewPass.Location = new System.Drawing.Point(493, 64);
+            this.viewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.viewPass.Name = "viewPass";
+            this.viewPass.Size = new System.Drawing.Size(40, 36);
+            this.viewPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewPass.TabIndex = 47;
+            this.viewPass.TabStop = false;
+            this.viewPass.Click += new System.EventHandler(this.viewPass_Click);
+            // 
             // panelStepsAndTitle
             // 
             this.panelStepsAndTitle.Controls.Add(this.step1);
@@ -824,227 +1045,6 @@
             this.pictureBox1.TabIndex = 90;
             this.pictureBox1.TabStop = false;
             // 
-            // picBoxConPassVOn
-            // 
-            this.picBoxConPassVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxConPassVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxConPassVOn.ImageRotate = 0F;
-            this.picBoxConPassVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxConPassVOn.Location = new System.Drawing.Point(451, 144);
-            this.picBoxConPassVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxConPassVOn.Name = "picBoxConPassVOn";
-            this.picBoxConPassVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxConPassVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxConPassVOn.TabIndex = 101;
-            this.picBoxConPassVOn.TabStop = false;
-            this.picBoxConPassVOn.Visible = false;
-            // 
-            // picBoxConPassVOff
-            // 
-            this.picBoxConPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxConPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.picBoxConPassVOff.ImageRotate = 0F;
-            this.picBoxConPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxConPassVOff.Location = new System.Drawing.Point(457, 149);
-            this.picBoxConPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxConPassVOff.Name = "picBoxConPassVOff";
-            this.picBoxConPassVOff.Size = new System.Drawing.Size(30, 30);
-            this.picBoxConPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxConPassVOff.TabIndex = 103;
-            this.picBoxConPassVOff.TabStop = false;
-            // 
-            // picBoxPassVOn
-            // 
-            this.picBoxPassVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPassVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxPassVOn.ImageRotate = 0F;
-            this.picBoxPassVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxPassVOn.Location = new System.Drawing.Point(451, 64);
-            this.picBoxPassVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxPassVOn.Name = "picBoxPassVOn";
-            this.picBoxPassVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxPassVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPassVOn.TabIndex = 100;
-            this.picBoxPassVOn.TabStop = false;
-            this.picBoxPassVOn.Visible = false;
-            // 
-            // picBoxPassVOff
-            // 
-            this.picBoxPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.picBoxPassVOff.ImageRotate = 0F;
-            this.picBoxPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxPassVOff.Location = new System.Drawing.Point(457, 66);
-            this.picBoxPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxPassVOff.Name = "picBoxPassVOff";
-            this.picBoxPassVOff.Size = new System.Drawing.Size(30, 30);
-            this.picBoxPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPassVOff.TabIndex = 102;
-            this.picBoxPassVOff.TabStop = false;
-            // 
-            // viewPass
-            // 
-            this.viewPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewPass.Image = ((System.Drawing.Image)(resources.GetObject("viewPass.Image")));
-            this.viewPass.ImageRotate = 0F;
-            this.viewPass.Location = new System.Drawing.Point(493, 64);
-            this.viewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viewPass.Name = "viewPass";
-            this.viewPass.Size = new System.Drawing.Size(40, 36);
-            this.viewPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.viewPass.TabIndex = 47;
-            this.viewPass.TabStop = false;
-            this.viewPass.Click += new System.EventHandler(this.viewPass_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.Image = global::Fitness_Club.Properties.Resources._9025667_gender_female_icon;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(181, 13);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 98;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // picBoxUser
-            // 
-            this.picBoxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxUser.Image = global::Fitness_Club.Properties.Resources._9042761_male_icon;
-            this.picBoxUser.ImageRotate = 0F;
-            this.picBoxUser.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxUser.InitialImage")));
-            this.picBoxUser.Location = new System.Drawing.Point(38, 13);
-            this.picBoxUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxUser.Name = "picBoxUser";
-            this.picBoxUser.Size = new System.Drawing.Size(40, 28);
-            this.picBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxUser.TabIndex = 97;
-            this.picBoxUser.TabStop = false;
-            // 
-            // vOffPass
-            // 
-            this.vOffPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.vOffPass.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.vOffPass.ImageRotate = 0F;
-            this.vOffPass.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.vOffPass.Location = new System.Drawing.Point(441, 176);
-            this.vOffPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.vOffPass.Name = "vOffPass";
-            this.vOffPass.Size = new System.Drawing.Size(31, 30);
-            this.vOffPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.vOffPass.TabIndex = 103;
-            this.vOffPass.TabStop = false;
-            this.vOffPass.Visible = false;
-            // 
-            // picBoxPassOk
-            // 
-            this.picBoxPassOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPassOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxPassOk.ImageRotate = 0F;
-            this.picBoxPassOk.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxPassOk.InitialImage")));
-            this.picBoxPassOk.Location = new System.Drawing.Point(441, 174);
-            this.picBoxPassOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxPassOk.Name = "picBoxPassOk";
-            this.picBoxPassOk.Size = new System.Drawing.Size(31, 30);
-            this.picBoxPassOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPassOk.TabIndex = 102;
-            this.picBoxPassOk.TabStop = false;
-            this.picBoxPassOk.Visible = false;
-            // 
-            // vOffEmail
-            // 
-            this.vOffEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.vOffEmail.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.vOffEmail.ImageRotate = 0F;
-            this.vOffEmail.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.vOffEmail.Location = new System.Drawing.Point(441, 132);
-            this.vOffEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.vOffEmail.Name = "vOffEmail";
-            this.vOffEmail.Size = new System.Drawing.Size(31, 30);
-            this.vOffEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.vOffEmail.TabIndex = 102;
-            this.vOffEmail.TabStop = false;
-            this.vOffEmail.Visible = false;
-            // 
-            // picBoxEmailOk
-            // 
-            this.picBoxEmailOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxEmailOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxEmailOk.ImageRotate = 0F;
-            this.picBoxEmailOk.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEmailOk.InitialImage")));
-            this.picBoxEmailOk.Location = new System.Drawing.Point(441, 127);
-            this.picBoxEmailOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxEmailOk.Name = "picBoxEmailOk";
-            this.picBoxEmailOk.Size = new System.Drawing.Size(31, 30);
-            this.picBoxEmailOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxEmailOk.TabIndex = 101;
-            this.picBoxEmailOk.TabStop = false;
-            this.picBoxEmailOk.Visible = false;
-            // 
-            // vOffLN
-            // 
-            this.vOffLN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.vOffLN.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.vOffLN.ImageRotate = 0F;
-            this.vOffLN.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.vOffLN.Location = new System.Drawing.Point(441, 76);
-            this.vOffLN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.vOffLN.Name = "vOffLN";
-            this.vOffLN.Size = new System.Drawing.Size(31, 30);
-            this.vOffLN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.vOffLN.TabIndex = 101;
-            this.vOffLN.TabStop = false;
-            this.vOffLN.Visible = false;
-            // 
-            // picBoxLnameOk
-            // 
-            this.picBoxLnameOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxLnameOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxLnameOk.ImageRotate = 0F;
-            this.picBoxLnameOk.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxLnameOk.InitialImage")));
-            this.picBoxLnameOk.Location = new System.Drawing.Point(441, 76);
-            this.picBoxLnameOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxLnameOk.Name = "picBoxLnameOk";
-            this.picBoxLnameOk.Size = new System.Drawing.Size(31, 30);
-            this.picBoxLnameOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxLnameOk.TabIndex = 100;
-            this.picBoxLnameOk.TabStop = false;
-            this.picBoxLnameOk.Visible = false;
-            // 
-            // picBoxFnameOk
-            // 
-            this.picBoxFnameOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxFnameOk.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxFnameOk.ImageRotate = 0F;
-            this.picBoxFnameOk.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxFnameOk.Location = new System.Drawing.Point(441, 20);
-            this.picBoxFnameOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxFnameOk.Name = "picBoxFnameOk";
-            this.picBoxFnameOk.Size = new System.Drawing.Size(31, 30);
-            this.picBoxFnameOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxFnameOk.TabIndex = 99;
-            this.picBoxFnameOk.TabStop = false;
-            this.picBoxFnameOk.Visible = false;
-            // 
-            // viFn
-            // 
-            this.viFn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viFn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.viFn.ImageRotate = 0F;
-            this.viFn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.viFn.Location = new System.Drawing.Point(441, 20);
-            this.viFn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viFn.Name = "viFn";
-            this.viFn.Size = new System.Drawing.Size(31, 30);
-            this.viFn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.viFn.TabIndex = 100;
-            this.viFn.TabStop = false;
-            this.viFn.Visible = false;
-            // 
             // FormMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1066,21 +1066,6 @@
             this.Load += new System.EventHandler(this.FormMembers_Load);
             this.panelStep1.ResumeLayout(false);
             this.panelStep1.PerformLayout();
-            this.panelStep2.ResumeLayout(false);
-            this.panelStep2.PerformLayout();
-            this.panelStep3.ResumeLayout(false);
-            this.panelStep3.PerformLayout();
-            this.panelStepsAndTitle.ResumeLayout(false);
-            this.panelVerS3.ResumeLayout(false);
-            this.panelVerS3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vOffPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassOk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vOffEmail)).EndInit();
@@ -1089,6 +1074,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLnameOk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFnameOk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viFn)).EndInit();
+            this.panelStep2.ResumeLayout(false);
+            this.panelStep2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).EndInit();
+            this.panelStep3.ResumeLayout(false);
+            this.panelStep3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).EndInit();
+            this.panelStepsAndTitle.ResumeLayout(false);
+            this.panelVerS3.ResumeLayout(false);
+            this.panelVerS3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

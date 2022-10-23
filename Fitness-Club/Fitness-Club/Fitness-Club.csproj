@@ -363,6 +363,7 @@
     <Compile Include="Forms-admin\DeleteAndUpdateFrom.Designer.cs">
       <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListImage.cs" />
     <Compile Include="LogANDRegister.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -683,6 +684,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrowsUPDWON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defult-pro-pic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defult-pro-pic2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_birthdayt_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

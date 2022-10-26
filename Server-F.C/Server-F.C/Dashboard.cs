@@ -115,8 +115,6 @@ namespace Server_F.C
         }
 
 
-        // SqlCommand cmd = new SqlCommand($"select profilePic from users where userId='{userId}'", Program.conn);
-
 
 
 

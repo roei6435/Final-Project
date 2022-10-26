@@ -27,16 +27,108 @@ namespace Server_F.C
         static void Main(string[] args)
         {
              openingTheServerToReceiveCalls();
-       
-
-
-
-
+           // Console.WriteLine();
             Console.ReadKey();
         }
 
-        static void TestServer(string inputFromClient) => Console.WriteLine(inputFromClient);
+        //Saving all the logged to system in txt file.
+        static void saveLogInTextFile(string ip, string date)
+        {
+            FileStream file = new FileStream("loginList.txt", FileMode.Append);
+            StreamWriter writer = new StreamWriter(file);
+            writer.WriteLine($"Logged in to the server from: {ip} in {date}.");
+            writer.Close();
+            file.Close();
+        }
 
+        //Found the controller and send the requset to the function.
+        private static string SendingToProperControllerAndResponseData(string controller,string funName,string [] fullDataFromClientInArry)
+        {
+            if (controller == "login")
+            {
+                return conntrollerLoginActions(funName, fullDataFromClientInArry);
+            }
+            else if (controller == "Dashboard")
+            {
+                return conntrollerDashboardActions(funName, fullDataFromClientInArry);
+            }
+            else if (controller == "myAccount")
+            {
+                return conntrollermyAccountActions(funName, fullDataFromClientInArry);
+
+            }
+            return "Controller not found.";
+        }
+
+        //Find the requested function in any of the controllers.
+        private static string conntrollerLoginActions(string functionName, string[] fullDataFromClientInArry)
+        {
+            if (functionName == "tryLogIn")
+            {
+                string email = fullDataFromClientInArry[2],
+                password = fullDataFromClientInArry[3],
+                admin = fullDataFromClientInArry[fullDataFromClientInArry.Length - 1];
+                return Login.tryLogIn(email, password, admin);
+            }
+            else if (functionName == "fogotPassword")
+            {
+                return "somthing"; //RETURN Only one person
+            }
+            return "Function not found.";
+        }
+        private static string conntrollerDashboardActions(string functionName,string [] fullDataFromClientInArry)
+        {
+            if (functionName == "getAllDataForAdminScreenInDahsboard")
+            {
+
+                return Dashboard.getAllDataForAdminScreenInDahsboard(); //RETURN ALL DATA
+            }
+            else if (functionName == "getDataForOnlyThisUserId")
+            {
+                string userId = fullDataFromClientInArry[2];
+                return  Dashboard.getDataForOnlyThisUserId(userId); //RETURN Only one person
+            }
+            return "Function not found.";
+        }
+        private static string conntrollermyAccountActions(string functionName, string[] fullDataFromClientInArry)
+        {
+
+            if (functionName == "editDetailsPersonById")
+            {
+                string userId = fullDataFromClientInArry[2],
+                fname = fullDataFromClientInArry[3],
+                lname = fullDataFromClientInArry[4],
+                email = fullDataFromClientInArry[5],
+                phone = fullDataFromClientInArry[6],
+                dateBorn = fullDataFromClientInArry[7];
+                return myAccount.editDetailsPersonById(userId, fname, lname, email, phone, dateBorn);
+            }
+            else if (functionName == "phoneExist")
+            {
+                string phone = fullDataFromClientInArry[2];
+                return myAccount.phoneExist(phone);
+
+            }
+            else if (functionName == "emailExist")
+            {
+                string email = fullDataFromClientInArry[2];
+                return myAccount.emailExist(email);
+
+            }
+            else if(functionName == "editPasswordById")
+            {
+                string userId = fullDataFromClientInArry[2],
+                password = fullDataFromClientInArry[3],
+                newPassword = fullDataFromClientInArry[4];
+                return myAccount.editPasswordById(userId, password, newPassword);
+            }
+            else if (functionName == "GetPasswordAndLastUpdateByUserId")
+            {
+                string userId = fullDataFromClientInArry[2];
+                return myAccount.GetPasswordAndLastUpdateByUserId(userId);
+            }
+            return "Function not found.";
+        }
         static void openingTheServerToReceiveCalls()         //Save and print to the console the calls to the server.
         {
 
@@ -67,58 +159,7 @@ namespace Server_F.C
                     string funName=fullDataFromClientInArry[1];
                     Console.WriteLine($"Request from client: go to controller: {controller}, function: {funName}. ");
                     // send data
-                    if (controller == "ServerRunning")
-                    {
-                        Program.TestServer(fullDataFromClientInArry[fullDataFromClientInArry.Length - 1]);
-                    }
-                    else if (controller == "login")
-                    {
-                        
-                        string email = fullDataFromClientInArry[2],
-                            password = fullDataFromClientInArry[3],
-                            admin = fullDataFromClientInArry[fullDataFromClientInArry.Length - 1];
-                        dataOutput = Login.tryLogIn(email, password, admin);
-                    }
-                    else if (controller == "Dashboard")
-                    {
-                       
-                        if (funName == "getAllDataForAdminScreenInDahsboard")
-                        {
-
-                             dataOutput = Dashboard.getAllDataForAdminScreenInDahsboard(); //RETURN ALL DATA
-                        }
-                        else if(funName == "getDataForOnlyThisUserId")
-                        {
-                            string userId = fullDataFromClientInArry[2];
-                            dataOutput = Dashboard.getDataForOnlyThisUserId(userId); //RETURN Only one person
-                        }
-                    }
-                    else if (controller == "myAccount")
-                    {
-
-                        if (funName == "editDetailsPersonById")
-                        {
-                            string userId = fullDataFromClientInArry[2],
-                            fname = fullDataFromClientInArry[3],
-                            lname = fullDataFromClientInArry[4],
-                            email = fullDataFromClientInArry[5],
-                            phone = fullDataFromClientInArry[6],
-                            dateBorn = fullDataFromClientInArry[7];
-                            dataOutput = myAccount.editDetailsPersonById(userId, fname, lname, email, phone, dateBorn);
-                        }
-                        else if (funName== "phoneExist")
-                        {
-                            string phone = fullDataFromClientInArry[2];
-                            dataOutput=myAccount.phoneExist(phone);
-                             
-                        }
-                        else if (funName == "emailExist")
-                        {
-                            string email = fullDataFromClientInArry[2];
-                            dataOutput = myAccount.emailExist(email);
-
-                        }
-                    }
+                    dataOutput=SendingToProperControllerAndResponseData(controller, funName, fullDataFromClientInArry);
                     BinaryWriter writer = new BinaryWriter(client.GetStream());
                     writer.Write(dataOutput);
                     client.Close();
@@ -137,13 +178,6 @@ namespace Server_F.C
 
 
       
-        static void saveLogInTextFile(string ip, string date)
-        {
-            FileStream file = new FileStream("loginList.txt", FileMode.Append);
-            StreamWriter writer = new StreamWriter(file);
-            writer.WriteLine($"Logged in to the server from: {ip} in {date}.");
-            writer.Close();
-            file.Close();
-        }
+
     }
 }

@@ -13,33 +13,46 @@ namespace Fitness_Club
 {
     public partial class UserControlDays : UserControl
     {
+        public static string controller = "Calandar#";
         public static string static_day;
-        public UserControlDays()
+        public static int _countUserEventsInDay;
+        private string fullDate;
+        public UserControlDays(int numDay)
         {
+            fullDate = numDay + "/" + Calandar.static_month + "/" + Calandar.static_year;
+            //get from server the count events of this date
+            string response = ConnectWithServer.callToServer(controller, "countUserEventsInDay#",
+                AdminScreen.static_userId+"#"+ fullDate);
+            _countUserEventsInDay = int.Parse(response);
             InitializeComponent();           
         }
           
         private void UserControlDays_Load(object sender, EventArgs e)        //display where heve event
         {
-            if (CountEventsInDay()>0)
+            if (_countUserEventsInDay>0)
                 ringPic.Visible = true;
         }
         public void days(int numDay)                                        //print day labal.
         {
             btnDay.Text = numDay +"";
+
         }
 
-        public void ptintCountEvent()                                       //print Counter events.
+        public void printCountEvent()                                       //print Counter events.
         {
-            if (CountEventsInDay() > 1 )
+            if (_countUserEventsInDay > 1 )
             {
-                CounterEvents.Text = CountEventsInDay()+"";
+                CounterEvents.Text = _countUserEventsInDay+ "";
                 CounterEvents.Visible = true;
+            }
+            else
+            {
+                CounterEvents.Visible = false;
             }
         }
 
 
-        private void btnDay_Click(object sender, EventArgs e)               //open create form
+        private void btnDay_Click(object sender, EventArgs e)               //open new form-add event and list of events.
         {
             static_day = btnDay.Text;
             EventForm ef = new EventForm();
@@ -48,37 +61,19 @@ namespace Fitness_Club
 
         }
 
-        private void EventForm_FormClosed(object sender, FormClosedEventArgs e)      //Checked if was created event
+        //checked and updated the status of events in closed form.
+        private void EventForm_FormClosed(object sender, FormClosedEventArgs e)     
         {
-            if (EventForm.eventCreted)                              
-            {
+
+             string response =  ConnectWithServer.callToServer(controller, "countUserEventsInDay#",
+              AdminScreen.static_userId + "#" + fullDate);
+            _countUserEventsInDay = int.Parse(response);
+            if (_countUserEventsInDay == 0)
+                ringPic.Visible = false;
+            else
                 ringPic.Visible = true;
-                ptintCountEvent();
-            }   
+            printCountEvent();
         }
-
-        private int CountEventsInDay()                          //Fatch count events from dataBase
-        {
-            try
-            {
-              
-                string date = btnDay.Text + "/" + Calandar.static_month + "/" + Calandar.static_year;
-                string querry = " SELECT * FROM events WHERE date = '"+date+"' and userId="+ AdminScreen.static_userId + "";
-                SqlDataAdapter adapter = new SqlDataAdapter(querry, LogIn.static_conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                return dt.Rows.Count;  
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return -1;
-            }
-
-        }         
-
-
 
     }
 }

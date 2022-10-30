@@ -14,7 +14,7 @@ namespace Fitness_Club
 {
     public partial class Calandar : Form
     {
-
+        public static string controller = "Calandar#";
         int month,year;
         public static int static_month,static_year;
         
@@ -50,6 +50,7 @@ namespace Fitness_Club
 
         public void displayDays()                           //display all useControlDays/Empty ralevente for month
         {
+          
             static_month = month;
             static_year = year;
             dayContainer.Controls.Clear();
@@ -64,9 +65,9 @@ namespace Fitness_Club
             }
             for (int i = 1; i <= days; i++)
             {
-                UserControlDays daySquare = new UserControlDays();
+                UserControlDays daySquare = new UserControlDays(i);
                 daySquare.days(i);                  //print numbur day and counter events                                                
-                daySquare.ptintCountEvent();
+                daySquare.printCountEvent();
                 dayContainer.Controls.Add(daySquare);        //add day squre with numnur day to countiner.
             }
         }                                                                 

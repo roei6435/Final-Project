@@ -28,7 +28,6 @@ namespace Fitness_Club
         public static SqlConnection static_conn=new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
         public LogIn()
         {
-            ConnectWithServer.HelloServerFromClient(); 
             InitializeComponent();
             this.Text = string.Empty;
             this.ControlBox = false;

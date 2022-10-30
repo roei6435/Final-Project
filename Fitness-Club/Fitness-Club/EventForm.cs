@@ -15,15 +15,12 @@ namespace Fitness_Club
     public partial class EventForm : Form
     {
         string fullDate = UserControlDays.static_day + "/" + Calandar.static_month + "/" + Calandar.static_year;
-        public static bool eventCreted;
-
+        private string fullEventsOnThisDay;
 
         public EventForm()
-        {
+        {       
             InitializeComponent();
-           
         }
-
         private void loadTheme()
         {
             foreach (Control btns in this.Controls)
@@ -35,100 +32,95 @@ namespace Fitness_Club
                     btns.ForeColor = Color.White;
                     btn.FlatAppearance.BorderColor = ThemColor.secondColor;
                     lblAddEv.ForeColor = ThemColor.primaryColor;
-                    lblMyEvents.ForeColor = ThemColor.primaryColor;
                 }
             }
 
         }
+
+        //Get all data events from server and putting in dataGrridView.
+        private void putAllEventsDataOnScreen(string fullEventsOnThisDay)
+        {
+            lblNotEvents.Visible = false;
+            List<EventCalandarcs> listEvent = ConnectWithServer.ConvartDataToListOfEvent(fullEventsOnThisDay);
+            for (int i = 0; i < listEvent.Count; i++)
+            {
+                dataEvents.Rows.Add(listEvent[i].EventName, listEvent[i].FromHour + " : " + listEvent[i].ToHour, listEvent[i].Location,listEvent[i].EventID);
+            }
+           
+
+        }
+
+
 
         private void EventForm_Load(object sender, EventArgs e)
         {
             loadTheme();
             txtBoxDate.Text = fullDate;
-            eventCreted = false;
-            List<List<string>> eventsList =FatchAllEventsForThisDayInList();
-            if (eventsList.Count > 0) {
-                lblMyEvents.Text+= fullDate;
-                lblEventslist.Text = "";
-                for (int i = 0; i < eventsList.Count; i++)
-                {
-                    string name=eventsList[i][0],time=eventsList[i][1]+"-"+eventsList[i][2],location=eventsList[i][3];
-                    name= char.ToUpper(name[0])+name.Substring(1);
-                    lblEventslist.Text += String.Format("{0,-12}{1,8}{2,12}\n\n", name, time,location);
-                }                
-                panelAllEvents.Visible = true;
-                panelAddEvent.Visible = false;
+            fullEventsOnThisDay = ConnectWithServer.callToServer(Calandar.controller, "allEventsForThisDay#",
+            AdminScreen.static_userId + "#" + fullDate);          //get all data events for this day
+            lblTitle.Text += " - " + fullDate + ", " + Convert.ToDateTime(fullDate).DayOfWeek + ".";
+            if (fullEventsOnThisDay != "")      
+            {                                       
+                panelAllEvent.Visible = true;
+                putAllEventsDataOnScreen(fullEventsOnThisDay);
             }
-          
-         
+            else
+            {
+                btnDeleteEvent.Visible = false;
+            }
+
         }
-        private List<List<string>> FatchAllEventsForThisDayInList()            //RETURN ALL EVENTS FOR THIS DAY IN LIST
+
+        //Deleted selected row.
+        private void btnTrhash_Click_1(object sender, EventArgs e)  
         {
-            //List<string>  = new List<string> { };
-            List<List<string>> allEventsForThisDay = new List<List<string>>();
-            try
+            foreach (DataGridViewRow row in dataEvents.SelectedRows)
             {
 
-                LogIn.static_conn.Open();
-                String sql = "SELECT * FROM events where date = @date AND userId=@userId";
-                SqlCommand cmd = LogIn.static_conn.CreateCommand();
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@date", fullDate);
-                cmd.Parameters.AddWithValue("@userId", AdminScreen.static_userId);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                string deleted = ConnectWithServer.callToServer(Calandar.controller, "deleteEventByEventId#",
+                     AdminScreen.static_userId + "#" + row.Cells[3].Value + "#");  //send userId and eventId
+                if (bool.Parse(deleted))
                 {
-                    allEventsForThisDay.Add(new List<string> { dr.GetValue(2) + "", dr.GetValue(4) + "", dr.GetValue(5) + "",dr.GetValue(6)+"" });  
+                    MessageBox.Show(row.Cells[0].Value + " deleted.");
+                    dataEvents.Rows.RemoveAt(row.Index);
+                    if(dataEvents.Rows.Count == 0)  
+                        this.Close();
                 }
-                dr.Dispose();
-                cmd.Dispose();
-                LogIn.static_conn.Close();
-                return allEventsForThisDay;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
             }
         }
 
-
-        private bool InsertNewEventToDataBase()                       //ADD EVENT TO LIST
+        //added new event.
+        private void btnSave_Click(object sender, EventArgs e)          
         {
-            try
+            if (txtBoxEvent.Text != "" && comboBoxHourFrom.SelectedIndex < comboBoxHourTo.SelectedIndex
+                && txtLocation.Text != "")          //if all feilds is proper
             {
-                LogIn.static_conn.Open();
-                String sql = "INSERT INTO events(userId,eventName,date)values(@userId,@eventName,@date)";
-                SqlCommand cmd = LogIn.static_conn.CreateCommand();
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@userId", AdminScreen.static_userId);
-                cmd.Parameters.AddWithValue("@eventName", txtBoxEvent.Text);
-                cmd.Parameters.AddWithValue("@date", txtBoxDate.Text);
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-                LogIn.static_conn.Close();
-                return true;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
-    
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (txtBoxEvent.Text != ""&& comboBoxHourFrom.SelectedIndex < comboBoxHourTo.SelectedIndex) //PROPER HOURS AND NAME
-            {
-                eventCreted = InsertNewEventToDataBase();          //inserting event to database and chenge flag
+                //Ask the server to add a new event
+                string eventCreted =ConnectWithServer.callToServer(Calandar.controller, "insertNewEvent#",
+                    AdminScreen.static_userId+"#"+txtBoxEvent.Text+"#"+txtBoxDate.Text+"#"+
+                    comboBoxHourFrom.Text+"#"+comboBoxHourTo.Text+"#"+txtLocation.Text);
+                if (bool.Parse(eventCreted))
+                {
+                    MessageBox.Show("The event has been successfully added");
+                }
+                else MessageBox.Show("Somthing worng...");
                 this.Close();
             }
             else 
-                MessageBox.Show("Plese enter name and normal hours ");
+                MessageBox.Show("Plese enter name, loacation and normal hours. ");
            
 
+        }
+
+        private void btnAddEvent_Click(object sender, EventArgs e)
+        {
+            panelAllEvent.Visible = false;
+        }
+
+
+        private void btnMyEvents_Click(object sender, EventArgs e)
+        {
+            panelAllEvent.Visible = true;
         }
 
 

@@ -339,6 +339,7 @@
       <DependentUpon>Calandar.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectWithServer.cs" />
+    <Compile Include="EventCalandarcs.cs" />
     <Compile Include="EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -696,6 +697,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\level.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TIMESmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoacationSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAH-ZAVAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAH2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAH3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAH4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

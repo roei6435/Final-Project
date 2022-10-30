@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calandar.cs" />
     <Compile Include="Dashboard.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="myAccount.cs" />

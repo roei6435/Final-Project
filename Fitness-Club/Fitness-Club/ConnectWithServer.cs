@@ -21,11 +21,6 @@ namespace Fitness_Club
         public static string separationKey = "&&&";
         public static string startObjectKey = "$$$";
 
-        public static void HelloServerFromClient()
-        {
-            callToServer("ServerRunning#", "TestServer#", "hello from client");
-
-        }
         public static string callToServer(string contr, string funName, string input)
         {
 
@@ -51,7 +46,7 @@ namespace Fitness_Club
 
         }
 
-        public static List<Person> ConvartDataToListObjects(string data)
+        public static List<Person> ConvartDataToListOfPersons(string data)
         {
             string userId, fName, lName, email, phone, dateBorn, dateRegistion;
             Image profilePic;
@@ -83,6 +78,29 @@ namespace Fitness_Club
             }
             return ListOfAllPerson;
 
+        }
+        public static List<EventCalandarcs> ConvartDataToListOfEvent(string data)
+        {
+            string eventId,eventName, date, fromHour, toHour, location;
+            List <EventCalandarcs> ListOfAllEvents = new List<EventCalandarcs> ();
+            List<string> list = new List<string>();
+            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            for (int j = 0; j < list.Count; j++)
+            {
+                List<string> invidualEvent = new List<string>();
+                invidualEvent = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+                eventId = invidualEvent[0];
+                eventName = invidualEvent[1];
+                date = invidualEvent[2];
+                fromHour = invidualEvent[3];
+                toHour = invidualEvent[4];
+                location = invidualEvent[invidualEvent.Count - 1];
+                EventCalandarcs newEvent=new EventCalandarcs(eventId, eventName, date, fromHour, toHour,location);
+                ListOfAllEvents.Add(newEvent);
+
+
+            }
+            return ListOfAllEvents;
         }
 
         public static Image getProfilePicByUserId(string userId, List<profilePicture> list)
@@ -129,15 +147,6 @@ namespace Fitness_Club
                 return null;
             }
         }
-
-
-
-
-
-
-
-
-
 
 
     }

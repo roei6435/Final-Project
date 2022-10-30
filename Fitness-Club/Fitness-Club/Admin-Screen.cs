@@ -327,7 +327,7 @@ namespace Fitness_Club
 
             //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
             List<Person> listP = new List<Person>();
-            listP =ConnectWithServer.ConvartDataToListObjects(responseFromServer);
+            listP =ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
 
             //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
@@ -385,7 +385,7 @@ namespace Fitness_Club
 
             //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
             List<Person> listP = new List<Person>();
-            listP =ConnectWithServer.ConvartDataToListObjects(responseFromServer);
+            listP =ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
 
             //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
@@ -434,7 +434,7 @@ namespace Fitness_Club
 
             //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
             List<Person> listP = new List<Person>();
-            listP =ConnectWithServer.ConvartDataToListObjects(responseFromServer);
+            listP =ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
 
             //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
@@ -447,16 +447,13 @@ namespace Fitness_Club
             return loggedUser;
         }
 
+        //loading the data and putting on dashboard. 
         private void AdminScreen_Load(object sender, EventArgs e)
         {
-            userLogged=FetchDataUserById(static_userId);           //loading the data and putting on dashboard. 
+            userLogged=FetchDataUserById(static_userId);        
             FetchUsersDataAndPutInDashboard();
 
         }
-
-
-
-
 
 
         private void btnUserStatistics_Click(object sender, EventArgs e)

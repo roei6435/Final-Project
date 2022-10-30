@@ -29,7 +29,7 @@ namespace Fitness_Club
 
             string responseFromServer = ConnectWithServer.callToServer(AdminScreen.controller, "getDataForOnlyThisUserId#", loggedUser.UserId);
             List<Person> listP = new List<Person>();
-            listP = ConnectWithServer.ConvartDataToListObjects(responseFromServer);
+            listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
             return listP[0];
 
         }

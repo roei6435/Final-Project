@@ -21,13 +21,14 @@ namespace Server_F.C
         public static int port = 13000;// number port
         public static IPAddress localAddress = IPAddress.Parse("127.0.0.1");
         public static TcpListener server = new TcpListener(localAddress, port);
-         public static string separationKey = "&&&";
+        public static string separationKey = "&&&";
         public static string startObjectKey = "$$$";
 
         static void Main(string[] args)
         {
-             openingTheServerToReceiveCalls();
-           // Console.WriteLine();
+            openingTheServerToReceiveCalls();
+           //  Console.WriteLine(Calandar.deleteEventByEventId("7","27"));
+           
             Console.ReadKey();
         }
 
@@ -56,6 +57,10 @@ namespace Server_F.C
             {
                 return conntrollermyAccountActions(funName, fullDataFromClientInArry);
 
+            }
+            else if(controller == "Calandar")
+            {
+                return conntrollerCalandarActions(funName, fullDataFromClientInArry);
             }
             return "Controller not found.";
         }
@@ -126,6 +131,36 @@ namespace Server_F.C
             {
                 string userId = fullDataFromClientInArry[2];
                 return myAccount.GetPasswordAndLastUpdateByUserId(userId);
+            }
+            return "Function not found.";
+        }
+        private static string conntrollerCalandarActions(string functionName, string[] fullDataFromClientInArry)
+        {
+            string userId = fullDataFromClientInArry[2];
+            if (functionName == "countUserEventsInDay")
+            {
+                string date = fullDataFromClientInArry[3];
+                return Calandar.countUserEventsInDay(userId, date);
+
+            }
+            else if (functionName == "insertNewEvent")
+            {
+                string eventName = fullDataFromClientInArry[3],
+                    date = fullDataFromClientInArry[4],
+                    from = fullDataFromClientInArry[5],
+                    to = fullDataFromClientInArry[6],
+                    location = fullDataFromClientInArry[7];
+                return Calandar.insertNewEvent(userId, eventName, date, from, to, location);
+            }
+            else if (functionName == "allEventsForThisDay") 
+            {
+                string  date = fullDataFromClientInArry[3];
+                return Calandar.allEventsForThisDay(userId, date);
+            }
+            else if(functionName == "deleteEventByEventId")
+            {
+                string eventId=fullDataFromClientInArry[3];
+                return Calandar.deleteEventByEventId(userId, eventId);  
             }
             return "Function not found.";
         }

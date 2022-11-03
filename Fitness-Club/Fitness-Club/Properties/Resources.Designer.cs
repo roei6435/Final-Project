@@ -343,6 +343,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Completed {
+            get {
+                object obj = ResourceManager.GetObject("Completed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dash5555 {
             get {
                 object obj = ResourceManager.GetObject("dash5555", resourceCulture);
@@ -426,6 +436,16 @@ namespace Fitness_Club.Properties {
         internal static System.Drawing.Bitmap Deshboard {
             get {
                 object obj = ResourceManager.GetObject("Deshboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap done_good {
+            get {
+                object obj = ResourceManager.GetObject("done_good", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

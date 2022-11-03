@@ -15,10 +15,24 @@ namespace Server_F.C
 {
     internal class Login:Program
     {
-      
-   
+        private static string CreateRandomPassword()
+        {
+            const string chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            StringBuilder sb = new StringBuilder();
+            Random rnd = new Random();
+
+            for (int i = 0; i < 12; i++)
+            {
+                int index = rnd.Next(chars.Length);
+                sb.Append(chars[index]);
+            }
+
+            return sb.ToString();
+        }
+
         //Check if user exist in system.
-       public static string tryLogIn(string email, string password,string admin)           
+        public static string tryLogIn(string email, string password,string admin)           
         {
             try
             {
@@ -50,9 +64,45 @@ namespace Server_F.C
             }
         }
 
+        public static string registerToSystem(string fname, string lname, string email,
+            string phone, string dateBorn,string gender,string isAdmin)
+        {
+            try
+            {
+                string dateRegistion = DateTime.Now.ToString().Split(' ')[0],
+                password = CreateRandomPassword();
+                Program.conn.Open();
+                String sql = "INSERT INTO users(fName,lName,email,phone,password,dateBorn,gender,admin,isAuth,dateRegistion)values(@fName,@lName,@email,@phone,@password,@dateBorn,@gender,@admin,@isAuth,@dateRegistion)";
+                SqlCommand cmd = Program.conn.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@fName", Program.uppercaseFirstLetter(fname));
+                cmd.Parameters.AddWithValue("@lName", Program.uppercaseFirstLetter(lname));
+                cmd.Parameters.AddWithValue("@email", Program.uppercaseFirstLetter(email));
+                cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@dateBorn", dateBorn);
+                cmd.Parameters.AddWithValue("@gender", bool.Parse(gender));
+                cmd.Parameters.AddWithValue("@admin", bool.Parse(isAdmin));
+                cmd.Parameters.AddWithValue("@isAuth", false);
+                cmd.Parameters.AddWithValue("@dateRegistion", dateRegistion);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                Program.conn.Close();
+                return "true "+password;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "false";
+            }
+            
+        }
 
 
-   
+
+
+
 
     }
 }

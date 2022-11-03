@@ -29,28 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMembers));
-            this.panelStep1 = new System.Windows.Forms.Panel();
-            this.vOffPass = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.comboBoxBefore = new System.Windows.Forms.ComboBox();
-            this.picBoxPassOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.vOffEmail = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxEmailOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.vOffLN = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxLnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.picBoxFnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.txtBoxPhone = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.viFn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.txtBoxEmail = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblLname = new System.Windows.Forms.Label();
-            this.txtBoxLname = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblFname = new System.Windows.Forms.Label();
-            this.txtBoxFname = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.step1 = new System.Windows.Forms.Label();
             this.step4 = new System.Windows.Forms.Label();
@@ -58,6 +36,30 @@
             this.step2 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.panelStepsAndTitle = new System.Windows.Forms.Panel();
+            this.lblTitle2 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtBoxFname = new System.Windows.Forms.TextBox();
+            this.lblFname = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtBoxLname = new System.Windows.Forms.TextBox();
+            this.lblLname = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtBoxPhone = new System.Windows.Forms.TextBox();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.comboBoxBefore = new System.Windows.Forms.ComboBox();
+            this.panelStep1 = new System.Windows.Forms.Panel();
+            this.vOffPass = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxPassOk = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.vOffEmail = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxEmailOk = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.vOffLN = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxLnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxFnameOk = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.viFn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.SwitchAdmin = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label9 = new System.Windows.Forms.Label();
@@ -67,31 +69,34 @@
             this.comboBoxMou = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelStep2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelStep2 = new System.Windows.Forms.Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBoxUser = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtBoxPassCode = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblCheckEmail = new System.Windows.Forms.Label();
+            this.panelVerS3 = new System.Windows.Forms.Panel();
+            this.picCompleted = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBoxConfirmPass = new System.Windows.Forms.TextBox();
             this.lblConfirm = new System.Windows.Forms.Label();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.panelStep3 = new System.Windows.Forms.Panel();
-            this.picBoxConPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxConPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
             this.viewPass = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panelStepsAndTitle = new System.Windows.Forms.Panel();
-            this.panelVerS3 = new System.Windows.Forms.Panel();
-            this.lblCheckEmail = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtBoxPassCode = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblTitle2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxConPassVOff = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxConPassVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panelStep3 = new System.Windows.Forms.Panel();
+            this.panelStepFour = new System.Windows.Forms.Panel();
+            this.picCompltedSucc = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.panelStepsAndTitle.SuspendLayout();
             this.panelStep1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vOffPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassOk)).BeginInit();
@@ -104,16 +109,273 @@
             this.panelStep2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).BeginInit();
-            this.panelStep3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).BeginInit();
-            this.panelStepsAndTitle.SuspendLayout();
             this.panelVerS3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompleted)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).BeginInit();
+            this.panelStep3.SuspendLayout();
+            this.panelStepFour.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompltedSucc)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle.Location = new System.Drawing.Point(221, 116);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(648, 96);
+            this.lblTitle.TabIndex = 80;
+            this.lblTitle.Text = "                       Lat\'s start...\r\n";
+            // 
+            // step1
+            // 
+            this.step1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.step1.ForeColor = System.Drawing.Color.White;
+            this.step1.Location = new System.Drawing.Point(3, 0);
+            this.step1.Name = "step1";
+            this.step1.Size = new System.Drawing.Size(58, 68);
+            this.step1.TabIndex = 79;
+            this.step1.Text = "-";
+            // 
+            // step4
+            // 
+            this.step4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.step4.ForeColor = System.Drawing.Color.DimGray;
+            this.step4.Location = new System.Drawing.Point(134, 0);
+            this.step4.Name = "step4";
+            this.step4.Size = new System.Drawing.Size(58, 68);
+            this.step4.TabIndex = 82;
+            this.step4.Text = "-";
+            // 
+            // step3
+            // 
+            this.step3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.step3.ForeColor = System.Drawing.Color.DimGray;
+            this.step3.Location = new System.Drawing.Point(92, 0);
+            this.step3.Name = "step3";
+            this.step3.Size = new System.Drawing.Size(58, 68);
+            this.step3.TabIndex = 81;
+            this.step3.Text = "-";
+            // 
+            // step2
+            // 
+            this.step2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.step2.ForeColor = System.Drawing.Color.DimGray;
+            this.step2.Location = new System.Drawing.Point(46, 0);
+            this.step2.Name = "step2";
+            this.step2.Size = new System.Drawing.Size(58, 68);
+            this.step2.TabIndex = 80;
+            this.step2.Text = "-";
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(467, 464);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(217, 50);
+            this.btnNext.TabIndex = 83;
+            this.btnNext.Text = "Next step";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnBack.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnBack.Location = new System.Drawing.Point(211, 464);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(212, 50);
+            this.btnBack.TabIndex = 84;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // panelStepsAndTitle
+            // 
+            this.panelStepsAndTitle.Controls.Add(this.step1);
+            this.panelStepsAndTitle.Controls.Add(this.step2);
+            this.panelStepsAndTitle.Controls.Add(this.step3);
+            this.panelStepsAndTitle.Controls.Add(this.step4);
+            this.panelStepsAndTitle.Location = new System.Drawing.Point(367, 12);
+            this.panelStepsAndTitle.Name = "panelStepsAndTitle";
+            this.panelStepsAndTitle.Size = new System.Drawing.Size(193, 60);
+            this.panelStepsAndTitle.TabIndex = 87;
+            // 
+            // lblTitle2
+            // 
+            this.lblTitle2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle2.Location = new System.Drawing.Point(127, 88);
+            this.lblTitle2.Name = "lblTitle2";
+            this.lblTitle2.Size = new System.Drawing.Size(648, 85);
+            this.lblTitle2.TabIndex = 89;
+            this.lblTitle2.Text = "ver";
+            this.lblTitle2.Visible = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Location = new System.Drawing.Point(185, 54);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(251, 1);
+            this.panel7.TabIndex = 77;
+            // 
+            // txtBoxFname
+            // 
+            this.txtBoxFname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtBoxFname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxFname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.txtBoxFname.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxFname.Location = new System.Drawing.Point(185, 20);
+            this.txtBoxFname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxFname.MaxLength = 12;
+            this.txtBoxFname.Name = "txtBoxFname";
+            this.txtBoxFname.Size = new System.Drawing.Size(251, 31);
+            this.txtBoxFname.TabIndex = 78;
+            this.txtBoxFname.Text = "roei";
+            this.txtBoxFname.TextChanged += new System.EventHandler(this.txtBoxFname_TextChanged);
+            // 
+            // lblFname
+            // 
+            this.lblFname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFname.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblFname.Location = new System.Drawing.Point(12, 23);
+            this.lblFname.Name = "lblFname";
+            this.lblFname.Size = new System.Drawing.Size(171, 32);
+            this.lblFname.TabIndex = 79;
+            this.lblFname.Text = "First name";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(185, 105);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(251, 1);
+            this.panel3.TabIndex = 81;
+            // 
+            // txtBoxLname
+            // 
+            this.txtBoxLname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtBoxLname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxLname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.txtBoxLname.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxLname.Location = new System.Drawing.Point(184, 71);
+            this.txtBoxLname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxLname.MaxLength = 12;
+            this.txtBoxLname.Name = "txtBoxLname";
+            this.txtBoxLname.Size = new System.Drawing.Size(251, 31);
+            this.txtBoxLname.TabIndex = 82;
+            this.txtBoxLname.Text = "benda";
+            this.txtBoxLname.TextChanged += new System.EventHandler(this.txtBoxLname_TextChanged);
+            // 
+            // lblLname
+            // 
+            this.lblLname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLname.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblLname.Location = new System.Drawing.Point(12, 74);
+            this.lblLname.Name = "lblLname";
+            this.lblLname.Size = new System.Drawing.Size(171, 32);
+            this.lblLname.TabIndex = 83;
+            this.lblLname.Text = "Last name";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(185, 158);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(251, 1);
+            this.panel1.TabIndex = 84;
+            // 
+            // txtBoxEmail
+            // 
+            this.txtBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.txtBoxEmail.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxEmail.Location = new System.Drawing.Point(183, 124);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxEmail.MaxLength = 30;
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(252, 31);
+            this.txtBoxEmail.TabIndex = 85;
+            this.txtBoxEmail.Text = "roei6435@gmail.com";
+            this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(184, 203);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(251, 1);
+            this.panel2.TabIndex = 87;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblEmail.Location = new System.Drawing.Point(12, 127);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(171, 32);
+            this.lblEmail.TabIndex = 86;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtBoxPhone
+            // 
+            this.txtBoxPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.txtBoxPhone.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxPhone.Location = new System.Drawing.Point(256, 170);
+            this.txtBoxPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxPhone.MaxLength = 7;
+            this.txtBoxPhone.Name = "txtBoxPhone";
+            this.txtBoxPhone.Size = new System.Drawing.Size(179, 31);
+            this.txtBoxPhone.TabIndex = 88;
+            this.txtBoxPhone.Text = "2483155";
+            this.txtBoxPhone.TextChanged += new System.EventHandler(this.txtBoxPhone_TextChanged);
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblPhone.Location = new System.Drawing.Point(12, 176);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(171, 32);
+            this.lblPhone.TabIndex = 89;
+            this.lblPhone.Text = "Phone";
+            // 
+            // comboBoxBefore
+            // 
+            this.comboBoxBefore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.comboBoxBefore.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.comboBoxBefore.ForeColor = System.Drawing.Color.Gainsboro;
+            this.comboBoxBefore.FormattingEnabled = true;
+            this.comboBoxBefore.Items.AddRange(new object[] {
+            "050",
+            "052",
+            "053",
+            "054",
+            "055"});
+            this.comboBoxBefore.Location = new System.Drawing.Point(184, 162);
+            this.comboBoxBefore.Name = "comboBoxBefore";
+            this.comboBoxBefore.Size = new System.Drawing.Size(66, 39);
+            this.comboBoxBefore.TabIndex = 88;
+            this.comboBoxBefore.Text = "050";
             // 
             // panelStep1
             // 
@@ -138,7 +400,7 @@
             this.panelStep1.Controls.Add(this.lblFname);
             this.panelStep1.Controls.Add(this.txtBoxFname);
             this.panelStep1.Controls.Add(this.panel7);
-            this.panelStep1.Location = new System.Drawing.Point(232, 176);
+            this.panelStep1.Location = new System.Drawing.Point(232, 194);
             this.panelStep1.Name = "panelStep1";
             this.panelStep1.Size = new System.Drawing.Size(483, 217);
             this.panelStep1.TabIndex = 78;
@@ -157,24 +419,6 @@
             this.vOffPass.TabIndex = 103;
             this.vOffPass.TabStop = false;
             this.vOffPass.Visible = false;
-            // 
-            // comboBoxBefore
-            // 
-            this.comboBoxBefore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.comboBoxBefore.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.comboBoxBefore.ForeColor = System.Drawing.Color.Gainsboro;
-            this.comboBoxBefore.FormattingEnabled = true;
-            this.comboBoxBefore.Items.AddRange(new object[] {
-            "050",
-            "052",
-            "053",
-            "054",
-            "055"});
-            this.comboBoxBefore.Location = new System.Drawing.Point(184, 162);
-            this.comboBoxBefore.Name = "comboBoxBefore";
-            this.comboBoxBefore.Size = new System.Drawing.Size(66, 39);
-            this.comboBoxBefore.TabIndex = 88;
-            this.comboBoxBefore.Text = "050";
             // 
             // picBoxPassOk
             // 
@@ -251,16 +495,6 @@
             this.picBoxLnameOk.TabStop = false;
             this.picBoxLnameOk.Visible = false;
             // 
-            // lblPhone
-            // 
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblPhone.Location = new System.Drawing.Point(12, 176);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(171, 32);
-            this.lblPhone.TabIndex = 89;
-            this.lblPhone.Text = "Phone";
-            // 
             // picBoxFnameOk
             // 
             this.picBoxFnameOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -276,40 +510,6 @@
             this.picBoxFnameOk.TabStop = false;
             this.picBoxFnameOk.Visible = false;
             // 
-            // txtBoxPhone
-            // 
-            this.txtBoxPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.txtBoxPhone.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxPhone.Location = new System.Drawing.Point(256, 170);
-            this.txtBoxPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxPhone.MaxLength = 7;
-            this.txtBoxPhone.Name = "txtBoxPhone";
-            this.txtBoxPhone.Size = new System.Drawing.Size(179, 31);
-            this.txtBoxPhone.TabIndex = 88;
-            this.txtBoxPhone.Text = "2483155";
-            this.txtBoxPhone.TextChanged += new System.EventHandler(this.txtBoxPhone_TextChanged);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblEmail.Location = new System.Drawing.Point(12, 127);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(171, 32);
-            this.lblEmail.TabIndex = 86;
-            this.lblEmail.Text = "Email";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(184, 203);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 1);
-            this.panel2.TabIndex = 87;
-            // 
             // viFn
             // 
             this.viFn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -324,177 +524,6 @@
             this.viFn.TabIndex = 100;
             this.viFn.TabStop = false;
             this.viFn.Visible = false;
-            // 
-            // txtBoxEmail
-            // 
-            this.txtBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.txtBoxEmail.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxEmail.Location = new System.Drawing.Point(183, 124);
-            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxEmail.MaxLength = 30;
-            this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(252, 31);
-            this.txtBoxEmail.TabIndex = 85;
-            this.txtBoxEmail.Text = "roei6435@gmail.com";
-            this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(185, 158);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(251, 1);
-            this.panel1.TabIndex = 84;
-            // 
-            // lblLname
-            // 
-            this.lblLname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLname.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblLname.Location = new System.Drawing.Point(12, 74);
-            this.lblLname.Name = "lblLname";
-            this.lblLname.Size = new System.Drawing.Size(171, 32);
-            this.lblLname.TabIndex = 83;
-            this.lblLname.Text = "Last name";
-            // 
-            // txtBoxLname
-            // 
-            this.txtBoxLname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtBoxLname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxLname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.txtBoxLname.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxLname.Location = new System.Drawing.Point(184, 71);
-            this.txtBoxLname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxLname.MaxLength = 12;
-            this.txtBoxLname.Name = "txtBoxLname";
-            this.txtBoxLname.Size = new System.Drawing.Size(251, 31);
-            this.txtBoxLname.TabIndex = 82;
-            this.txtBoxLname.Text = "benda";
-            this.txtBoxLname.TextChanged += new System.EventHandler(this.txtBoxLname_TextChanged);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(185, 105);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(251, 1);
-            this.panel3.TabIndex = 81;
-            // 
-            // lblFname
-            // 
-            this.lblFname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFname.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblFname.Location = new System.Drawing.Point(12, 23);
-            this.lblFname.Name = "lblFname";
-            this.lblFname.Size = new System.Drawing.Size(171, 32);
-            this.lblFname.TabIndex = 79;
-            this.lblFname.Text = "First name";
-            // 
-            // txtBoxFname
-            // 
-            this.txtBoxFname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtBoxFname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxFname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.txtBoxFname.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxFname.Location = new System.Drawing.Point(185, 20);
-            this.txtBoxFname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxFname.MaxLength = 12;
-            this.txtBoxFname.Name = "txtBoxFname";
-            this.txtBoxFname.Size = new System.Drawing.Size(251, 31);
-            this.txtBoxFname.TabIndex = 78;
-            this.txtBoxFname.Text = "roei";
-            this.txtBoxFname.TextChanged += new System.EventHandler(this.txtBoxFname_TextChanged);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(185, 54);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(251, 1);
-            this.panel7.TabIndex = 77;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitle.Location = new System.Drawing.Point(221, 116);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(648, 57);
-            this.lblTitle.TabIndex = 80;
-            this.lblTitle.Text = "                       Lat\'s start...\r\n";
-            // 
-            // step1
-            // 
-            this.step1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.step1.ForeColor = System.Drawing.Color.White;
-            this.step1.Location = new System.Drawing.Point(3, 0);
-            this.step1.Name = "step1";
-            this.step1.Size = new System.Drawing.Size(58, 68);
-            this.step1.TabIndex = 79;
-            this.step1.Text = "-";
-            // 
-            // step4
-            // 
-            this.step4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.step4.ForeColor = System.Drawing.Color.DimGray;
-            this.step4.Location = new System.Drawing.Point(134, 0);
-            this.step4.Name = "step4";
-            this.step4.Size = new System.Drawing.Size(58, 68);
-            this.step4.TabIndex = 82;
-            this.step4.Text = "-";
-            // 
-            // step3
-            // 
-            this.step3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.step3.ForeColor = System.Drawing.Color.DimGray;
-            this.step3.Location = new System.Drawing.Point(92, 0);
-            this.step3.Name = "step3";
-            this.step3.Size = new System.Drawing.Size(58, 68);
-            this.step3.TabIndex = 81;
-            this.step3.Text = "-";
-            // 
-            // step2
-            // 
-            this.step2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.step2.ForeColor = System.Drawing.Color.DimGray;
-            this.step2.Location = new System.Drawing.Point(46, 0);
-            this.step2.Name = "step2";
-            this.step2.Size = new System.Drawing.Size(58, 68);
-            this.step2.TabIndex = 80;
-            this.step2.Text = "-";
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(467, 446);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(217, 50);
-            this.btnNext.TabIndex = 83;
-            this.btnNext.Text = "Next step";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnBack.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnBack.Location = new System.Drawing.Point(211, 446);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(212, 50);
-            this.btnBack.TabIndex = 84;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Visible = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label13
             // 
@@ -726,6 +755,26 @@
             this.label1.TabIndex = 101;
             this.label1.Text = "day";
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(321, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 26);
+            this.label2.TabIndex = 102;
+            this.label2.Text = "month";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(496, 200);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 26);
+            this.label3.TabIndex = 102;
+            this.label3.Text = "year";
+            // 
             // panelStep2
             // 
             this.panelStep2.Controls.Add(this.label3);
@@ -741,31 +790,11 @@
             this.panelStep2.Controls.Add(this.label9);
             this.panelStep2.Controls.Add(this.SwitchAdmin);
             this.panelStep2.Controls.Add(this.label13);
-            this.panelStep2.Location = new System.Drawing.Point(186, 176);
+            this.panelStep2.Location = new System.Drawing.Point(186, 194);
             this.panelStep2.Name = "panelStep2";
             this.panelStep2.Size = new System.Drawing.Size(589, 246);
             this.panelStep2.TabIndex = 85;
             this.panelStep2.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(496, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 26);
-            this.label3.TabIndex = 102;
-            this.label3.Text = "year";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(321, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 26);
-            this.label2.TabIndex = 102;
-            this.label2.Text = "month";
             // 
             // guna2PictureBox1
             // 
@@ -794,6 +823,83 @@
             this.picBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxUser.TabIndex = 97;
             this.picBoxUser.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(243, 31);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(235, 1);
+            this.panel4.TabIndex = 42;
+            // 
+            // txtBoxPassCode
+            // 
+            this.txtBoxPassCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtBoxPassCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxPassCode.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.txtBoxPassCode.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxPassCode.Location = new System.Drawing.Point(242, -3);
+            this.txtBoxPassCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxPassCode.MaxLength = 5;
+            this.txtBoxPassCode.Name = "txtBoxPassCode";
+            this.txtBoxPassCode.Size = new System.Drawing.Size(221, 31);
+            this.txtBoxPassCode.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label4.Location = new System.Drawing.Point(70, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 32);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Enter passcode";
+            // 
+            // lblCheckEmail
+            // 
+            this.lblCheckEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCheckEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckEmail.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblCheckEmail.Location = new System.Drawing.Point(228, 87);
+            this.lblCheckEmail.Name = "lblCheckEmail";
+            this.lblCheckEmail.Size = new System.Drawing.Size(120, 43);
+            this.lblCheckEmail.TabIndex = 89;
+            this.lblCheckEmail.Text = "Edit email";
+            this.lblCheckEmail.Click += new System.EventHandler(this.lblCheckEmail_Click);
+            // 
+            // panelVerS3
+            // 
+            this.panelVerS3.Controls.Add(this.lblCheckEmail);
+            this.panelVerS3.Controls.Add(this.label4);
+            this.panelVerS3.Controls.Add(this.txtBoxPassCode);
+            this.panelVerS3.Controls.Add(this.panel4);
+            this.panelVerS3.Location = new System.Drawing.Point(183, 268);
+            this.panelVerS3.Name = "panelVerS3";
+            this.panelVerS3.Size = new System.Drawing.Size(589, 161);
+            this.panelVerS3.TabIndex = 88;
+            this.panelVerS3.Visible = false;
+            // 
+            // picCompleted
+            // 
+            this.picCompleted.Image = global::Fitness_Club.Properties.Resources.Completed;
+            this.picCompleted.Location = new System.Drawing.Point(912, -1);
+            this.picCompleted.Name = "picCompleted";
+            this.picCompleted.Size = new System.Drawing.Size(490, 658);
+            this.picCompleted.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCompleted.TabIndex = 91;
+            this.picCompleted.TabStop = false;
+            this.picCompleted.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Fitness_Club.Properties.Resources.Registration11;
+            this.pictureBox1.Location = new System.Drawing.Point(923, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(479, 658);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 90;
+            this.pictureBox1.TabStop = false;
             // 
             // panel6
             // 
@@ -865,53 +971,34 @@
             this.lblPassword.TabIndex = 41;
             this.lblPassword.Text = "Enter password";
             // 
-            // panelStep3
+            // viewPass
             // 
-            this.panelStep3.Controls.Add(this.picBoxConPassVOn);
-            this.panelStep3.Controls.Add(this.picBoxConPassVOff);
-            this.panelStep3.Controls.Add(this.picBoxPassVOn);
-            this.panelStep3.Controls.Add(this.picBoxPassVOff);
-            this.panelStep3.Controls.Add(this.viewPass);
-            this.panelStep3.Controls.Add(this.lblPassword);
-            this.panelStep3.Controls.Add(this.panel5);
-            this.panelStep3.Controls.Add(this.txtBoxPassword);
-            this.panelStep3.Controls.Add(this.lblConfirm);
-            this.panelStep3.Controls.Add(this.txtBoxConfirmPass);
-            this.panelStep3.Controls.Add(this.panel6);
-            this.panelStep3.Location = new System.Drawing.Point(171, 176);
-            this.panelStep3.Name = "panelStep3";
-            this.panelStep3.Size = new System.Drawing.Size(589, 246);
-            this.panelStep3.TabIndex = 86;
-            this.panelStep3.Visible = false;
+            this.viewPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.viewPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewPass.Image = ((System.Drawing.Image)(resources.GetObject("viewPass.Image")));
+            this.viewPass.ImageRotate = 0F;
+            this.viewPass.Location = new System.Drawing.Point(493, 64);
+            this.viewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.viewPass.Name = "viewPass";
+            this.viewPass.Size = new System.Drawing.Size(40, 36);
+            this.viewPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewPass.TabIndex = 47;
+            this.viewPass.TabStop = false;
+            this.viewPass.Click += new System.EventHandler(this.viewPass_Click);
             // 
-            // picBoxConPassVOn
+            // picBoxPassVOff
             // 
-            this.picBoxConPassVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxConPassVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxConPassVOn.ImageRotate = 0F;
-            this.picBoxConPassVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxConPassVOn.Location = new System.Drawing.Point(451, 144);
-            this.picBoxConPassVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxConPassVOn.Name = "picBoxConPassVOn";
-            this.picBoxConPassVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxConPassVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxConPassVOn.TabIndex = 101;
-            this.picBoxConPassVOn.TabStop = false;
-            this.picBoxConPassVOn.Visible = false;
-            // 
-            // picBoxConPassVOff
-            // 
-            this.picBoxConPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxConPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.picBoxConPassVOff.ImageRotate = 0F;
-            this.picBoxConPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxConPassVOff.Location = new System.Drawing.Point(457, 149);
-            this.picBoxConPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxConPassVOff.Name = "picBoxConPassVOff";
-            this.picBoxConPassVOff.Size = new System.Drawing.Size(30, 30);
-            this.picBoxConPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxConPassVOff.TabIndex = 103;
-            this.picBoxConPassVOff.TabStop = false;
+            this.picBoxPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.picBoxPassVOff.ImageRotate = 0F;
+            this.picBoxPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxPassVOff.Location = new System.Drawing.Point(457, 66);
+            this.picBoxPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxPassVOff.Name = "picBoxPassVOff";
+            this.picBoxPassVOff.Size = new System.Drawing.Size(30, 30);
+            this.picBoxPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPassVOff.TabIndex = 102;
+            this.picBoxPassVOff.TabStop = false;
             // 
             // picBoxPassVOn
             // 
@@ -928,122 +1015,88 @@
             this.picBoxPassVOn.TabStop = false;
             this.picBoxPassVOn.Visible = false;
             // 
-            // picBoxPassVOff
+            // picBoxConPassVOff
             // 
-            this.picBoxPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
-            this.picBoxPassVOff.ImageRotate = 0F;
-            this.picBoxPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxPassVOff.Location = new System.Drawing.Point(457, 66);
-            this.picBoxPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxPassVOff.Name = "picBoxPassVOff";
-            this.picBoxPassVOff.Size = new System.Drawing.Size(30, 30);
-            this.picBoxPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPassVOff.TabIndex = 102;
-            this.picBoxPassVOff.TabStop = false;
+            this.picBoxConPassVOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxConPassVOff.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_;
+            this.picBoxConPassVOff.ImageRotate = 0F;
+            this.picBoxConPassVOff.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxConPassVOff.Location = new System.Drawing.Point(457, 149);
+            this.picBoxConPassVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxConPassVOff.Name = "picBoxConPassVOff";
+            this.picBoxConPassVOff.Size = new System.Drawing.Size(30, 30);
+            this.picBoxConPassVOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxConPassVOff.TabIndex = 103;
+            this.picBoxConPassVOff.TabStop = false;
             // 
-            // viewPass
+            // picBoxConPassVOn
             // 
-            this.viewPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.viewPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewPass.Image = ((System.Drawing.Image)(resources.GetObject("viewPass.Image")));
-            this.viewPass.ImageRotate = 0F;
-            this.viewPass.Location = new System.Drawing.Point(493, 64);
-            this.viewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.viewPass.Name = "viewPass";
-            this.viewPass.Size = new System.Drawing.Size(40, 36);
-            this.viewPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.viewPass.TabIndex = 47;
-            this.viewPass.TabStop = false;
-            this.viewPass.Click += new System.EventHandler(this.viewPass_Click);
+            this.picBoxConPassVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxConPassVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxConPassVOn.ImageRotate = 0F;
+            this.picBoxConPassVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxConPassVOn.Location = new System.Drawing.Point(451, 144);
+            this.picBoxConPassVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxConPassVOn.Name = "picBoxConPassVOn";
+            this.picBoxConPassVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxConPassVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxConPassVOn.TabIndex = 101;
+            this.picBoxConPassVOn.TabStop = false;
+            this.picBoxConPassVOn.Visible = false;
             // 
-            // panelStepsAndTitle
+            // panelStep3
             // 
-            this.panelStepsAndTitle.Controls.Add(this.step1);
-            this.panelStepsAndTitle.Controls.Add(this.step2);
-            this.panelStepsAndTitle.Controls.Add(this.step3);
-            this.panelStepsAndTitle.Controls.Add(this.step4);
-            this.panelStepsAndTitle.Location = new System.Drawing.Point(367, 12);
-            this.panelStepsAndTitle.Name = "panelStepsAndTitle";
-            this.panelStepsAndTitle.Size = new System.Drawing.Size(193, 60);
-            this.panelStepsAndTitle.TabIndex = 87;
+            this.panelStep3.Controls.Add(this.picBoxConPassVOn);
+            this.panelStep3.Controls.Add(this.picBoxConPassVOff);
+            this.panelStep3.Controls.Add(this.picBoxPassVOn);
+            this.panelStep3.Controls.Add(this.picBoxPassVOff);
+            this.panelStep3.Controls.Add(this.viewPass);
+            this.panelStep3.Controls.Add(this.lblPassword);
+            this.panelStep3.Controls.Add(this.panel5);
+            this.panelStep3.Controls.Add(this.txtBoxPassword);
+            this.panelStep3.Controls.Add(this.lblConfirm);
+            this.panelStep3.Controls.Add(this.txtBoxConfirmPass);
+            this.panelStep3.Controls.Add(this.panel6);
+            this.panelStep3.Location = new System.Drawing.Point(171, 194);
+            this.panelStep3.Name = "panelStep3";
+            this.panelStep3.Size = new System.Drawing.Size(589, 246);
+            this.panelStep3.TabIndex = 86;
+            this.panelStep3.Visible = false;
             // 
-            // panelVerS3
+            // panelStepFour
             // 
-            this.panelVerS3.Controls.Add(this.lblCheckEmail);
-            this.panelVerS3.Controls.Add(this.label4);
-            this.panelVerS3.Controls.Add(this.txtBoxPassCode);
-            this.panelVerS3.Controls.Add(this.panel4);
-            this.panelVerS3.Location = new System.Drawing.Point(183, 250);
-            this.panelVerS3.Name = "panelVerS3";
-            this.panelVerS3.Size = new System.Drawing.Size(589, 161);
-            this.panelVerS3.TabIndex = 88;
-            this.panelVerS3.Visible = false;
+            this.panelStepFour.Controls.Add(this.picCompltedSucc);
+            this.panelStepFour.Controls.Add(this.btnHome);
+            this.panelStepFour.Location = new System.Drawing.Point(144, 233);
+            this.panelStepFour.Name = "panelStepFour";
+            this.panelStepFour.Size = new System.Drawing.Size(631, 323);
+            this.panelStepFour.TabIndex = 93;
+            this.panelStepFour.Visible = false;
             // 
-            // lblCheckEmail
+            // picCompltedSucc
             // 
-            this.lblCheckEmail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCheckEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckEmail.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCheckEmail.Location = new System.Drawing.Point(228, 87);
-            this.lblCheckEmail.Name = "lblCheckEmail";
-            this.lblCheckEmail.Size = new System.Drawing.Size(120, 43);
-            this.lblCheckEmail.TabIndex = 89;
-            this.lblCheckEmail.Text = "Edit email";
-            this.lblCheckEmail.Click += new System.EventHandler(this.lblCheckEmail_Click);
+            this.picCompltedSucc.Image = global::Fitness_Club.Properties.Resources.done_good;
+            this.picCompltedSucc.ImageRotate = 0F;
+            this.picCompltedSucc.Location = new System.Drawing.Point(186, 3);
+            this.picCompltedSucc.Name = "picCompltedSucc";
+            this.picCompltedSucc.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picCompltedSucc.Size = new System.Drawing.Size(207, 200);
+            this.picCompltedSucc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCompltedSucc.TabIndex = 89;
+            this.picCompltedSucc.TabStop = false;
             // 
-            // label4
+            // btnHome
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(70, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 32);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Enter passcode";
-            // 
-            // txtBoxPassCode
-            // 
-            this.txtBoxPassCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtBoxPassCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxPassCode.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.txtBoxPassCode.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxPassCode.Location = new System.Drawing.Point(242, -3);
-            this.txtBoxPassCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxPassCode.MaxLength = 5;
-            this.txtBoxPassCode.Name = "txtBoxPassCode";
-            this.txtBoxPassCode.Size = new System.Drawing.Size(221, 31);
-            this.txtBoxPassCode.TabIndex = 43;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(243, 31);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(235, 1);
-            this.panel4.TabIndex = 42;
-            // 
-            // lblTitle2
-            // 
-            this.lblTitle2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitle2.Location = new System.Drawing.Point(127, 107);
-            this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(648, 85);
-            this.lblTitle2.TabIndex = 89;
-            this.lblTitle2.Text = "ver";
-            this.lblTitle2.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Fitness_Club.Properties.Resources.Registration11;
-            this.pictureBox1.Location = new System.Drawing.Point(933, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(469, 658);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 90;
-            this.pictureBox1.TabStop = false;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnHome.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHome.Location = new System.Drawing.Point(198, 231);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(212, 50);
+            this.btnHome.TabIndex = 86;
+            this.btnHome.Text = "Dashboard";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // FormMembers
             // 
@@ -1051,6 +1104,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1401, 656);
+            this.Controls.Add(this.panelStepFour);
+            this.Controls.Add(this.picCompleted);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitle2);
             this.Controls.Add(this.lblTitle);
@@ -1064,6 +1119,7 @@
             this.Name = "FormMembers";
             this.Text = "FormMembers";
             this.Load += new System.EventHandler(this.FormMembers_Load);
+            this.panelStepsAndTitle.ResumeLayout(false);
             this.panelStep1.ResumeLayout(false);
             this.panelStep1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vOffPass)).EndInit();
@@ -1078,51 +1134,56 @@
             this.panelStep2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).EndInit();
-            this.panelStep3.ResumeLayout(false);
-            this.panelStep3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).EndInit();
-            this.panelStepsAndTitle.ResumeLayout(false);
             this.panelVerS3.ResumeLayout(false);
             this.panelVerS3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompleted)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPassVOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).EndInit();
+            this.panelStep3.ResumeLayout(false);
+            this.panelStep3.PerformLayout();
+            this.panelStepFour.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCompltedSucc)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelStep1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtBoxEmail;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblLname;
-        private System.Windows.Forms.TextBox txtBoxLname;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblFname;
-        private System.Windows.Forms.TextBox txtBoxFname;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label step1;
         private System.Windows.Forms.Label step4;
         private System.Windows.Forms.Label step3;
         private System.Windows.Forms.Label step2;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Panel panelStepsAndTitle;
+        private System.Windows.Forms.Label lblTitle2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox txtBoxFname;
+        private System.Windows.Forms.Label lblFname;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtBoxLname;
+        private System.Windows.Forms.Label lblLname;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtBoxEmail;
+        private Guna.UI2.WinForms.Guna2PictureBox viFn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtBoxPhone;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxFnameOk;
-        private Guna.UI2.WinForms.Guna2PictureBox picBoxPassOk;
-        private Guna.UI2.WinForms.Guna2PictureBox picBoxEmailOk;
+        private System.Windows.Forms.Label lblPhone;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxLnameOk;
-        private System.Windows.Forms.ComboBox comboBoxBefore;
-        private Guna.UI2.WinForms.Guna2PictureBox viFn;
         private Guna.UI2.WinForms.Guna2PictureBox vOffLN;
+        private Guna.UI2.WinForms.Guna2PictureBox picBoxEmailOk;
         private Guna.UI2.WinForms.Guna2PictureBox vOffEmail;
+        private Guna.UI2.WinForms.Guna2PictureBox picBoxPassOk;
+        private System.Windows.Forms.ComboBox comboBoxBefore;
         private Guna.UI2.WinForms.Guna2PictureBox vOffPass;
+        private System.Windows.Forms.Panel panelStep1;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2ToggleSwitch SwitchAdmin;
         private System.Windows.Forms.Label label9;
@@ -1134,9 +1195,15 @@
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxMou;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxYear;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panelStep2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelStep2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txtBoxPassCode;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCheckEmail;
+        private System.Windows.Forms.Panel panelVerS3;
+        private System.Windows.Forms.PictureBox picCompleted;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtBoxConfirmPass;
         private System.Windows.Forms.Label lblConfirm;
@@ -1144,18 +1211,13 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblPassword;
         private Guna.UI2.WinForms.Guna2PictureBox viewPass;
-        private System.Windows.Forms.Panel panelStep3;
-        private Guna.UI2.WinForms.Guna2PictureBox picBoxPassVOn;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxPassVOff;
-        private Guna.UI2.WinForms.Guna2PictureBox picBoxConPassVOn;
+        private Guna.UI2.WinForms.Guna2PictureBox picBoxPassVOn;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxConPassVOff;
-        private System.Windows.Forms.Panel panelStepsAndTitle;
-        private System.Windows.Forms.Panel panelVerS3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBoxPassCode;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblCheckEmail;
-        private System.Windows.Forms.Label lblTitle2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox picBoxConPassVOn;
+        private System.Windows.Forms.Panel panelStep3;
+        private System.Windows.Forms.Panel panelStepFour;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox picCompltedSucc;
+        private System.Windows.Forms.Button btnHome;
     }
 }

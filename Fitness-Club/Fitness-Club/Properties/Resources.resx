@@ -172,6 +172,9 @@
   <data name="pen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Completed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Completed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PAH2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PAH2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,6 +204,9 @@
   </data>
   <data name="defult-pro-pic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\defult-pro-pic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PAH-ZAVAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PAH-ZAVAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="firstScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\firstScreen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,8 +256,8 @@
   <data name="CALANDAR-PIC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CALANDAR-PIC2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PAH-ZAVAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PAH-ZAVAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PAH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PAH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,7 +355,7 @@
   <data name="TIMESmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TIMESmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PAH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PAH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="done_good" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\done_good.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

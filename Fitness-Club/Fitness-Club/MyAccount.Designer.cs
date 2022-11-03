@@ -211,7 +211,7 @@
             this.txtBoxNewPass.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtBoxNewPass.Location = new System.Drawing.Point(4, 143);
             this.txtBoxNewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxNewPass.MaxLength = 10;
+            this.txtBoxNewPass.MaxLength = 14;
             this.txtBoxNewPass.Name = "txtBoxNewPass";
             this.txtBoxNewPass.Size = new System.Drawing.Size(255, 30);
             this.txtBoxNewPass.TabIndex = 112;
@@ -227,7 +227,7 @@
             this.txtBoxPass.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtBoxPass.Location = new System.Drawing.Point(4, 88);
             this.txtBoxPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxPass.MaxLength = 10;
+            this.txtBoxPass.MaxLength = 14;
             this.txtBoxPass.Name = "txtBoxPass";
             this.txtBoxPass.Size = new System.Drawing.Size(255, 30);
             this.txtBoxPass.TabIndex = 113;

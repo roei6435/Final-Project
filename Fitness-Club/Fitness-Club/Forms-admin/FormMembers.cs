@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
+using System.Web;
 
 namespace Fitness_Club
 {
@@ -97,12 +98,13 @@ namespace Fitness_Club
 
         private void txtBoxEmail_TextChanged(object sender, EventArgs e)
         {
+            string emailExist = ConnectWithServer.callToServer(MyAccount.controller, "emailExist#", AdminScreen.static_userId + "#" + txtBoxEmail.Text);
             if (txtBoxEmail.Text.Length == 0)
             {
                 vOffEmail.Visible = false;
                 picBoxEmailOk.Visible = false;
-            }
-            else if (!isEmail(txtBoxEmail.Text) || emailExist(txtBoxEmail.Text))
+            }  
+            else if (!isEmail(txtBoxEmail.Text)||bool.Parse(emailExist))
             {
                 vOffEmail.Visible = true;
                 picBoxEmailOk.Visible = false;
@@ -116,12 +118,13 @@ namespace Fitness_Club
 
         private void txtBoxPhone_TextChanged(object sender, EventArgs e)
         {
+            string phoneExist = ConnectWithServer.callToServer(MyAccount.controller, "phoneExist#", AdminScreen.static_userId + "#" + comboBoxBefore.Text + txtBoxPhone.Text);
             if (txtBoxPhone.Text.Length == 0)
             {
                 vOffPass.Visible = false;
                 picBoxPassOk.Visible = false;
             }
-            else if (PhoneExist(comboBoxBefore.Text + txtBoxPhone.Text) ||
+            else if (bool.Parse(phoneExist) ||
                 !phoneIsProper(comboBoxBefore.Text + txtBoxPhone.Text))
             {
                 vOffPass.Visible = true;
@@ -138,18 +141,20 @@ namespace Fitness_Club
         {
             if (step1.ForeColor == Color.White)     //step1
             {
-                
+
                 //cheked feilds 
                 //return error in the title.
+                string emailExist = ConnectWithServer.callToServer(MyAccount.controller, "emailExist#", AdminScreen.static_userId + "#"+ txtBoxEmail.Text);
+                string phoneExist = ConnectWithServer.callToServer(MyAccount.controller,"phoneExist#", AdminScreen.static_userId + "#" + comboBoxBefore.Text + txtBoxPhone.Text);
                 if (!nameIsProper(txtBoxLname.Text)||!nameIsProper(txtBoxFname.Text))
                     lblTitle.Text = "        Invalid name, try again.";
                 else if (!isEmail(txtBoxEmail.Text))
                     lblTitle.Text = "        Invalid email, try again.";
-                else if (emailExist(txtBoxEmail.Text))
+                else if (bool.Parse(emailExist))
                     lblTitle.Text = "      This email exists in the system.";
                 else if (!phoneIsProper(comboBoxBefore.Text + txtBoxPhone.Text))
                     lblTitle.Text = "      Invalid phone numbur, try again.";
-                else if (PhoneExist(comboBoxBefore.Text + txtBoxPhone.Text))
+                else if (bool.Parse(phoneExist))
                     lblTitle.Text = " This phone connected to atoher account.";
                 //If evtithing ok,go to penel 2.
                 else                       
@@ -176,7 +181,7 @@ namespace Fitness_Club
                     panelVerS3.Visible = true;
                     panelStep2.Visible = false;
                     lblTitle.Visible = false;               
-                    lblTitle2.Location = new Point(320, 55);
+                    lblTitle2.Location = new Point(260, 65);
                     lblTitle2.Font = new Font("Segoe UI", 14.0f);
                     lblTitle2.Text = "Verification Passcode sent to email:\n" + txtBoxEmail.Text+"\nenter the verification code we just sent.";
                     lblTitle2.Visible = true;
@@ -188,7 +193,28 @@ namespace Fitness_Club
             else if(step3.ForeColor == Color.White)        //step3
             {
                 if (passcode == (txtBoxPassCode.Text))
-                {   
+                {
+                    int month = DateTime.Parse("1." + comboBoxMou.Text + " 2008").Month;
+                    string response = ConnectWithServer.callToServer(LogIn.controller, "registerToSystem#",
+                         txtBoxFname.Text + "#" + txtBoxLname.Text + "#" + txtBoxEmail.Text + "#" + comboBoxBefore.Text + txtBoxPhone.Text + "#" +
+                         comboBoxDay.Text + "/" + month + "/" + comboBoxYear.Text + "#" + radioButtonMale.Checked + "#" + SwitchAdmin.Checked + "#");
+                    if (bool.Parse(response.Split(' ')[0]))
+                    {
+                        lblTitle2.Visible = false;
+                        lblTitle.Visible = true;
+                        picCompleted.Visible = true;
+                        lblTitle2.Location = new Point(260, 85);
+                        lblTitle.Font = new Font("Segoe UI", 14.0f);
+                        lblTitle.Text = "The registration process was successfully completed,\n the initial password for entering the system was sent to the email.";
+                        SendEmailWellcomeToSystem(txtBoxEmail.Text, response.Split(' ')[1], txtBoxFname.Text);
+                        panelVerS3.Visible = false;
+                        btnBack.Visible = false;    
+                        btnNext.Visible = false;
+                        step3.ForeColor = Color.DimGray;
+                        step4.ForeColor = Color.White;
+                        panelStep3.Visible = false; 
+                        panelStepFour.Visible = true;
+                    }
                     //crate parson,add to data base
                    // Person p1=new Person()
                     //sending email with password and completed registor
@@ -278,6 +304,12 @@ namespace Fitness_Club
             lblTitle.Visible = true;
             step3.ForeColor = Color.DimGray;
             step1.ForeColor = Color.White;
+        }
+
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Server_F.C
                 return dt.Rows.Count + "";
 
             }
-            catch (Exception ex)
+            catch 
             {
                 return null;
             }
@@ -82,7 +82,7 @@ namespace Server_F.C
                 Program.conn.Close();
                 return data;
             }
-            catch (Exception ex)
+            catch 
             {
                 return null;
             }

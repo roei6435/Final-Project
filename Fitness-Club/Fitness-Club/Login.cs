@@ -23,7 +23,7 @@ namespace Fitness_Club
 
     {
         
-        static string controller = "login#";
+        public static string controller = "login#";
 
         public static SqlConnection static_conn=new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
         public LogIn()

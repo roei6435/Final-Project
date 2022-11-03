@@ -390,11 +390,11 @@
     <Compile Include="Admin-Screen.Designer.cs">
       <DependentUpon>Admin-Screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms-admin\paymentsFrom.cs">
+    <Compile Include="Forms-admin\Clients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms-admin\paymentsFrom.Designer.cs">
-      <DependentUpon>paymentsFrom.cs</DependentUpon>
+    <Compile Include="Forms-admin\Clients.Designer.cs">
+      <DependentUpon>Clients.cs</DependentUpon>
     </Compile>
     <Compile Include="MyAccount.cs">
       <SubType>Form</SubType>
@@ -452,8 +452,8 @@
     <EmbeddedResource Include="Admin-Screen.resx">
       <DependentUpon>Admin-Screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms-admin\paymentsFrom.resx">
-      <DependentUpon>paymentsFrom.cs</DependentUpon>
+    <EmbeddedResource Include="Forms-admin\Clients.resx">
+      <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>
@@ -724,6 +724,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PAH4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Completed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\done_good.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

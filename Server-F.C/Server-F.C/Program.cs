@@ -9,9 +9,6 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Data;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-
 
 namespace Server_F.C
 {
@@ -24,11 +21,55 @@ namespace Server_F.C
         public static string separationKey = "&&&";
         public static string startObjectKey = "$$$";
 
+        static void openingTheServerToReceiveCalls()       //The central function receives requests and handles them.
+        {
+
+            try
+            {
+                byte[] bytes = new byte[256];
+                int i, countReq = 0;
+                string dataOutput = "";
+                string fullDataFromClient = "";
+                server.Start();
+                while (true)
+                {
+
+                    Console.WriteLine($"{countReq}: A server is waiting for requests.");
+                    Console.WriteLine("---------------------------------------------------------------\n");
+                    TcpClient client = server.AcceptTcpClient();
+                    countReq++;
+                    string ipClient = client.Client.RemoteEndPoint.ToString();
+                    string dateCon = DateTime.Now.ToString();
+                    Console.WriteLine($"New call to server from: {ipClient} in {dateCon}, numbur requset:{countReq}");
+                    saveLogInTextFile(ipClient, dateCon);
+                    // resev from client
+                    NetworkStream stream = client.GetStream();// input data
+                    i = stream.Read(bytes, 0, bytes.Length);  //number bytes
+                    fullDataFromClient = Encoding.ASCII.GetString(bytes, 0, i); // convert data to string
+                    string[] fullDataFromClientInArry = fullDataFromClient.Split('#');
+                    string controller = fullDataFromClientInArry[0];
+                    string funName = fullDataFromClientInArry[1];
+                    Console.WriteLine($"Request from client: go to controller: {controller}, function: {funName}. ");
+                    // send data
+                    dataOutput = SendingToProperControllerAndResponseData(controller, funName, fullDataFromClientInArry);
+                    BinaryWriter writer = new BinaryWriter(client.GetStream());
+                    writer.Write(dataOutput);
+                    client.Close();
+                    Console.WriteLine($"Request number {countReq} has ended");
+                    Console.WriteLine("---------------------------------------------------------------");
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+
+            }
+
+        }
+
         static void Main(string[] args)
         {
             openingTheServerToReceiveCalls();
-           //  Console.WriteLine(Calandar.deleteEventByEventId("7","27"));
-           
             Console.ReadKey();
         }
 
@@ -40,6 +81,12 @@ namespace Server_F.C
             writer.WriteLine($"Logged in to the server from: {ip} in {date}.");
             writer.Close();
             file.Close();
+        }
+
+        public static string uppercaseFirstLetter(string str)
+        {
+           str= str.ToLower();
+           return char.ToUpper(str[0]) + str.Substring(1);
         }
 
         //Found the controller and send the requset to the function.
@@ -75,9 +122,16 @@ namespace Server_F.C
                 admin = fullDataFromClientInArry[fullDataFromClientInArry.Length - 1];
                 return Login.tryLogIn(email, password, admin);
             }
-            else if (functionName == "fogotPassword")
+            else if (functionName == "registerToSystem")
             {
-                return "somthing"; //RETURN Only one person
+                string fname = fullDataFromClientInArry[2],
+                lname = fullDataFromClientInArry[3],
+                email = fullDataFromClientInArry[4],
+                phone = fullDataFromClientInArry[5],
+                dateBorn = fullDataFromClientInArry[6],
+                gender = fullDataFromClientInArry[7],
+                isAdmin = fullDataFromClientInArry[8];
+                return Login.registerToSystem(fname, lname, email, phone, dateBorn, gender, isAdmin);
             }
             return "Function not found.";
         }
@@ -110,14 +164,16 @@ namespace Server_F.C
             }
             else if (functionName == "phoneExist")
             {
-                string phone = fullDataFromClientInArry[2];
-                return myAccount.phoneExist(phone);
+                string userId = fullDataFromClientInArry[2],
+                phone = fullDataFromClientInArry[3];
+                return myAccount.phoneExist(userId, phone);
 
             }
             else if (functionName == "emailExist")
             {
-                string email = fullDataFromClientInArry[2];
-                return myAccount.emailExist(email);
+                string userId = fullDataFromClientInArry[2],
+                    email= fullDataFromClientInArry[3];
+                return myAccount.emailExist(userId,email);
 
             }
             else if(functionName == "editPasswordById")
@@ -164,51 +220,7 @@ namespace Server_F.C
             }
             return "Function not found.";
         }
-        static void openingTheServerToReceiveCalls()         //Save and print to the console the calls to the server.
-        {
-
-            try
-            {
-                byte[] bytes = new byte[256];
-                int i, countReq=0;
-                string dataOutput="" ;
-                string fullDataFromClient = "" ;
-                server.Start();
-                while (true)
-                {
-                    
-                    Console.WriteLine($"{countReq}: A server is waiting for requests.");
-                    Console.WriteLine("---------------------------------------------------------------\n");
-                    TcpClient client = server.AcceptTcpClient();
-                    countReq++;
-                    string ipClient = client.Client.RemoteEndPoint.ToString();
-                    string dateCon = DateTime.Now.ToString();
-                    Console.WriteLine($"New call to server from: {ipClient} in {dateCon}, numbur requset:{countReq}");
-                    saveLogInTextFile(ipClient, dateCon);
-                    // resev from client
-                    NetworkStream stream = client.GetStream();// input data
-                    i = stream.Read(bytes, 0, bytes.Length);  //number bytes
-                    fullDataFromClient = Encoding.ASCII.GetString(bytes, 0, i); // convert data to string
-                    string[] fullDataFromClientInArry = fullDataFromClient.Split('#');
-                    string controller = fullDataFromClientInArry[0];
-                    string funName=fullDataFromClientInArry[1];
-                    Console.WriteLine($"Request from client: go to controller: {controller}, function: {funName}. ");
-                    // send data
-                    dataOutput=SendingToProperControllerAndResponseData(controller, funName, fullDataFromClientInArry);
-                    BinaryWriter writer = new BinaryWriter(client.GetStream());
-                    writer.Write(dataOutput);
-                    client.Close();
-                    Console.WriteLine($"Request number {countReq} has ended");
-                    Console.WriteLine("---------------------------------------------------------------");
-                }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-                
-            }
-
-        }
+     
 
 
 

@@ -11,12 +11,12 @@ namespace Server_F.C
     internal class myAccount
     {
 
-        public static string phoneExist(string phone)
+        public static string phoneExist(string userId, string phone)
         {
             try
             {
 
-                string querry = "SELECT * FROM users WHERE phone ='" + phone + "'";
+                string querry = $"SELECT * FROM users WHERE phone ='{phone}' and userId!='{userId}';";
                 SqlDataAdapter adapter = new SqlDataAdapter(querry, Program.conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -30,13 +30,13 @@ namespace Server_F.C
             }
 
         }
-        public static string emailExist(string email)              //to check if email exist in dataBase
+        public static string emailExist(string userId,string email)              //to check if email exist in dataBase
         {
 
             try
             {
 
-                string querry = "SELECT * FROM users WHERE email ='" + email + "'";
+                string querry = $"SELECT * FROM users WHERE email ='{email}' and userId!='{userId}';";
                 SqlDataAdapter adapter = new SqlDataAdapter(querry, Program.conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -60,9 +60,9 @@ namespace Server_F.C
                 cmd.Connection = Program.conn;
                 cmd.CommandText = $"update users set fName=@fName , lName=@lName , email=@email , phone=@phone, dateBorn=@dateBorn where userId=@userId;";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@fName", fName);
-                cmd.Parameters.AddWithValue("@lName", lName);
-                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@fName", Program.uppercaseFirstLetter(fName));
+                cmd.Parameters.AddWithValue("@lName", Program.uppercaseFirstLetter(lName));
+                cmd.Parameters.AddWithValue("@email", Program.uppercaseFirstLetter(email));
                 cmd.Parameters.AddWithValue("@phone", phone);
                 cmd.Parameters.AddWithValue("@dateBorn", dateBorn);
                 cmd.Parameters.AddWithValue("@userId", userId);

@@ -110,7 +110,7 @@
             this.txtBoxDate.Size = new System.Drawing.Size(202, 31);
             this.txtBoxDate.TabIndex = 24;
             // 
-            // lblEvent
+            // lblEvent                                                 
             // 
             this.lblEvent.BackColor = System.Drawing.Color.Transparent;
             this.lblEvent.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -15,7 +15,7 @@ namespace Fitness_Club
     partial class MyAccount : LoginANDRegister
     {
         private Person loggedUser;
-        static string controller = "myAccount#";
+        public static string controller = "myAccount#";
         private string passwordLogadUser;
         public MyAccount(Person loggedUser)
         {
@@ -186,36 +186,32 @@ namespace Fitness_Club
                 if (nameIsProper(txtBoxFname.Text) && nameIsProper(txtBoxLname.Text) &&         //2. and validate fields is proper
                phoneIsProper(textBoxPhone.Text) && isEmail(textBoxEmail.Text) && isDate(textBoxDateBorn.Text))
                 {
-
-                    //3.Check if email or phone changed, if yes check if can add to sysytem
-                    string phoneExist = ConnectWithServer.callToServer(controller, "phoneExist#", textBoxPhone.Text);
-                    string emailExist = ConnectWithServer.callToServer(controller, "emailExist#", textBoxEmail.Text);
-                    if (bool.Parse(phoneExist) && textBoxPhone.Text != loggedUser.Phone)
-                        MessageBox.Show("This phone exist in system.");
-                    else if (bool.Parse(emailExist) && textBoxEmail.Text != loggedUser.Email)
-                        MessageBox.Show("This email exist in system.");
+                    string emailExist = ConnectWithServer.callToServer(controller, "emailExist#", AdminScreen.static_userId + "#" + textBoxEmail.Text);
+                    string phoneExist = ConnectWithServer.callToServer(controller, "phoneExist#", AdminScreen.static_userId + "#" + textBoxPhone.Text);
+                    if (bool.Parse(emailExist))
+                        MessageBox.Show("This email existing in the system. Plese entering another email.");
+                    else  if (bool.Parse(phoneExist))
+                        MessageBox.Show("This phone existing in the system. Plese entering another phone.");
                     else
                     {
                         //if all anything ok send to server all feilds and updete.
                         string dataUpdated = ConnectWithServer.callToServer(controller, "editDetailsPersonById#", loggedUser.UserId +
-                      "#" + txtBoxFname.Text + '#' + txtBoxLname.Text + '#' + textBoxEmail.Text + '#' + textBoxPhone.Text
-                      + '#' + textBoxDateBorn.Text + "#");
-
+                          "#" + txtBoxFname.Text + '#' + txtBoxLname.Text + '#' + textBoxEmail.Text + '#' + textBoxPhone.Text
+                          + '#' + textBoxDateBorn.Text + "#");
 
                         if (bool.Parse(dataUpdated))
                         {
-                            MessageBox.Show("updated!!");
+                            MessageBox.Show("Your details have been successfully updated.");
                             BtnSaveDatlis.Visible = false; txtBoxFname.Visible = false; txtBoxLname.Visible = false; textBoxPhone.Visible = false;
                             textBoxEmail.Visible = false; textBoxDateBorn.Visible = false; BtnSaveDatlis.Visible = false;
                             picBoxEditDatlis.Visible = true;
                             MyAccount_Load(sender, e);
                         }
                         else MessageBox.Show("Oops something went wrong...");
-
                     }
 
-
                 }
+                else MessageBox.Show("The fields were entered incorrectly.\n Try again.");
             }
             else
             {
@@ -256,28 +252,36 @@ namespace Fitness_Club
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
+            if (textBoxEmail.Visible)
+            {
+                string emailExist = ConnectWithServer.callToServer(controller, "emailExist#", AdminScreen.static_userId + "#" + textBoxEmail.Text);
+                if (isEmail(textBoxEmail.Text) && bool.Parse(emailExist)==false)
+                {
+                    picBoxEmailVOn.Visible = true;
+                }
+                else
+                {
+                    picBoxEmailVOn.Visible = false;
+                }
+            }
 
-            if (isEmail(textBoxEmail.Text) && textBoxEmail.Visible)
-            {
-                picBoxEmailVOn.Visible = true;
-            }
-            else
-            {
-                picBoxEmailVOn.Visible = false;
-            }
         }
 
         private void textBoxPhone_TextChanged(object sender, EventArgs e)
         {
-
-            if (phoneIsProper(textBoxPhone.Text) && textBoxPhone.Visible)
+            if (textBoxPhone.Visible)
             {
-                picBoxPhoneVOn.Visible = true;
+                string phoneExist = ConnectWithServer.callToServer(controller, "phoneExist#", AdminScreen.static_userId + "#" + textBoxPhone.Text);
+                if (phoneIsProper(textBoxPhone.Text) && bool.Parse(phoneExist)==false)
+                {
+                    picBoxPhoneVOn.Visible = true;
+                }
+                else
+                {
+                    picBoxPhoneVOn.Visible = false;
+                }
             }
-            else
-            {
-                picBoxPhoneVOn.Visible = false;
-            }
+ 
         }
 
         private void textBoxDateBorn_TextChanged(object sender, EventArgs e)

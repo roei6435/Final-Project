@@ -12,6 +12,7 @@ using System.Net.Mail;
 //using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Fitness_Club
 {
@@ -21,18 +22,19 @@ namespace Fitness_Club
         {
             InitializeComponent();
         }
-        protected  SqlConnection conn = new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
+    
 
         protected static string to, email, passcode;
 
         protected bool isEmail(string email)                            //to check if proper Email
         {
-          string[] sub = email.Split('.');
+            email = email.ToLower();
+            string[] sub = email.Split('.');
             try
             {
                 
                 var addr = new System.Net.Mail.MailAddress(email);
-                return (addr.Address == email) && sub[1] == "com" || sub[1] == "co";
+                return (addr.Address == email) && sub[1] == "com" || ( sub[1] == "co"&&sub[2]=="il");
             }
             catch
             {
@@ -47,7 +49,7 @@ namespace Fitness_Club
             return passcode;
         }                       //to Generateryting passcode
 
-        protected bool SendEmailPasscode(string email)
+        protected bool SendEmailWellcomeToSystem(string email,string password,string fullName)
         {
                
                 string fromMail = "roei6435@gmail.com";
@@ -55,10 +57,10 @@ namespace Fitness_Club
                 to = email;
                 MailMessage message = new MailMessage();
                 message.From = new MailAddress(fromMail);
-                message.Subject = "Fitness-Club reset password";
+                message.Subject = "Wellcome to Fitness-Club";
                 message.To.Add(new MailAddress(to));
-                passcode = genratePasscode();
-                message.Body = "Enter this passcode " + passcode + " for to be continued ";
+                message.Body = $"Wellcome dear {fullName}. Now your for logged to system the password is:{password}\n" +
+                $"You can change it in application-settings password. ENJOY. :) ";
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com");
                 smtp.Port = 587;
                 smtp.Credentials = new NetworkCredential(fromMail, fromPassword);
@@ -73,73 +75,47 @@ namespace Fitness_Club
                     return false;
                 }
 
-        }                   //sending email
+        }
+
+
+        protected bool SendEmailPasscode(string email)
+        {
+
+            string fromMail = "roei6435@gmail.com";
+            string fromPassword = "szucuztaplqjtvet";
+            to = email;
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(fromMail);
+            message.Subject = "Fitness-Club reset password";
+            message.To.Add(new MailAddress(to));
+            passcode = genratePasscode();
+            message.Body = "Enter this passcode " + passcode + " for to be continued ";
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.Port = 587;
+            smtp.Credentials = new NetworkCredential(fromMail, fromPassword);
+            smtp.EnableSsl = true;
+            try
+            {
+                smtp.Send(message);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+        //sending email
         public bool nameIsProper(String name)                    //to check if proper first/last name
         {
-
-            if (name.Length < 2) return false;
-            char ch = name[0]; bool flag = false;
-            for (int i = 0; i < name.Length; i++)
-            {
-                if (ch != name[i])
-                    flag = true;
-                if ((name[i] <= '9' && name[i] >= '0') || name[i] == ' '|| name[i]==','|| name[i] == '.')
-                    return false;
-            }
-            if (flag)
-                return true;
-            return false;
+           return Regex.IsMatch(name, @"^[a-zA-Z -]+$");
         }
 
-        protected bool emailExist(string email)              //to check if email exist in dataBase
+        protected bool phoneIsProper(String numbur)                    //to check if is proper phone numbur
         {
 
-            try
-            {
-
-                string querry = "SELECT * FROM users WHERE email ='" + email + "'";
-                SqlDataAdapter adapter = new SqlDataAdapter(querry, conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                if (dt.Rows.Count > 0)
-                    return true;
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
-
-        protected bool PhoneExist(string phone)
-        {
-            try
-            {
-
-                string querry = "SELECT * FROM users WHERE phone ='" + phone + "'";
-                SqlDataAdapter adapter = new SqlDataAdapter(querry, conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                if (dt.Rows.Count > 0)
-                    return true;
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-
-        }           //to check if phone exist in dataBase
-
-        protected bool phoneIsProper(String s)                    //to check if is proper phone numbur
-        {
-            if (s.Length < 10) return false;
-            for (int i = 0; i < s.Length; i++)
-                if (!(s[i] <= '9' && s[i] >= '0') || s[i] == ' ')
-                    return false;
-            return true;
+            if (numbur.Length < 10) return false;
+            return numbur.All(char.IsDigit);
         }
 
         private void LoginANDRegister_Load(object sender, EventArgs e)
@@ -178,21 +154,7 @@ namespace Fitness_Club
 
         }         //to check password quelity
 
-        protected string GetRandomPassword()                      //to Generateryting Quality Password.
-        {
-            const string chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-            StringBuilder sb = new StringBuilder();
-            Random rnd = new Random();
-
-            for (int i = 0; i < 12; i++)
-            {
-                int index = rnd.Next(chars.Length);
-                sb.Append(chars[index]);
-            }
-
-            return sb.ToString();
-        }
 
     }
 }

@@ -224,6 +224,11 @@ namespace Fitness_Club
 
         }
 
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            openChildForm(new paymentsFrom(), sender);
+        }
+
         private void btnSettings_Click(object sender, EventArgs e)
         {
             if (!membersCollapse)
@@ -472,6 +477,7 @@ namespace Fitness_Club
         {
 
         }
+
 
     }
 }

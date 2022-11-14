@@ -28,6 +28,7 @@ namespace Fitness_Club
         public static string static_userId;
         public static string controller = "Dashboard#";
         private Person userLogged = null;
+        private List<Person> listP = null;
 
 
         public AdminScreen(string userId)
@@ -149,8 +150,13 @@ namespace Fitness_Club
         {
             if (activeForm != null)
                 activeForm.Close();
-            FetchUsersDataAndPutInDashboard();         //Raload data ralavnt again.
-            FetchDataUserById(static_userId);
+            if (btnUserMengement.BackColor != Color.FromArgb(51, 51, 76))
+            {
+                MembersTimer.Start();
+                timerSideManu.Start();
+                btnUserMengement.BackColor = Color.FromArgb(51, 51, 76);
+            }              
+            AdminScreen_Load(sender, e);    
             Reset();
         }         //return to dashboard
 
@@ -219,15 +225,51 @@ namespace Fitness_Club
 
         private void btnAddUser_Click(object sender, EventArgs e)             //open form add member(registion)
         {
-
-            openChildForm(new FormMembers(), sender);
+            if(btnAddUser.BackColor == Color.FromArgb(34, 36, 49))
+            {
+                openChildForm(new FormMembers(), sender);
+                btnClients.BackColor = Color.FromArgb(34, 36, 49);
+                btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
+                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
+            }
+                
 
         }
-
-        private void btnClients_Click(object sender, EventArgs e)
+        private void btnClients_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new paymentsFrom(), sender);
+            if (btnClients.BackColor == Color.FromArgb(34, 36, 49))
+            {
+                openChildForm(new Clients(), sender);
+                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
+                btnAdmins.BackColor=Color.FromArgb(34, 36, 49);
+                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
+            }
+               
         }
+        private void btnAdmins_Click(object sender, EventArgs e)
+        {
+            if (btnAdmins.BackColor == Color.FromArgb(34, 36, 49))
+            {
+                openChildForm(new DeleteAndUpdateFrom(), sender);
+                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
+                btnClients.BackColor = Color.FromArgb(34, 36, 49);
+                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
+            }
+        }
+
+        private void btnTraning_Click(object sender, EventArgs e)
+        {
+            if (btnTraning.BackColor == Color.FromArgb(34, 36, 49))
+            {
+                openChildForm(new Forms_admin.ClassesForm(), sender);
+                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
+                btnClients.BackColor = Color.FromArgb(34, 36, 49);
+                btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
+            }
+
+
+        }
+
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
@@ -247,10 +289,10 @@ namespace Fitness_Club
             {
                 MembersTimer.Start();
                 btnUserMengement.BackColor = btnSideManu.BackColor;
-                openChildForm(new paymentsFrom(), sender);
+                openChildForm(new DeleteAndUpdateFrom(), sender);
             }
             else
-                openChildForm(new paymentsFrom(), sender);
+                openChildForm(new DeleteAndUpdateFrom(), sender);
         }           //open form about
 
 
@@ -294,8 +336,8 @@ namespace Fitness_Club
             {
 
                 membersContiener.Height += 10;
-                btnAbout.Location = new Point(5, 552);
-                btnSettings.Location = new Point(5, 608);
+                btnAbout.Location = new Point(-6, 567);
+                btnSettings.Location = new Point(-6, 629);
                 btnUserMengement.Text = "     Management  ▲";
                 if (membersContiener.Height == membersContiener.MaximumSize.Height)
                 {
@@ -305,8 +347,10 @@ namespace Fitness_Club
             }
             else
             {
-                
-
+                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
+                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
+                btnClients.BackColor = Color.FromArgb(34, 36, 49);
+                btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
                 btnAbout.Location = new Point(5, 360);
                 btnSettings.Location = new Point(5, 423);
                 membersContiener.Height -= 10;
@@ -323,22 +367,14 @@ namespace Fitness_Club
 
 
   
-        //Requast to the server.
-        private void FetchUsersDataAndPutInDashboard()
+        //Requasts to the server.
+        private void FetchUsersDataAndPutInDashboard(List<Person> listP)
         {
-
-            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
-
-
-            //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
-            List<Person> listP = new List<Person>();
-            listP =ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
 
             //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
 
 
-            //4.FETCH DATA RELEVANT TO DASHBOARD
             lblTitleStatics.Text = "Registered users statistics ";
             btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey) + "";
             btnUserStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.userKey) + "";
@@ -382,20 +418,12 @@ namespace Fitness_Club
             LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
         }
 
-        private void FetchAdminsDataAndPutInDashboard()
+        private void FetchAdminsDataAndPutInDashboard(List<Person> listP)
         {
-            //1.GET ALL DATA FROM SERVER IN FULL STRING.
-            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
 
 
-            //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
-            List<Person> listP = new List<Person>();
-            listP =ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
-
-            //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
 
-            //4.FETCH DATA RELEVANT TO DASHBOARD
             lblTitleStatics.Text = "Administrators statistics ";
             btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey) + "";
             btnUserStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.userKey) + "";
@@ -431,17 +459,9 @@ namespace Fitness_Club
             LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
         }
 
-        private Person FetchDataUserById(string id)
+        private Person FetchDataUserById(string id,List<Person>listP)
         {
-            //1.GET ALL DATA FROM SERVER IN FULL STRING.
-            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
 
-
-            //2.CONVERT FULL STRING TO LIST OF OBJECTS(PERSONS).
-            List<Person> listP = new List<Person>();
-            listP =ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
-
-            //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
 
             Person loggedUser = PL.findPersonById(id);
@@ -455,21 +475,26 @@ namespace Fitness_Club
         //loading the data and putting on dashboard. 
         private void AdminScreen_Load(object sender, EventArgs e)
         {
-            userLogged=FetchDataUserById(static_userId);        
-            FetchUsersDataAndPutInDashboard();
+            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
+
+            listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
+
+            userLogged =FetchDataUserById(static_userId,listP);        
+            FetchUsersDataAndPutInDashboard(listP);
+                
 
         }
 
 
         private void btnUserStatistics_Click(object sender, EventArgs e)
         {
-            FetchUsersDataAndPutInDashboard();
+            FetchUsersDataAndPutInDashboard(listP);
 
         }
 
         private void btnAdminsStatistics_Click(object sender, EventArgs e)
         {
-            FetchAdminsDataAndPutInDashboard();
+            FetchAdminsDataAndPutInDashboard(listP);
 
         }
 

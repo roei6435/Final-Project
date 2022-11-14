@@ -108,7 +108,7 @@ namespace Fitness_Club
         //sending email
         public bool nameIsProper(String name)                    //to check if proper first/last name
         {
-           return Regex.IsMatch(name, @"^[a-zA-Z -]+$");
+           return Regex.IsMatch(name, @"^[a-zA-Z ]+$");
         }
 
         protected bool phoneIsProper(String numbur)                    //to check if is proper phone numbur

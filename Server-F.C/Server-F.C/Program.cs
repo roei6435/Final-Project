@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Data;
+using System.Globalization;
 
 namespace Server_F.C
 {
@@ -70,8 +71,15 @@ namespace Server_F.C
         static void Main(string[] args)
         {
             openingTheServerToReceiveCalls();
+           // Console.WriteLine(lastConnectDiff("1/11/2022 08:00:59"));  
+
+
+
             Console.ReadKey();
         }
+
+
+
 
         //Saving all the logged to system in txt file.
         static void saveLogInTextFile(string ip, string date)
@@ -88,6 +96,7 @@ namespace Server_F.C
            str= str.ToLower();
            return char.ToUpper(str[0]) + str.Substring(1);
         }
+
 
         //Found the controller and send the requset to the function.
         private static string SendingToProperControllerAndResponseData(string controller,string funName,string [] fullDataFromClientInArry)
@@ -109,6 +118,15 @@ namespace Server_F.C
             {
                 return conntrollerCalandarActions(funName, fullDataFromClientInArry);
             }
+            else if(controller == "MengementUsers")
+            {
+                return conntrollerMengementUsersActions(funName, fullDataFromClientInArry);
+            }
+            else if(controller== "MengementClasses")
+            {
+                return conntrollerMengementClassesActions(funName, fullDataFromClientInArry);
+            }
+             
             return "Controller not found.";
         }
 
@@ -121,6 +139,11 @@ namespace Server_F.C
                 password = fullDataFromClientInArry[3],
                 admin = fullDataFromClientInArry[fullDataFromClientInArry.Length - 1];
                 return Login.tryLogIn(email, password, admin);
+            }
+            else if(functionName == "updateLastConn")
+            {
+                string userId=fullDataFromClientInArry[2];
+                return Login.updateLastConn(userId);
             }
             else if (functionName == "registerToSystem")
             {
@@ -220,11 +243,38 @@ namespace Server_F.C
             }
             return "Function not found.";
         }
-     
+
+        private static string conntrollerMengementUsersActions(string functionName, string[] fullDataFromClientInArry)
+        {
+            string userId = fullDataFromClientInArry[2];
+            if (functionName == "blockOrUnblockUser")
+            {
+                string blocked = fullDataFromClientInArry[3];
+                return MengementUsers.blockOrUnblockUser(userId, blocked);
+
+            }
+            else if (functionName == "meso")
+            {
+                return "klom";
+            }
+            return "Function not found.";
+        }
+
+        private static string conntrollerMengementClassesActions(string functionName, string[] fullDataFromClientInArry)
+        {
+            if (functionName == "getAllDataClasses")
+            {
+
+                return MengementClasses.getAllDataClasses(); //RETURN ALL DATA
+            }
+            else if (functionName == "meso")
+            {
+                return "klom";
+            }
+            return "Function not found.";
+        }
 
 
-
-      
 
     }
 }

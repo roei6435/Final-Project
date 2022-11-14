@@ -32,13 +32,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminScreen));
             this.panelManu = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblUserNameAndStatus = new System.Windows.Forms.Label();
+            this.btnMyAcc = new System.Windows.Forms.Button();
             this.membersContiener = new System.Windows.Forms.Panel();
+            this.btnTraning = new System.Windows.Forms.Button();
+            this.btnAdmins = new System.Windows.Forms.Button();
+            this.btnClients = new System.Windows.Forms.Button();
+            this.btnUserMengement = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnSideManu = new System.Windows.Forms.Button();
+            this.btnCalendar = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.picBoxHome = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.penelHome = new System.Windows.Forms.Panel();
+            this.btnUserStatistics = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClassesStatistics = new Guna.UI2.WinForms.Guna2Button();
             this.panelStatisicsData = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.LblMostOlder = new System.Windows.Forms.Label();
             this.lblMostYounger = new System.Windows.Forms.Label();
@@ -48,7 +63,9 @@
             this.lblLeastExprince = new System.Windows.Forms.Label();
             this.lblLeastExprinceTitle = new System.Windows.Forms.Label();
             this.lblMostExprinceTitle = new System.Windows.Forms.Label();
+            this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblCircleGender = new System.Windows.Forms.Label();
+            this.btnAdminsStatistics = new Guna.UI2.WinForms.Guna2Button();
             this.panelStaticsCircule = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.LblAVG = new System.Windows.Forms.Label();
             this.lblAvgData = new System.Windows.Forms.Label();
@@ -63,38 +80,21 @@
             this.circleGender = new CircularProgressBar.CircularProgressBar();
             this.circularIsBlocked = new CircularProgressBar.CircularProgressBar();
             this.circuleEmailPpoular = new CircularProgressBar.CircularProgressBar();
+            this.pictureInidcation = new System.Windows.Forms.PictureBox();
             this.timerSideManu = new System.Windows.Forms.Timer(this.components);
             this.MembersTimer = new System.Windows.Forms.Timer(this.components);
-            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnMyAcc = new System.Windows.Forms.Button();
-            this.btnTraning = new System.Windows.Forms.Button();
-            this.btnAdmins = new System.Windows.Forms.Button();
-            this.btnClients = new System.Windows.Forms.Button();
-            this.btnUserMengement = new System.Windows.Forms.Button();
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnSideManu = new System.Windows.Forms.Button();
-            this.btnCalendar = new System.Windows.Forms.Button();
-            this.btnAbout = new System.Windows.Forms.Button();
-            this.btnUserStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClassesStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnAdminsStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureInidcation = new System.Windows.Forms.PictureBox();
-            this.picBoxHome = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelManu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.membersContiener.SuspendLayout();
             this.panelTitle.SuspendLayout();
-            this.penelHome.SuspendLayout();
-            this.panelStatisicsData.SuspendLayout();
-            this.panelStaticsCircule.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.penelHome.SuspendLayout();
+            this.panelStatisicsData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
+            this.panelStaticsCircule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             this.SuspendLayout();
             // 
             // panelManu
@@ -126,6 +126,18 @@
             this.panelLogo.Size = new System.Drawing.Size(266, 83);
             this.panelLogo.TabIndex = 87;
             // 
+            // profilePic
+            // 
+            this.profilePic.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
+            this.profilePic.ImageRotate = 0F;
+            this.profilePic.Location = new System.Drawing.Point(3, 13);
+            this.profilePic.Name = "profilePic";
+            this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.profilePic.Size = new System.Drawing.Size(69, 65);
+            this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePic.TabIndex = 88;
+            this.profilePic.TabStop = false;
+            // 
             // lblUserNameAndStatus
             // 
             this.lblUserNameAndStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +148,26 @@
             this.lblUserNameAndStatus.TabIndex = 88;
             this.lblUserNameAndStatus.Text = "Roei ben david\r\n         admin\r\n";
             // 
+            // btnMyAcc
+            // 
+            this.btnMyAcc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMyAcc.FlatAppearance.BorderSize = 0;
+            this.btnMyAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyAcc.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnMyAcc.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMyAcc.Image = global::Fitness_Club.Properties.Resources.usersMengment2;
+            this.btnMyAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyAcc.Location = new System.Drawing.Point(-6, 146);
+            this.btnMyAcc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMyAcc.Name = "btnMyAcc";
+            this.btnMyAcc.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnMyAcc.Size = new System.Drawing.Size(276, 70);
+            this.btnMyAcc.TabIndex = 91;
+            this.btnMyAcc.Text = "      My account";
+            this.btnMyAcc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMyAcc.UseVisualStyleBackColor = true;
+            this.btnMyAcc.Click += new System.EventHandler(this.btnMyAcc_Click);
+            // 
             // membersContiener
             // 
             this.membersContiener.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -144,12 +176,196 @@
             this.membersContiener.Controls.Add(this.btnClients);
             this.membersContiener.Controls.Add(this.btnUserMengement);
             this.membersContiener.Controls.Add(this.btnAddUser);
-            this.membersContiener.Location = new System.Drawing.Point(2, 301);
-            this.membersContiener.MaximumSize = new System.Drawing.Size(255, 254);
+            this.membersContiener.Location = new System.Drawing.Point(3, 301);
+            this.membersContiener.MaximumSize = new System.Drawing.Size(255, 274);
             this.membersContiener.MinimumSize = new System.Drawing.Size(255, 62);
             this.membersContiener.Name = "membersContiener";
             this.membersContiener.Size = new System.Drawing.Size(255, 62);
             this.membersContiener.TabIndex = 88;
+            // 
+            // btnTraning
+            // 
+            this.btnTraning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnTraning.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTraning.FlatAppearance.BorderSize = 0;
+            this.btnTraning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraning.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnTraning.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnTraning.Image = global::Fitness_Club.Properties.Resources.swimmer;
+            this.btnTraning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTraning.Location = new System.Drawing.Point(-16, 219);
+            this.btnTraning.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTraning.Name = "btnTraning";
+            this.btnTraning.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnTraning.Size = new System.Drawing.Size(267, 55);
+            this.btnTraning.TabIndex = 10;
+            this.btnTraning.Text = "         Training classes";
+            this.btnTraning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTraning.UseVisualStyleBackColor = false;
+            this.btnTraning.Click += new System.EventHandler(this.btnTraning_Click);
+            // 
+            // btnAdmins
+            // 
+            this.btnAdmins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmins.FlatAppearance.BorderSize = 0;
+            this.btnAdmins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmins.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnAdmins.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAdmins.Image = global::Fitness_Club.Properties.Resources.admin2;
+            this.btnAdmins.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmins.Location = new System.Drawing.Point(-18, 166);
+            this.btnAdmins.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdmins.Name = "btnAdmins";
+            this.btnAdmins.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnAdmins.Size = new System.Drawing.Size(267, 55);
+            this.btnAdmins.TabIndex = 9;
+            this.btnAdmins.Text = "        Admins";
+            this.btnAdmins.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdmins.UseVisualStyleBackColor = false;
+            this.btnAdmins.Click += new System.EventHandler(this.btnAdmins_Click);
+            // 
+            // btnClients
+            // 
+            this.btnClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnClients.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClients.FlatAppearance.BorderSize = 0;
+            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClients.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnClients.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClients.Image = global::Fitness_Club.Properties.Resources.Clients2;
+            this.btnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClients.Location = new System.Drawing.Point(-8, 112);
+            this.btnClients.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClients.Name = "btnClients";
+            this.btnClients.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnClients.Size = new System.Drawing.Size(267, 55);
+            this.btnClients.TabIndex = 8;
+            this.btnClients.Text = "         Clients";
+            this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClients.UseVisualStyleBackColor = false;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click_1);
+            // 
+            // btnUserMengement
+            // 
+            this.btnUserMengement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnUserMengement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserMengement.FlatAppearance.BorderSize = 0;
+            this.btnUserMengement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserMengement.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnUserMengement.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUserMengement.Image = global::Fitness_Club.Properties.Resources._management_business_2;
+            this.btnUserMengement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserMengement.Location = new System.Drawing.Point(-6, 0);
+            this.btnUserMengement.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUserMengement.Name = "btnUserMengement";
+            this.btnUserMengement.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnUserMengement.Size = new System.Drawing.Size(269, 62);
+            this.btnUserMengement.TabIndex = 6;
+            this.btnUserMengement.Text = "        Management  ▼";
+            this.btnUserMengement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUserMengement.UseVisualStyleBackColor = false;
+            this.btnUserMengement.Click += new System.EventHandler(this.btnUserMengement_Click);
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddUser.FlatAppearance.BorderSize = 0;
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnAddUser.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddUser.Image = global::Fitness_Club.Properties.Resources._2202248_account_add_avatar_human_man_icon;
+            this.btnAddUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddUser.Location = new System.Drawing.Point(-8, 59);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnAddUser.Size = new System.Drawing.Size(267, 55);
+            this.btnAddUser.TabIndex = 7;
+            this.btnAddUser.Text = "         Add to system";
+            this.btnAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(-2, 422);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(264, 70);
+            this.btnSettings.TabIndex = 3;
+            this.btnSettings.Text = "        Settings";
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnSideManu
+            // 
+            this.btnSideManu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSideManu.FlatAppearance.BorderSize = 0;
+            this.btnSideManu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideManu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnSideManu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSideManu.Image = global::Fitness_Club.Properties.Resources.manu2;
+            this.btnSideManu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideManu.Location = new System.Drawing.Point(2, 78);
+            this.btnSideManu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSideManu.Name = "btnSideManu";
+            this.btnSideManu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnSideManu.Size = new System.Drawing.Size(266, 70);
+            this.btnSideManu.TabIndex = 90;
+            this.btnSideManu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSideManu.UseVisualStyleBackColor = true;
+            this.btnSideManu.Click += new System.EventHandler(this.btnSideManu_Click);
+            // 
+            // btnCalendar
+            // 
+            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalendar.FlatAppearance.BorderSize = 0;
+            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalendar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnCalendar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCalendar.Image = global::Fitness_Club.Properties.Resources.calendar;
+            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendar.Location = new System.Drawing.Point(1, 224);
+            this.btnCalendar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnCalendar.Size = new System.Drawing.Size(266, 70);
+            this.btnCalendar.TabIndex = 89;
+            this.btnCalendar.Text = "        Calendar";
+            this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCalendar.UseVisualStyleBackColor = true;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalandar_Click);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.FlatAppearance.BorderSize = 0;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnAbout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
+            this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbout.Location = new System.Drawing.Point(-2, 360);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnAbout.Size = new System.Drawing.Size(267, 70);
+            this.btnAbout.TabIndex = 4;
+            this.btnAbout.Text = "        About";
+            this.btnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // panelTitle
             // 
@@ -159,11 +375,26 @@
             this.panelTitle.Controls.Add(this.guna2PictureBox1);
             this.panelTitle.Controls.Add(this.btnClose);
             this.panelTitle.Controls.Add(this.lblTitle);
-            this.panelTitle.Location = new System.Drawing.Point(55, 0);
+            this.panelTitle.Location = new System.Drawing.Point(57, 0);
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(1212, 76);
             this.panelTitle.TabIndex = 1;
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
+            // 
+            // picBoxHome
+            // 
+            this.picBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxHome.Image = global::Fitness_Club.Properties.Resources.dashboard;
+            this.picBoxHome.ImageRotate = 0F;
+            this.picBoxHome.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxHome.InitialImage")));
+            this.picBoxHome.Location = new System.Drawing.Point(232, 22);
+            this.picBoxHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxHome.Name = "picBoxHome";
+            this.picBoxHome.Size = new System.Drawing.Size(43, 34);
+            this.picBoxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxHome.TabIndex = 90;
+            this.picBoxHome.TabStop = false;
+            this.picBoxHome.Click += new System.EventHandler(this.picBoxHome_Click);
             // 
             // btnMinimize
             // 
@@ -180,6 +411,20 @@
             this.btnMinimize.Text = "-";
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.Image = global::Fitness_Club.Properties.Resources.messenger__2_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(190, 22);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 38);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 86;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -224,6 +469,54 @@
             this.penelHome.Name = "penelHome";
             this.penelHome.Size = new System.Drawing.Size(1275, 1069);
             this.penelHome.TabIndex = 0;
+            // 
+            // btnUserStatistics
+            // 
+            this.btnUserStatistics.BackColor = System.Drawing.Color.Transparent;
+            this.btnUserStatistics.BorderRadius = 15;
+            this.btnUserStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUserStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUserStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUserStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUserStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(90)))), ((int)(((byte)(114)))));
+            this.btnUserStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnUserStatistics.Image = global::Fitness_Club.Properties.Resources.users;
+            this.btnUserStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnUserStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
+            this.btnUserStatistics.ImageSize = new System.Drawing.Size(110, 110);
+            this.btnUserStatistics.Location = new System.Drawing.Point(35, 19);
+            this.btnUserStatistics.Name = "btnUserStatistics";
+            this.btnUserStatistics.Size = new System.Drawing.Size(255, 70);
+            this.btnUserStatistics.TabIndex = 92;
+            this.btnUserStatistics.Text = "18";
+            this.btnUserStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUserStatistics.TextOffset = new System.Drawing.Point(-7, -5);
+            this.btnUserStatistics.Click += new System.EventHandler(this.btnUserStatistics_Click);
+            // 
+            // btnClassesStatistics
+            // 
+            this.btnClassesStatistics.BackColor = System.Drawing.Color.Transparent;
+            this.btnClassesStatistics.BorderRadius = 15;
+            this.btnClassesStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClassesStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClassesStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClassesStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClassesStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(181)))), ((int)(((byte)(101)))));
+            this.btnClassesStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClassesStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnClassesStatistics.Image = global::Fitness_Club.Properties.Resources.swim2;
+            this.btnClassesStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnClassesStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
+            this.btnClassesStatistics.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnClassesStatistics.Location = new System.Drawing.Point(557, 19);
+            this.btnClassesStatistics.Name = "btnClassesStatistics";
+            this.btnClassesStatistics.Size = new System.Drawing.Size(252, 70);
+            this.btnClassesStatistics.TabIndex = 94;
+            this.btnClassesStatistics.Text = "49";
+            this.btnClassesStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnClassesStatistics.TextOffset = new System.Drawing.Point(-7, -5);
+            this.btnClassesStatistics.Click += new System.EventHandler(this.btnClassesStatistics_Click);
             // 
             // panelStatisicsData
             // 
@@ -336,6 +629,21 @@
             this.lblMostExprinceTitle.TabIndex = 154;
             this.lblMostExprinceTitle.Text = "The most experienced user";
             // 
+            // arrowsPic
+            // 
+            this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
+            this.arrowsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.arrowsUPDWON;
+            this.arrowsPic.ImageRotate = 0F;
+            this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
+            this.arrowsPic.Location = new System.Drawing.Point(340, 8);
+            this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.arrowsPic.Name = "arrowsPic";
+            this.arrowsPic.Size = new System.Drawing.Size(77, 140);
+            this.arrowsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.arrowsPic.TabIndex = 91;
+            this.arrowsPic.TabStop = false;
+            // 
             // lblCircleGender
             // 
             this.lblCircleGender.BackColor = System.Drawing.Color.Transparent;
@@ -346,6 +654,30 @@
             this.lblCircleGender.Size = new System.Drawing.Size(103, 63);
             this.lblCircleGender.TabIndex = 149;
             this.lblCircleGender.Text = "Of the users\r\n are males, female 32%.\r\n";
+            // 
+            // btnAdminsStatistics
+            // 
+            this.btnAdminsStatistics.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdminsStatistics.BorderRadius = 15;
+            this.btnAdminsStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdminsStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdminsStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdminsStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdminsStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
+            this.btnAdminsStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminsStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnAdminsStatistics.Image = global::Fitness_Club.Properties.Resources.manager;
+            this.btnAdminsStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdminsStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
+            this.btnAdminsStatistics.ImageSize = new System.Drawing.Size(90, 90);
+            this.btnAdminsStatistics.Location = new System.Drawing.Point(296, 19);
+            this.btnAdminsStatistics.Name = "btnAdminsStatistics";
+            this.btnAdminsStatistics.Size = new System.Drawing.Size(257, 70);
+            this.btnAdminsStatistics.TabIndex = 93;
+            this.btnAdminsStatistics.Text = "36";
+            this.btnAdminsStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdminsStatistics.TextOffset = new System.Drawing.Point(-7, -5);
+            this.btnAdminsStatistics.Click += new System.EventHandler(this.btnAdminsStatistics_Click);
             // 
             // panelStaticsCircule
             // 
@@ -579,316 +911,6 @@
             this.circuleEmailPpoular.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.circuleEmailPpoular.Value = 93;
             // 
-            // timerSideManu
-            // 
-            this.timerSideManu.Interval = 1;
-            this.timerSideManu.Tick += new System.EventHandler(this.timerSideMenu_Tick);
-            // 
-            // MembersTimer
-            // 
-            this.MembersTimer.Interval = 1;
-            this.MembersTimer.Tick += new System.EventHandler(this.MembersTimer_Tick);
-            // 
-            // profilePic
-            // 
-            this.profilePic.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
-            this.profilePic.ImageRotate = 0F;
-            this.profilePic.Location = new System.Drawing.Point(3, 13);
-            this.profilePic.Name = "profilePic";
-            this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profilePic.Size = new System.Drawing.Size(69, 65);
-            this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePic.TabIndex = 88;
-            this.profilePic.TabStop = false;
-            // 
-            // btnMyAcc
-            // 
-            this.btnMyAcc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMyAcc.FlatAppearance.BorderSize = 0;
-            this.btnMyAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyAcc.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnMyAcc.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMyAcc.Image = global::Fitness_Club.Properties.Resources.usersMengment2;
-            this.btnMyAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyAcc.Location = new System.Drawing.Point(-6, 146);
-            this.btnMyAcc.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMyAcc.Name = "btnMyAcc";
-            this.btnMyAcc.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnMyAcc.Size = new System.Drawing.Size(276, 70);
-            this.btnMyAcc.TabIndex = 91;
-            this.btnMyAcc.Text = "      My account";
-            this.btnMyAcc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMyAcc.UseVisualStyleBackColor = true;
-            this.btnMyAcc.Click += new System.EventHandler(this.btnMyAcc_Click);
-            // 
-            // btnTraning
-            // 
-            this.btnTraning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnTraning.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTraning.FlatAppearance.BorderSize = 0;
-            this.btnTraning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraning.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnTraning.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTraning.Image = global::Fitness_Club.Properties.Resources.swimmer;
-            this.btnTraning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTraning.Location = new System.Drawing.Point(-7, 200);
-            this.btnTraning.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTraning.Name = "btnTraning";
-            this.btnTraning.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnTraning.Size = new System.Drawing.Size(266, 58);
-            this.btnTraning.TabIndex = 10;
-            this.btnTraning.Text = "         Training classes";
-            this.btnTraning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTraning.UseVisualStyleBackColor = false;
-            // 
-            // btnAdmins
-            // 
-            this.btnAdmins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmins.FlatAppearance.BorderSize = 0;
-            this.btnAdmins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmins.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnAdmins.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdmins.Image = global::Fitness_Club.Properties.Resources.admin2;
-            this.btnAdmins.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmins.Location = new System.Drawing.Point(-19, 152);
-            this.btnAdmins.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdmins.Name = "btnAdmins";
-            this.btnAdmins.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnAdmins.Size = new System.Drawing.Size(278, 58);
-            this.btnAdmins.TabIndex = 9;
-            this.btnAdmins.Text = "        Admins";
-            this.btnAdmins.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdmins.UseVisualStyleBackColor = false;
-            // 
-            // btnClients
-            // 
-            this.btnClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnClients.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClients.FlatAppearance.BorderSize = 0;
-            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClients.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnClients.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClients.Image = global::Fitness_Club.Properties.Resources.Clients2;
-            this.btnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClients.Location = new System.Drawing.Point(-10, 108);
-            this.btnClients.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClients.Name = "btnClients";
-            this.btnClients.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnClients.Size = new System.Drawing.Size(268, 49);
-            this.btnClients.TabIndex = 8;
-            this.btnClients.Text = "         Clients";
-            this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClients.UseVisualStyleBackColor = false;
-            // 
-            // btnUserMengement
-            // 
-            this.btnUserMengement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnUserMengement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserMengement.FlatAppearance.BorderSize = 0;
-            this.btnUserMengement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserMengement.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnUserMengement.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUserMengement.Image = global::Fitness_Club.Properties.Resources._management_business_2;
-            this.btnUserMengement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserMengement.Location = new System.Drawing.Point(-3, 0);
-            this.btnUserMengement.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUserMengement.Name = "btnUserMengement";
-            this.btnUserMengement.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnUserMengement.Size = new System.Drawing.Size(269, 62);
-            this.btnUserMengement.TabIndex = 6;
-            this.btnUserMengement.Text = "         Management  ▼";
-            this.btnUserMengement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUserMengement.UseVisualStyleBackColor = false;
-            this.btnUserMengement.Click += new System.EventHandler(this.btnUserMengement_Click);
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddUser.FlatAppearance.BorderSize = 0;
-            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnAddUser.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAddUser.Image = global::Fitness_Club.Properties.Resources._2202248_account_add_avatar_human_man_icon;
-            this.btnAddUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddUser.Location = new System.Drawing.Point(-8, 59);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnAddUser.Size = new System.Drawing.Size(267, 55);
-            this.btnAddUser.TabIndex = 7;
-            this.btnAddUser.Text = "         Add to system";
-            this.btnAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddUser.UseVisualStyleBackColor = false;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(-1, 423);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(266, 70);
-            this.btnSettings.TabIndex = 3;
-            this.btnSettings.Text = "        Settings";
-            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
-            // btnSideManu
-            // 
-            this.btnSideManu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSideManu.FlatAppearance.BorderSize = 0;
-            this.btnSideManu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSideManu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSideManu.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSideManu.Image = global::Fitness_Club.Properties.Resources.manu2;
-            this.btnSideManu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSideManu.Location = new System.Drawing.Point(2, 78);
-            this.btnSideManu.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSideManu.Name = "btnSideManu";
-            this.btnSideManu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnSideManu.Size = new System.Drawing.Size(266, 70);
-            this.btnSideManu.TabIndex = 90;
-            this.btnSideManu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSideManu.UseVisualStyleBackColor = true;
-            this.btnSideManu.Click += new System.EventHandler(this.btnSideManu_Click);
-            // 
-            // btnCalendar
-            // 
-            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalendar.FlatAppearance.BorderSize = 0;
-            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnCalendar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCalendar.Image = global::Fitness_Club.Properties.Resources.calendar;
-            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendar.Location = new System.Drawing.Point(1, 224);
-            this.btnCalendar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnCalendar.Size = new System.Drawing.Size(266, 70);
-            this.btnCalendar.TabIndex = 89;
-            this.btnCalendar.Text = "        Calendar";
-            this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalendar.UseVisualStyleBackColor = true;
-            this.btnCalendar.Click += new System.EventHandler(this.btnCalandar_Click);
-            // 
-            // btnAbout
-            // 
-            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.FlatAppearance.BorderSize = 0;
-            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnAbout.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbout.Location = new System.Drawing.Point(-1, 360);
-            this.btnAbout.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnAbout.Size = new System.Drawing.Size(269, 70);
-            this.btnAbout.TabIndex = 4;
-            this.btnAbout.Text = "        About";
-            this.btnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-            // 
-            // btnUserStatistics
-            // 
-            this.btnUserStatistics.BackColor = System.Drawing.Color.Transparent;
-            this.btnUserStatistics.BorderRadius = 15;
-            this.btnUserStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUserStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUserStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUserStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUserStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(90)))), ((int)(((byte)(114)))));
-            this.btnUserStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserStatistics.ForeColor = System.Drawing.Color.White;
-            this.btnUserStatistics.Image = global::Fitness_Club.Properties.Resources.users;
-            this.btnUserStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnUserStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
-            this.btnUserStatistics.ImageSize = new System.Drawing.Size(110, 110);
-            this.btnUserStatistics.Location = new System.Drawing.Point(35, 19);
-            this.btnUserStatistics.Name = "btnUserStatistics";
-            this.btnUserStatistics.Size = new System.Drawing.Size(255, 70);
-            this.btnUserStatistics.TabIndex = 92;
-            this.btnUserStatistics.Text = "18";
-            this.btnUserStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUserStatistics.TextOffset = new System.Drawing.Point(-7, -5);
-            this.btnUserStatistics.Click += new System.EventHandler(this.btnUserStatistics_Click);
-            // 
-            // btnClassesStatistics
-            // 
-            this.btnClassesStatistics.BackColor = System.Drawing.Color.Transparent;
-            this.btnClassesStatistics.BorderRadius = 15;
-            this.btnClassesStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClassesStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClassesStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClassesStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClassesStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(181)))), ((int)(((byte)(101)))));
-            this.btnClassesStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClassesStatistics.ForeColor = System.Drawing.Color.White;
-            this.btnClassesStatistics.Image = global::Fitness_Club.Properties.Resources.swim2;
-            this.btnClassesStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnClassesStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
-            this.btnClassesStatistics.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnClassesStatistics.Location = new System.Drawing.Point(557, 19);
-            this.btnClassesStatistics.Name = "btnClassesStatistics";
-            this.btnClassesStatistics.Size = new System.Drawing.Size(252, 70);
-            this.btnClassesStatistics.TabIndex = 94;
-            this.btnClassesStatistics.Text = "49";
-            this.btnClassesStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnClassesStatistics.TextOffset = new System.Drawing.Point(-7, -5);
-            this.btnClassesStatistics.Click += new System.EventHandler(this.btnClassesStatistics_Click);
-            // 
-            // arrowsPic
-            // 
-            this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
-            this.arrowsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.arrowsUPDWON;
-            this.arrowsPic.ImageRotate = 0F;
-            this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
-            this.arrowsPic.Location = new System.Drawing.Point(340, 8);
-            this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.arrowsPic.Name = "arrowsPic";
-            this.arrowsPic.Size = new System.Drawing.Size(77, 140);
-            this.arrowsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.arrowsPic.TabIndex = 91;
-            this.arrowsPic.TabStop = false;
-            // 
-            // btnAdminsStatistics
-            // 
-            this.btnAdminsStatistics.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdminsStatistics.BorderRadius = 15;
-            this.btnAdminsStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdminsStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdminsStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdminsStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdminsStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
-            this.btnAdminsStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminsStatistics.ForeColor = System.Drawing.Color.White;
-            this.btnAdminsStatistics.Image = global::Fitness_Club.Properties.Resources.manager;
-            this.btnAdminsStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnAdminsStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
-            this.btnAdminsStatistics.ImageSize = new System.Drawing.Size(90, 90);
-            this.btnAdminsStatistics.Location = new System.Drawing.Point(296, 19);
-            this.btnAdminsStatistics.Name = "btnAdminsStatistics";
-            this.btnAdminsStatistics.Size = new System.Drawing.Size(257, 70);
-            this.btnAdminsStatistics.TabIndex = 93;
-            this.btnAdminsStatistics.Text = "36";
-            this.btnAdminsStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdminsStatistics.TextOffset = new System.Drawing.Point(-7, -5);
-            this.btnAdminsStatistics.Click += new System.EventHandler(this.btnAdminsStatistics_Click);
-            // 
             // pictureInidcation
             // 
             this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.firstScreen;
@@ -899,34 +921,15 @@
             this.pictureInidcation.TabIndex = 91;
             this.pictureInidcation.TabStop = false;
             // 
-            // picBoxHome
+            // timerSideManu
             // 
-            this.picBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxHome.Image = global::Fitness_Club.Properties.Resources.dashboard;
-            this.picBoxHome.ImageRotate = 0F;
-            this.picBoxHome.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxHome.InitialImage")));
-            this.picBoxHome.Location = new System.Drawing.Point(232, 22);
-            this.picBoxHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxHome.Name = "picBoxHome";
-            this.picBoxHome.Size = new System.Drawing.Size(43, 34);
-            this.picBoxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxHome.TabIndex = 90;
-            this.picBoxHome.TabStop = false;
-            this.picBoxHome.Click += new System.EventHandler(this.picBoxHome_Click);
+            this.timerSideManu.Interval = 1;
+            this.timerSideManu.Tick += new System.EventHandler(this.timerSideMenu_Tick);
             // 
-            // guna2PictureBox1
+            // MembersTimer
             // 
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.Image = global::Fitness_Club.Properties.Resources.messenger__2_;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(190, 22);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 38);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 86;
-            this.guna2PictureBox1.TabStop = false;
+            this.MembersTimer.Interval = 1;
+            this.MembersTimer.Tick += new System.EventHandler(this.MembersTimer_Tick);
             // 
             // AdminScreen
             // 
@@ -948,17 +951,17 @@
             this.Load += new System.EventHandler(this.AdminScreen_Load);
             this.panelManu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.membersContiener.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            this.penelHome.ResumeLayout(false);
-            this.panelStatisicsData.ResumeLayout(false);
-            this.panelStaticsCircule.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.penelHome.ResumeLayout(false);
+            this.panelStatisicsData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
+            this.panelStaticsCircule.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

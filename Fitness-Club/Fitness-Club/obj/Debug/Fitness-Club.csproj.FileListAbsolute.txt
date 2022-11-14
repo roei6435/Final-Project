@@ -47,7 +47,6 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.DeleteAndUpdateFrom.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.FormMembers.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Resources.FormsLogin.ForgetPassword.resources
-C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Forms_admin.addPerson.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.LoginANDRegister.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.MyAccount.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\bin\Debug\Bunifu.Charts.WinForms.xml
@@ -75,4 +74,5 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.AdminScreen.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.EventForm.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\bin\Debug\CircularProgressBar.xml
-C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.paymentsFrom.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Clients.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Forms_admin.ClassesForm.resources

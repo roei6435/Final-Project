@@ -64,6 +64,30 @@ namespace Server_F.C
             }
         }
 
+
+        public static string updateLastConn(string userId)
+        {
+            string dateConnect = DateTime.Now.ToString();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Program.conn;
+                cmd.CommandText = $"update users set lastConnect = '{dateConnect}' where userId = '{userId}';";
+                Program.conn.Open();
+                int updeted = cmd.ExecuteNonQuery();
+                Program.conn.Close();
+                if (updeted > 0)
+                    return "true";
+                return "false";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "false";
+
+            }
+        }
+
         public static string registerToSystem(string fname, string lname, string email,
             string phone, string dateBorn,string gender,string isAdmin)
         {
@@ -72,7 +96,7 @@ namespace Server_F.C
                 string dateRegistion = DateTime.Now.ToString().Split(' ')[0],
                 password = CreateRandomPassword();
                 Program.conn.Open();
-                String sql = "INSERT INTO users(fName,lName,email,phone,password,dateBorn,gender,admin,isAuth,dateRegistion)values(@fName,@lName,@email,@phone,@password,@dateBorn,@gender,@admin,@isAuth,@dateRegistion)";
+                String sql = "INSERT INTO users(fName,lName,email,phone,password,dateBorn,gender,admin,isAuth,dateRegistion,lastConnect)values(@fName,@lName,@email,@phone,@password,@dateBorn,@gender,@admin,@isAuth,@dateRegistion,@lastConnect)";
                 SqlCommand cmd = Program.conn.CreateCommand();
                 cmd.CommandText = sql;
                 cmd.Parameters.AddWithValue("@fName", Program.uppercaseFirstLetter(fname));
@@ -85,6 +109,7 @@ namespace Server_F.C
                 cmd.Parameters.AddWithValue("@admin", bool.Parse(isAdmin));
                 cmd.Parameters.AddWithValue("@isAuth", false);
                 cmd.Parameters.AddWithValue("@dateRegistion", dateRegistion);
+                cmd.Parameters.AddWithValue("@lastConnect", dateRegistion);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 Program.conn.Close();

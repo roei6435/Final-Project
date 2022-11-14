@@ -41,13 +41,17 @@ namespace Server_F.C
                    // string pic;
                     for (int i = 0; rdr.Read(); i++)
                     {
+                       string lastConn = "null";
+                        if(rdr[15].GetType() != typeof(DBNull))
+                            lastConn = rdr[15].ToString();
                         data += rdr[0] + Program.separationKey;   //id
                         data += rdr[1] + Program.separationKey;    //fname
                         data += rdr[2] + Program.separationKey;   //lname
                         data += rdr[3] + Program.separationKey;    //email
                         data += rdr[4] + Program.separationKey;   //phone
                         data += rdr[6] + Program.separationKey;    //dateB
-                        data += rdr[12] + Program.separationKey;    //dateRegistion                    
+                        data += rdr[12] + Program.separationKey;    //dateRegistion
+                        data += lastConn + Program.separationKey;  //lastConn
                         data += rdr[7] + Program.separationKey;     //gender
                         data += rdr[8] + Program.separationKey;    //admin 
                         data += rdr[9] + Program.separationKey;     //isAuth
@@ -86,13 +90,17 @@ namespace Server_F.C
                     // string pic;
                     for (int i = 0; rdr.Read(); i++)
                     {
+                        string lastConn = "null";
+                        if (rdr[15].GetType() != typeof(DBNull))
+                            lastConn = rdr[15].ToString();
                         data += rdr[0] + Program.separationKey;   //id
                         data += rdr[1] + Program.separationKey;    //fname
                         data += rdr[2] + Program.separationKey;   //lname
                         data += rdr[3] + Program.separationKey;    //email
                         data += rdr[4] + Program.separationKey;   //phone
                         data += rdr[6] + Program.separationKey;    //dateB
-                        data += rdr[12] + Program.separationKey;    //dateRegistion                    
+                        data += rdr[12] + Program.separationKey;    //dateRegistion
+                        data += lastConn + Program.separationKey;  //lastConn
                         data += rdr[7] + Program.separationKey;     //gender
                         data += rdr[8] + Program.separationKey;    //admin 
                         data += rdr[9] + Program.separationKey;     //isAuth

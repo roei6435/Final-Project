@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace Fitness_Club
 {
@@ -60,6 +61,8 @@ namespace Fitness_Club
             lblLevel.ForeColor = Color.FromName(fullDataOfLevelExprince[1]);
 
         }
+
+
 
         //open files for selection profile pic 
         private void picBoxEditPicPropfile_Click(object sender, EventArgs e)

@@ -52,7 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comboBoxMou = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboBoxDay = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBoxUser = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -336,7 +335,6 @@
             this.panelStep2.Controls.Add(this.label2);
             this.panelStep2.Controls.Add(this.label1);
             this.panelStep2.Controls.Add(this.comboBoxYear);
-            this.panelStep2.Controls.Add(this.comboBoxMou);
             this.panelStep2.Controls.Add(this.comboBoxDay);
             this.panelStep2.Controls.Add(this.guna2PictureBox1);
             this.panelStep2.Controls.Add(this.picBoxUser);
@@ -451,40 +449,6 @@
             this.comboBoxYear.Size = new System.Drawing.Size(135, 36);
             this.comboBoxYear.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.comboBoxYear.TabIndex = 100;
-            // 
-            // comboBoxMou
-            // 
-            this.comboBoxMou.AllowDrop = true;
-            this.comboBoxMou.BackColor = System.Drawing.Color.White;
-            this.comboBoxMou.DisplayMember = "12";
-            this.comboBoxMou.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxMou.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMou.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.comboBoxMou.FocusedColor = System.Drawing.Color.RoyalBlue;
-            this.comboBoxMou.FocusedState.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.comboBoxMou.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMou.ForeColor = System.Drawing.Color.Gainsboro;
-            this.comboBoxMou.FormattingEnabled = true;
-            this.comboBoxMou.IntegralHeight = false;
-            this.comboBoxMou.ItemHeight = 30;
-            this.comboBoxMou.Items.AddRange(new object[] {
-            "January ",
-            "February ",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.comboBoxMou.Location = new System.Drawing.Point(250, 152);
-            this.comboBoxMou.Name = "comboBoxMou";
-            this.comboBoxMou.Size = new System.Drawing.Size(208, 36);
-            this.comboBoxMou.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.comboBoxMou.TabIndex = 99;
             // 
             // comboBoxDay
             // 
@@ -992,7 +956,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxYear;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxMou;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxDay;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxUser;

@@ -48,7 +48,7 @@ namespace Fitness_Club
 
         public static List<Person> ConvartDataToListOfPersons(string data)
         {
-            string userId, fName, lName, email, phone, dateBorn, dateRegistion;
+            string userId, fName, lName, email, phone, dateBorn, dateRegistion,lastConn;
             Image profilePic;
             bool gender, admin, isAuth, isBlocked;
             List<Person> ListOfAllPerson = new List<Person>();
@@ -67,11 +67,12 @@ namespace Fitness_Club
                 phone = invidualPerson[4];
                 dateBorn = invidualPerson[5];
                 dateRegistion = invidualPerson[6];
-                gender = bool.Parse(invidualPerson[7]);
-                admin = bool.Parse(invidualPerson[8]);
-                isAuth = bool.Parse(invidualPerson[9]);
+                lastConn= invidualPerson[7];
+                gender = bool.Parse(invidualPerson[8]);
+                admin = bool.Parse(invidualPerson[9]);
+                isAuth = bool.Parse(invidualPerson[10]);
                 isBlocked = bool.Parse(invidualPerson[invidualPerson.Count - 1]);
-                Person p = new Person(userId, fName, lName, email, phone, dateBorn, dateRegistion, gender, admin, isAuth, isBlocked, profilePic);
+                Person p = new Person(userId, fName, lName, email, phone, dateBorn, dateRegistion, gender, admin, isAuth, isBlocked, profilePic, lastConn);
                 ListOfAllPerson.Add(p);
 
 
@@ -101,6 +102,27 @@ namespace Fitness_Club
 
             }
             return ListOfAllEvents;
+        }
+
+        public static List<Classes> ConvartDataToListOfClasses(string data)
+        {
+            string classId, nameClass, place;
+            List<Classes> ListOfAllClasses = new List<Classes>();
+            List<string> list = new List<string>();
+            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            for (int j = 0; j < list.Count; j++)
+            {
+                List<string> invidualClass = new List<string>();
+                invidualClass = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+                classId = invidualClass[0];
+                nameClass = invidualClass[1];
+                place = invidualClass[invidualClass.Count - 1];
+                Classes newClass = new Classes(classId, nameClass, place);
+                ListOfAllClasses.Add(newClass);
+
+
+            }
+            return ListOfAllClasses;
         }
 
         public static Image getProfilePicByUserId(string userId, List<profilePicture> list)
@@ -142,7 +164,7 @@ namespace Fitness_Club
                 conn.Close();
                 return list;
             }
-            catch (Exception err)
+            catch
             {
                 return null;
             }

@@ -338,6 +338,7 @@
     <Compile Include="Calandar.Designer.cs">
       <DependentUpon>Calandar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes.cs" />
     <Compile Include="ConnectWithServer.cs" />
     <Compile Include="EventCalandarcs.cs" />
     <Compile Include="EventForm.cs">
@@ -352,11 +353,11 @@
     <Compile Include="Forms-admin\addMember.Designer.cs">
       <DependentUpon>addMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms-admin\addPerson.cs">
+    <Compile Include="Forms-admin\ClassesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms-admin\addPerson.Designer.cs">
-      <DependentUpon>addPerson.cs</DependentUpon>
+    <Compile Include="Forms-admin\ClassesForm.Designer.cs">
+      <DependentUpon>ClassesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms-admin\DeleteAndUpdateFrom.cs">
       <SubType>Form</SubType>
@@ -434,8 +435,8 @@
     <EmbeddedResource Include="Forms-admin\addMember.resx">
       <DependentUpon>addMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms-admin\addPerson.resx">
-      <DependentUpon>addPerson.cs</DependentUpon>
+    <EmbeddedResource Include="Forms-admin\ClassesForm.resx">
+      <DependentUpon>ClassesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms-admin\DeleteAndUpdateFrom.resx">
       <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
@@ -460,14 +461,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="FormsLogin\ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -672,9 +667,6 @@
     <None Include="Resources\users.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\swim2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\admins.png" />
   </ItemGroup>
   <ItemGroup>
@@ -730,6 +722,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\done_good.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\serch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5755636.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\block_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_circle_block_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9110980_circle_block_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9054327_bx_comment_error_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nonActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7159621.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\71596211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1465154896woman-doing-yoga-simple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1465154896woman-doing-yoga-simple1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

@@ -119,13 +119,14 @@ namespace Fitness_Club
 
             if (splitResponse[0] == "true" && admin== "True")
             {
+                ConnectWithServer.callToServer(controller, "updateLastConn#",splitResponse[1]);
                 AdminScreen adsc = new AdminScreen(splitResponse[1]);
                 adsc.Show();
                 this.Hide();
             }
             else if(splitResponse[0] == "true" && admin == "False")
             {
-                paymentsFrom pf=new paymentsFrom();
+                DeleteAndUpdateFrom pf=new DeleteAndUpdateFrom();
                 pf.Show();
                 this.Hide();
             }

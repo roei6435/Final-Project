@@ -49,6 +49,8 @@
     <Compile Include="Calandar.cs" />
     <Compile Include="Dashboard.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Mengement.cs" />
+    <Compile Include="MengementClasses.cs" />
     <Compile Include="myAccount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

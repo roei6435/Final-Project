@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fitness_Club
 {
-    internal class Person
+    public class Person
     {
         private string userId;
         private string fName;
@@ -17,6 +17,7 @@ namespace Fitness_Club
         // private string password;
         private string dateBorn;
         private string dateRegistion;
+        private string lastConnect;
         private Image profilePic;
         private bool gender;
         private bool admin;
@@ -39,7 +40,7 @@ namespace Fitness_Club
         }
         public Person(string userId, string fName, string lName, string email, string phone,
             string dateBorn, string dateRegistion, bool gender, bool admin,
-            bool isAuth, bool isBlocked,Image profilePic)
+            bool isAuth, bool isBlocked,Image profilePic,string lastConnect)
         {
             this.userId = userId;
             this.fName = fName;
@@ -49,6 +50,7 @@ namespace Fitness_Club
             //  this.password = password;   
             this.dateBorn = dateBorn;
             this.dateRegistion = dateRegistion;
+            this.lastConnect = lastConnect;
             this.profilePic = profilePic;
             this.gender = gender;
             this.admin = admin;
@@ -93,6 +95,11 @@ namespace Fitness_Club
         {
             get { return dateRegistion; }
             set { dateRegistion = value; }
+        }
+        public string LastConnect
+        {
+            get { return lastConnect; }
+            set { lastConnect = value; }
         }
         public Image ProfilePic
        { 

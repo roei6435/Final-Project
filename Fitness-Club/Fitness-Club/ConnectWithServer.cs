@@ -51,8 +51,10 @@ namespace Fitness_Club
             string userId, fName, lName, email, phone, dateBorn, dateRegistion,lastConn;
             Image profilePic;
             bool gender, admin, isAuth, isBlocked;
+
+
             List<Person> ListOfAllPerson = new List<Person>();
-            List<profilePicture> proPicList = ConnectWithServer.getListOfAllPics();
+            List<profilePicture> proPicList = ConnectWithServer.getListOfAllPics("select profilePic,userId from users");
             List<string> list = new List<string>();
             list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
             for (int j = 0; j < list.Count; j++)
@@ -60,7 +62,7 @@ namespace Fitness_Club
                 List<string> invidualPerson = new List<string>();
                 invidualPerson = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
                 userId = invidualPerson[0];
-                profilePic = getProfilePicByUserId(userId, proPicList);
+                profilePic = getPicById(userId, proPicList);
                 fName = invidualPerson[1];
                 lName = invidualPerson[2];
                 email = invidualPerson[3];
@@ -104,28 +106,98 @@ namespace Fitness_Club
             return ListOfAllEvents;
         }
 
-        public static List<Classes> ConvartDataToListOfClasses(string data)
+        public static List<Classes> ConvartDataToListOfClasses(string data,List<Person>listP)
         {
-            string classId, nameClass, place;
+            string classId, nameClass, place,activity,about;
+            Image pic;
+            Person [] personRegistedThisClass;
+          
             List<Classes> ListOfAllClasses = new List<Classes>();
-            List<string> list = new List<string>();
-            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
-            for (int j = 0; j < list.Count; j++)
+            List<profilePicture> proPicList = ConnectWithServer.getListOfAllPics("select pic, classId from classes");
+
+            List<string> dataInStringArray = new List<string>();
+            dataInStringArray = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            for (int j = 0; j < dataInStringArray.Count; j++)
             {
                 List<string> invidualClass = new List<string>();
-                invidualClass = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+                invidualClass = (dataInStringArray.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
                 classId = invidualClass[0];
                 nameClass = invidualClass[1];
-                place = invidualClass[invidualClass.Count - 1];
-                Classes newClass = new Classes(classId, nameClass, place);
-                ListOfAllClasses.Add(newClass);
-
-
+                place = invidualClass[2];
+                activity = invidualClass[3];
+                about = invidualClass[invidualClass.Count - 1];
+                pic = getPicById(classId, proPicList);
+                personRegistedThisClass = ConnectWithServer.getPersonIdArrayByClassId(classId, listP);
+                Classes newClassAdded;
+                if (personRegistedThisClass is null)
+                {
+                    newClassAdded = new Classes(classId, nameClass, place, bool.Parse(activity),about, pic);             
+                }
+                else
+                {
+                    newClassAdded = new Classes(classId, nameClass, place, bool.Parse(activity),about ,pic, personRegistedThisClass);
+                }
+                ListOfAllClasses.Add(newClassAdded);
             }
             return ListOfAllClasses;
         }
 
-        public static Image getProfilePicByUserId(string userId, List<profilePicture> list)
+        public static  Person[] getPersonIdArrayByClassId(string classId, List<Person> listP)
+        {
+            string response = ConnectWithServer.callToServer(Forms_admin.ClassesForm.controller, "getPersonIdArrayByClassId#", classId);
+            if (response == string.Empty) 
+                return null;
+            List<Person> result = new List<Person>();
+            PersonList PL = new PersonList(listP);
+            string[] idArray = (response.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries));
+            foreach (string id in idArray)
+            {
+                Person p = PL.findPersonById(id);
+                result.Add(p);
+            }
+            return result.ToArray();
+        }
+        public static Classes[] getClassesIdArrayByPersonId(string userId, List<Classes> listC)
+        {
+            string response = ConnectWithServer.callToServer(Clients.controller, "getClassesIdArrayByPersonId#",userId);
+            if (response == string.Empty)
+                return null;
+            List<Classes> result = new List<Classes>();
+            ClassesList CL = new ClassesList(listC);
+            string[] idArray = (response.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries));
+            foreach (string id in idArray)
+            {
+                Classes c = CL.findClassById(id);
+                result.Add(c);
+            }
+            return result.ToArray();
+        }
+
+        public static List<Reviews>convartDataToListOfReviews(string data,List<Person> listP,Classes c)
+        {
+            string id, userId, content, rating, dateInString;
+            List<Reviews> ListOfAllReviews = new List<Reviews>();
+            PersonList PL = new PersonList(listP);
+            List<string> list = new List<string>();
+            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            for (int j = 0; j < list.Count; j++)
+            {
+                List<string> invidualReview = new List<string>();
+                invidualReview = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+                id = invidualReview[0];
+                userId = invidualReview[1]; Person user = PL.findPersonById(userId);
+                content = invidualReview[2];
+                rating = invidualReview[3];
+                dateInString = invidualReview[invidualReview.Count - 1]; DateTime date = Convert.ToDateTime(dateInString);
+
+                Reviews review = new Reviews(id,user,c,content,rating,date);
+                ListOfAllReviews.Add(review);
+            }
+            return ListOfAllReviews;
+        } 
+
+        //pic
+        public static Image getPicById(string userId, List<profilePicture> list)
         {
             foreach (profilePicture picture in list)
             {
@@ -134,13 +206,14 @@ namespace Fitness_Club
             }
             return Properties.Resources.defult_pro_pic2;
         }
-        public static List<profilePicture> getListOfAllPics()
+
+        public static List<profilePicture> getListOfAllPics(string commend)
         {
             SqlConnection conn = new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
             List<profilePicture> list = new List<profilePicture>();
             try
             {
-                SqlCommand cmd = new SqlCommand("select profilePic,userId from users", conn);
+                SqlCommand cmd = new SqlCommand(commend, conn);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if(reader.HasRows)
@@ -169,6 +242,34 @@ namespace Fitness_Club
                 return null;
             }
         }
+
+        public static bool updatePic(Image pic,string id,string command)
+        {
+            
+            try
+            {
+                bool updated = false;
+                LogIn.static_conn.Open();
+                SqlCommand cmd = LogIn.static_conn.CreateCommand();
+                var image = new ImageConverter().ConvertTo(pic, typeof(Byte[]));
+                cmd.Parameters.AddWithValue("@image", image);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.CommandText =command;
+                if (cmd.ExecuteNonQuery() > 0)
+                    updated=true;
+                LogIn.static_conn.Close();
+                return updated;
+            }
+            catch 
+            {
+                return false;
+            }
+        }
+
+
+
+
+
 
 
     }

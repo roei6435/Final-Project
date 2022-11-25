@@ -50,7 +50,8 @@ namespace Server_F.C
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+               // Console.WriteLine(ex);
+                Program.conn.Close();
                 return "false";
             }
 
@@ -84,7 +85,7 @@ namespace Server_F.C
             }
             catch 
             {
-                return null;
+                return "false";
             }
         }
 

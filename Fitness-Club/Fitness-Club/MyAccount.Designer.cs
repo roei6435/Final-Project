@@ -67,7 +67,6 @@
             this.lblFname = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelStatisicsData = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.stam = new System.Windows.Forms.PictureBox();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblExprinceCountDays = new System.Windows.Forms.Label();
             this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -88,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLnameVOn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFnameVOn)).BeginInit();
             this.panelStatisicsData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +109,7 @@
             this.panelFullOfDatlis.Controls.Add(this.panelDatlis);
             this.panelFullOfDatlis.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelFullOfDatlis.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelFullOfDatlis.FillColor3 = System.Drawing.Color.DarkSlateBlue;
+            this.panelFullOfDatlis.FillColor3 = System.Drawing.Color.Transparent;
             this.panelFullOfDatlis.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelFullOfDatlis.Location = new System.Drawing.Point(38, 21);
             this.panelFullOfDatlis.Name = "panelFullOfDatlis";
@@ -641,28 +639,18 @@
             // 
             this.panelStatisicsData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panelStatisicsData.BorderRadius = 30;
-            this.panelStatisicsData.Controls.Add(this.stam);
             this.panelStatisicsData.Controls.Add(this.lblLevel);
             this.panelStatisicsData.Controls.Add(this.lblExprinceCountDays);
             this.panelStatisicsData.Controls.Add(this.label3);
             this.panelStatisicsData.Controls.Add(this.arrowsPic);
             this.panelStatisicsData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelStatisicsData.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStatisicsData.FillColor3 = System.Drawing.Color.DarkSlateBlue;
+            this.panelStatisicsData.FillColor3 = System.Drawing.Color.Transparent;
             this.panelStatisicsData.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelStatisicsData.Location = new System.Drawing.Point(38, 404);
             this.panelStatisicsData.Name = "panelStatisicsData";
             this.panelStatisicsData.Size = new System.Drawing.Size(877, 178);
             this.panelStatisicsData.TabIndex = 144;
-            // 
-            // stam
-            // 
-            this.stam.Location = new System.Drawing.Point(527, 13);
-            this.stam.Name = "stam";
-            this.stam.Size = new System.Drawing.Size(146, 140);
-            this.stam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.stam.TabIndex = 152;
-            this.stam.TabStop = false;
             // 
             // lblLevel
             // 
@@ -742,7 +730,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLnameVOn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFnameVOn)).EndInit();
             this.panelStatisicsData.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
@@ -792,6 +779,5 @@
         private System.Windows.Forms.Label lblNotStrong;
         private System.Windows.Forms.Label lblNotCorrect;
         private System.Windows.Forms.Label lblLevel;
-        private System.Windows.Forms.PictureBox stam;
     }
 }

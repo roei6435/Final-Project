@@ -56,7 +56,7 @@ namespace Fitness_Club
             checkLastUpdatePassword(fullDataPass.Split(' ')[1]);
             string [] fullDataOfLevelExprince = getLevelExprinceAndCountDays(loggedUser.DateRegistion).Split(' ');
 
-            lblExprinceCountDays.Text += fullDataOfLevelExprince[2]+ "days.";
+            lblExprinceCountDays.Text =$"You registered in the administrative system before {fullDataOfLevelExprince[2]} days.";
             lblLevel.Text = fullDataOfLevelExprince[0];
             lblLevel.ForeColor = Color.FromName(fullDataOfLevelExprince[1]);
 
@@ -65,7 +65,7 @@ namespace Fitness_Club
 
 
         //open files for selection profile pic 
-        private void picBoxEditPicPropfile_Click(object sender, EventArgs e)
+        public void picBoxEditPicPropfile_Click(object sender, EventArgs e)
         {
 
             OpenFileDialog od = new OpenFileDialog();
@@ -79,33 +79,6 @@ namespace Fitness_Club
 
         }
 
-
-        //function connacting to dataBase and update the profile picture.
-        private void btnUpdatePic()
-        {
-            try
-            {
-                LogIn.static_conn.Open();
-                SqlCommand cmd = LogIn.static_conn.CreateCommand();
-                var image = new ImageConverter().ConvertTo(profilePic.Image, typeof(Byte[]));
-                string id = AdminScreen.static_userId;
-                cmd.Parameters.AddWithValue("@image", image);
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.CommandText = "UPDATE users SET profilePic = @image WHERE userId=@id";
-                if (cmd.ExecuteNonQuery() > 0)
-                    MessageBox.Show("The image has been successfully replaced.");
-                else
-                    MessageBox.Show("Oops something went wrong...");
-                LogIn.static_conn.Close();
-                btnSaveChenge.Visible = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-        }
 
         //put data about diffrent from today to last update password.
         private void checkLastUpdatePassword(string lastUpdatePasswordFromData)
@@ -142,7 +115,15 @@ namespace Fitness_Club
         }
         private void btnSaveChenge_Click_1(object sender, EventArgs e)
         {
-            btnUpdatePic();
+            string command = "UPDATE users SET profilePic = @image WHERE userId=@id";
+            bool picUpdated=ConnectWithServer.updatePic(profilePic.Image, AdminScreen.static_userId, command);
+            if (picUpdated)
+            {
+                MessageBox.Show("The image has been successfully replaced.");
+                btnSaveChenge.Visible = false;
+            }
+            else
+                MessageBox.Show("Oops something went wrong...");
         }
 
         //open the options entering passwords

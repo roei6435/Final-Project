@@ -46,30 +46,35 @@
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.btnLogOut = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBoxHome = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnNotification = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.penelHome = new System.Windows.Forms.Panel();
-            this.btnUserStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClassesStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.panelStatisicsData = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblClasses = new System.Windows.Forms.Label();
+            this.lblAdmins = new System.Windows.Forms.Label();
+            this.lblUsers = new System.Windows.Forms.Label();
+            this.panelClasses = new System.Windows.Forms.Panel();
+            this.panelAdmins = new System.Windows.Forms.Panel();
+            this.panelUsers = new System.Windows.Forms.Panel();
+            this.panelStaticsCircule = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.LblMostOlder = new System.Windows.Forms.Label();
             this.lblMostYounger = new System.Windows.Forms.Label();
             this.lblMostYoungerTitle = new System.Windows.Forms.Label();
-            this.LblMostOlderTitle = new System.Windows.Forms.Label();
             this.lblMostExprince = new System.Windows.Forms.Label();
-            this.lblLeastExprince = new System.Windows.Forms.Label();
             this.lblLeastExprinceTitle = new System.Windows.Forms.Label();
-            this.lblMostExprinceTitle = new System.Windows.Forms.Label();
+            this.lblLeastExprince = new System.Windows.Forms.Label();
+            this.LblMostOlderTitle = new System.Windows.Forms.Label();
             this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblCircleGender = new System.Windows.Forms.Label();
-            this.btnAdminsStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.panelStaticsCircule = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.LblAVG = new System.Windows.Forms.Label();
             this.lblAvgData = new System.Windows.Forms.Label();
             this.lblAvgAgesTitle = new System.Windows.Forms.Label();
+            this.lblMostExprinceTitle = new System.Windows.Forms.Label();
             this.LblEmailFavData = new System.Windows.Forms.Label();
             this.LblGenderData = new System.Windows.Forms.Label();
             this.lblIsBlockData = new System.Windows.Forms.Label();
@@ -88,12 +93,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.membersContiener.SuspendLayout();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNotification)).BeginInit();
             this.penelHome.SuspendLayout();
-            this.panelStatisicsData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panelStaticsCircule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -370,16 +378,32 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelTitle.Controls.Add(this.btnLogOut);
             this.panelTitle.Controls.Add(this.picBoxHome);
             this.panelTitle.Controls.Add(this.btnMinimize);
-            this.panelTitle.Controls.Add(this.guna2PictureBox1);
+            this.panelTitle.Controls.Add(this.btnNotification);
             this.panelTitle.Controls.Add(this.btnClose);
             this.panelTitle.Controls.Add(this.lblTitle);
             this.panelTitle.Location = new System.Drawing.Point(57, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(1212, 76);
+            this.panelTitle.Size = new System.Drawing.Size(1212, 83);
             this.panelTitle.TabIndex = 1;
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogOut.Image = global::Fitness_Club.Properties.Resources._3005766_account_door_exit_logout_icon;
+            this.btnLogOut.ImageRotate = 0F;
+            this.btnLogOut.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.InitialImage")));
+            this.btnLogOut.Location = new System.Drawing.Point(215, 18);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(43, 34);
+            this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLogOut.TabIndex = 91;
+            this.btnLogOut.TabStop = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // picBoxHome
             // 
@@ -387,7 +411,7 @@
             this.picBoxHome.Image = global::Fitness_Club.Properties.Resources.dashboard;
             this.picBoxHome.ImageRotate = 0F;
             this.picBoxHome.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxHome.InitialImage")));
-            this.picBoxHome.Location = new System.Drawing.Point(232, 22);
+            this.picBoxHome.Location = new System.Drawing.Point(297, 18);
             this.picBoxHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picBoxHome.Name = "picBoxHome";
             this.picBoxHome.Size = new System.Drawing.Size(43, 34);
@@ -406,25 +430,25 @@
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
             this.btnMinimize.Location = new System.Drawing.Point(1104, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(54, 76);
+            this.btnMinimize.Size = new System.Drawing.Size(54, 83);
             this.btnMinimize.TabIndex = 5;
             this.btnMinimize.Text = "-";
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // guna2PictureBox1
+            // btnNotification
             // 
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.Image = global::Fitness_Club.Properties.Resources.messenger__2_;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(190, 22);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 38);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 86;
-            this.guna2PictureBox1.TabStop = false;
+            this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNotification.Image = global::Fitness_Club.Properties.Resources.ring2;
+            this.btnNotification.ImageRotate = 0F;
+            this.btnNotification.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnNotification.InitialImage")));
+            this.btnNotification.Location = new System.Drawing.Point(257, 18);
+            this.btnNotification.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.Size = new System.Drawing.Size(38, 34);
+            this.btnNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNotification.TabIndex = 86;
+            this.btnNotification.TabStop = false;
             // 
             // btnClose
             // 
@@ -436,7 +460,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(1158, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(54, 76);
+            this.btnClose.Size = new System.Drawing.Size(54, 83);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "x";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -448,244 +472,156 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(541, 15);
+            this.lblTitle.Location = new System.Drawing.Point(541, 18);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(178, 45);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Dashboard";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // penelHome
             // 
             this.penelHome.AutoSize = true;
             this.penelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.penelHome.Controls.Add(this.btnUserStatistics);
-            this.penelHome.Controls.Add(this.btnClassesStatistics);
-            this.penelHome.Controls.Add(this.panelStatisicsData);
-            this.penelHome.Controls.Add(this.btnAdminsStatistics);
+            this.penelHome.Controls.Add(this.guna2PictureBox4);
+            this.penelHome.Controls.Add(this.guna2PictureBox3);
+            this.penelHome.Controls.Add(this.guna2PictureBox2);
+            this.penelHome.Controls.Add(this.lblClasses);
+            this.penelHome.Controls.Add(this.lblAdmins);
+            this.penelHome.Controls.Add(this.lblUsers);
+            this.penelHome.Controls.Add(this.panelClasses);
+            this.penelHome.Controls.Add(this.panelAdmins);
+            this.penelHome.Controls.Add(this.panelUsers);
             this.penelHome.Controls.Add(this.panelStaticsCircule);
             this.penelHome.Controls.Add(this.pictureInidcation);
             this.penelHome.Location = new System.Drawing.Point(55, 74);
             this.penelHome.Margin = new System.Windows.Forms.Padding(0);
             this.penelHome.Name = "penelHome";
-            this.penelHome.Size = new System.Drawing.Size(1275, 1069);
+            this.penelHome.Size = new System.Drawing.Size(1278, 1069);
             this.penelHome.TabIndex = 0;
+            this.penelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.penelHome_Paint);
             // 
-            // btnUserStatistics
+            // guna2PictureBox4
             // 
-            this.btnUserStatistics.BackColor = System.Drawing.Color.Transparent;
-            this.btnUserStatistics.BorderRadius = 15;
-            this.btnUserStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUserStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUserStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUserStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUserStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(90)))), ((int)(((byte)(114)))));
-            this.btnUserStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserStatistics.ForeColor = System.Drawing.Color.White;
-            this.btnUserStatistics.Image = global::Fitness_Club.Properties.Resources.users;
-            this.btnUserStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnUserStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
-            this.btnUserStatistics.ImageSize = new System.Drawing.Size(110, 110);
-            this.btnUserStatistics.Location = new System.Drawing.Point(35, 19);
-            this.btnUserStatistics.Name = "btnUserStatistics";
-            this.btnUserStatistics.Size = new System.Drawing.Size(255, 70);
-            this.btnUserStatistics.TabIndex = 92;
-            this.btnUserStatistics.Text = "18";
-            this.btnUserStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUserStatistics.TextOffset = new System.Drawing.Point(-7, -5);
-            this.btnUserStatistics.Click += new System.EventHandler(this.btnUserStatistics_Click);
+            this.guna2PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox4.Image = global::Fitness_Club.Properties.Resources.swimmer;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.InitialImage")));
+            this.guna2PictureBox4.Location = new System.Drawing.Point(770, 31);
+            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(31, 28);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 195;
+            this.guna2PictureBox4.TabStop = false;
             // 
-            // btnClassesStatistics
+            // guna2PictureBox3
             // 
-            this.btnClassesStatistics.BackColor = System.Drawing.Color.Transparent;
-            this.btnClassesStatistics.BorderRadius = 15;
-            this.btnClassesStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClassesStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClassesStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClassesStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClassesStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(181)))), ((int)(((byte)(101)))));
-            this.btnClassesStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClassesStatistics.ForeColor = System.Drawing.Color.White;
-            this.btnClassesStatistics.Image = global::Fitness_Club.Properties.Resources.swim2;
-            this.btnClassesStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnClassesStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
-            this.btnClassesStatistics.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnClassesStatistics.Location = new System.Drawing.Point(557, 19);
-            this.btnClassesStatistics.Name = "btnClassesStatistics";
-            this.btnClassesStatistics.Size = new System.Drawing.Size(252, 70);
-            this.btnClassesStatistics.TabIndex = 94;
-            this.btnClassesStatistics.Text = "49";
-            this.btnClassesStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnClassesStatistics.TextOffset = new System.Drawing.Point(-7, -5);
-            this.btnClassesStatistics.Click += new System.EventHandler(this.btnClassesStatistics_Click);
+            this.guna2PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox3.Image = global::Fitness_Club.Properties.Resources.manager;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.InitialImage")));
+            this.guna2PictureBox3.Location = new System.Drawing.Point(514, 32);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(31, 28);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 194;
+            this.guna2PictureBox3.TabStop = false;
             // 
-            // panelStatisicsData
+            // guna2PictureBox2
             // 
-            this.panelStatisicsData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.panelStatisicsData.BorderRadius = 30;
-            this.panelStatisicsData.Controls.Add(this.LblMostOlder);
-            this.panelStatisicsData.Controls.Add(this.lblMostYounger);
-            this.panelStatisicsData.Controls.Add(this.lblMostYoungerTitle);
-            this.panelStatisicsData.Controls.Add(this.LblMostOlderTitle);
-            this.panelStatisicsData.Controls.Add(this.lblMostExprince);
-            this.panelStatisicsData.Controls.Add(this.lblLeastExprince);
-            this.panelStatisicsData.Controls.Add(this.lblLeastExprinceTitle);
-            this.panelStatisicsData.Controls.Add(this.lblMostExprinceTitle);
-            this.panelStatisicsData.Controls.Add(this.arrowsPic);
-            this.panelStatisicsData.Controls.Add(this.lblCircleGender);
-            this.panelStatisicsData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStatisicsData.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStatisicsData.FillColor3 = System.Drawing.Color.DarkSlateBlue;
-            this.panelStatisicsData.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStatisicsData.Location = new System.Drawing.Point(31, 444);
-            this.panelStatisicsData.Name = "panelStatisicsData";
-            this.panelStatisicsData.Size = new System.Drawing.Size(781, 163);
-            this.panelStatisicsData.TabIndex = 143;
+            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox2.Image = global::Fitness_Club.Properties.Resources.users;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.InitialImage")));
+            this.guna2PictureBox2.Location = new System.Drawing.Point(247, 31);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(53, 29);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 193;
+            this.guna2PictureBox2.TabStop = false;
             // 
-            // LblMostOlder
+            // lblClasses
             // 
-            this.LblMostOlder.BackColor = System.Drawing.Color.Transparent;
-            this.LblMostOlder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMostOlder.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblMostOlder.Location = new System.Drawing.Point(436, 115);
-            this.LblMostOlder.Name = "LblMostOlder";
-            this.LblMostOlder.Size = new System.Drawing.Size(335, 33);
-            this.LblMostOlder.TabIndex = 161;
-            this.LblMostOlder.Text = "Shlomi Amar, is 57 years old.";
+            this.lblClasses.BackColor = System.Drawing.Color.Transparent;
+            this.lblClasses.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClasses.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblClasses.Location = new System.Drawing.Point(552, 29);
+            this.lblClasses.Name = "lblClasses";
+            this.lblClasses.Size = new System.Drawing.Size(205, 30);
+            this.lblClasses.TabIndex = 192;
+            this.lblClasses.Text = "Classes";
+            this.lblClasses.Click += new System.EventHandler(this.lblClasses_Click);
             // 
-            // lblMostYounger
+            // lblAdmins
             // 
-            this.lblMostYounger.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostYounger.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostYounger.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMostYounger.Location = new System.Drawing.Point(19, 107);
-            this.lblMostYounger.Name = "lblMostYounger";
-            this.lblMostYounger.Size = new System.Drawing.Size(335, 33);
-            this.lblMostYounger.TabIndex = 160;
-            this.lblMostYounger.Text = "Avi Hazan, is 7 years old.";
+            this.lblAdmins.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdmins.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmins.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblAdmins.Location = new System.Drawing.Point(306, 30);
+            this.lblAdmins.Name = "lblAdmins";
+            this.lblAdmins.Size = new System.Drawing.Size(170, 30);
+            this.lblAdmins.TabIndex = 191;
+            this.lblAdmins.Text = "Administrators";
+            this.lblAdmins.Click += new System.EventHandler(this.lblAdmins_Click);
             // 
-            // lblMostYoungerTitle
+            // lblUsers
             // 
-            this.lblMostYoungerTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostYoungerTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostYoungerTitle.ForeColor = System.Drawing.Color.Brown;
-            this.lblMostYoungerTitle.Location = new System.Drawing.Point(13, 74);
-            this.lblMostYoungerTitle.Name = "lblMostYoungerTitle";
-            this.lblMostYoungerTitle.Size = new System.Drawing.Size(317, 33);
-            this.lblMostYoungerTitle.TabIndex = 159;
-            this.lblMostYoungerTitle.Text = "The youngest user";
+            this.lblUsers.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsers.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsers.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblUsers.Location = new System.Drawing.Point(51, 30);
+            this.lblUsers.Name = "lblUsers";
+            this.lblUsers.Size = new System.Drawing.Size(164, 28);
+            this.lblUsers.TabIndex = 190;
+            this.lblUsers.Text = "Users";
+            this.lblUsers.Click += new System.EventHandler(this.lblUsers_Click);
             // 
-            // LblMostOlderTitle
+            // panelClasses
             // 
-            this.LblMostOlderTitle.BackColor = System.Drawing.Color.Transparent;
-            this.LblMostOlderTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMostOlderTitle.ForeColor = System.Drawing.Color.Green;
-            this.LblMostOlderTitle.Location = new System.Drawing.Point(431, 82);
-            this.LblMostOlderTitle.Name = "LblMostOlderTitle";
-            this.LblMostOlderTitle.Size = new System.Drawing.Size(257, 26);
-            this.LblMostOlderTitle.TabIndex = 158;
-            this.LblMostOlderTitle.Text = " The oldest user";
+            this.panelClasses.BackColor = System.Drawing.Color.White;
+            this.panelClasses.Location = new System.Drawing.Point(551, 62);
+            this.panelClasses.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelClasses.Name = "panelClasses";
+            this.panelClasses.Size = new System.Drawing.Size(243, 2);
+            this.panelClasses.TabIndex = 189;
             // 
-            // lblMostExprince
+            // panelAdmins
             // 
-            this.lblMostExprince.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostExprince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostExprince.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMostExprince.Location = new System.Drawing.Point(436, 49);
-            this.lblMostExprince.Name = "lblMostExprince";
-            this.lblMostExprince.Size = new System.Drawing.Size(354, 33);
-            this.lblMostExprince.TabIndex = 157;
-            this.lblMostExprince.Text = "Liraz Gazit, registed to system 07/12/2019.\r\n";
+            this.panelAdmins.BackColor = System.Drawing.Color.White;
+            this.panelAdmins.Location = new System.Drawing.Point(302, 62);
+            this.panelAdmins.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelAdmins.Name = "panelAdmins";
+            this.panelAdmins.Size = new System.Drawing.Size(243, 2);
+            this.panelAdmins.TabIndex = 188;
             // 
-            // lblLeastExprince
+            // panelUsers
             // 
-            this.lblLeastExprince.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeastExprince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeastExprince.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblLeastExprince.Location = new System.Drawing.Point(13, 41);
-            this.lblLeastExprince.Name = "lblLeastExprince";
-            this.lblLeastExprince.Size = new System.Drawing.Size(335, 33);
-            this.lblLeastExprince.TabIndex = 156;
-            this.lblLeastExprince.Text = "Noy palas, registed to system 20/01/2022.";
-            // 
-            // lblLeastExprinceTitle
-            // 
-            this.lblLeastExprinceTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeastExprinceTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeastExprinceTitle.ForeColor = System.Drawing.Color.Brown;
-            this.lblLeastExprinceTitle.Location = new System.Drawing.Point(13, 8);
-            this.lblLeastExprinceTitle.Name = "lblLeastExprinceTitle";
-            this.lblLeastExprinceTitle.Size = new System.Drawing.Size(356, 33);
-            this.lblLeastExprinceTitle.TabIndex = 155;
-            this.lblLeastExprinceTitle.Text = "The least experienced user";
-            // 
-            // lblMostExprinceTitle
-            // 
-            this.lblMostExprinceTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostExprinceTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostExprinceTitle.ForeColor = System.Drawing.Color.Green;
-            this.lblMostExprinceTitle.Location = new System.Drawing.Point(435, 8);
-            this.lblMostExprinceTitle.Name = "lblMostExprinceTitle";
-            this.lblMostExprinceTitle.Size = new System.Drawing.Size(355, 26);
-            this.lblMostExprinceTitle.TabIndex = 154;
-            this.lblMostExprinceTitle.Text = "The most experienced user";
-            // 
-            // arrowsPic
-            // 
-            this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
-            this.arrowsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.arrowsUPDWON;
-            this.arrowsPic.ImageRotate = 0F;
-            this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
-            this.arrowsPic.Location = new System.Drawing.Point(340, 8);
-            this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.arrowsPic.Name = "arrowsPic";
-            this.arrowsPic.Size = new System.Drawing.Size(77, 140);
-            this.arrowsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.arrowsPic.TabIndex = 91;
-            this.arrowsPic.TabStop = false;
-            // 
-            // lblCircleGender
-            // 
-            this.lblCircleGender.BackColor = System.Drawing.Color.Transparent;
-            this.lblCircleGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCircleGender.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCircleGender.Location = new System.Drawing.Point(554, 161);
-            this.lblCircleGender.Name = "lblCircleGender";
-            this.lblCircleGender.Size = new System.Drawing.Size(103, 63);
-            this.lblCircleGender.TabIndex = 149;
-            this.lblCircleGender.Text = "Of the users\r\n are males, female 32%.\r\n";
-            // 
-            // btnAdminsStatistics
-            // 
-            this.btnAdminsStatistics.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdminsStatistics.BorderRadius = 15;
-            this.btnAdminsStatistics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdminsStatistics.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdminsStatistics.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdminsStatistics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdminsStatistics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
-            this.btnAdminsStatistics.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminsStatistics.ForeColor = System.Drawing.Color.White;
-            this.btnAdminsStatistics.Image = global::Fitness_Club.Properties.Resources.manager;
-            this.btnAdminsStatistics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnAdminsStatistics.ImageOffset = new System.Drawing.Point(-14, 0);
-            this.btnAdminsStatistics.ImageSize = new System.Drawing.Size(90, 90);
-            this.btnAdminsStatistics.Location = new System.Drawing.Point(296, 19);
-            this.btnAdminsStatistics.Name = "btnAdminsStatistics";
-            this.btnAdminsStatistics.Size = new System.Drawing.Size(257, 70);
-            this.btnAdminsStatistics.TabIndex = 93;
-            this.btnAdminsStatistics.Text = "36";
-            this.btnAdminsStatistics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdminsStatistics.TextOffset = new System.Drawing.Point(-7, -5);
-            this.btnAdminsStatistics.Click += new System.EventHandler(this.btnAdminsStatistics_Click);
+            this.panelUsers.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panelUsers.Location = new System.Drawing.Point(53, 62);
+            this.panelUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelUsers.Name = "panelUsers";
+            this.panelUsers.Size = new System.Drawing.Size(243, 2);
+            this.panelUsers.TabIndex = 187;
             // 
             // panelStaticsCircule
             // 
             this.panelStaticsCircule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panelStaticsCircule.BorderRadius = 30;
+            this.panelStaticsCircule.Controls.Add(this.LblMostOlder);
+            this.panelStaticsCircule.Controls.Add(this.lblMostYounger);
+            this.panelStaticsCircule.Controls.Add(this.lblMostYoungerTitle);
+            this.panelStaticsCircule.Controls.Add(this.lblMostExprince);
+            this.panelStaticsCircule.Controls.Add(this.lblLeastExprinceTitle);
+            this.panelStaticsCircule.Controls.Add(this.lblLeastExprince);
+            this.panelStaticsCircule.Controls.Add(this.LblMostOlderTitle);
+            this.panelStaticsCircule.Controls.Add(this.arrowsPic);
             this.panelStaticsCircule.Controls.Add(this.LblAVG);
             this.panelStaticsCircule.Controls.Add(this.lblAvgData);
             this.panelStaticsCircule.Controls.Add(this.lblAvgAgesTitle);
+            this.panelStaticsCircule.Controls.Add(this.lblMostExprinceTitle);
             this.panelStaticsCircule.Controls.Add(this.LblEmailFavData);
             this.panelStaticsCircule.Controls.Add(this.LblGenderData);
             this.panelStaticsCircule.Controls.Add(this.lblIsBlockData);
@@ -698,19 +634,111 @@
             this.panelStaticsCircule.Controls.Add(this.circuleEmailPpoular);
             this.panelStaticsCircule.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelStaticsCircule.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.FillColor3 = System.Drawing.Color.DarkSlateBlue;
+            this.panelStaticsCircule.FillColor3 = System.Drawing.Color.Transparent;
             this.panelStaticsCircule.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.Location = new System.Drawing.Point(31, 107);
+            this.panelStaticsCircule.Location = new System.Drawing.Point(24, 81);
             this.panelStaticsCircule.Name = "panelStaticsCircule";
-            this.panelStaticsCircule.Size = new System.Drawing.Size(778, 329);
+            this.panelStaticsCircule.Size = new System.Drawing.Size(778, 224);
             this.panelStaticsCircule.TabIndex = 140;
+            // 
+            // LblMostOlder
+            // 
+            this.LblMostOlder.BackColor = System.Drawing.Color.Transparent;
+            this.LblMostOlder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMostOlder.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LblMostOlder.Location = new System.Drawing.Point(436, 463);
+            this.LblMostOlder.Name = "LblMostOlder";
+            this.LblMostOlder.Size = new System.Drawing.Size(335, 33);
+            this.LblMostOlder.TabIndex = 171;
+            this.LblMostOlder.Text = "Shlomi Amar, is 57 years old.";
+            // 
+            // lblMostYounger
+            // 
+            this.lblMostYounger.BackColor = System.Drawing.Color.Transparent;
+            this.lblMostYounger.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostYounger.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblMostYounger.Location = new System.Drawing.Point(10, 456);
+            this.lblMostYounger.Name = "lblMostYounger";
+            this.lblMostYounger.Size = new System.Drawing.Size(335, 33);
+            this.lblMostYounger.TabIndex = 170;
+            this.lblMostYounger.Text = "Avi Hazan, is 7 years old.";
+            // 
+            // lblMostYoungerTitle
+            // 
+            this.lblMostYoungerTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblMostYoungerTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblMostYoungerTitle.ForeColor = System.Drawing.Color.Tomato;
+            this.lblMostYoungerTitle.Location = new System.Drawing.Point(9, 423);
+            this.lblMostYoungerTitle.Name = "lblMostYoungerTitle";
+            this.lblMostYoungerTitle.Size = new System.Drawing.Size(317, 33);
+            this.lblMostYoungerTitle.TabIndex = 169;
+            this.lblMostYoungerTitle.Text = "The youngest user";
+            // 
+            // lblMostExprince
+            // 
+            this.lblMostExprince.BackColor = System.Drawing.Color.Transparent;
+            this.lblMostExprince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostExprince.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblMostExprince.Location = new System.Drawing.Point(436, 397);
+            this.lblMostExprince.Name = "lblMostExprince";
+            this.lblMostExprince.Size = new System.Drawing.Size(354, 33);
+            this.lblMostExprince.TabIndex = 167;
+            this.lblMostExprince.Text = "Liraz Gazit, registed to system 07/12/2019.\r\n";
+            // 
+            // lblLeastExprinceTitle
+            // 
+            this.lblLeastExprinceTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblLeastExprinceTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblLeastExprinceTitle.ForeColor = System.Drawing.Color.Tomato;
+            this.lblLeastExprinceTitle.Location = new System.Drawing.Point(3, 353);
+            this.lblLeastExprinceTitle.Name = "lblLeastExprinceTitle";
+            this.lblLeastExprinceTitle.Size = new System.Drawing.Size(356, 33);
+            this.lblLeastExprinceTitle.TabIndex = 165;
+            this.lblLeastExprinceTitle.Text = "The least experienced user";
+            // 
+            // lblLeastExprince
+            // 
+            this.lblLeastExprince.BackColor = System.Drawing.Color.Transparent;
+            this.lblLeastExprince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeastExprince.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblLeastExprince.Location = new System.Drawing.Point(4, 390);
+            this.lblLeastExprince.Name = "lblLeastExprince";
+            this.lblLeastExprince.Size = new System.Drawing.Size(341, 33);
+            this.lblLeastExprince.TabIndex = 166;
+            this.lblLeastExprince.Text = "Noy palas, registed to system 20/01/2022.";
+            // 
+            // LblMostOlderTitle
+            // 
+            this.LblMostOlderTitle.BackColor = System.Drawing.Color.Transparent;
+            this.LblMostOlderTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.LblMostOlderTitle.ForeColor = System.Drawing.Color.LimeGreen;
+            this.LblMostOlderTitle.Location = new System.Drawing.Point(423, 430);
+            this.LblMostOlderTitle.Name = "LblMostOlderTitle";
+            this.LblMostOlderTitle.Size = new System.Drawing.Size(320, 40);
+            this.LblMostOlderTitle.TabIndex = 168;
+            this.LblMostOlderTitle.Text = " The oldest user";
+            // 
+            // arrowsPic
+            // 
+            this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
+            this.arrowsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.arrowsUPDWON;
+            this.arrowsPic.ImageRotate = 0F;
+            this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
+            this.arrowsPic.Location = new System.Drawing.Point(335, 346);
+            this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.arrowsPic.Name = "arrowsPic";
+            this.arrowsPic.Size = new System.Drawing.Size(77, 143);
+            this.arrowsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.arrowsPic.TabIndex = 163;
+            this.arrowsPic.TabStop = false;
             // 
             // LblAVG
             // 
             this.LblAVG.BackColor = System.Drawing.Color.Transparent;
             this.LblAVG.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.LblAVG.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblAVG.Location = new System.Drawing.Point(630, 133);
+            this.LblAVG.Location = new System.Drawing.Point(630, 151);
             this.LblAVG.Name = "LblAVG";
             this.LblAVG.Size = new System.Drawing.Size(104, 66);
             this.LblAVG.TabIndex = 162;
@@ -721,7 +749,7 @@
             this.lblAvgData.BackColor = System.Drawing.Color.Transparent;
             this.lblAvgData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvgData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAvgData.Location = new System.Drawing.Point(616, 229);
+            this.lblAvgData.Location = new System.Drawing.Point(616, 247);
             this.lblAvgData.Name = "lblAvgData";
             this.lblAvgData.Size = new System.Drawing.Size(155, 84);
             this.lblAvgData.TabIndex = 161;
@@ -732,18 +760,29 @@
             this.lblAvgAgesTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblAvgAgesTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvgAgesTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAvgAgesTitle.Location = new System.Drawing.Point(615, 61);
+            this.lblAvgAgesTitle.Location = new System.Drawing.Point(615, 79);
             this.lblAvgAgesTitle.Name = "lblAvgAgesTitle";
             this.lblAvgAgesTitle.Size = new System.Drawing.Size(158, 33);
             this.lblAvgAgesTitle.TabIndex = 160;
             this.lblAvgAgesTitle.Text = "Average ages";
+            // 
+            // lblMostExprinceTitle
+            // 
+            this.lblMostExprinceTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblMostExprinceTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblMostExprinceTitle.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblMostExprinceTitle.Location = new System.Drawing.Point(435, 353);
+            this.lblMostExprinceTitle.Name = "lblMostExprinceTitle";
+            this.lblMostExprinceTitle.Size = new System.Drawing.Size(335, 42);
+            this.lblMostExprinceTitle.TabIndex = 164;
+            this.lblMostExprinceTitle.Text = "The most experienced user";
             // 
             // LblEmailFavData
             // 
             this.LblEmailFavData.BackColor = System.Drawing.Color.Transparent;
             this.LblEmailFavData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmailFavData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblEmailFavData.Location = new System.Drawing.Point(436, 232);
+            this.LblEmailFavData.Location = new System.Drawing.Point(436, 250);
             this.LblEmailFavData.Name = "LblEmailFavData";
             this.LblEmailFavData.Size = new System.Drawing.Size(163, 97);
             this.LblEmailFavData.TabIndex = 159;
@@ -754,7 +793,7 @@
             this.LblGenderData.BackColor = System.Drawing.Color.Transparent;
             this.LblGenderData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblGenderData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblGenderData.Location = new System.Drawing.Point(14, 229);
+            this.LblGenderData.Location = new System.Drawing.Point(14, 247);
             this.LblGenderData.Name = "LblGenderData";
             this.LblGenderData.Size = new System.Drawing.Size(185, 74);
             this.LblGenderData.TabIndex = 158;
@@ -765,7 +804,7 @@
             this.lblIsBlockData.BackColor = System.Drawing.Color.Transparent;
             this.lblIsBlockData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIsBlockData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblIsBlockData.Location = new System.Drawing.Point(215, 229);
+            this.lblIsBlockData.Location = new System.Drawing.Point(215, 247);
             this.lblIsBlockData.Name = "lblIsBlockData";
             this.lblIsBlockData.Size = new System.Drawing.Size(195, 84);
             this.lblIsBlockData.TabIndex = 157;
@@ -776,9 +815,9 @@
             this.lblTitleStatics.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleStatics.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleStatics.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleStatics.Location = new System.Drawing.Point(135, 0);
+            this.lblTitleStatics.Location = new System.Drawing.Point(179, 6);
             this.lblTitleStatics.Name = "lblTitleStatics";
-            this.lblTitleStatics.Size = new System.Drawing.Size(532, 57);
+            this.lblTitleStatics.Size = new System.Drawing.Size(532, 52);
             this.lblTitleStatics.TabIndex = 155;
             this.lblTitleStatics.Text = "Registered users statistics";
             // 
@@ -787,7 +826,7 @@
             this.lblEmailFav.BackColor = System.Drawing.Color.Transparent;
             this.lblEmailFav.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailFav.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblEmailFav.Location = new System.Drawing.Point(477, 58);
+            this.lblEmailFav.Location = new System.Drawing.Point(477, 76);
             this.lblEmailFav.Name = "lblEmailFav";
             this.lblEmailFav.Size = new System.Drawing.Size(85, 33);
             this.lblEmailFav.TabIndex = 154;
@@ -798,7 +837,7 @@
             this.lblIsBlock.BackColor = System.Drawing.Color.Transparent;
             this.lblIsBlock.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIsBlock.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblIsBlock.Location = new System.Drawing.Point(244, 61);
+            this.lblIsBlock.Location = new System.Drawing.Point(244, 79);
             this.lblIsBlock.Name = "lblIsBlock";
             this.lblIsBlock.Size = new System.Drawing.Size(168, 33);
             this.lblIsBlock.TabIndex = 153;
@@ -809,7 +848,7 @@
             this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblGender.Location = new System.Drawing.Point(61, 61);
+            this.lblGender.Location = new System.Drawing.Point(61, 79);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(104, 33);
             this.lblGender.TabIndex = 152;
@@ -825,10 +864,10 @@
             this.circleGender.InnerColor = System.Drawing.Color.Transparent;
             this.circleGender.InnerMargin = 2;
             this.circleGender.InnerWidth = -1;
-            this.circleGender.Location = new System.Drawing.Point(30, 94);
+            this.circleGender.Location = new System.Drawing.Point(30, 112);
             this.circleGender.MarqueeAnimationSpeed = 2000;
             this.circleGender.Name = "circleGender";
-            this.circleGender.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
+            this.circleGender.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.circleGender.OuterMargin = -26;
             this.circleGender.OuterWidth = 26;
             this.circleGender.ProgressColor = System.Drawing.Color.DodgerBlue;
@@ -857,10 +896,10 @@
             this.circularIsBlocked.InnerColor = System.Drawing.Color.Transparent;
             this.circularIsBlocked.InnerMargin = 2;
             this.circularIsBlocked.InnerWidth = -1;
-            this.circularIsBlocked.Location = new System.Drawing.Point(234, 94);
+            this.circularIsBlocked.Location = new System.Drawing.Point(234, 112);
             this.circularIsBlocked.MarqueeAnimationSpeed = 2000;
             this.circularIsBlocked.Name = "circularIsBlocked";
-            this.circularIsBlocked.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
+            this.circularIsBlocked.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.circularIsBlocked.OuterMargin = -26;
             this.circularIsBlocked.OuterWidth = 26;
             this.circularIsBlocked.ProgressColor = System.Drawing.Color.Crimson;
@@ -889,10 +928,10 @@
             this.circuleEmailPpoular.InnerColor = System.Drawing.Color.Transparent;
             this.circuleEmailPpoular.InnerMargin = 2;
             this.circuleEmailPpoular.InnerWidth = -1;
-            this.circuleEmailPpoular.Location = new System.Drawing.Point(437, 94);
+            this.circuleEmailPpoular.Location = new System.Drawing.Point(437, 112);
             this.circuleEmailPpoular.MarqueeAnimationSpeed = 2000;
             this.circuleEmailPpoular.Name = "circuleEmailPpoular";
-            this.circuleEmailPpoular.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(30)))), ((int)(((byte)(49)))));
+            this.circuleEmailPpoular.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.circuleEmailPpoular.OuterMargin = -26;
             this.circuleEmailPpoular.OuterWidth = 26;
             this.circuleEmailPpoular.ProgressColor = System.Drawing.Color.DarkOrchid;
@@ -913,10 +952,10 @@
             // 
             // pictureInidcation
             // 
-            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.firstScreen;
-            this.pictureInidcation.Location = new System.Drawing.Point(815, 3);
+            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources._20943798;
+            this.pictureInidcation.Location = new System.Drawing.Point(808, 3);
             this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(457, 653);
+            this.pictureInidcation.Size = new System.Drawing.Size(404, 622);
             this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureInidcation.TabIndex = 91;
             this.pictureInidcation.TabStop = false;
@@ -955,12 +994,15 @@
             this.membersContiener.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNotification)).EndInit();
             this.penelHome.ResumeLayout(false);
-            this.panelStatisicsData.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panelStaticsCircule.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -977,7 +1019,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox btnNotification;
         private System.Windows.Forms.Panel penelHome;
         private Guna.UI2.WinForms.Guna2CirclePictureBox profilePic;
         private System.Windows.Forms.Label lblUserNameAndStatus;
@@ -994,20 +1036,6 @@
         private System.Windows.Forms.Button btnMyAcc;
         private System.Windows.Forms.PictureBox pictureInidcation;
         private System.Windows.Forms.Button btnTraning;
-        private System.Windows.Forms.Label lblCircleGender;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStatisicsData;
-        private Guna.UI2.WinForms.Guna2Button btnUserStatistics;
-        private Guna.UI2.WinForms.Guna2Button btnClassesStatistics;
-        private Guna.UI2.WinForms.Guna2Button btnAdminsStatistics;
-        private Guna.UI2.WinForms.Guna2PictureBox arrowsPic;
-        private System.Windows.Forms.Label lblMostExprince;
-        private System.Windows.Forms.Label lblLeastExprince;
-        private System.Windows.Forms.Label lblLeastExprinceTitle;
-        private System.Windows.Forms.Label lblMostExprinceTitle;
-        private System.Windows.Forms.Label LblMostOlder;
-        private System.Windows.Forms.Label lblMostYounger;
-        private System.Windows.Forms.Label lblMostYoungerTitle;
-        private System.Windows.Forms.Label LblMostOlderTitle;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsCircule;
         private System.Windows.Forms.Label LblAVG;
         private System.Windows.Forms.Label lblAvgData;
@@ -1022,5 +1050,24 @@
         private CircularProgressBar.CircularProgressBar circleGender;
         private CircularProgressBar.CircularProgressBar circularIsBlocked;
         private CircularProgressBar.CircularProgressBar circuleEmailPpoular;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private System.Windows.Forms.Label lblClasses;
+        private System.Windows.Forms.Label lblAdmins;
+        private System.Windows.Forms.Label lblUsers;
+        private System.Windows.Forms.Panel panelClasses;
+        private System.Windows.Forms.Panel panelAdmins;
+        private System.Windows.Forms.Panel panelUsers;
+        private System.Windows.Forms.Label LblMostOlder;
+        private System.Windows.Forms.Label lblMostYounger;
+        private System.Windows.Forms.Label lblMostYoungerTitle;
+        private System.Windows.Forms.Label LblMostOlderTitle;
+        private System.Windows.Forms.Label lblMostExprince;
+        private System.Windows.Forms.Label lblLeastExprince;
+        private System.Windows.Forms.Label lblLeastExprinceTitle;
+        private System.Windows.Forms.Label lblMostExprinceTitle;
+        private Guna.UI2.WinForms.Guna2PictureBox arrowsPic;
+        private Guna.UI2.WinForms.Guna2PictureBox btnLogOut;
     }
 }

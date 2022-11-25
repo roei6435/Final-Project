@@ -16,6 +16,7 @@ namespace Fitness_Club
     {
         string fullDate = UserControlDays.static_day + "/" + Calandar.static_month + "/" + Calandar.static_year;
         private string fullEventsOnThisDay;
+        private string eventCreted;
 
         public EventForm()
         {       
@@ -59,10 +60,11 @@ namespace Fitness_Club
             fullEventsOnThisDay = ConnectWithServer.callToServer(Calandar.controller, "allEventsForThisDay#",
             AdminScreen.static_userId + "#" + fullDate);          //get all data events for this day
             lblTitle.Text += " - " + fullDate + ", " + Convert.ToDateTime(fullDate).DayOfWeek + ".";
-            if (fullEventsOnThisDay != "")      
+            if (fullEventsOnThisDay != string.Empty && fullEventsOnThisDay != "false")  
             {                                       
                 panelAllEvent.Visible = true;
                 putAllEventsDataOnScreen(fullEventsOnThisDay);
+                fullEventsOnThisDay = null;
             }
             else
             {
@@ -96,20 +98,19 @@ namespace Fitness_Club
                 && txtLocation.Text != "")          //if all feilds is proper
             {
                 //Ask the server to add a new event
-                string eventCreted =ConnectWithServer.callToServer(Calandar.controller, "insertNewEvent#",
+                 eventCreted =ConnectWithServer.callToServer(Calandar.controller, "insertNewEvent#",
                     AdminScreen.static_userId+"#"+txtBoxEvent.Text+"#"+txtBoxDate.Text+"#"+
                     comboBoxHourFrom.Text+"#"+comboBoxHourTo.Text+"#"+txtLocation.Text);
                 if (bool.Parse(eventCreted))
                 {
                     MessageBox.Show("The event has been successfully added");
+                    this.Close();
                 }
-                else MessageBox.Show("Somthing worng...");
-                this.Close();
+                else MessageBox.Show("You already have another event at this time....");             
             }
             else 
                 MessageBox.Show("Plese enter name, loacation and normal hours. ");
-           
-
+          
         }
 
         private void btnAddEvent_Click(object sender, EventArgs e)

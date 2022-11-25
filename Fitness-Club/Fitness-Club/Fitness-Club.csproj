@@ -339,6 +339,7 @@
       <DependentUpon>Calandar.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes.cs" />
+    <Compile Include="ClassesList.cs" />
     <Compile Include="ConnectWithServer.cs" />
     <Compile Include="EventCalandarcs.cs" />
     <Compile Include="EventForm.cs">
@@ -365,8 +366,7 @@
     <Compile Include="Forms-admin\DeleteAndUpdateFrom.Designer.cs">
       <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListImage.cs" />
-    <Compile Include="LogANDRegister.cs" />
+    <Compile Include="profilePicture.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +413,12 @@
     <Compile Include="FormsLogin\ForgetPassword.Designer.cs">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reviews.cs" />
     <Compile Include="ThemColor.cs" />
     <Compile Include="UserControlEmpty.cs">
       <SubType>UserControl</SubType>
@@ -460,8 +466,9 @@
       <DependentUpon>MyAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsLogin\ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
@@ -767,6 +774,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1465154896woman-doing-yoga-simple1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19333424.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USERS3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USERS4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211677_image_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20943798.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ring2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3005766_account_door_exit_logout_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\299040_star_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

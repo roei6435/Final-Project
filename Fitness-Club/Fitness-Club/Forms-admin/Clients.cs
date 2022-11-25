@@ -38,7 +38,7 @@ namespace Fitness_Club
             }
 
         }
-        public Image ClipToCircle(Image srcImage, PointF center, float radius, Color backGround)
+        public static Image ClipToCircle(Image srcImage, PointF center, float radius, Color backGround)
         {
             Image dstImage = new Bitmap(srcImage.Width, srcImage.Height, srcImage.PixelFormat);
 
@@ -74,7 +74,7 @@ namespace Fitness_Club
             loadTheme();
             
         }
-        private Image getActiveStatusPicture(string lastConn)
+        public static Image getActiveStatusPicture(string lastConn)
         {
             Image nonActive = (Image)(new Bitmap(Properties.Resources.nonActive, 13, 13));
             Image active = (Image)(new Bitmap(Properties.Resources.active, 13, 13));
@@ -94,7 +94,7 @@ namespace Fitness_Club
                 for (int i = now; i < now + jump; i++)
                 {
                    
-                    string lastConn = lastConnectDiff(listP[i].LastConnect);
+                    string lastConn = LoginANDRegister.lastConnectDiff(listP[i].LastConnect);
                     Image statusUserAvctive= getActiveStatusPicture(lastConn);
                     DataUsersView.Rows.Add(
                          ClipToCircle(listP[i].ProfilePic, new PointF(listP[i].ProfilePic.Width / 2, listP[i].ProfilePic.Height / 2), listP[i].ProfilePic.Width / 2, Color.FromArgb(51, 51, 76)),
@@ -112,18 +112,18 @@ namespace Fitness_Club
             
             if (textBoxFind.Text != "")
             {
-                string str = uppercaseFirstLetter(textBoxFind.Text);
+                string str = LoginANDRegister.uppercaseFirstLetter(textBoxFind.Text);
                 DataUsersView.Rows.Clear();
                 for (int i = 0; i < listP.Count; i++)
                 {                 
-                    string lastConn = lastConnectDiff(listP[i].LastConnect);
+                    string lastConn = LoginANDRegister.lastConnectDiff(listP[i].LastConnect);
                     Image statusUserAvctive = getActiveStatusPicture(lastConn);
                     string fullName = listP[i].FirstName + " " + listP[i].LastName;
                     if (fullName.Contains(str))
                     {
                         DataUsersView.Rows.Add(
                         ClipToCircle(listP[i].ProfilePic, new PointF(listP[i].ProfilePic.Width / 2, listP[i].ProfilePic.Height / 2), listP[i].ProfilePic.Width / 2, Color.FromArgb(51, 51, 76)),
-                        statusUserAvctive, listP[i].FirstName + " " + listP[i].LastName, listP[i].UserId, lastConnectDiff(listP[i].LastConnect)
+                        statusUserAvctive, listP[i].FirstName + " " + listP[i].LastName, listP[i].UserId, LoginANDRegister.lastConnectDiff(listP[i].LastConnect)
                         );
                     }
                 }
@@ -139,34 +139,7 @@ namespace Fitness_Club
             }
         }
 
-        public static string lastConnectDiff(string lastConn)
-        {
-            if (lastConn != "null")
-            {
-                var prevDate = Convert.ToDateTime(lastConn);
-                var today = DateTime.Now;
-
-                var diffOfDates = today - prevDate;
-
-                if (diffOfDates.Days == 0 && diffOfDates.Hours == 0)
-                {
-                    if (diffOfDates.Minutes < 11) 
-                        return "Active now";
-                    return diffOfDates.Minutes + "m";
-                }                
-                else if (diffOfDates.Days == 0 && diffOfDates.Hours != 0)
-                    return diffOfDates.Hours + "h";
-                else
-                {
-                    if (diffOfDates.Days > 6)
-                        return "1w";
-                    return diffOfDates.Days + "d";
-                }
-
-            }
-            return "";
-
-        }
+      
         private void btnNext_Click_1(object sender, EventArgs e)
         {
             btnPrev.Visible = true;
@@ -273,18 +246,7 @@ namespace Fitness_Club
         }
 
 
-        public static string uppercaseFirstLetter(string str)
-        {
-            string res = char.ToUpper(str[0]).ToString();
-            for (int i = 1; i < str.Length; i++)
-            {
-                if (str[i - 1] == ' ')
-                    res += char.ToUpper(str[i]);
-                else
-                    res += char.ToLower(str[i]);
-            }
-            return res;
-        }
+
         
 
         private void textBoxFind_TextChanged(object sender, EventArgs e)

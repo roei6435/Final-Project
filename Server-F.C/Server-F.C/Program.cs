@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Data;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Server_F.C
 {
@@ -27,7 +28,7 @@ namespace Server_F.C
 
             try
             {
-                byte[] bytes = new byte[256];
+                byte[] bytes = new byte[1640];
                 int i, countReq = 0;
                 string dataOutput = "";
                 string fullDataFromClient = "";
@@ -70,13 +71,12 @@ namespace Server_F.C
 
         static void Main(string[] args)
         {
+            //  MengementClasses.getAllReviewsByIdClass("3");
             openingTheServerToReceiveCalls();
-           // Console.WriteLine(lastConnectDiff("1/11/2022 08:00:59"));  
-
-
-
-            Console.ReadKey();
+          
+             Console.ReadKey();
         }
+
 
 
 
@@ -267,9 +267,29 @@ namespace Server_F.C
 
                 return MengementClasses.getAllDataClasses(); //RETURN ALL DATA
             }
-            else if (functionName == "meso")
+            else if (functionName == "getPersonIdArrayByClassId")
             {
-                return "klom";
+                string classId = fullDataFromClientInArry[2];
+                return MengementClasses.getPersonIdArrayByClassId(classId);
+            }
+            else if(functionName == "editDatilsClass")
+            {
+                string classId = fullDataFromClientInArry[2],
+                    name = fullDataFromClientInArry[3],
+                    pos = fullDataFromClientInArry[4],
+                    activity = fullDataFromClientInArry[5],
+                    about = fullDataFromClientInArry[6];
+                return MengementClasses.editDatilsClass(classId,name,pos,activity,about);
+            }
+            else if(functionName== "getAllReviewsByIdClass")
+            {
+                string classId=fullDataFromClientInArry[2]; 
+                return MengementClasses.getAllReviewsByIdClass(classId);
+            }
+            else if(functionName== "deleteReviewById")
+            {
+                string reviewId=fullDataFromClientInArry[2];
+                return MengementClasses.deleteReviewById(reviewId);
             }
             return "Function not found.";
         }

@@ -65,11 +65,26 @@ namespace Fitness_Club
 
 
 
-       //------------------------------------------------------------------------------------------------------------------------------
-       //------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------
 
 
         //manu activity functions
+
+        public static void activePanel(Label lblActive, Panel panelActive)
+        {
+            lblActive.ForeColor = Color.DodgerBlue;
+            lblActive.Font = new Font("Segoe UI", 14f, FontStyle.Bold);
+            panelActive.Height = 3;
+            panelActive.BackColor = Color.DodgerBlue;
+        }
+        public static void inactivePanel(Label lblActive, Panel panelActive)
+        {
+            lblActive.ForeColor = Color.Gainsboro;
+            lblActive.Font = new Font("Segoe UI", 14f, FontStyle.Regular);
+            panelActive.Height = 2;
+            panelActive.BackColor = Color.Gainsboro;
+        }
         private Color SelectThemeColor()          //function return color theme
         {
             int index = random.Next(ThemColor.ColorList.Count);  //next in list
@@ -159,6 +174,7 @@ namespace Fitness_Club
             AdminScreen_Load(sender, e);    
             Reset();
         }         //return to dashboard
+
 
         private void btnClose_Click(object sender, EventArgs e)                 //close
         {
@@ -260,8 +276,8 @@ namespace Fitness_Club
         private void btnTraning_Click(object sender, EventArgs e)
         {
             if (btnTraning.BackColor == Color.FromArgb(34, 36, 49))
-            {
-                openChildForm(new Forms_admin.ClassesForm(), sender);
+            { 
+                openChildForm(new Forms_admin.ClassesForm(listP), sender);
                 btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
                 btnClients.BackColor = Color.FromArgb(34, 36, 49);
                 btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
@@ -376,8 +392,8 @@ namespace Fitness_Club
 
 
             lblTitleStatics.Text = "Registered users statistics ";
-            btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey) + "";
-            btnUserStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.userKey) + "";
+            lblUsers.Text = "Users  "+PL.CountAdminsANDUsersInSystem(PL.adminKey);
+            lblAdmins.Text = "Administrators  " + PL.CountAdminsANDUsersInSystem(PL.userKey);
 
             //PUTTING THE INFORMATION IN THE APPROPRIATE PLACES ON THE SCREEN
 
@@ -425,8 +441,8 @@ namespace Fitness_Club
             PersonList PL = new PersonList(listP);
 
             lblTitleStatics.Text = "Administrators statistics ";
-            btnAdminsStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.adminKey) + "";
-            btnUserStatistics.Text = PL.CountAdminsANDUsersInSystem(PL.userKey) + "";
+            lblUsers.Text = "Users  " + PL.CountAdminsANDUsersInSystem(PL.adminKey);
+            lblAdmins.Text = "Administrators  " + PL.CountAdminsANDUsersInSystem(PL.userKey);
 
             circleGender.Value = PL.PercentageGenderForUserORAdmins(PL.adminKey);
             circleGender.Text = circleGender.Value + "%";
@@ -476,7 +492,7 @@ namespace Fitness_Club
         private void AdminScreen_Load(object sender, EventArgs e)
         {
             string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
-
+            panelStaticsCircule.Size = new Size(778, 523);
             listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
 
             userLogged =FetchDataUserById(static_userId,listP);        
@@ -485,24 +501,44 @@ namespace Fitness_Club
 
         }
 
-
-        private void btnUserStatistics_Click(object sender, EventArgs e)
+        private void lblUsers_Click(object sender, EventArgs e)
         {
+            activePanel(lblUsers,panelUsers);
+            inactivePanel(lblAdmins,panelAdmins);
+            inactivePanel(lblClasses,panelClasses);
             FetchUsersDataAndPutInDashboard(listP);
-
         }
 
-        private void btnAdminsStatistics_Click(object sender, EventArgs e)
+        private void lblAdmins_Click(object sender, EventArgs e)
         {
+            activePanel(lblAdmins, panelAdmins);
+            inactivePanel(lblUsers, panelUsers);
+            inactivePanel(lblClasses, panelClasses);
             FetchAdminsDataAndPutInDashboard(listP);
-
         }
 
-        private void btnClassesStatistics_Click(object sender, EventArgs e)
+        private void lblClasses_Click(object sender, EventArgs e)
+        {
+            activePanel(lblClasses, panelClasses);
+            inactivePanel(lblUsers, panelUsers);
+            inactivePanel(lblAdmins, panelAdmins);
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LogIn login = new LogIn();
+            login.Show();
+            this.Hide();
+        }
+
+        private void penelHome_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

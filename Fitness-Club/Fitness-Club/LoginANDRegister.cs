@@ -106,7 +106,7 @@ namespace Fitness_Club
 
         }
         //sending email
-        public bool nameIsProper(String name)                    //to check if proper first/last name
+        public static bool nameIsProper(String name)                    //to check if proper first/last name
         {
            return Regex.IsMatch(name, @"^[a-zA-Z ]+$");
         }
@@ -154,6 +154,48 @@ namespace Fitness_Club
 
         }         //to check password quelity
 
+       public static string lastConnectDiff(string lastConn)
+        {
+            
+            if (lastConn != "null")
+            {
+                var prevDate = Convert.ToDateTime(lastConn);
+                var today = DateTime.Now;
+
+                var diffOfDates = today - prevDate;
+
+                if (diffOfDates.Days == 0 && diffOfDates.Hours == 0)
+                {
+                    if (diffOfDates.Minutes < 11)
+                        return "Active now";
+                    return diffOfDates.Minutes + "m";
+                }
+                else if (diffOfDates.Days == 0 && diffOfDates.Hours != 0)
+                    return diffOfDates.Hours + "h";
+                else
+                {
+                    if(diffOfDates.Days<7)
+                        return diffOfDates.Days + "d";
+                    return $"{diffOfDates.Days/7}w";
+                }
+
+            }
+            return "-";
+
+        }
+
+        public static string uppercaseFirstLetter(string str)
+        {
+            string res = char.ToUpper(str[0]).ToString();
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (str[i - 1] == ' ')
+                    res += char.ToUpper(str[i]);
+                else
+                    res += char.ToLower(str[i]);
+            }
+            return res;
+        }
 
 
     }

@@ -14,6 +14,101 @@ using System.Text.RegularExpressions;
 
 namespace Server_F.C
 {
+
+    //abstract class Shape
+    //{
+    //    public Shape(string name)
+    //    {
+    //        Console.WriteLine("Shape " + name);
+
+    //    }
+    //    public abstract void whatAmI();
+    //}
+    //class Ractengle : Shape
+    //{
+    //    public Ractengle(string name) : base(name)
+    //    {
+    //        Console.WriteLine("Rectengle: " + name);
+    //    }
+    //    public override void whatAmI()
+    //    {
+    //        Console.WriteLine("Rectengle");
+    //    }
+    //}
+    //class Squre : Ractengle
+    //{
+    //    public Squre(string name) : base(name)
+    //    {
+    //        Console.WriteLine("Squre: " + name);
+    //    }
+    //    public override void whatAmI()
+    //    {
+    //        Console.WriteLine("Squre");
+    //    }
+    //}
+    //static void Main(string[] args)
+    //{
+
+
+    //    //Ractengle r1 = new Ractengle("A");
+    //    //Ractengle r2 = new Squre("B");
+    //    //Squre s1 = (Squre)r2;
+
+    //    //r1.whatAmI();
+    //    //r2.whatAmI();
+    //    //s1.whatAmI();
+
+    //}
+    //public void QustionOne()
+    //{
+    //    int n = 0;
+    //    int[] arr = new int[10];
+    //    while (n != -1)
+    //    {
+    //        Console.WriteLine("enter num");
+    //        n = int.Parse(Console.ReadLine());
+    //        while (n > 9)
+    //        {
+    //            arr[n % 10] += 1;
+    //            n /= 10;
+    //        }
+    //        if (n != -1)
+    //            arr[n % 10] += 1;
+
+    //    }
+    //    n = 0;
+    //    int max = 0;
+    //    for (int i = 0; i < arr.Length; i++)
+    //        if (arr[i] > n)
+    //        {
+    //            n = arr[i];
+    //            max = i;
+    //        }
+    //    Console.WriteLine(max);
+    //}
+    //public void QustionTwo()
+    //{
+    //    int n = 727, a = 0, tmp = n;
+    //    while (tmp != 0)
+    //    {
+    //        a = a * 10 + (tmp % 10);
+    //        tmp = (int)tmp / 10;
+    //    }
+    //    if (n == a)
+    //    {
+    //        Console.WriteLine(n + " is polindrom");
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine(n + " not polindrom");
+
+    //    }
+    //}
+
+
+
+
+
     internal class Program
     {
         public static SqlConnection conn = new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
@@ -69,14 +164,17 @@ namespace Server_F.C
 
         }
 
+
+
         static void Main(string[] args)
         {
-            //  MengementClasses.getAllReviewsByIdClass("3");
-            openingTheServerToReceiveCalls();
-          
-             Console.ReadKey();
-        }
 
+
+             openingTheServerToReceiveCalls();
+            Console.ReadKey();
+
+
+        }
 
 
 
@@ -101,7 +199,11 @@ namespace Server_F.C
         //Found the controller and send the requset to the function.
         private static string SendingToProperControllerAndResponseData(string controller,string funName,string [] fullDataFromClientInArry)
         {
-            if (controller == "login")
+            if(controller== "dataOperation")
+            {
+                return conntrollerdataOperationActions(funName, fullDataFromClientInArry);
+            }
+            else if (controller == "login")
             {
                 return conntrollerLoginActions(funName, fullDataFromClientInArry);
             }
@@ -125,12 +227,42 @@ namespace Server_F.C
             else if(controller== "MengementClasses")
             {
                 return conntrollerMengementClassesActions(funName, fullDataFromClientInArry);
+            }  
+            else if(controller== "chatAdministrators")
+            {
+                return conntrollerChatAdministratorsActions(funName,fullDataFromClientInArry);  
+
             }
-             
             return "Controller not found.";
         }
 
         //Find the requested function in any of the controllers.
+
+        private static string conntrollerdataOperationActions(string functionName, string[] fullDataFromClientInArry)
+        {
+            string id = fullDataFromClientInArry[2];
+            if (functionName == "getPersonIdArrayByClassId")
+            {
+                return dataOperation.getPersonIdArrayByClassId(id);
+            }
+            else if (functionName == "getAllReviewsByIdClass")
+            {
+                return dataOperation.getAllReviewsByIdClass(id);
+            }
+            else if (functionName == "getClassesIdArrayByPersonId")
+            {
+                return dataOperation.getClassesIdArrayByPersonId(id);
+            }
+            else if (functionName == "getAllPaymentsArrayByUserId")
+            {
+                return dataOperation.getAllPaymentsArrayByUserId(id);
+            }
+            else if (functionName == "getPersonArrayLikeMessageByMessageId")
+            {
+                return dataOperation.getPersonArrayLikeMessageByMessageId(id);
+            }
+            return "Function not found.";
+        }
         private static string conntrollerLoginActions(string functionName, string[] fullDataFromClientInArry)
         {
             if (functionName == "tryLogIn")
@@ -160,15 +292,14 @@ namespace Server_F.C
         }
         private static string conntrollerDashboardActions(string functionName,string [] fullDataFromClientInArry)
         {
-            if (functionName == "getAllDataForAdminScreenInDahsboard")
+            if (functionName == "getAllDataAboutPersonsInSystem")
             {
 
-                return Dashboard.getAllDataForAdminScreenInDahsboard(); //RETURN ALL DATA
+                return Dashboard.getAllDataAboutPersonsInSystem(); //RETURN ALL DATA
             }
-            else if (functionName == "getDataForOnlyThisUserId")
+            else if (functionName == "getAllDataClasses")
             {
-                string userId = fullDataFromClientInArry[2];
-                return  Dashboard.getDataForOnlyThisUserId(userId); //RETURN Only one person
+                return Dashboard.getAllDataClasses();
             }
             return "Function not found.";
         }
@@ -184,6 +315,11 @@ namespace Server_F.C
                 phone = fullDataFromClientInArry[6],
                 dateBorn = fullDataFromClientInArry[7];
                 return myAccount.editDetailsPersonById(userId, fname, lname, email, phone, dateBorn);
+            }
+            else if (functionName == "getDataForOnlyThisUserId")
+            {
+                string userId = fullDataFromClientInArry[2];
+                return myAccount.getDataForOnlyThisUserId(userId); 
             }
             else if (functionName == "phoneExist")
             {
@@ -253,6 +389,14 @@ namespace Server_F.C
                 return MengementUsers.blockOrUnblockUser(userId, blocked);
 
             }
+            else if (functionName == "addPaymentByUserAndClassId") 
+            {
+                string classId = fullDataFromClientInArry[3],
+                    date = fullDataFromClientInArry[4],
+                    paidVia = fullDataFromClientInArry[5],
+                    sum = fullDataFromClientInArry[6];
+                return MengementUsers.addPaymentByUserAndClassId(userId,classId,date,paidVia,sum);
+            }
             else if (functionName == "meso")
             {
                 return "klom";
@@ -262,17 +406,7 @@ namespace Server_F.C
 
         private static string conntrollerMengementClassesActions(string functionName, string[] fullDataFromClientInArry)
         {
-            if (functionName == "getAllDataClasses")
-            {
-
-                return MengementClasses.getAllDataClasses(); //RETURN ALL DATA
-            }
-            else if (functionName == "getPersonIdArrayByClassId")
-            {
-                string classId = fullDataFromClientInArry[2];
-                return MengementClasses.getPersonIdArrayByClassId(classId);
-            }
-            else if(functionName == "editDatilsClass")
+             if(functionName == "editDatilsClass")
             {
                 string classId = fullDataFromClientInArry[2],
                     name = fullDataFromClientInArry[3],
@@ -281,11 +415,7 @@ namespace Server_F.C
                     about = fullDataFromClientInArry[6];
                 return MengementClasses.editDatilsClass(classId,name,pos,activity,about);
             }
-            else if(functionName== "getAllReviewsByIdClass")
-            {
-                string classId=fullDataFromClientInArry[2]; 
-                return MengementClasses.getAllReviewsByIdClass(classId);
-            }
+
             else if(functionName== "deleteReviewById")
             {
                 string reviewId=fullDataFromClientInArry[2];
@@ -294,7 +424,32 @@ namespace Server_F.C
             return "Function not found.";
         }
 
-
+        private static string conntrollerChatAdministratorsActions(string functionName, string[] fullDataFromClientInArry)
+        {
+            if (functionName == "getAllDataAboutTweet")
+            {
+                return ChatAdministrators.getAllDataAboutTweet();
+            }
+            else if (functionName == "addNewTweet")
+            {
+                string userId = fullDataFromClientInArry[2],
+                 content = fullDataFromClientInArry[3];
+                return ChatAdministrators.addNewTweet(userId,content);
+            }
+            else if(functionName== "likeToTweet")
+            {
+                string userId = fullDataFromClientInArry[2],
+                    messageId = fullDataFromClientInArry[3];
+                return ChatAdministrators.likeToTweet(userId,messageId);
+            }
+            else if(functionName== "unlikeToTweet")
+            {
+                string userId = fullDataFromClientInArry[2],
+                 messageId = fullDataFromClientInArry[3];
+                return ChatAdministrators.unlikeToTweet(userId, messageId);
+            }
+            return "Function not found.";
+        }
 
     }
 }

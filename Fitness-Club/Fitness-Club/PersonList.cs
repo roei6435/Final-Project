@@ -215,7 +215,37 @@ namespace Fitness_Club
             return newList;
         }
 
+        public Person theLeastOrMustActiveUser(string key)
+        {
 
+            int maxClassesRegisted = 0, minClassesRegisted = int.MaxValue;
+            Person pMax, pMin; pMax = pMin = listP[0];
+            for (int i = 0; i < listP.Count; i++)
+            {
+                if (key == "low" && listP[i].ClassesArray is null)  //if have class not reviews
+                {
+                    return listP[i];
+                }
+                else if (listP[i].ClassesArray != null && listP[i].ClassesArray.Length > maxClassesRegisted)
+                {
+                    maxClassesRegisted = listP[i].ClassesArray.Length;
+                    pMax = listP[i];
+                }
+                else if (listP[i].ClassesArray != null && listP[i].ClassesArray.Length < minClassesRegisted)
+                {
+                    minClassesRegisted = listP[i].ClassesArray.Length;
+                    pMin = listP[i];
+                }
+            }
+            switch (key)
+            {
+                case "low":
+                    return pMin;
+                case "high":
+                    return pMax;
+                default: return null;
+            }
+        }
 
 
 

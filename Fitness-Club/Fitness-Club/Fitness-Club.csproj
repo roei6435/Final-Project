@@ -332,6 +332,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addPayment.Designer.cs">
+      <DependentUpon>addPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calandar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -354,6 +360,12 @@
     <Compile Include="Forms-admin\addMember.Designer.cs">
       <DependentUpon>addMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms-admin\AdministratorCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms-admin\AdministratorCenter.Designer.cs">
+      <DependentUpon>AdministratorCenter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms-admin\ClassesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +377,20 @@
     </Compile>
     <Compile Include="Forms-admin\DeleteAndUpdateFrom.Designer.cs">
       <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="likeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="likeList.Designer.cs">
+      <DependentUpon>likeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tweets.cs" />
+    <Compile Include="Payments.cs" />
+    <Compile Include="personsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="personsList.Designer.cs">
+      <DependentUpon>personsList.cs</DependentUpon>
     </Compile>
     <Compile Include="profilePicture.cs" />
     <Compile Include="Login.cs">
@@ -419,7 +445,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Reviews.cs" />
+    <Compile Include="ReviewsList.cs" />
     <Compile Include="ThemColor.cs" />
+    <Compile Include="BubbleOfTweet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BubbleOfTweet.Designer.cs">
+      <DependentUpon>BubbleOfTweet.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEmpty.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -432,6 +465,9 @@
     <Compile Include="UserControlDays.Designer.cs">
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addPayment.resx">
+      <DependentUpon>addPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calandar.resx">
       <DependentUpon>Calandar.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,11 +477,17 @@
     <EmbeddedResource Include="Forms-admin\addMember.resx">
       <DependentUpon>addMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms-admin\AdministratorCenter.resx">
+      <DependentUpon>AdministratorCenter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms-admin\ClassesForm.resx">
       <DependentUpon>ClassesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms-admin\DeleteAndUpdateFrom.resx">
       <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="likeList.resx">
+      <DependentUpon>likeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -465,6 +507,9 @@
     <EmbeddedResource Include="MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="personsList.resx">
+      <DependentUpon>personsList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -472,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsLogin\ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BubbleOfTweet.resx">
+      <DependentUpon>BubbleOfTweet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlEmpty.resx">
       <DependentUpon>UserControlEmpty.cs</DependentUpon>
@@ -798,6 +846,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\299040_star_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2427699_statistics_analysis_statistic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2427699_statistics_analysis_statistic_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLUS2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLUS3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEND4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEND5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POINTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIKE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIKE2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HIDE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\likeonn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLEAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowDwon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

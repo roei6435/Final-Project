@@ -48,16 +48,10 @@
             this.txtBoxConfirmPass = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelStep2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comboBoxDay = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBoxUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.SwitchAdmin = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label13 = new System.Windows.Forms.Label();
             this.panelStep1 = new System.Windows.Forms.Panel();
@@ -82,6 +76,12 @@
             this.lblFname = new System.Windows.Forms.Label();
             this.txtBoxFname = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxDay = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelVerS3.SuspendLayout();
             this.panelStep3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxConPassVOn)).BeginInit();
@@ -349,160 +349,6 @@
             this.panelStep2.TabIndex = 90;
             this.panelStep2.Visible = false;
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(496, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 26);
-            this.label3.TabIndex = 102;
-            this.label3.Text = "year";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(321, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 26);
-            this.label2.TabIndex = 102;
-            this.label2.Text = "month";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(180, 200);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 26);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "day";
-            // 
-            // comboBoxYear
-            // 
-            this.comboBoxYear.AllowDrop = true;
-            this.comboBoxYear.BackColor = System.Drawing.Color.White;
-            this.comboBoxYear.DisplayMember = "12";
-            this.comboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxYear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.comboBoxYear.FocusedColor = System.Drawing.Color.RoyalBlue;
-            this.comboBoxYear.FocusedState.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.comboBoxYear.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxYear.ForeColor = System.Drawing.Color.Gainsboro;
-            this.comboBoxYear.FormattingEnabled = true;
-            this.comboBoxYear.IntegralHeight = false;
-            this.comboBoxYear.ItemHeight = 30;
-            this.comboBoxYear.Items.AddRange(new object[] {
-            "1961",
-            "1962",
-            "1963",
-            "1964",
-            "1965",
-            "1966",
-            "1967",
-            "1968",
-            "1969",
-            "1970",
-            "1971",
-            "1972",
-            "1973",
-            "1974",
-            "1975",
-            "1976",
-            "1977",
-            "1978",
-            "1979",
-            "1980",
-            "1981",
-            "1982",
-            "1983",
-            "1984",
-            "1985",
-            "1986",
-            "1987",
-            "1988",
-            "1989",
-            "1990",
-            "1991",
-            "1992",
-            "1993",
-            "1994",
-            "1995",
-            "1996",
-            "1997",
-            "1998",
-            "1999",
-            "2000",
-            "2001",
-            "2002",
-            "2003",
-            "2004",
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            ""});
-            this.comboBoxYear.Location = new System.Drawing.Point(451, 152);
-            this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(135, 36);
-            this.comboBoxYear.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.comboBoxYear.TabIndex = 100;
-            // 
-            // comboBoxDay
-            // 
-            this.comboBoxDay.AllowDrop = true;
-            this.comboBoxDay.BackColor = System.Drawing.Color.White;
-            this.comboBoxDay.DisplayMember = "12";
-            this.comboBoxDay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.comboBoxDay.FocusedColor = System.Drawing.Color.RoyalBlue;
-            this.comboBoxDay.FocusedState.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.comboBoxDay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxDay.ForeColor = System.Drawing.Color.Gainsboro;
-            this.comboBoxDay.FormattingEnabled = true;
-            this.comboBoxDay.IntegralHeight = false;
-            this.comboBoxDay.ItemHeight = 30;
-            this.comboBoxDay.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.comboBoxDay.Location = new System.Drawing.Point(156, 152);
-            this.comboBoxDay.Name = "comboBoxDay";
-            this.comboBoxDay.Size = new System.Drawing.Size(102, 36);
-            this.comboBoxDay.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.comboBoxDay.TabIndex = 87;
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -556,16 +402,6 @@
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Male";
             this.radioButtonMale.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label9.Location = new System.Drawing.Point(5, 167);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 32);
-            this.label9.TabIndex = 94;
-            this.label9.Text = "Date of birth";
             // 
             // SwitchAdmin
             // 
@@ -891,6 +727,170 @@
             this.panel7.Size = new System.Drawing.Size(251, 1);
             this.panel7.TabIndex = 77;
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label9.Location = new System.Drawing.Point(5, 167);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(148, 32);
+            this.label9.TabIndex = 94;
+            this.label9.Text = "Date of birth";
+            // 
+            // comboBoxDay
+            // 
+            this.comboBoxDay.AllowDrop = true;
+            this.comboBoxDay.BackColor = System.Drawing.Color.White;
+            this.comboBoxDay.DisplayMember = "12";
+            this.comboBoxDay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.comboBoxDay.FocusedColor = System.Drawing.Color.RoyalBlue;
+            this.comboBoxDay.FocusedState.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.comboBoxDay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDay.ForeColor = System.Drawing.Color.Gainsboro;
+            this.comboBoxDay.FormattingEnabled = true;
+            this.comboBoxDay.IntegralHeight = false;
+            this.comboBoxDay.ItemHeight = 30;
+            this.comboBoxDay.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxDay.Location = new System.Drawing.Point(156, 152);
+            this.comboBoxDay.Name = "comboBoxDay";
+            this.comboBoxDay.Size = new System.Drawing.Size(102, 36);
+            this.comboBoxDay.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.comboBoxDay.TabIndex = 87;
+            // 
+            // comboBoxYear
+            // 
+            this.comboBoxYear.AllowDrop = true;
+            this.comboBoxYear.BackColor = System.Drawing.Color.White;
+            this.comboBoxYear.DisplayMember = "12";
+            this.comboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxYear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.comboBoxYear.FocusedColor = System.Drawing.Color.RoyalBlue;
+            this.comboBoxYear.FocusedState.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.comboBoxYear.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxYear.ForeColor = System.Drawing.Color.Gainsboro;
+            this.comboBoxYear.FormattingEnabled = true;
+            this.comboBoxYear.IntegralHeight = false;
+            this.comboBoxYear.ItemHeight = 30;
+            this.comboBoxYear.Items.AddRange(new object[] {
+            "1961",
+            "1962",
+            "1963",
+            "1964",
+            "1965",
+            "1966",
+            "1967",
+            "1968",
+            "1969",
+            "1970",
+            "1971",
+            "1972",
+            "1973",
+            "1974",
+            "1975",
+            "1976",
+            "1977",
+            "1978",
+            "1979",
+            "1980",
+            "1981",
+            "1982",
+            "1983",
+            "1984",
+            "1985",
+            "1986",
+            "1987",
+            "1988",
+            "1989",
+            "1990",
+            "1991",
+            "1992",
+            "1993",
+            "1994",
+            "1995",
+            "1996",
+            "1997",
+            "1998",
+            "1999",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            ""});
+            this.comboBoxYear.Location = new System.Drawing.Point(451, 152);
+            this.comboBoxYear.Name = "comboBoxYear";
+            this.comboBoxYear.Size = new System.Drawing.Size(135, 36);
+            this.comboBoxYear.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.comboBoxYear.TabIndex = 100;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(180, 200);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 26);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "day";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(321, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 26);
+            this.label2.TabIndex = 102;
+            this.label2.Text = "month";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(496, 200);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 26);
+            this.label3.TabIndex = 102;
+            this.label3.Text = "year";
+            // 
             // addMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -952,16 +952,10 @@
         private System.Windows.Forms.TextBox txtBoxConfirmPass;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panelStep2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxYear;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxDay;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxUser;
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonMale;
-        private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2ToggleSwitch SwitchAdmin;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panelStep1;
@@ -986,5 +980,11 @@
         private System.Windows.Forms.Label lblFname;
         private System.Windows.Forms.TextBox txtBoxFname;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxYear;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxDay;
+        private System.Windows.Forms.Label label9;
     }
 }

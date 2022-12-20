@@ -20,7 +20,9 @@ namespace Fitness_Club
         static public IPAddress hostName = IPAddress.Parse("127.0.0.1");
         public static string separationKey = "&&&";
         public static string startObjectKey = "$$$";
+        public static string controller = "dataOperation#";
 
+        //main connact with server
         public static string callToServer(string contr, string funName, string input)
         {
 
@@ -46,13 +48,16 @@ namespace Fitness_Club
 
         }
 
+
+
+
+        //conavartd data. 
+
         public static List<Person> ConvartDataToListOfPersons(string data)
         {
             string userId, fName, lName, email, phone, dateBorn, dateRegistion,lastConn;
             Image profilePic;
             bool gender, admin, isAuth, isBlocked;
-
-
             List<Person> ListOfAllPerson = new List<Person>();
             List<profilePicture> proPicList = ConnectWithServer.getListOfAllPics("select profilePic,userId from users");
             List<string> list = new List<string>();
@@ -82,6 +87,7 @@ namespace Fitness_Club
             return ListOfAllPerson;
 
         }
+
         public static List<EventCalandarcs> ConvartDataToListOfEvent(string data)
         {
             string eventId,eventName, date, fromHour, toHour, location;
@@ -110,7 +116,7 @@ namespace Fitness_Club
         {
             string classId, nameClass, place,activity,about;
             Image pic;
-            Person [] personRegistedThisClass;
+            Person [] personRegistedThisClass; Reviews[] reviewsArrayForThisClass;
           
             List<Classes> ListOfAllClasses = new List<Classes>();
             List<profilePicture> proPicList = ConnectWithServer.getListOfAllPics("select pic, classId from classes");
@@ -127,52 +133,25 @@ namespace Fitness_Club
                 activity = invidualClass[3];
                 about = invidualClass[invidualClass.Count - 1];
                 pic = getPicById(classId, proPicList);
-                personRegistedThisClass = ConnectWithServer.getPersonIdArrayByClassId(classId, listP);
+                personRegistedThisClass =getPersonArrayByClassId(classId, listP);
+               
                 Classes newClassAdded;
-                if (personRegistedThisClass is null)
+                newClassAdded = new Classes(classId, nameClass, place, bool.Parse(activity), about, pic);
+                if (personRegistedThisClass != null)
                 {
-                    newClassAdded = new Classes(classId, nameClass, place, bool.Parse(activity),about, pic);             
+                    newClassAdded.ArrayRegisteredUsersThisClass = personRegistedThisClass;             
                 }
-                else
+                reviewsArrayForThisClass = getReviewArrayByClassId(newClassAdded, listP);
+                if(reviewsArrayForThisClass != null)
                 {
-                    newClassAdded = new Classes(classId, nameClass, place, bool.Parse(activity),about ,pic, personRegistedThisClass);
+                    newClassAdded.ArrayReviews=reviewsArrayForThisClass;
                 }
                 ListOfAllClasses.Add(newClassAdded);
             }
             return ListOfAllClasses;
         }
 
-        public static  Person[] getPersonIdArrayByClassId(string classId, List<Person> listP)
-        {
-            string response = ConnectWithServer.callToServer(Forms_admin.ClassesForm.controller, "getPersonIdArrayByClassId#", classId);
-            if (response == string.Empty) 
-                return null;
-            List<Person> result = new List<Person>();
-            PersonList PL = new PersonList(listP);
-            string[] idArray = (response.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries));
-            foreach (string id in idArray)
-            {
-                Person p = PL.findPersonById(id);
-                result.Add(p);
-            }
-            return result.ToArray();
-        }
-        public static Classes[] getClassesIdArrayByPersonId(string userId, List<Classes> listC)
-        {
-            string response = ConnectWithServer.callToServer(Clients.controller, "getClassesIdArrayByPersonId#",userId);
-            if (response == string.Empty)
-                return null;
-            List<Classes> result = new List<Classes>();
-            ClassesList CL = new ClassesList(listC);
-            string[] idArray = (response.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries));
-            foreach (string id in idArray)
-            {
-                Classes c = CL.findClassById(id);
-                result.Add(c);
-            }
-            return result.ToArray();
-        }
-
+  
         public static List<Reviews>convartDataToListOfReviews(string data,List<Person> listP,Classes c)
         {
             string id, userId, content, rating, dateInString;
@@ -194,7 +173,60 @@ namespace Fitness_Club
                 ListOfAllReviews.Add(review);
             }
             return ListOfAllReviews;
-        } 
+        }
+
+        public static List<Payments> convartDataToListOfPayments(string data, List<Person> listP,List<Classes>listC)
+        {
+            string id, userId, classId, sum,paidVia, dateInString;
+            List<Payments> ListOfAllPayments = new List<Payments>();
+            PersonList PL = new PersonList(listP);
+            ClassesList CL=new ClassesList(listC);
+            List<string> list = new List<string>();
+            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            for (int j = 0; j < list.Count; j++)
+            {
+                List<string> invidualPayment = new List<string>();
+                invidualPayment = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+                id = invidualPayment[0];
+                userId = invidualPayment[1]; Person user = PL.findPersonById(userId);
+                classId = invidualPayment[2]; Classes c=CL.findClassById(classId);
+                dateInString = invidualPayment[3]; DateTime date = Convert.ToDateTime(dateInString);
+                paidVia = invidualPayment[4];   
+                sum = invidualPayment[invidualPayment.Count - 1];
+
+                Payments payment = new Payments(id, user, c,paidVia,sum, date);
+                ListOfAllPayments.Add(payment);
+            }
+            return ListOfAllPayments;
+        }
+
+        public static List<Tweets> convartDataToListOfMessageAdmin(string data, List<Person> listP)
+        {
+            string id, userId,dateInString,content;
+            Person[] arrOfLikes; 
+            List<Tweets> ListOfAlltweets = new List<Tweets>();
+            PersonList PL = new PersonList(listP);
+            List<string> list = new List<string>();
+            list = (data.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            for (int j = 0; j < list.Count; j++)
+            {
+                List<string> invidualMessageAdmin = new List<string>();
+                invidualMessageAdmin = (list.ElementAt(j).Split(new string[] { ConnectWithServer.separationKey }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+                id = invidualMessageAdmin[0];
+                userId = invidualMessageAdmin[1]; Person user = PL.findPersonById(userId);
+                dateInString = invidualMessageAdmin[invidualMessageAdmin.Count - 1]; DateTime date = Convert.ToDateTime(dateInString);
+                content = invidualMessageAdmin[2];
+                Tweets tweet = new Tweets(id, user, date, content);
+                arrOfLikes = getPersonArrayLikeMessageByMessageId(id, listP);
+                if(arrOfLikes != null)
+                {
+                    tweet.ArrLikesThisTweet = arrOfLikes;
+                }
+                ListOfAlltweets.Add(tweet);
+            }
+            return ListOfAlltweets;
+        }
+
 
         //pic
         public static Image getPicById(string userId, List<profilePicture> list)
@@ -271,6 +303,110 @@ namespace Fitness_Club
 
 
 
+
+        /// <summary>
+        /// dataOperation
+        /// 
+
+        public static Person[] getPersonArrayLikeMessageByMessageId(string messageId,List<Person>listP)
+        {
+            string response = ConnectWithServer.callToServer(controller, "getPersonArrayLikeMessageByMessageId#", messageId);
+            if (response == string.Empty)
+                return null;
+            List<Person> result = new List<Person>();
+            PersonList PL = new PersonList(listP);
+            string[] idArray = (response.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries));
+            foreach (string id in idArray)
+            {
+                Person p = PL.findPersonById(id);
+                result.Add(p);
+            }
+            return result.ToArray();
+        }
+
+
+        public static Payments[] getPaymentsArrayByUserId(string userId,List<Person> listP,List<Classes>listC)
+        {
+            string fullPaymentsData = ConnectWithServer.callToServer(controller, "getAllPaymentsArrayByUserId#", userId);
+            if (fullPaymentsData != string.Empty)
+            {
+                List<Payments> listPayments = ConnectWithServer.convartDataToListOfPayments(fullPaymentsData, listP,listC);
+                return listPayments.ToArray();
+            }
+            return null;
+        }
+
+        public static Reviews[] getReviewArrayByClassId(Classes c, List<Person> listP)///
+        {
+
+            string fullDataReviews = ConnectWithServer.callToServer(controller, "getAllReviewsByIdClass#", c.ClassId);
+            if (fullDataReviews != string.Empty)
+            {
+                List<Reviews> listR = ConnectWithServer.convartDataToListOfReviews(fullDataReviews, listP, c);
+                return listR.ToArray();
+            }
+            return null;
+        }
+
+        public static Person[] getPersonArrayByClassId(string classId, List<Person> listP)
+        {
+            string response = ConnectWithServer.callToServer(controller, "getPersonIdArrayByClassId#", classId);
+            if (response == string.Empty)
+                return null;
+            List<Person> result = new List<Person>();
+            PersonList PL = new PersonList(listP);
+            string[] idArray = (response.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries));
+            foreach (string id in idArray)
+            {
+                Person p = PL.findPersonById(id);
+                result.Add(p);
+            }
+            return result.ToArray();
+        }
+
+
+        public static Classes[] getClassesArrayByPersonId(string userId, List<Classes> listC)
+        {
+            string response = ConnectWithServer.callToServer(controller, "getClassesIdArrayByPersonId#", userId);
+            if (response == string.Empty)
+                return null;
+            List<Classes> result = new List<Classes>();
+            ClassesList CL = new ClassesList(listC);
+            string[] idArray = (response.Split(new string[] { ConnectWithServer.startObjectKey }, StringSplitOptions.RemoveEmptyEntries));
+            foreach (string id in idArray)
+            {
+                Classes c = CL.findClassById(id);
+                result.Add(c);
+            }
+            return result.ToArray();
+        }
+
+
+
+
+
+
+        public static List<Person> addArraysClassesAndPaymentsToPersonList(List<Person> listP, List<Classes> listC)
+        {
+            List<Person> newList = new List<Person>();
+            foreach (Person person in listP)
+            {
+                Classes[] classArray = null;
+                Payments [] paymentArray=null;
+                classArray = getClassesArrayByPersonId(person.UserId, listC);
+                paymentArray = getPaymentsArrayByUserId(person.UserId,listP ,listC);
+                if (classArray != null)
+                {
+                    person.ClassesArray = classArray;
+                }
+                if(paymentArray != null)
+                {
+                    person.PaymentsArray = paymentArray;
+                }
+                newList.Add(person);
+            }
+            return newList;
+        }
 
     }
 }

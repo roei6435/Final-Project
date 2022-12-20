@@ -14,7 +14,6 @@ namespace Fitness_Club
         private string lName;
         private string email;
         private string phone;
-        // private string password;
         private string dateBorn;
         private string dateRegistion;
         private string lastConnect;
@@ -23,7 +22,8 @@ namespace Fitness_Club
         private bool admin;
         private bool isAuth;
         private bool isBlocked;
-        //  private int calId;
+        private Classes[] classArray = null;
+        private Payments[] paymentsArray = null;
 
 
 
@@ -46,8 +46,7 @@ namespace Fitness_Club
             this.fName = fName;
             this.lName = lName;
             this.email = email;
-            this.phone = phone;
-            //  this.password = password;   
+            this.phone = phone;  
             this.dateBorn = dateBorn;
             this.dateRegistion = dateRegistion;
             this.lastConnect = lastConnect;
@@ -56,8 +55,6 @@ namespace Fitness_Club
             this.admin = admin;
             this.isAuth = isAuth;
             this.isBlocked = isBlocked;
-            //  this.calId = calId;
-
         }
 
 
@@ -69,6 +66,11 @@ namespace Fitness_Club
         public string FirstName
         {
             get { return fName; }
+            set { fName = value; }
+        }
+        public string FullName
+        {
+            get { return fName+" "+lName; }
             set { fName = value; }
         }
         public string LastName
@@ -126,6 +128,16 @@ namespace Fitness_Club
         {
             get { return isBlocked; }
             set { isBlocked = value; }
+        }
+        public Classes[] ClassesArray
+        {
+            get { return classArray; }
+            set { classArray = value; }
+        }
+        public Payments[] PaymentsArray
+        {
+            get { return paymentsArray; }
+            set { paymentsArray = value; }
         }
 
     }

@@ -17,11 +17,17 @@ namespace Fitness_Club
     {
         public static string controller = "MengementUsers#";
         private List<Person> listP;
+        private List<Classes> listC;
+        private PersonList PL;
         private int indicator=0;
         private int jump = 8;
+        private Person personSelected=null;
+        private bool needRefresh = false;
 
-        public Clients()
+        public Clients(List<Person>listP,List<Classes>listC)
         {
+            this.listP = listP;
+            this.listC = listC;
             InitializeComponent();
         }
         private void loadTheme()
@@ -68,9 +74,14 @@ namespace Fitness_Club
 
         private void Clients_Load(object sender, EventArgs e)
         {
-            string responseFromServer = ConnectWithServer.callToServer(AdminScreen.controller, "getAllDataForAdminScreenInDahsboard#", "");
-            listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
-            displayData(indicator, jump);
+            if (needRefresh)
+            {
+                string responseFromServer = ConnectWithServer.callToServer(AdminScreen.controller, "getAllDataAboutPersonsInSystem#", "");
+                listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
+            }
+          //  displayDataListOfPayments(listP[0].PaymentsArray);
+            PL = new PersonList(listP);
+            displayDataListOfUser(indicator, jump);
             loadTheme();
             
         }
@@ -82,9 +93,60 @@ namespace Fitness_Club
                 return active;
             return nonActive;
         }
+        private string getAvgOfClass(Reviews [] arr)
+        {
+            float sum = 0;
+            foreach (Reviews review in arr)
+            {
+                sum += float.Parse(review.Rating);
+            }
+            return ((int)(sum / arr.Length) + "");
+        }
+        private void displayDataListOfClasses(Classes[] arr)
+        {
+            try
+            {
 
+                for (int i = 0; i < 5; i++)
+                {
+                    int friends = 0;
+                    if (arr[i].ArrayRegisteredUsersThisClass != null)
+                        friends = arr[i].ArrayRegisteredUsersThisClass.Length;
+                    string raiting = "Not reviews...";
+                    if (arr[i].ArrayReviews != null)
+                    {
+                        raiting = getAvgOfClass(arr[i].ArrayReviews) + " Stars";
+                    }
+                    DataGridViewClassMember.Rows.Add(
+                               arr[i].NameClass,friends+ " Friends", raiting
+                           ) ;
+                }
+            }
+            catch
+            {
+               
+            }
+        }
 
-        private void displayData(int now,int jump)
+        private void displayDataListOfPayments(Payments [] arr)
+        {
+            try
+            {
+
+                for (int i = 0; i < 5 ; i++)
+                {
+
+                    DataPaymentsView.Rows.Add(
+                               arr[i].Date.ToShortDateString(),arr[i].Sum,arr[i].PaidVia,arr[i].ClassP.NameClass     
+                           );
+                }
+            }
+            catch
+            {
+               
+            }
+        }
+        private void displayDataListOfUser(int now,int jump)
         {
             
             DataUsersView.Rows.Clear();
@@ -135,7 +197,7 @@ namespace Fitness_Club
                 btnPrev.Visible = true;
                 btnNext.Visible = true;
                 indicator = 0;
-                displayData(indicator, jump);
+                displayDataListOfUser(indicator, jump);
             }
         }
 
@@ -146,7 +208,7 @@ namespace Fitness_Club
             if (indicator + jump < listP.Count)
             {
                 indicator += jump;
-                displayData(indicator, jump);
+                displayDataListOfUser(indicator, jump);
 
             }
         }
@@ -158,7 +220,7 @@ namespace Fitness_Club
             {
 
                 indicator -= jump;
-                displayData(indicator, jump);
+                displayDataListOfUser(indicator, jump);
 
             }
             else
@@ -174,38 +236,56 @@ namespace Fitness_Club
         {
             foreach (DataGridViewRow row in DataUsersView.SelectedRows)
             {
-                
-                panelSTAM.Visible = true;
+                DataPaymentsView.Rows.Clear();
+                DataGridViewClassMember.Rows.Clear();   
                 panelAllPerons.Visible = false;
                 panelUserData.Visible = true;
                 btnSendMess.BackColor=btnNext.BackColor;
-                PersonList PL = new PersonList(listP);
-                Person person=PL.findPersonById((row.Cells[3].Value).ToString());
-                btnBloked.Tag = person.UserId;
-                lblFullName.Text = person.FirstName + " " + person.LastName;
-                lblDateBornAndAge.Text = person.DateBorn + ", " + PersonList.GetAge(person.DateBorn).ToString("0");
-                lblEmail.Text=person.Email; 
-                lblPhone.Text=person.Phone;
-                profilePic.Image = person.ProfilePic;
-                if (!person.IsBlocked)
+                personSelected = PL.findPersonById((row.Cells[3].Value).ToString());
+                btnBloked.Tag = personSelected.UserId;
+                lblFullName.Text = personSelected.FullName;
+                lblDateBornAndAge.Text = personSelected.DateBorn + ", " + PersonList.GetAge(personSelected.DateBorn).ToString("0");
+                lblEmail.Text= personSelected.Email; 
+                lblPhone.Text= personSelected.Phone;
+                profilePic.Image = personSelected.ProfilePic;
+                if (!personSelected.IsBlocked)
                 {
                     isBlockStatus.Visible = false;
-                    btnBloked.Text = "Blocked now";
+                    btnBloked.Text = "Blocked";
                     btnBloked.Image = Properties.Resources._9110980_circle_block_icon;
                 }
                 else
                 {
                     isBlockStatus.Visible = true;
-                    btnBloked.Text = "Unblock now";
+                    btnBloked.Text = "Unblock";
                     btnBloked.Image = Properties.Resources.unlock_icon;
-                }               
-               
+                }
+                if (personSelected.PaymentsArray != null)
+                {
+                    btnAddPaymentTwo.Visible = true;
+                    DataPaymentsView.Visible = true;
+                    displayDataListOfPayments(personSelected.PaymentsArray);
+                }
+                else
+                {
+                    btnAddPaymentTwo.Visible = false;
+                    DataPaymentsView.Visible = false;
+                }
+                if (personSelected.ClassesArray != null)
+                {
+                    displayDataListOfClasses(personSelected.ClassesArray);
+                    DataGridViewClassMember.Visible = true;
+                }
+                else
+                {
+                    DataGridViewClassMember.Visible = false;
+                }
             }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            panelSTAM.Visible = false;
+          
             panelUserData.Visible = false;
             panelAllPerons.Visible = true;
 
@@ -261,7 +341,63 @@ namespace Fitness_Club
 
         private void btnSendMess_Click(object sender, EventArgs e)
         {
-          //  panelSendMail.Visible = true;
+        
+        }
+
+        private void lblPayments_Click(object sender, EventArgs e)
+        {
+            AdminScreen.activePanel(lblPayments, panelPayments);
+            AdminScreen.inactivePanel(lblMemberOfClass, panelMember);
+            panelLastPayments.Visible = true;
+            panelMemberOfClass.Visible = false;
+        }
+
+        private void lblMemberOfClass_Click(object sender, EventArgs e)
+        {
+            AdminScreen.activePanel( lblMemberOfClass, panelMember);
+            AdminScreen.inactivePanel(lblPayments, panelPayments);
+            panelLastPayments.Visible = false;
+            panelMemberOfClass.Visible = true;
+        }
+
+
+        private void btnAddPayment_Click_1(object sender, EventArgs e)
+        {
+            personSelected = PL.findPersonById(DataUsersView.CurrentRow.Cells[3].Value.ToString());
+            addPayment ap = new addPayment(personSelected);
+            ap.FormClosed += addPayment_FormClosed;
+            ap.Show();
+        }
+
+        private void btnAddPaymentTwo_Click(object sender, EventArgs e)
+        {
+            personSelected = PL.findPersonById(DataUsersView.CurrentRow.Cells[3].Value.ToString());
+            addPayment ap = new addPayment(personSelected);
+            ap.FormClosed += addPayment_FormClosed;
+            ap.Show();
+        }
+        private void addPayment_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (bool.Parse(addPayment.paymentDone))
+            {
+                if(personSelected.PaymentsArray is null)
+                {
+                     btnAddPaymentTwo.Visible = true;
+                    DataPaymentsView.Visible = true;
+                   
+                }              
+                personSelected.PaymentsArray=ConnectWithServer.getPaymentsArrayByUserId(personSelected.UserId, listP, listC);
+                DataPaymentsView.Rows.Clear();
+                List<Payments>list=personSelected.PaymentsArray.ToList();
+                list.Reverse();
+                displayDataListOfPayments(list.ToArray());
+                this.Refresh();
+               
+            }
+            else
+            {
+                MessageBox.Show("Sorry, payment not sucsses.");
+            }
         }
     }
 }

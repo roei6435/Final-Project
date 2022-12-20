@@ -10,77 +10,7 @@ namespace Server_F.C
 {
     internal class MengementClasses
     {
-        public static string getAllDataClasses()
-        {
-            string data = "";
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "select * from classes";
-                cmd.Connection = Program.conn;
-                Program.conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.HasRows)
-                {
-                    // string pic;
-                    for (int i = 0; rdr.Read(); i++)
-                    {
-                        data += rdr[0] + Program.separationKey;   //ClassId
-                        data += rdr[1] + Program.separationKey;    //nameClass
-                        data += rdr[2] + Program.separationKey;   //place
-                         data += rdr[4] + Program.separationKey;    //activity
-                        data += rdr[5] + Program.startObjectKey;  //about
-
-                    }
-
-                }
-
-                Program.conn.Close();
-                return data;
-
-            }
-            catch (Exception err)
-            {
-                Program.conn.Close();
-                Console.WriteLine("from exption in function: " + err.Message);
-                return null;
-            }
-        }
-
-
-        public static string getPersonIdArrayByClassId(string classId)
-        {
-            string data = "";
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select userId from listClassesByUser where classesId='{classId}';";
-                cmd.Connection = Program.conn;
-                Program.conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.HasRows)
-                {
-                    for (int i = 0; rdr.Read(); i++)
-                    {
-                        data += rdr[0] + Program.startObjectKey;    //userId
-                    }
-
-                }
-
-                Program.conn.Close();
-                return data;
-
-            }
-            catch (Exception err)
-            {
-                Program.conn.Close();
-                Console.WriteLine("from exption in function: " + err.Message);
-                return null;
-            }
-        }
-
+    
         public static string editDatilsClass(string classId,string name,string position,string activity,string about)
         {
             try
@@ -107,46 +37,7 @@ namespace Server_F.C
             }
         }
 
-        public static string getAllReviewsByIdClass(string classId)
-        {
-            string data = "";
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select * from reviewsClasses where classId='{classId}'";
-                cmd.Connection = Program.conn;
-                Program.conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.HasRows)
-                {
-                   
-                    for (int i = 0; rdr.Read(); i++)
-                    {
-                       // Console.WriteLine(rdr[6].ToString().Split(' ')[0]);
-                        data += rdr[0] + Program.separationKey;   //reviewId
-                        data += rdr[1] + Program.separationKey;    //userId
-                       // data += rdr[2] + Program.separationKey;   //classId
-                        data += rdr[3] + Program.separationKey;    //reviewContent
-                        data += rdr[4] + Program.separationKey;  //rating
-                        data += rdr[5] + Program.startObjectKey;   //date
-
-
-                    }
-
-                }
-
-                Program.conn.Close();
-                return data;
-
-            }
-            catch (Exception err)
-            {
-                Program.conn.Close();
-                //Console.WriteLine("from exption in function: " + err.Message);
-                return "";
-            }
-        }
+       
        
         public static string deleteReviewById(string reviewId)
         {

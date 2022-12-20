@@ -27,8 +27,9 @@ namespace Fitness_Club
         private bool membersCollapse=true;
         public static string static_userId;
         public static string controller = "Dashboard#";
-        private Person userLogged = null;
+        public static Person userLogged = null;
         private List<Person> listP = null;
+        private List<Classes> listC;
 
 
         public AdminScreen(string userId)
@@ -255,7 +256,7 @@ namespace Fitness_Club
         {
             if (btnClients.BackColor == Color.FromArgb(34, 36, 49))
             {
-                openChildForm(new Clients(), sender);
+                openChildForm(new Clients(listP,listC), sender);
                 btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
                 btnAdmins.BackColor=Color.FromArgb(34, 36, 49);
                 btnTraning.BackColor = Color.FromArgb(34, 36, 49);
@@ -266,7 +267,7 @@ namespace Fitness_Club
         {
             if (btnAdmins.BackColor == Color.FromArgb(34, 36, 49))
             {
-                openChildForm(new DeleteAndUpdateFrom(), sender);
+                openChildForm(new Forms_admin.AdministratorCenter(listP), sender);
                 btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
                 btnClients.BackColor = Color.FromArgb(34, 36, 49);
                 btnTraning.BackColor = Color.FromArgb(34, 36, 49);
@@ -277,7 +278,7 @@ namespace Fitness_Club
         {
             if (btnTraning.BackColor == Color.FromArgb(34, 36, 49))
             { 
-                openChildForm(new Forms_admin.ClassesForm(listP), sender);
+                openChildForm(new Forms_admin.ClassesForm(listP,listC), sender);
                 btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
                 btnClients.BackColor = Color.FromArgb(34, 36, 49);
                 btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
@@ -381,18 +382,102 @@ namespace Fitness_Club
 
    
 
+        //loading the data and putting on dashboard. 
+        private void AdminScreen_Load(object sender, EventArgs e)
+        {
+            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataAboutPersonsInSystem#", "");
+            panelStaticsPersons.Size = new Size(778, 523);
+            panelStaticsClasses.Location = panelStaticsPersons.Location;
+            panelStaticsClasses.Size = new Size(778, 523);
+            listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
 
-  
-        //Requasts to the server.
-        private void FetchUsersDataAndPutInDashboard(List<Person> listP)
+
+            responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataClasses#", "");
+            listC = ConnectWithServer.ConvartDataToListOfClasses(responseFromServer, listP);
+
+            listP=ConnectWithServer.addArraysClassesAndPaymentsToPersonList(listP, listC);
+
+
+           putClassesDataInDashboard(listC,listP);
+
+            userLogged =getLoggedUserNowByPersonId(static_userId,listP);
+            putUsersDataInDashboard(listP);
+                
+
+        }
+
+        private void putClassesDataInDashboard(List<Classes> listClasses,List<Person>listPerson)
+        {
+            PersonList PL = new PersonList(listPerson);
+            ClassesList CL=new ClassesList(listClasses);
+            lblClasses.Text = $"Classes {listC.Count}";
+
+            Classes ClassNow;
+            string variable;   //%
+
+
+            ClassNow = CL.theMostPopulerOrNotPopulerClass(ClassesList.highKey);
+            lblNameOfPopulerClass.Text = ClassNow.NameClass;        
+            variable= (ClassNow.ArrayRegisteredUsersThisClass.Length / (float)listC.Count * 100).ToString("0.#");
+            circularIsPopuler.Text = variable+"%";
+            circularIsPopuler.Value = int.Parse(variable.Split('.')[0]);
+            LblPopulerData.Text = $"The most popular class with {variable}% of members.";
+
+
+            ClassNow = CL.theMostPopulerOrNotPopulerClass(ClassesList.lowKey);
+            lblNameOfNotPopulerClass.Text = ClassNow.NameClass;
+            variable = (ClassNow.ArrayRegisteredUsersThisClass.Length / (float)listC.Count * 100).ToString("0.#");
+            circularIsNotPopuler.Text=variable+"%";
+            circularIsNotPopuler.Value = int.Parse(variable.Split('.')[0]);
+            LblNotPopulerData.Text = $"The least popular class with only {variable}% of members.";
+
+
+
+            variable = CL.theLowestAndHighstAvgGrade(ClassesList.lowKey);
+            lblOfNameLowGradeAvg.Text = variable.Split('#')[0];
+            lblLowAvgGrade.Text = variable.Split('#')[1];
+
+            variable = CL.theLowestAndHighstAvgGrade(ClassesList.highKey);
+            lblOfNameHighGradeAvg.Text = variable.Split('#')[0];
+            LblAvgHigeGrade.Text = variable.Split('#')[1];
+
+
+
+            Person personNow = PL.theLeastOrMustActiveUser(ClassesList.lowKey);
+            variable = "0";
+            if (personNow != null && personNow.ClassesArray != null) 
+                variable = personNow.ClassesArray.Length.ToString();
+            lblLeastActiveUserData.Text = $"{personNow.FullName}, actively registered for {variable} classes.";
+
+
+            personNow = PL.theLeastOrMustActiveUser(ClassesList.highKey);
+            variable = personNow.ClassesArray.Length.ToString();
+            lblMostActiveUserData.Text = $"{personNow.FullName}, actively registered for {variable} classes.";
+
+
+            variable = CL.theLowestAndHighstReviews(ClassesList.lowKey);
+            lblFewestReviewsData.Text = $"{variable.Split('#')[0]}, with {variable.Split('#')[1]} reviews.";
+
+            variable = CL.theLowestAndHighstReviews(ClassesList.highKey);
+            lblMostReviewsData.Text = $"{variable.Split('#')[0]}, with {variable.Split('#')[1]} reviews.";
+
+
+
+
+
+
+        }
+
+
+        private void putUsersDataInDashboard(List<Person> listP)
         {
 
             //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
             PersonList PL = new PersonList(listP);
 
 
-            lblTitleStatics.Text = "Registered users statistics ";
-            lblUsers.Text = "Users  "+PL.CountAdminsANDUsersInSystem(PL.adminKey);
+            lblTitleStatics.Text = "Users statistics ";
+            lblUsers.Text = "Users  " + PL.CountAdminsANDUsersInSystem(PL.adminKey);
             lblAdmins.Text = "Administrators  " + PL.CountAdminsANDUsersInSystem(PL.userKey);
 
             //PUTTING THE INFORMATION IN THE APPROPRIATE PLACES ON THE SCREEN
@@ -434,7 +519,7 @@ namespace Fitness_Club
             LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
         }
 
-        private void FetchAdminsDataAndPutInDashboard(List<Person> listP)
+        private void putAdminsDataInDashboard(List<Person> listP)
         {
 
 
@@ -475,7 +560,8 @@ namespace Fitness_Club
             LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
         }
 
-        private Person FetchDataUserById(string id,List<Person>listP)
+        //getDataPersonLoggedNow
+        private Person getLoggedUserNowByPersonId(string id, List<Person> listP)
         {
 
             PersonList PL = new PersonList(listP);
@@ -488,25 +574,15 @@ namespace Fitness_Club
             return loggedUser;
         }
 
-        //loading the data and putting on dashboard. 
-        private void AdminScreen_Load(object sender, EventArgs e)
-        {
-            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataForAdminScreenInDahsboard#", "");
-            panelStaticsCircule.Size = new Size(778, 523);
-            listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
 
-            userLogged =FetchDataUserById(static_userId,listP);        
-            FetchUsersDataAndPutInDashboard(listP);
-                
-
-        }
 
         private void lblUsers_Click(object sender, EventArgs e)
         {
             activePanel(lblUsers,panelUsers);
             inactivePanel(lblAdmins,panelAdmins);
             inactivePanel(lblClasses,panelClasses);
-            FetchUsersDataAndPutInDashboard(listP);
+            putUsersDataInDashboard(listP);
+            panelStaticsClasses.Visible = false; panelStaticsPersons.Visible = true;
         }
 
         private void lblAdmins_Click(object sender, EventArgs e)
@@ -514,7 +590,8 @@ namespace Fitness_Club
             activePanel(lblAdmins, panelAdmins);
             inactivePanel(lblUsers, panelUsers);
             inactivePanel(lblClasses, panelClasses);
-            FetchAdminsDataAndPutInDashboard(listP);
+            putAdminsDataInDashboard(listP);
+            panelStaticsClasses.Visible = false; panelStaticsPersons.Visible = true;
         }
 
         private void lblClasses_Click(object sender, EventArgs e)
@@ -522,6 +599,7 @@ namespace Fitness_Club
             activePanel(lblClasses, panelClasses);
             inactivePanel(lblUsers, panelUsers);
             inactivePanel(lblAdmins, panelAdmins);
+            panelStaticsClasses.Visible = true; panelStaticsPersons.Visible = false;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -537,6 +615,11 @@ namespace Fitness_Club
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelStaticsClasses_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -25,10 +25,10 @@ namespace Fitness_Club
         }
 
         //get updated datlis of person.
-        private Person RefrehPersonDatils()
+        private Person RefrehLoggedUserDatils()
         {
 
-            string responseFromServer = ConnectWithServer.callToServer(AdminScreen.controller, "getDataForOnlyThisUserId#", loggedUser.UserId);
+            string responseFromServer = ConnectWithServer.callToServer(controller, "getDataForOnlyThisUserId#", loggedUser.UserId);
             List<Person> listP = new List<Person>();
             listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
             return listP[0];
@@ -39,7 +39,7 @@ namespace Fitness_Club
         //putting the data on instead of
         private void MyAccount_Load(object sender, EventArgs e)
         {
-            Person p = RefrehPersonDatils();
+            Person p = RefrehLoggedUserDatils();
             profilePic.Image = p.ProfilePic;
             lblFname.Text = p.FirstName;
             lblLname.Text = p.LastName;
@@ -98,7 +98,7 @@ namespace Fitness_Club
         }
 
         //get level exprince, color, and count of days exprince.
-        private string getLevelExprinceAndCountDays(string dateRgistionInString)
+        public static string getLevelExprinceAndCountDays(string dateRgistionInString)
         {
             
             DateTime dateRgistion = Convert.ToDateTime(dateRgistionInString);

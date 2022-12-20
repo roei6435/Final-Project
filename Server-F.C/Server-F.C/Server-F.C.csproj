@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calandar.cs" />
+    <Compile Include="ChatAdministrators.cs" />
     <Compile Include="Dashboard.cs" />
+    <Compile Include="dataOperation.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="Mengement.cs" />
+    <Compile Include="MengementUsers.cs" />
     <Compile Include="MengementClasses.cs" />
     <Compile Include="myAccount.cs" />
     <Compile Include="Program.cs" />

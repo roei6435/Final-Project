@@ -53,6 +53,29 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.penelHome = new System.Windows.Forms.Panel();
+            this.panelStaticsClasses = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lblLeastActiveUserData = new System.Windows.Forms.Label();
+            this.lblLowAvgGrade = new System.Windows.Forms.Label();
+            this.lblFewestReviewsData = new System.Windows.Forms.Label();
+            this.circularIsNotPopuler = new CircularProgressBar.CircularProgressBar();
+            this.lblTitleStaticsClasses = new System.Windows.Forms.Label();
+            this.lblMostReviewsData = new System.Windows.Forms.Label();
+            this.lblOfNameHighGradeAvg = new System.Windows.Forms.Label();
+            this.lblTitleFewestReviews = new System.Windows.Forms.Label();
+            this.lblMostActiveUserData = new System.Windows.Forms.Label();
+            this.lblLeastActiveUserTitle = new System.Windows.Forms.Label();
+            this.picBoxStatics = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.LblAvgHigeGrade = new System.Windows.Forms.Label();
+            this.circularIsPopuler = new CircularProgressBar.CircularProgressBar();
+            this.lblDataHighAvg = new System.Windows.Forms.Label();
+            this.lblNameOfPopulerClass = new System.Windows.Forms.Label();
+            this.lblTitleMostReviews = new System.Windows.Forms.Label();
+            this.lblMostActiveUserTitle = new System.Windows.Forms.Label();
+            this.lblDataLowAvg = new System.Windows.Forms.Label();
+            this.LblPopulerData = new System.Windows.Forms.Label();
+            this.LblNotPopulerData = new System.Windows.Forms.Label();
+            this.lblOfNameLowGradeAvg = new System.Windows.Forms.Label();
+            this.lblNameOfNotPopulerClass = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -62,7 +85,7 @@
             this.panelClasses = new System.Windows.Forms.Panel();
             this.panelAdmins = new System.Windows.Forms.Panel();
             this.panelUsers = new System.Windows.Forms.Panel();
-            this.panelStaticsCircule = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelStaticsPersons = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.LblMostOlder = new System.Windows.Forms.Label();
             this.lblMostYounger = new System.Windows.Forms.Label();
             this.lblMostYoungerTitle = new System.Windows.Forms.Label();
@@ -70,7 +93,6 @@
             this.lblLeastExprinceTitle = new System.Windows.Forms.Label();
             this.lblLeastExprince = new System.Windows.Forms.Label();
             this.LblMostOlderTitle = new System.Windows.Forms.Label();
-            this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.LblAVG = new System.Windows.Forms.Label();
             this.lblAvgData = new System.Windows.Forms.Label();
             this.lblAvgAgesTitle = new System.Windows.Forms.Label();
@@ -88,6 +110,7 @@
             this.pictureInidcation = new System.Windows.Forms.PictureBox();
             this.timerSideManu = new System.Windows.Forms.Timer(this.components);
             this.MembersTimer = new System.Windows.Forms.Timer(this.components);
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelManu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -97,12 +120,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNotification)).BeginInit();
             this.penelHome.SuspendLayout();
+            this.panelStaticsClasses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxStatics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.panelStaticsCircule.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
+            this.panelStaticsPersons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelManu
@@ -483,6 +508,7 @@
             // 
             this.penelHome.AutoSize = true;
             this.penelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.penelHome.Controls.Add(this.panelStaticsClasses);
             this.penelHome.Controls.Add(this.guna2PictureBox4);
             this.penelHome.Controls.Add(this.guna2PictureBox3);
             this.penelHome.Controls.Add(this.guna2PictureBox2);
@@ -492,14 +518,339 @@
             this.penelHome.Controls.Add(this.panelClasses);
             this.penelHome.Controls.Add(this.panelAdmins);
             this.penelHome.Controls.Add(this.panelUsers);
-            this.penelHome.Controls.Add(this.panelStaticsCircule);
+            this.penelHome.Controls.Add(this.panelStaticsPersons);
             this.penelHome.Controls.Add(this.pictureInidcation);
             this.penelHome.Location = new System.Drawing.Point(55, 74);
             this.penelHome.Margin = new System.Windows.Forms.Padding(0);
             this.penelHome.Name = "penelHome";
-            this.penelHome.Size = new System.Drawing.Size(1278, 1069);
+            this.penelHome.Size = new System.Drawing.Size(1215, 628);
             this.penelHome.TabIndex = 0;
             this.penelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.penelHome_Paint);
+            // 
+            // panelStaticsClasses
+            // 
+            this.panelStaticsClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.panelStaticsClasses.BorderRadius = 30;
+            this.panelStaticsClasses.Controls.Add(this.lblLeastActiveUserData);
+            this.panelStaticsClasses.Controls.Add(this.lblLowAvgGrade);
+            this.panelStaticsClasses.Controls.Add(this.lblFewestReviewsData);
+            this.panelStaticsClasses.Controls.Add(this.circularIsNotPopuler);
+            this.panelStaticsClasses.Controls.Add(this.lblTitleStaticsClasses);
+            this.panelStaticsClasses.Controls.Add(this.lblMostReviewsData);
+            this.panelStaticsClasses.Controls.Add(this.lblOfNameHighGradeAvg);
+            this.panelStaticsClasses.Controls.Add(this.lblTitleFewestReviews);
+            this.panelStaticsClasses.Controls.Add(this.lblMostActiveUserData);
+            this.panelStaticsClasses.Controls.Add(this.lblLeastActiveUserTitle);
+            this.panelStaticsClasses.Controls.Add(this.picBoxStatics);
+            this.panelStaticsClasses.Controls.Add(this.LblAvgHigeGrade);
+            this.panelStaticsClasses.Controls.Add(this.circularIsPopuler);
+            this.panelStaticsClasses.Controls.Add(this.lblDataHighAvg);
+            this.panelStaticsClasses.Controls.Add(this.lblNameOfPopulerClass);
+            this.panelStaticsClasses.Controls.Add(this.lblTitleMostReviews);
+            this.panelStaticsClasses.Controls.Add(this.lblMostActiveUserTitle);
+            this.panelStaticsClasses.Controls.Add(this.lblDataLowAvg);
+            this.panelStaticsClasses.Controls.Add(this.LblPopulerData);
+            this.panelStaticsClasses.Controls.Add(this.LblNotPopulerData);
+            this.panelStaticsClasses.Controls.Add(this.lblOfNameLowGradeAvg);
+            this.panelStaticsClasses.Controls.Add(this.lblNameOfNotPopulerClass);
+            this.panelStaticsClasses.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsClasses.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsClasses.FillColor3 = System.Drawing.Color.Transparent;
+            this.panelStaticsClasses.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsClasses.Location = new System.Drawing.Point(30, 162);
+            this.panelStaticsClasses.Name = "panelStaticsClasses";
+            this.panelStaticsClasses.Size = new System.Drawing.Size(771, 67);
+            this.panelStaticsClasses.TabIndex = 205;
+            this.panelStaticsClasses.Visible = false;
+            this.panelStaticsClasses.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStaticsClasses_Paint);
+            // 
+            // lblLeastActiveUserData
+            // 
+            this.lblLeastActiveUserData.BackColor = System.Drawing.Color.Transparent;
+            this.lblLeastActiveUserData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeastActiveUserData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblLeastActiveUserData.Location = new System.Drawing.Point(4, 379);
+            this.lblLeastActiveUserData.Name = "lblLeastActiveUserData";
+            this.lblLeastActiveUserData.Size = new System.Drawing.Size(328, 54);
+            this.lblLeastActiveUserData.TabIndex = 174;
+            this.lblLeastActiveUserData.Text = "Maor bar asher, actively registered \r\nfor 5 classes.\r\n\r\n";
+            // 
+            // lblLowAvgGrade
+            // 
+            this.lblLowAvgGrade.BackColor = System.Drawing.Color.Transparent;
+            this.lblLowAvgGrade.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLowAvgGrade.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblLowAvgGrade.Location = new System.Drawing.Point(445, 135);
+            this.lblLowAvgGrade.Name = "lblLowAvgGrade";
+            this.lblLowAvgGrade.Size = new System.Drawing.Size(93, 66);
+            this.lblLowAvgGrade.TabIndex = 173;
+            this.lblLowAvgGrade.Text = "2.1";
+            // 
+            // lblFewestReviewsData
+            // 
+            this.lblFewestReviewsData.BackColor = System.Drawing.Color.Transparent;
+            this.lblFewestReviewsData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFewestReviewsData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblFewestReviewsData.Location = new System.Drawing.Point(4, 472);
+            this.lblFewestReviewsData.Name = "lblFewestReviewsData";
+            this.lblFewestReviewsData.Size = new System.Drawing.Size(335, 33);
+            this.lblFewestReviewsData.TabIndex = 170;
+            this.lblFewestReviewsData.Text = "Tennis, with 3 reviews.";
+            // 
+            // circularIsNotPopuler
+            // 
+            this.circularIsNotPopuler.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularIsNotPopuler.AnimationSpeed = 500;
+            this.circularIsNotPopuler.BackColor = System.Drawing.Color.Transparent;
+            this.circularIsNotPopuler.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularIsNotPopuler.ForeColor = System.Drawing.Color.Gainsboro;
+            this.circularIsNotPopuler.InnerColor = System.Drawing.Color.Transparent;
+            this.circularIsNotPopuler.InnerMargin = 2;
+            this.circularIsNotPopuler.InnerWidth = -1;
+            this.circularIsNotPopuler.Location = new System.Drawing.Point(19, 103);
+            this.circularIsNotPopuler.MarqueeAnimationSpeed = 2000;
+            this.circularIsNotPopuler.Name = "circularIsNotPopuler";
+            this.circularIsNotPopuler.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.circularIsNotPopuler.OuterMargin = -26;
+            this.circularIsNotPopuler.OuterWidth = 26;
+            this.circularIsNotPopuler.ProgressColor = System.Drawing.Color.Tomato;
+            this.circularIsNotPopuler.ProgressWidth = 12;
+            this.circularIsNotPopuler.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularIsNotPopuler.Size = new System.Drawing.Size(135, 135);
+            this.circularIsNotPopuler.StartAngle = 270;
+            this.circularIsNotPopuler.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularIsNotPopuler.SubscriptMargin = new System.Windows.Forms.Padding(0);
+            this.circularIsNotPopuler.SubscriptText = "";
+            this.circularIsNotPopuler.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularIsNotPopuler.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.circularIsNotPopuler.SuperscriptText = "";
+            this.circularIsNotPopuler.TabIndex = 144;
+            this.circularIsNotPopuler.Text = "22%";
+            this.circularIsNotPopuler.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.circularIsNotPopuler.Value = 22;
+            // 
+            // lblTitleStaticsClasses
+            // 
+            this.lblTitleStaticsClasses.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleStaticsClasses.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleStaticsClasses.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleStaticsClasses.Location = new System.Drawing.Point(231, 8);
+            this.lblTitleStaticsClasses.Name = "lblTitleStaticsClasses";
+            this.lblTitleStaticsClasses.Size = new System.Drawing.Size(404, 52);
+            this.lblTitleStaticsClasses.TabIndex = 155;
+            this.lblTitleStaticsClasses.Text = "Statistics of classes";
+            // 
+            // lblMostReviewsData
+            // 
+            this.lblMostReviewsData.BackColor = System.Drawing.Color.Transparent;
+            this.lblMostReviewsData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostReviewsData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblMostReviewsData.Location = new System.Drawing.Point(441, 472);
+            this.lblMostReviewsData.Name = "lblMostReviewsData";
+            this.lblMostReviewsData.Size = new System.Drawing.Size(335, 33);
+            this.lblMostReviewsData.TabIndex = 171;
+            this.lblMostReviewsData.Text = "Football, with 16 reviews.";
+            // 
+            // lblOfNameHighGradeAvg
+            // 
+            this.lblOfNameHighGradeAvg.BackColor = System.Drawing.Color.Transparent;
+            this.lblOfNameHighGradeAvg.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOfNameHighGradeAvg.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblOfNameHighGradeAvg.Location = new System.Drawing.Point(605, 63);
+            this.lblOfNameHighGradeAvg.Name = "lblOfNameHighGradeAvg";
+            this.lblOfNameHighGradeAvg.Size = new System.Drawing.Size(148, 33);
+            this.lblOfNameHighGradeAvg.TabIndex = 172;
+            this.lblOfNameHighGradeAvg.Text = "Yoga";
+            // 
+            // lblTitleFewestReviews
+            // 
+            this.lblTitleFewestReviews.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleFewestReviews.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleFewestReviews.ForeColor = System.Drawing.Color.Tomato;
+            this.lblTitleFewestReviews.Location = new System.Drawing.Point(3, 439);
+            this.lblTitleFewestReviews.Name = "lblTitleFewestReviews";
+            this.lblTitleFewestReviews.Size = new System.Drawing.Size(329, 33);
+            this.lblTitleFewestReviews.TabIndex = 169;
+            this.lblTitleFewestReviews.Text = "The class with fewest reviews ";
+            // 
+            // lblMostActiveUserData
+            // 
+            this.lblMostActiveUserData.BackColor = System.Drawing.Color.Transparent;
+            this.lblMostActiveUserData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostActiveUserData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblMostActiveUserData.Location = new System.Drawing.Point(440, 377);
+            this.lblMostActiveUserData.Name = "lblMostActiveUserData";
+            this.lblMostActiveUserData.Size = new System.Drawing.Size(328, 54);
+            this.lblMostActiveUserData.TabIndex = 167;
+            this.lblMostActiveUserData.Text = "Ben bokobza, actively registered \r\nfor 5 classes.\r\n\r\n";
+            // 
+            // lblLeastActiveUserTitle
+            // 
+            this.lblLeastActiveUserTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblLeastActiveUserTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeastActiveUserTitle.ForeColor = System.Drawing.Color.Tomato;
+            this.lblLeastActiveUserTitle.Location = new System.Drawing.Point(3, 341);
+            this.lblLeastActiveUserTitle.Name = "lblLeastActiveUserTitle";
+            this.lblLeastActiveUserTitle.Size = new System.Drawing.Size(356, 33);
+            this.lblLeastActiveUserTitle.TabIndex = 165;
+            this.lblLeastActiveUserTitle.Text = "The least active user";
+            // 
+            // picBoxStatics
+            // 
+            this.picBoxStatics.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxStatics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxStatics.Image = global::Fitness_Club.Properties.Resources._2427699_statistics_analysis_statistic_icon__1_;
+            this.picBoxStatics.ImageRotate = 0F;
+            this.picBoxStatics.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxStatics.InitialImage")));
+            this.picBoxStatics.Location = new System.Drawing.Point(312, 329);
+            this.picBoxStatics.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxStatics.Name = "picBoxStatics";
+            this.picBoxStatics.Size = new System.Drawing.Size(123, 204);
+            this.picBoxStatics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxStatics.TabIndex = 163;
+            this.picBoxStatics.TabStop = false;
+            // 
+            // LblAvgHigeGrade
+            // 
+            this.LblAvgHigeGrade.BackColor = System.Drawing.Color.Transparent;
+            this.LblAvgHigeGrade.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAvgHigeGrade.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LblAvgHigeGrade.Location = new System.Drawing.Point(608, 138);
+            this.LblAvgHigeGrade.Name = "LblAvgHigeGrade";
+            this.LblAvgHigeGrade.Size = new System.Drawing.Size(93, 66);
+            this.LblAvgHigeGrade.TabIndex = 162;
+            this.LblAvgHigeGrade.Text = "4.7";
+            // 
+            // circularIsPopuler
+            // 
+            this.circularIsPopuler.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularIsPopuler.AnimationSpeed = 500;
+            this.circularIsPopuler.BackColor = System.Drawing.Color.Transparent;
+            this.circularIsPopuler.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularIsPopuler.ForeColor = System.Drawing.Color.Gainsboro;
+            this.circularIsPopuler.InnerColor = System.Drawing.Color.Transparent;
+            this.circularIsPopuler.InnerMargin = 2;
+            this.circularIsPopuler.InnerWidth = -1;
+            this.circularIsPopuler.Location = new System.Drawing.Point(229, 103);
+            this.circularIsPopuler.MarqueeAnimationSpeed = 2000;
+            this.circularIsPopuler.Name = "circularIsPopuler";
+            this.circularIsPopuler.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.circularIsPopuler.OuterMargin = -26;
+            this.circularIsPopuler.OuterWidth = 26;
+            this.circularIsPopuler.ProgressColor = System.Drawing.Color.LimeGreen;
+            this.circularIsPopuler.ProgressWidth = 12;
+            this.circularIsPopuler.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularIsPopuler.Size = new System.Drawing.Size(140, 135);
+            this.circularIsPopuler.StartAngle = 270;
+            this.circularIsPopuler.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularIsPopuler.SubscriptMargin = new System.Windows.Forms.Padding(0);
+            this.circularIsPopuler.SubscriptText = "";
+            this.circularIsPopuler.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularIsPopuler.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.circularIsPopuler.SuperscriptText = "";
+            this.circularIsPopuler.TabIndex = 145;
+            this.circularIsPopuler.Text = "93%";
+            this.circularIsPopuler.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.circularIsPopuler.Value = 93;
+            // 
+            // lblDataHighAvg
+            // 
+            this.lblDataHighAvg.BackColor = System.Drawing.Color.Transparent;
+            this.lblDataHighAvg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataHighAvg.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblDataHighAvg.Location = new System.Drawing.Point(596, 241);
+            this.lblDataHighAvg.Name = "lblDataHighAvg";
+            this.lblDataHighAvg.Size = new System.Drawing.Size(165, 106);
+            this.lblDataHighAvg.TabIndex = 161;
+            this.lblDataHighAvg.Text = "The class with the highest average reviews grade.\r\n";
+            // 
+            // lblNameOfPopulerClass
+            // 
+            this.lblNameOfPopulerClass.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameOfPopulerClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameOfPopulerClass.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblNameOfPopulerClass.Location = new System.Drawing.Point(45, 67);
+            this.lblNameOfPopulerClass.Name = "lblNameOfPopulerClass";
+            this.lblNameOfPopulerClass.Size = new System.Drawing.Size(138, 33);
+            this.lblNameOfPopulerClass.TabIndex = 160;
+            this.lblNameOfPopulerClass.Text = "Soccer";
+            // 
+            // lblTitleMostReviews
+            // 
+            this.lblTitleMostReviews.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleMostReviews.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleMostReviews.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblTitleMostReviews.Location = new System.Drawing.Point(439, 432);
+            this.lblTitleMostReviews.Name = "lblTitleMostReviews";
+            this.lblTitleMostReviews.Size = new System.Drawing.Size(364, 40);
+            this.lblTitleMostReviews.TabIndex = 168;
+            this.lblTitleMostReviews.Text = "The class with most reviews";
+            // 
+            // lblMostActiveUserTitle
+            // 
+            this.lblMostActiveUserTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblMostActiveUserTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostActiveUserTitle.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblMostActiveUserTitle.Location = new System.Drawing.Point(440, 341);
+            this.lblMostActiveUserTitle.Name = "lblMostActiveUserTitle";
+            this.lblMostActiveUserTitle.Size = new System.Drawing.Size(305, 36);
+            this.lblMostActiveUserTitle.TabIndex = 164;
+            this.lblMostActiveUserTitle.Text = "The most active user\r\n";
+            // 
+            // lblDataLowAvg
+            // 
+            this.lblDataLowAvg.BackColor = System.Drawing.Color.Transparent;
+            this.lblDataLowAvg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataLowAvg.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblDataLowAvg.Location = new System.Drawing.Point(411, 241);
+            this.lblDataLowAvg.Name = "lblDataLowAvg";
+            this.lblDataLowAvg.Size = new System.Drawing.Size(170, 94);
+            this.lblDataLowAvg.TabIndex = 159;
+            this.lblDataLowAvg.Text = "The class with the lowest average reviews grade.\r\n\r\n\r\n\r\n";
+            // 
+            // LblPopulerData
+            // 
+            this.LblPopulerData.BackColor = System.Drawing.Color.Transparent;
+            this.LblPopulerData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPopulerData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LblPopulerData.Location = new System.Drawing.Point(12, 241);
+            this.LblPopulerData.Name = "LblPopulerData";
+            this.LblPopulerData.Size = new System.Drawing.Size(185, 94);
+            this.LblPopulerData.TabIndex = 158;
+            this.LblPopulerData.Text = "The most popular class with 32% of members.\r\n\r\n\r\n";
+            // 
+            // LblNotPopulerData
+            // 
+            this.LblNotPopulerData.BackColor = System.Drawing.Color.Transparent;
+            this.LblNotPopulerData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNotPopulerData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LblNotPopulerData.Location = new System.Drawing.Point(213, 241);
+            this.LblNotPopulerData.Name = "LblNotPopulerData";
+            this.LblNotPopulerData.Size = new System.Drawing.Size(195, 84);
+            this.LblNotPopulerData.TabIndex = 157;
+            this.LblNotPopulerData.Text = "The least popular class with only 12% of members.\r\n\r\n";
+            // 
+            // lblOfNameLowGradeAvg
+            // 
+            this.lblOfNameLowGradeAvg.BackColor = System.Drawing.Color.Transparent;
+            this.lblOfNameLowGradeAvg.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOfNameLowGradeAvg.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblOfNameLowGradeAvg.Location = new System.Drawing.Point(431, 63);
+            this.lblOfNameLowGradeAvg.Name = "lblOfNameLowGradeAvg";
+            this.lblOfNameLowGradeAvg.Size = new System.Drawing.Size(128, 33);
+            this.lblOfNameLowGradeAvg.TabIndex = 154;
+            this.lblOfNameLowGradeAvg.Text = "Swimmer";
+            // 
+            // lblNameOfNotPopulerClass
+            // 
+            this.lblNameOfNotPopulerClass.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameOfNotPopulerClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameOfNotPopulerClass.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblNameOfNotPopulerClass.Location = new System.Drawing.Point(242, 66);
+            this.lblNameOfNotPopulerClass.Name = "lblNameOfNotPopulerClass";
+            this.lblNameOfNotPopulerClass.Size = new System.Drawing.Size(168, 33);
+            this.lblNameOfNotPopulerClass.TabIndex = 153;
+            this.lblNameOfNotPopulerClass.Text = "Basketball";
             // 
             // guna2PictureBox4
             // 
@@ -606,40 +957,40 @@
             this.panelUsers.Size = new System.Drawing.Size(243, 2);
             this.panelUsers.TabIndex = 187;
             // 
-            // panelStaticsCircule
+            // panelStaticsPersons
             // 
-            this.panelStaticsCircule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.panelStaticsCircule.BorderRadius = 30;
-            this.panelStaticsCircule.Controls.Add(this.LblMostOlder);
-            this.panelStaticsCircule.Controls.Add(this.lblMostYounger);
-            this.panelStaticsCircule.Controls.Add(this.lblMostYoungerTitle);
-            this.panelStaticsCircule.Controls.Add(this.lblMostExprince);
-            this.panelStaticsCircule.Controls.Add(this.lblLeastExprinceTitle);
-            this.panelStaticsCircule.Controls.Add(this.lblLeastExprince);
-            this.panelStaticsCircule.Controls.Add(this.LblMostOlderTitle);
-            this.panelStaticsCircule.Controls.Add(this.arrowsPic);
-            this.panelStaticsCircule.Controls.Add(this.LblAVG);
-            this.panelStaticsCircule.Controls.Add(this.lblAvgData);
-            this.panelStaticsCircule.Controls.Add(this.lblAvgAgesTitle);
-            this.panelStaticsCircule.Controls.Add(this.lblMostExprinceTitle);
-            this.panelStaticsCircule.Controls.Add(this.LblEmailFavData);
-            this.panelStaticsCircule.Controls.Add(this.LblGenderData);
-            this.panelStaticsCircule.Controls.Add(this.lblIsBlockData);
-            this.panelStaticsCircule.Controls.Add(this.lblTitleStatics);
-            this.panelStaticsCircule.Controls.Add(this.lblEmailFav);
-            this.panelStaticsCircule.Controls.Add(this.lblIsBlock);
-            this.panelStaticsCircule.Controls.Add(this.lblGender);
-            this.panelStaticsCircule.Controls.Add(this.circleGender);
-            this.panelStaticsCircule.Controls.Add(this.circularIsBlocked);
-            this.panelStaticsCircule.Controls.Add(this.circuleEmailPpoular);
-            this.panelStaticsCircule.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.FillColor3 = System.Drawing.Color.Transparent;
-            this.panelStaticsCircule.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsCircule.Location = new System.Drawing.Point(24, 81);
-            this.panelStaticsCircule.Name = "panelStaticsCircule";
-            this.panelStaticsCircule.Size = new System.Drawing.Size(778, 224);
-            this.panelStaticsCircule.TabIndex = 140;
+            this.panelStaticsPersons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.panelStaticsPersons.BorderRadius = 30;
+            this.panelStaticsPersons.Controls.Add(this.guna2PictureBox1);
+            this.panelStaticsPersons.Controls.Add(this.LblMostOlder);
+            this.panelStaticsPersons.Controls.Add(this.lblMostYounger);
+            this.panelStaticsPersons.Controls.Add(this.lblMostYoungerTitle);
+            this.panelStaticsPersons.Controls.Add(this.lblMostExprince);
+            this.panelStaticsPersons.Controls.Add(this.lblLeastExprinceTitle);
+            this.panelStaticsPersons.Controls.Add(this.lblLeastExprince);
+            this.panelStaticsPersons.Controls.Add(this.LblMostOlderTitle);
+            this.panelStaticsPersons.Controls.Add(this.LblAVG);
+            this.panelStaticsPersons.Controls.Add(this.lblAvgData);
+            this.panelStaticsPersons.Controls.Add(this.lblAvgAgesTitle);
+            this.panelStaticsPersons.Controls.Add(this.lblMostExprinceTitle);
+            this.panelStaticsPersons.Controls.Add(this.LblEmailFavData);
+            this.panelStaticsPersons.Controls.Add(this.LblGenderData);
+            this.panelStaticsPersons.Controls.Add(this.lblIsBlockData);
+            this.panelStaticsPersons.Controls.Add(this.lblTitleStatics);
+            this.panelStaticsPersons.Controls.Add(this.lblEmailFav);
+            this.panelStaticsPersons.Controls.Add(this.lblIsBlock);
+            this.panelStaticsPersons.Controls.Add(this.lblGender);
+            this.panelStaticsPersons.Controls.Add(this.circleGender);
+            this.panelStaticsPersons.Controls.Add(this.circularIsBlocked);
+            this.panelStaticsPersons.Controls.Add(this.circuleEmailPpoular);
+            this.panelStaticsPersons.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsPersons.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsPersons.FillColor3 = System.Drawing.Color.Transparent;
+            this.panelStaticsPersons.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelStaticsPersons.Location = new System.Drawing.Point(27, 81);
+            this.panelStaticsPersons.Name = "panelStaticsPersons";
+            this.panelStaticsPersons.Size = new System.Drawing.Size(772, 62);
+            this.panelStaticsPersons.TabIndex = 140;
             // 
             // LblMostOlder
             // 
@@ -717,21 +1068,6 @@
             this.LblMostOlderTitle.Size = new System.Drawing.Size(320, 40);
             this.LblMostOlderTitle.TabIndex = 168;
             this.LblMostOlderTitle.Text = " The oldest user";
-            // 
-            // arrowsPic
-            // 
-            this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
-            this.arrowsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.arrowsUPDWON;
-            this.arrowsPic.ImageRotate = 0F;
-            this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
-            this.arrowsPic.Location = new System.Drawing.Point(335, 346);
-            this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.arrowsPic.Name = "arrowsPic";
-            this.arrowsPic.Size = new System.Drawing.Size(77, 143);
-            this.arrowsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.arrowsPic.TabIndex = 163;
-            this.arrowsPic.TabStop = false;
             // 
             // LblAVG
             // 
@@ -815,11 +1151,11 @@
             this.lblTitleStatics.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleStatics.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleStatics.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleStatics.Location = new System.Drawing.Point(179, 6);
+            this.lblTitleStatics.Location = new System.Drawing.Point(241, 9);
             this.lblTitleStatics.Name = "lblTitleStatics";
-            this.lblTitleStatics.Size = new System.Drawing.Size(532, 52);
+            this.lblTitleStatics.Size = new System.Drawing.Size(393, 52);
             this.lblTitleStatics.TabIndex = 155;
-            this.lblTitleStatics.Text = "Registered users statistics";
+            this.lblTitleStatics.Text = "Users statistics";
             // 
             // lblEmailFav
             // 
@@ -953,7 +1289,7 @@
             // pictureInidcation
             // 
             this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources._20943798;
-            this.pictureInidcation.Location = new System.Drawing.Point(808, 3);
+            this.pictureInidcation.Location = new System.Drawing.Point(807, 0);
             this.pictureInidcation.Name = "pictureInidcation";
             this.pictureInidcation.Size = new System.Drawing.Size(404, 622);
             this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -969,6 +1305,21 @@
             // 
             this.MembersTimer.Interval = 1;
             this.MembersTimer.Tick += new System.EventHandler(this.MembersTimer_Tick);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.Image = global::Fitness_Club.Properties.Resources._2427699_statistics_analysis_statistic_icon__1_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(307, 331);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(123, 204);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 172;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // AdminScreen
             // 
@@ -998,12 +1349,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNotification)).EndInit();
             this.penelHome.ResumeLayout(false);
+            this.panelStaticsClasses.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxStatics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.panelStaticsCircule.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
+            this.panelStaticsPersons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1036,7 +1389,7 @@
         private System.Windows.Forms.Button btnMyAcc;
         private System.Windows.Forms.PictureBox pictureInidcation;
         private System.Windows.Forms.Button btnTraning;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsCircule;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsPersons;
         private System.Windows.Forms.Label LblAVG;
         private System.Windows.Forms.Label lblAvgData;
         private System.Windows.Forms.Label lblAvgAgesTitle;
@@ -1067,7 +1420,30 @@
         private System.Windows.Forms.Label lblLeastExprince;
         private System.Windows.Forms.Label lblLeastExprinceTitle;
         private System.Windows.Forms.Label lblMostExprinceTitle;
-        private Guna.UI2.WinForms.Guna2PictureBox arrowsPic;
         private Guna.UI2.WinForms.Guna2PictureBox btnLogOut;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsClasses;
+        private System.Windows.Forms.Label lblLeastActiveUserData;
+        private System.Windows.Forms.Label lblLowAvgGrade;
+        private System.Windows.Forms.Label lblFewestReviewsData;
+        private System.Windows.Forms.Label lblTitleStaticsClasses;
+        private System.Windows.Forms.Label lblMostReviewsData;
+        private System.Windows.Forms.Label lblOfNameHighGradeAvg;
+        private System.Windows.Forms.Label lblTitleFewestReviews;
+        private System.Windows.Forms.Label lblMostActiveUserData;
+        private System.Windows.Forms.Label lblLeastActiveUserTitle;
+        private Guna.UI2.WinForms.Guna2PictureBox picBoxStatics;
+        private System.Windows.Forms.Label LblAvgHigeGrade;
+        private System.Windows.Forms.Label lblDataHighAvg;
+        private System.Windows.Forms.Label lblNameOfPopulerClass;
+        private System.Windows.Forms.Label lblTitleMostReviews;
+        private System.Windows.Forms.Label lblMostActiveUserTitle;
+        private System.Windows.Forms.Label lblDataLowAvg;
+        private System.Windows.Forms.Label LblPopulerData;
+        private System.Windows.Forms.Label LblNotPopulerData;
+        private System.Windows.Forms.Label lblOfNameLowGradeAvg;
+        private System.Windows.Forms.Label lblNameOfNotPopulerClass;
+        private CircularProgressBar.CircularProgressBar circularIsNotPopuler;
+        private CircularProgressBar.CircularProgressBar circularIsPopuler;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

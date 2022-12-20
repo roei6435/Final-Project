@@ -25,7 +25,8 @@ namespace Server_F.C
 
 
         //fetch from the database all relevant data from the users table, stored in a full key-separated string
-        public static string getAllDataForAdminScreenInDahsboard()
+        
+        public static string getAllDataAboutPersonsInSystem()
         {
             string data = "";
             try
@@ -73,14 +74,13 @@ namespace Server_F.C
             }
         }
 
-
-        public static string getDataForOnlyThisUserId(string userId)
+        public static string getAllDataClasses()
         {
             string data = "";
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select * from users where userId='{userId}';";
+                cmd.CommandText = "select * from classes";
                 cmd.Connection = Program.conn;
                 Program.conn.Open();
                 DataTable dt = new DataTable();
@@ -90,21 +90,11 @@ namespace Server_F.C
                     // string pic;
                     for (int i = 0; rdr.Read(); i++)
                     {
-                        string lastConn = "null";
-                        if (rdr[15].GetType() != typeof(DBNull))
-                            lastConn = rdr[15].ToString();
-                        data += rdr[0] + Program.separationKey;   //id
-                        data += rdr[1] + Program.separationKey;    //fname
-                        data += rdr[2] + Program.separationKey;   //lname
-                        data += rdr[3] + Program.separationKey;    //email
-                        data += rdr[4] + Program.separationKey;   //phone
-                        data += rdr[6] + Program.separationKey;    //dateB
-                        data += rdr[12] + Program.separationKey;    //dateRegistion
-                        data += lastConn + Program.separationKey;  //lastConn
-                        data += rdr[7] + Program.separationKey;     //gender
-                        data += rdr[8] + Program.separationKey;    //admin 
-                        data += rdr[9] + Program.separationKey;     //isAuth
-                        data += rdr[10] + Program.startObjectKey;  //isBlocked
+                        data += rdr[0] + Program.separationKey;   //ClassId
+                        data += rdr[1] + Program.separationKey;    //nameClass
+                        data += rdr[2] + Program.separationKey;   //place
+                        data += rdr[4] + Program.separationKey;    //activity
+                        data += rdr[5] + Program.startObjectKey;  //about
 
                     }
 
@@ -121,6 +111,9 @@ namespace Server_F.C
                 return null;
             }
         }
+
+
+
 
 
 

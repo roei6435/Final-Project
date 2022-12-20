@@ -36,6 +36,33 @@ namespace Server_F.C
 
         }
 
+        public static string addPaymentByUserAndClassId(string userId,string classId,string date,string paidVia,string sum)
+        {
+
+            try
+            {
+                Program.conn.Open();
+                String sql = "INSERT INTO payments(userId,classId,date,paidVia,sum)values(@userId,@classId,@date,@paidVia,@sum)";
+                SqlCommand cmd = Program.conn.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@classId", classId);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@paidVia", paidVia);
+                cmd.Parameters.AddWithValue("@sum", sum);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                Program.conn.Close();
+                return "true";
+
+            }
+            catch 
+            {
+                Program.conn.Close();
+                return "false";
+            }
+        }
+
 
     }
 }

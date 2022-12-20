@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fitness_Club
 {
-    internal class Reviews
+    public class Reviews
     {
         private string idReviews;
         private Person user;

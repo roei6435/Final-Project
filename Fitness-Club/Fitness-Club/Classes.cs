@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fitness_Club
 {
-    internal class Classes
+    public class Classes
     {
         private string classId;
         private string nameClass;
@@ -15,18 +15,9 @@ namespace Fitness_Club
         private bool activity;
         private string about;
         private Image pic;
-        private Person[] arrayRegisteredUsersThisClass=null;
+        private Person[] arrayRegisteredUsersThisClass = null;
+        private Reviews[] arrayReviews = null;
 
-        public Classes(string classId, string nameClass, string place,bool activity,string about, Image pic, Person[] arrayRegisteredUsersThisClass)
-        {
-            this.classId = classId;
-            this.nameClass = nameClass;
-            this.place = place;
-            this.activity = activity;
-            this.about = about;
-            this.pic = pic;
-            this.arrayRegisteredUsersThisClass = arrayRegisteredUsersThisClass;
-        }
         public Classes(string classId, string nameClass, string place, bool activity, string about, Image pic)
         {
             this.classId = classId;
@@ -71,6 +62,11 @@ namespace Fitness_Club
         {
             get { return arrayRegisteredUsersThisClass; }
             set { arrayRegisteredUsersThisClass = value; }
+        }
+        public Reviews [] ArrayReviews
+        {
+            get { return arrayReviews; }
+            set { arrayReviews = value; }
         }
 
 

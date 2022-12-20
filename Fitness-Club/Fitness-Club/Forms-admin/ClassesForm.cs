@@ -17,13 +17,15 @@ namespace Fitness_Club.Forms_admin
     public partial class ClassesForm : Form
     {
         public static string controller = "MengementClasses#";
-        private List <Classes> listC;  
+        private List<Classes> listC;  
         private List <Person> listP;
         private Classes classSelected;
         private int indicator = 0;
         private int jump = 4;
-        public ClassesForm(List <Person> listP)
+        private bool firstScreen = true;
+        public ClassesForm(List <Person> listP,List<Classes>listC)
         {
+            this.listC = listC;
             this.listP = listP;
             InitializeComponent();
         }
@@ -47,9 +49,12 @@ namespace Fitness_Club.Forms_admin
             loadTheme();
 
             //GET FROM SERVER ALL DATA ABOUT CLASSES AND CONVERTING TO LIST OF CLASSES.
-            string response = ConnectWithServer.callToServer(controller, "getAllDataClasses#", "");   
-            listC = ConnectWithServer.ConvartDataToListOfClasses(response, listP);
-
+            if (listC is null)
+            {
+                string response = ConnectWithServer.callToServer(AdminScreen.controller, "getAllDataClasses#", "");
+                listC = ConnectWithServer.ConvartDataToListOfClasses(response, listP);
+            }
+            
             //MATCH ALL NAMES FOR COMBOBOX
             foreach (Classes c in listC)
             {
@@ -60,30 +65,22 @@ namespace Fitness_Club.Forms_admin
             classSelected = listC[0];
             comboBoxNameClasses.Text = classSelected.NameClass;
             putDataOfClassInFeilds(classSelected);
-            fatchAndPutTheReviewsDataByClassId(classSelected.ClassId);
+            fatchAndPutTheReviewsDataByClassId();
             panelCavarPicClass.Visible = true;panelFriends.Visible = true;panelEditor.Visible = true;panelAbout.Visible=true;    
           
         }
-        private void fatchAndPutTheReviewsDataByClassId(string classId)
+        private void fatchAndPutTheReviewsDataByClassId()
         {
            
             displayDataListFriends(indicator, jump, classSelected.ArrayRegisteredUsersThisClass);
 
-            //GET ALL DATA FOR  THE CLASS UNIQE ABOUT REVIEWS 
-            string fullDataReviews = ConnectWithServer.callToServer(controller, "getAllReviewsByIdClass#", classId);
-            if (fullDataReviews != string.Empty)
+            if (classSelected.ArrayReviews != null)
             {
                 panalTitleRaiting.Visible = true; panelReviewsEmpty.Visible = false;
-                List<Reviews> listR = ConnectWithServer.convartDataToListOfReviews(fullDataReviews, listP, classSelected);
-
      
-                getAllDataAboutRating(listR);
+                getAllDataAboutRating(classSelected.ArrayReviews);
 
-                //IF MORE 3, GET LIST WITH ONLAY 3 MUST LASTED REVIEWS 
-                if (listR.Count > 3)
-                    displayDataReviews(0, 3, getTheLastThreeReviews(listR));
-                else
-                    displayDataReviews(0,3, listR);
+                displayDataReviews(0,3, classSelected.ArrayReviews);
 
             }
             else
@@ -93,20 +90,20 @@ namespace Fitness_Club.Forms_admin
             }
         }
 
-        private void getAllDataAboutRating(List <Reviews> list)
+        private void getAllDataAboutRating(Reviews [] arr)
         {
 
             //CALCULATE AVERAGE RATING (NUMBUR)
             float sum = 0;
-            foreach (Reviews review in list)
+            foreach (Reviews review in arr)
             {
                 sum += float.Parse(review.Rating);
             }
 
             //PUT DATA IN TITLE
             lblReviewRaiting.Text = $"Average rating by friends of a {classSelected.NameClass} class";
-            lblAvgRaiting.Text = (sum / list.Count).ToString("0.#");
-            string raiting = ((int)(sum / list.Count) + "");     
+            lblAvgRaiting.Text = (sum / arr.Length).ToString("0.#");
+            string raiting = ((int)(sum / arr.Length) + "");     
             
             //HOW MATCH STAR DISPLAY
             switch (raiting)
@@ -136,28 +133,7 @@ namespace Fitness_Club.Forms_admin
         }
 
 
-        //GETS A LIST OF REVIEWS, RETURNS A LIST OF LAST 3 REVIEWS
-        private List<Reviews> getTheLastThreeReviews(List<Reviews> list)  
-        {
-            List<Reviews> top3 = new List<Reviews>();
-            var today = DateTime.Now;
-           
-            while (top3.Count < 3)
-            {
-                int maxDiffrence = (today - list[0].Date).Days; Reviews r = list[0];
-                foreach (Reviews review in list)
-                {                      
-                    if ((today - review.Date).Days < maxDiffrence)
-                    {
-                        maxDiffrence = (today - review.Date).Days;
-                        r = review;
-                    }
-                }
-                list.Remove(r);
-                top3.Add(r);
-            }
-            return top3;    
-        }
+
         private Classes findClassByName(string name)
         {
             foreach(Classes c in listC)
@@ -224,7 +200,7 @@ namespace Fitness_Club.Forms_admin
 
 
         //DISPLAY DATA, REVIWS AND LIST FRIENDS
-        private void displayDataReviews(int now, int jump, List<Reviews> listR)
+        private void displayDataReviews(int now, int jump, Reviews [] arr)
         {
 
             DataGridReview.Rows.Clear();
@@ -233,12 +209,12 @@ namespace Fitness_Club.Forms_admin
                 for (int i = now; i < jump; i++)
                 {
 
-                    string dateComm = LoginANDRegister.lastConnectDiff(listR[i].Date + "");
+                    string dateComm = LoginANDRegister.lastConnectDiff(arr[i].Date + "");
                     if (dateComm == "Active now")
                         dateComm = "Just now";
                     DataGridReview.Rows.Add(
-                         Clients.ClipToCircle(listR[i].User.ProfilePic, new PointF(listR[i].User.ProfilePic.Width / 2, listR[i].User.ProfilePic.Height / 2), listR[i].User.ProfilePic.Width / 2, Color.FromArgb(51, 51, 76)),
-                     listR[i].User.FirstName, listR[i].ReviewContent + " " + dateComm, listR[i].IdReviews);
+                         Clients.ClipToCircle(arr[i].User.ProfilePic, new PointF(arr[i].User.ProfilePic.Width / 2, arr[i].User.ProfilePic.Height / 2), arr[i].User.ProfilePic.Width / 2, Color.FromArgb(51, 51, 76)),
+                     arr[i].User.FirstName, arr[i].ReviewContent + " " + dateComm, arr[i].IdReviews);
                 }
             }
             catch
@@ -327,6 +303,7 @@ namespace Fitness_Club.Forms_admin
                         MessageBox.Show("Updating the class details has been completed successfully.");
                         comboBoxNameClasses.Items.Clear();
                         lblLengthOfAbout.Visible = false;
+                        listC = null;
                         Classes_Load(sender, e);
                     }
                     else
@@ -350,23 +327,26 @@ namespace Fitness_Club.Forms_admin
 
         private void comboBoxNameClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            classSelected = findClassByName(comboBoxNameClasses.SelectedItem.ToString());
-            if (classSelected != null)
+            if (!firstScreen)
             {
-                panelEditData.Visible = false;
-                textBoxAbout.Visible = false; panelNotFriends.Visible = false; btnPrev.Visible = false;
-
-                putDataOfClassInFeilds(classSelected);
-                indicator = 0;
-                if (classSelected.ArrayRegisteredUsersThisClass != null && jump < classSelected.ArrayRegisteredUsersThisClass.Length)
+                classSelected = findClassByName(comboBoxNameClasses.SelectedItem.ToString());
+                if (classSelected != null)
                 {
-                    btnNext.Visible = true;
+                    panelEditData.Visible = false;
+                    textBoxAbout.Visible = false; panelNotFriends.Visible = false; btnPrev.Visible = false;
+
+                    putDataOfClassInFeilds(classSelected);
+                    indicator = 0;
+                    if (classSelected.ArrayRegisteredUsersThisClass != null && jump < classSelected.ArrayRegisteredUsersThisClass.Length)
+                    {
+                        btnNext.Visible = true;
+                    }
+                    fatchAndPutTheReviewsDataByClassId();
+
                 }
-
-                fatchAndPutTheReviewsDataByClassId(classSelected.ClassId);
-
             }
+            firstScreen = false;
+
         }
 
         private void textBoxAbout_TextChanged(object sender, EventArgs e)

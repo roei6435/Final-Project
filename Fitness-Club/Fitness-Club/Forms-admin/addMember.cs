@@ -36,5 +36,10 @@ namespace Fitness_Club
             lblTitle.ForeColor = ThemColor.secondColor;
 
         }
+
+        private void btnVerify_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

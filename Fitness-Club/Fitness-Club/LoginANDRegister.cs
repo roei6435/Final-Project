@@ -26,7 +26,7 @@ namespace Fitness_Club
 
         protected static string to, email, passcode;
 
-        protected bool isEmail(string email)                            //to check if proper Email
+        public static bool isEmail(string email)                            //to check if proper Email
         {
             email = email.ToLower();
             string[] sub = email.Split('.');
@@ -78,7 +78,7 @@ namespace Fitness_Club
         }
 
 
-        protected bool SendEmailPasscode(string email)
+        public bool SendEmailPasscode(string email)
         {
 
             string fromMail = "roei6435@gmail.com";
@@ -111,7 +111,7 @@ namespace Fitness_Club
            return Regex.IsMatch(name, @"^[a-zA-Z ]+$");
         }
 
-        protected bool phoneIsProper(String numbur)                    //to check if is proper phone numbur
+        public static bool phoneIsProper(String numbur)                    //to check if is proper phone numbur
         {
 
             if (numbur.Length < 10) return false;
@@ -148,8 +148,8 @@ namespace Fitness_Club
                 return "Minimum One upper case";
             else if (!passwd.Any(char.IsLower))
                 return "Atleast one lower case";
-            else if (passwd.Contains(" "))
-                return "No white space";
+            else if (passwd.Contains(" ")||passwd.Contains("#"))
+                return "No white space or #";
             return "good";
 
         }         //to check password quelity

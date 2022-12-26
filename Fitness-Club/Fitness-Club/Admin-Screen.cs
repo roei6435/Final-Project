@@ -306,10 +306,10 @@ namespace Fitness_Club
             {
                 MembersTimer.Start();
                 btnUserMengement.BackColor = btnSideManu.BackColor;
-                openChildForm(new DeleteAndUpdateFrom(), sender);
+                openChildForm(new About(), sender);
             }
             else
-                openChildForm(new DeleteAndUpdateFrom(), sender);
+                openChildForm(new About(), sender);
         }           //open form about
 
 

@@ -200,7 +200,7 @@ namespace Fitness_Club
             return ListOfAllPayments;
         }
 
-        public static List<Tweets> convartDataToListOfMessageAdmin(string data, List<Person> listP)
+        public static List<Tweets> convartDataToListOfTweets(string data, List<Person> listP)
         {
             string id, userId,dateInString,content;
             Person[] arrOfLikes; 
@@ -217,7 +217,7 @@ namespace Fitness_Club
                 dateInString = invidualMessageAdmin[invidualMessageAdmin.Count - 1]; DateTime date = Convert.ToDateTime(dateInString);
                 content = invidualMessageAdmin[2];
                 Tweets tweet = new Tweets(id, user, date, content);
-                arrOfLikes = getPersonArrayLikeMessageByMessageId(id, listP);
+                arrOfLikes = getPersonArrayLikeTweetByTweetId(id, listP);
                 if(arrOfLikes != null)
                 {
                     tweet.ArrLikesThisTweet = arrOfLikes;
@@ -308,9 +308,9 @@ namespace Fitness_Club
         /// dataOperation
         /// 
 
-        public static Person[] getPersonArrayLikeMessageByMessageId(string messageId,List<Person>listP)
+        public static Person[] getPersonArrayLikeTweetByTweetId(string messageId,List<Person>listP)
         {
-            string response = ConnectWithServer.callToServer(controller, "getPersonArrayLikeMessageByMessageId#", messageId);
+            string response = ConnectWithServer.callToServer(controller, "getPersonArrayLikeTweetByTweetId#", messageId);
             if (response == string.Empty)
                 return null;
             List<Person> result = new List<Person>();

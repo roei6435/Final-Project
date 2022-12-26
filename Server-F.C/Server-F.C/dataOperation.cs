@@ -40,10 +40,9 @@ namespace Server_F.C
                 return data;
 
             }
-            catch (Exception err)
+            catch
             {
                 Program.conn.Close();
-                //Console.WriteLine("from exption in function: " + err.Message);
                 return "";
             }
         }
@@ -144,7 +143,7 @@ namespace Server_F.C
                 return data;
 
             }
-            catch (Exception err)
+            catch
             {
                 Program.conn.Close();
                 return "";
@@ -152,13 +151,13 @@ namespace Server_F.C
             //
         }
 
-        public static string getPersonArrayLikeMessageByMessageId(string messageId)
+        public static string getPersonArrayLikeTweetByTweetId(string tweetId)
         {
             string data = "";
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select userId from likesOfMessageAdmins where messageId='{messageId}';";
+                cmd.CommandText = $"select userId from likesOfTweets where tweetId='{tweetId}';";
                 cmd.Connection = Program.conn;
                 Program.conn.Open();
                 DataTable dt = new DataTable();

@@ -91,7 +91,7 @@ namespace Fitness_Club
             {
                 picLikeOn.Visible = true;
                 picLikeOf.Visible = false;
-                nowSelectdTweet.ArrLikesThisTweet = ConnectWithServer.getPersonArrayLikeMessageByMessageId(nowSelectdTweet.MessageId, listP);
+                nowSelectdTweet.ArrLikesThisTweet = ConnectWithServer.getPersonArrayLikeTweetByTweetId(nowSelectdTweet.MessageId, listP);
                 lblCounter.Text = nowSelectdTweet.ArrLikesThisTweet.Length.ToString();
                 lblCounter.Visible = true;
             }
@@ -109,7 +109,7 @@ namespace Fitness_Club
                
                 picLikeOn.Visible = false;
                 picLikeOf.Visible = true;
-                nowSelectdTweet.ArrLikesThisTweet = ConnectWithServer.getPersonArrayLikeMessageByMessageId(nowSelectdTweet.MessageId, listP);
+                nowSelectdTweet.ArrLikesThisTweet = ConnectWithServer.getPersonArrayLikeTweetByTweetId(nowSelectdTweet.MessageId, listP);
                 int counter = 0;lblCounter.Visible = false;
                 if (nowSelectdTweet.ArrLikesThisTweet != null)
                 {

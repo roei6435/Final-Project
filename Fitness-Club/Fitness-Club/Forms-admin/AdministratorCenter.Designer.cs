@@ -409,6 +409,7 @@
             // btnClear
             // 
             this.btnClear.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnClear.BorderRadius = 6;
             this.btnClear.BorderThickness = 1;
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Retry;
@@ -430,6 +431,9 @@
             // 
             // btnTweet
             // 
+            this.btnTweet.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnTweet.BorderRadius = 6;
+            this.btnTweet.BorderThickness = 1;
             this.btnTweet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTweet.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.btnTweet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;

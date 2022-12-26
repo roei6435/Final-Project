@@ -213,6 +213,36 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _5167172 {
+            get {
+                object obj = ResourceManager.GetObject("5167172", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _51671721 {
+            get {
+                object obj = ResourceManager.GetObject("51671721", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _5274708 {
+            get {
+                object obj = ResourceManager.GetObject("5274708", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap _5402431_done_success_tick_valid_approve_icon {
             get {
                 object obj = ResourceManager.GetObject("5402431_done_success_tick_valid_approve_icon", resourceCulture);
@@ -226,6 +256,16 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap _5755636 {
             get {
                 object obj = ResourceManager.GetObject("5755636", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _6343825 {
+            get {
+                object obj = ResourceManager.GetObject("6343825", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -803,6 +843,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGIN {
+            get {
+                object obj = ResourceManager.GetObject("LOGIN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -1153,6 +1203,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap stock_vector_thinking_man_with_question_marks_vector_illustration_2162774881 {
+            get {
+                object obj = ResourceManager.GetObject("stock-vector-thinking-man-with-question-marks-vector-illustration-2162774881", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap swimmer {
             get {
                 object obj = ResourceManager.GetObject("swimmer", resourceCulture);
@@ -1176,6 +1236,36 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap TIMESmall {
             get {
                 object obj = ResourceManager.GetObject("TIMESmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tweet {
+            get {
+                object obj = ResourceManager.GetObject("tweet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tweet2 {
+            get {
+                object obj = ResourceManager.GetObject("tweet2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tweet3 {
+            get {
+                object obj = ResourceManager.GetObject("tweet3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

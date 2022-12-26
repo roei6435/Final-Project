@@ -140,8 +140,7 @@ namespace Fitness_Club
         {
             if (picBoxNewPassIsStrong.Visible && picBoxPassCorrect.Visible)
             {
-                string passwordChenged = ConnectWithServer.callToServer(controller, "editPasswordById#", loggedUser.UserId + "#" +
-                      txtBoxPass.Text + "#" + txtBoxNewPass.Text);
+                string passwordChenged = ConnectWithServer.callToServer(controller, "editPasswordById#", loggedUser.UserId + "#" + txtBoxNewPass.Text);
                 if (bool.Parse(passwordChenged))
                 {
                     MessageBox.Show("Password changed successfully.");

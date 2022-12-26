@@ -16,13 +16,14 @@ namespace Fitness_Club.Forms_admin
         private List<Tweets> fullOfTweets;
         private List<Tweets> listActivityNow;
         public static List<Person> hideList=new List<Person>();
-        public static string controller = "chatAdministrators#";
+        public static string controller = "TweetAdministrators#";
         private int start = 0;
-        private int jump = 8;
+        private int jump = 7;
         private bool showThelastTeweet = true;
         private DateTime dateSelected;
         public static bool refrhshOn = true;
-        
+        public bool firstLoad = true;
+
         public AdministratorCenter(List<Person>listP)
         {   
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace Fitness_Club.Forms_admin
             string responseFromServer= ConnectWithServer.callToServer(controller, "getAllDataAboutTweet#", "");
             if (responseFromServer != string.Empty)
             {
-                fullOfTweets = ConnectWithServer.convartDataToListOfMessageAdmin(responseFromServer, listP);
+                fullOfTweets = ConnectWithServer.convartDataToListOfTweets(responseFromServer, listP);
             }
             //PUT DATE AND DATA TWEETS
             dateSelected = DateTime.Now;
@@ -60,12 +61,12 @@ namespace Fitness_Club.Forms_admin
             {
                 listActivityNow = fullOfTweets;               
             }
-            dispalyLastMessage(listActivityNow, start);
-            loadListAdmins(true);             //ONLY IN FIRST LOAD.
+            dispalyLastTweets(listActivityNow, start);
+            loadListAdmins();             //ONLY IN FIRST LOAD.
         }
 
         //FUNCTION FOR DISPALYING THE LAST TWEETS.
-        private void dispalyLastMessage(List<Tweets> list, int start)
+        private void dispalyLastTweets(List<Tweets> list, int start)
         {
             tweetsContainer1.Controls.Clear();
             try
@@ -92,7 +93,7 @@ namespace Fitness_Club.Forms_admin
         }
 
         //GET THE ADMINS LIST.
-        private void loadListAdmins(bool firstLoad)
+        private void loadListAdmins()
         {
             if (firstLoad)
             {
@@ -155,7 +156,7 @@ namespace Fitness_Club.Forms_admin
                 else
                 {
                     start = 0;
-                    dispalyLastMessage(listActivityNow, start);
+                    dispalyLastTweets(listActivityNow, start);
                 }
             }
             catch(Exception ex)
@@ -180,6 +181,7 @@ namespace Fitness_Club.Forms_admin
                     paneDate.Visible = false;
                     start = 0;
                     ComboBoxRelAndUpd.SelectedIndex = 1;
+                    firstLoad = false;
                     AdministratorCenter_Load(sender, e);
                     displayByDateOnChanged();
                 }
@@ -200,7 +202,7 @@ namespace Fitness_Club.Forms_admin
             if (showThelastTeweet)
             {
 
-                dispalyLastMessage(listActivityNow, start);
+                dispalyLastTweets(listActivityNow, start);
                 if (start + jump == listActivityNow.Count)
                 {
                     more.Visible = false;
@@ -209,7 +211,7 @@ namespace Fitness_Club.Forms_admin
             }
             else
             {
-                dispalyLastMessage(listActivityNow, start);
+                dispalyLastTweets(listActivityNow, start);
                 if (start + jump == listActivityNow.Count)
                 {
                     more.Visible = false;
@@ -263,7 +265,7 @@ namespace Fitness_Club.Forms_admin
                 {
                     listActivityNow = returnListOrganizedByRelevance(listActivityNow);
                     start = 0;
-                    dispalyLastMessage(listActivityNow, start);
+                    dispalyLastTweets(listActivityNow, start);
                 }
                 else
                 {
@@ -276,7 +278,7 @@ namespace Fitness_Club.Forms_admin
                 {
                     listActivityNow = getAllTweetsByDate(dateSelected);
                     start = 0;
-                    dispalyLastMessage(listActivityNow, start);
+                    dispalyLastTweets(listActivityNow, start);
                 }
                 else
                 {

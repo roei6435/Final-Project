@@ -81,3 +81,5 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.personsList.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.likeList.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.BubbleOfTweet.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.About.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.ForgetPassword1.resources

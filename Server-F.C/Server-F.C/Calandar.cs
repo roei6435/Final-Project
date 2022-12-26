@@ -48,9 +48,8 @@ namespace Server_F.C
                 return "true";
 
             }
-            catch (Exception ex)
+            catch 
             {
-               // Console.WriteLine(ex);
                 Program.conn.Close();
                 return "false";
             }

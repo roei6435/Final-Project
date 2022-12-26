@@ -16,7 +16,7 @@ namespace Server_F.C
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select * from chatRoom ORDER BY fullDate DESC;";
+                cmd.CommandText = $"select * from tweets ORDER BY fullDate DESC;";
                 cmd.Connection = Program.conn;
                 Program.conn.Open();
                 DataTable dt = new DataTable();
@@ -26,9 +26,9 @@ namespace Server_F.C
 
                     for (int i = 0; rdr.Read(); i++)
                     {
-                        data += rdr[0] + Program.separationKey;   //MessageId
+                        data += rdr[0] + Program.separationKey;   //tweetId
                         data += rdr[1] + Program.separationKey;    //userId
-                        data += rdr[2] + Program.separationKey;    //  contentMessage
+                        data += rdr[2] + Program.separationKey;    //  contentTweet
                         data += rdr[3] + Program.startObjectKey;  //date
 
                     }
@@ -52,7 +52,7 @@ namespace Server_F.C
             {
                 DateTime date = DateTime.Now;
                 Program.conn.Open();
-                String sql = "INSERT INTO chatRoom(userId,contentMess,fullDate)values(@userId,@content,@date)";
+                String sql = "INSERT INTO tweets(userId,contentTweet,fullDate)values(@userId,@content,@date)";
                 SqlCommand cmd = Program.conn.CreateCommand();
                 cmd.CommandText = sql;
                 cmd.Parameters.AddWithValue("@userId", userId);
@@ -72,17 +72,17 @@ namespace Server_F.C
 
         }
 
-        public static string likeToTweet(string userId,string messageId)
+        public static string likeToTweet(string userId,string tweetId)
         {
 
             try
             {
                 Program.conn.Open();
-                String sql = "INSERT INTO likesOfMessageAdmins(messageId,userId)values(@messageId,@userId)";
+                String sql = "INSERT INTO likesOfTweets(tweetId,userId)values(@tweetId,@userId)";
                 SqlCommand cmd = Program.conn.CreateCommand();
                 cmd.CommandText = sql;
                 cmd.Parameters.AddWithValue("@userId", userId);
-                cmd.Parameters.AddWithValue("@messageId", messageId);
+                cmd.Parameters.AddWithValue("@tweetId", tweetId);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 Program.conn.Close();
@@ -96,13 +96,13 @@ namespace Server_F.C
             }
         }
 
-        public static string unlikeToTweet(string userId, string messageId)
+        public static string unlikeToTweet(string userId, string tweetId)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Program.conn;
-                cmd.CommandText = $"delete from likesOfMessageAdmins where messageId='{messageId}' and userId='{userId}';";
+                cmd.CommandText = $"delete from likesOfTweets where tweetId='{tweetId}' and userId='{userId}';";
                 Program.conn.Open();
                 int deleted = cmd.ExecuteNonQuery();
                 Program.conn.Close();

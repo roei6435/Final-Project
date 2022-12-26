@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness_Club.Resources.FormsLogin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Fitness_Club
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminScreen("16"));
+            Application.Run(new LogIn());
         }
     }
 }

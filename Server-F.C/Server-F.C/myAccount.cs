@@ -50,6 +50,38 @@ namespace Server_F.C
             }
         }
 
+        public static string userExistByEmailAndPhone(string email,string phone)
+        {
+            string userId;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = $"SELECT userId from users where email='{email}' and phone='{phone}';";
+                cmd.Connection = Program.conn;
+                Program.conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.HasRows)
+                {
+                    rdr.Read();
+                    userId= "true "+rdr[0];
+                }
+                else
+                {
+                    userId = "false none";
+                }
+
+                Program.conn.Close();
+                return userId;
+                
+            }
+            catch (Exception err)
+            {
+                return err.ToString();  
+            }
+        }
+
+
         public static string getDataForOnlyThisUserId(string userId)
         {
             string data = "";
@@ -156,13 +188,13 @@ namespace Server_F.C
             }
         }
 
-        public static string editPasswordById(string userId,string password,string newPassword)
+        public static string editPasswordById(string userId,string newPassword)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Program.conn;
-                cmd.CommandText = $"update users set password = '{newPassword}', lastUpdateOfPassword = '{DateTime.Today.ToString().Split(' ')[0]}' where password = '{password}' and userId = '{userId}';";
+                cmd.CommandText = $"update users set password = '{newPassword}', lastUpdateOfPassword = '{DateTime.Today.ToString().Split(' ')[0]}' where userId = '{userId}';";
                 Program.conn.Open();
                 int updeted=cmd.ExecuteNonQuery();
                 Program.conn.Close();

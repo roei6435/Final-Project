@@ -147,6 +147,7 @@
             // 
             this.BtnChengeThePass.BackColor = System.Drawing.Color.Transparent;
             this.BtnChengeThePass.BorderColor = System.Drawing.Color.Gainsboro;
+            this.BtnChengeThePass.BorderRadius = 6;
             this.BtnChengeThePass.BorderThickness = 1;
             this.BtnChengeThePass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnChengeThePass.DialogResult = System.Windows.Forms.DialogResult.Retry;
@@ -332,6 +333,7 @@
             // 
             this.BtnSaveDatlis.BackColor = System.Drawing.Color.Transparent;
             this.BtnSaveDatlis.BorderColor = System.Drawing.Color.Gainsboro;
+            this.BtnSaveDatlis.BorderRadius = 6;
             this.BtnSaveDatlis.BorderThickness = 1;
             this.BtnSaveDatlis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSaveDatlis.DialogResult = System.Windows.Forms.DialogResult.Retry;
@@ -355,6 +357,7 @@
             // 
             this.btnSaveChenge.BackColor = System.Drawing.Color.Transparent;
             this.btnSaveChenge.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnSaveChenge.BorderRadius = 6;
             this.btnSaveChenge.BorderThickness = 1;
             this.btnSaveChenge.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveChenge.DialogResult = System.Windows.Forms.DialogResult.Retry;

@@ -15,99 +15,6 @@ using System.Text.RegularExpressions;
 namespace Server_F.C
 {
 
-    //abstract class Shape
-    //{
-    //    public Shape(string name)
-    //    {
-    //        Console.WriteLine("Shape " + name);
-
-    //    }
-    //    public abstract void whatAmI();
-    //}
-    //class Ractengle : Shape
-    //{
-    //    public Ractengle(string name) : base(name)
-    //    {
-    //        Console.WriteLine("Rectengle: " + name);
-    //    }
-    //    public override void whatAmI()
-    //    {
-    //        Console.WriteLine("Rectengle");
-    //    }
-    //}
-    //class Squre : Ractengle
-    //{
-    //    public Squre(string name) : base(name)
-    //    {
-    //        Console.WriteLine("Squre: " + name);
-    //    }
-    //    public override void whatAmI()
-    //    {
-    //        Console.WriteLine("Squre");
-    //    }
-    //}
-    //static void Main(string[] args)
-    //{
-
-
-    //    //Ractengle r1 = new Ractengle("A");
-    //    //Ractengle r2 = new Squre("B");
-    //    //Squre s1 = (Squre)r2;
-
-    //    //r1.whatAmI();
-    //    //r2.whatAmI();
-    //    //s1.whatAmI();
-
-    //}
-    //public void QustionOne()
-    //{
-    //    int n = 0;
-    //    int[] arr = new int[10];
-    //    while (n != -1)
-    //    {
-    //        Console.WriteLine("enter num");
-    //        n = int.Parse(Console.ReadLine());
-    //        while (n > 9)
-    //        {
-    //            arr[n % 10] += 1;
-    //            n /= 10;
-    //        }
-    //        if (n != -1)
-    //            arr[n % 10] += 1;
-
-    //    }
-    //    n = 0;
-    //    int max = 0;
-    //    for (int i = 0; i < arr.Length; i++)
-    //        if (arr[i] > n)
-    //        {
-    //            n = arr[i];
-    //            max = i;
-    //        }
-    //    Console.WriteLine(max);
-    //}
-    //public void QustionTwo()
-    //{
-    //    int n = 727, a = 0, tmp = n;
-    //    while (tmp != 0)
-    //    {
-    //        a = a * 10 + (tmp % 10);
-    //        tmp = (int)tmp / 10;
-    //    }
-    //    if (n == a)
-    //    {
-    //        Console.WriteLine(n + " is polindrom");
-    //    }
-    //    else
-    //    {
-    //        Console.WriteLine(n + " not polindrom");
-
-    //    }
-    //}
-
-
-
-
 
     internal class Program
     {
@@ -148,7 +55,7 @@ namespace Server_F.C
                     string funName = fullDataFromClientInArry[1];
                     Console.WriteLine($"Request from client: go to controller: {controller}, function: {funName}. ");
                     // send data
-                    dataOutput = SendingToProperControllerAndResponseData(controller, funName, fullDataFromClientInArry);
+                    dataOutput = sendingToProperControllerAndResponseData(controller, funName, fullDataFromClientInArry);
                     BinaryWriter writer = new BinaryWriter(client.GetStream());
                     writer.Write(dataOutput);
                     client.Close();
@@ -164,20 +71,14 @@ namespace Server_F.C
 
         }
 
-
-
         static void Main(string[] args)
         {
-
-
-             openingTheServerToReceiveCalls();
+            
+            openingTheServerToReceiveCalls();
             Console.ReadKey();
 
 
         }
-
-
-
 
         //Saving all the logged to system in txt file.
         static void saveLogInTextFile(string ip, string date)
@@ -197,7 +98,7 @@ namespace Server_F.C
 
 
         //Found the controller and send the requset to the function.
-        private static string SendingToProperControllerAndResponseData(string controller,string funName,string [] fullDataFromClientInArry)
+        private static string sendingToProperControllerAndResponseData(string controller,string funName,string [] fullDataFromClientInArry)
         {
             if(controller== "dataOperation")
             {
@@ -228,9 +129,9 @@ namespace Server_F.C
             {
                 return conntrollerMengementClassesActions(funName, fullDataFromClientInArry);
             }  
-            else if(controller== "chatAdministrators")
+            else if(controller== "TweetAdministrators")
             {
-                return conntrollerChatAdministratorsActions(funName,fullDataFromClientInArry);  
+                return conntrollerTweetsAdministratorsActions(funName,fullDataFromClientInArry);  
 
             }
             return "Controller not found.";
@@ -257,9 +158,9 @@ namespace Server_F.C
             {
                 return dataOperation.getAllPaymentsArrayByUserId(id);
             }
-            else if (functionName == "getPersonArrayLikeMessageByMessageId")
+            else if (functionName == "getPersonArrayLikeTweetByTweetId")
             {
-                return dataOperation.getPersonArrayLikeMessageByMessageId(id);
+                return dataOperation.getPersonArrayLikeTweetByTweetId(id);
             }
             return "Function not found.";
         }
@@ -338,14 +239,20 @@ namespace Server_F.C
             else if(functionName == "editPasswordById")
             {
                 string userId = fullDataFromClientInArry[2],
-                password = fullDataFromClientInArry[3],
-                newPassword = fullDataFromClientInArry[4];
-                return myAccount.editPasswordById(userId, password, newPassword);
+                newPassword = fullDataFromClientInArry[3];
+                return myAccount.editPasswordById(userId, newPassword);
             }
             else if (functionName == "GetPasswordAndLastUpdateByUserId")
             {
                 string userId = fullDataFromClientInArry[2];
                 return myAccount.GetPasswordAndLastUpdateByUserId(userId);
+            }
+            else if(functionName == "userExistByEmailAndPhone")
+            {
+                string email = fullDataFromClientInArry[2],
+                phone = fullDataFromClientInArry[3];
+                return myAccount.userExistByEmailAndPhone(email,phone); 
+
             }
             return "Function not found.";
         }
@@ -424,7 +331,7 @@ namespace Server_F.C
             return "Function not found.";
         }
 
-        private static string conntrollerChatAdministratorsActions(string functionName, string[] fullDataFromClientInArry)
+        private static string conntrollerTweetsAdministratorsActions(string functionName, string[] fullDataFromClientInArry)
         {
             if (functionName == "getAllDataAboutTweet")
             {
@@ -450,6 +357,10 @@ namespace Server_F.C
             }
             return "Function not found.";
         }
+
+
+
+
 
     }
 }

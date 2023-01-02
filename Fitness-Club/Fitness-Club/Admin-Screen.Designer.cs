@@ -96,15 +96,15 @@
             this.btnTraning = new System.Windows.Forms.Button();
             this.btnAdmins = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
+            this.btnUserMengement = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.btnSideManu = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.picBoxStatics = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnUserMengement = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureInidcation = new System.Windows.Forms.PictureBox();
@@ -136,6 +136,7 @@
             this.panelManu.Controls.Add(this.panelLogo);
             this.panelManu.Controls.Add(this.btnMyAcc);
             this.panelManu.Controls.Add(this.membersContiener);
+            this.panelManu.Controls.Add(this.btnSettings);
             this.panelManu.Controls.Add(this.btnSideManu);
             this.panelManu.Controls.Add(this.btnCalendar);
             this.panelManu.Controls.Add(this.btnAbout);
@@ -176,7 +177,7 @@
             this.membersContiener.Controls.Add(this.btnClients);
             this.membersContiener.Controls.Add(this.btnUserMengement);
             this.membersContiener.Controls.Add(this.btnAddUser);
-            this.membersContiener.Location = new System.Drawing.Point(0, 301);
+            this.membersContiener.Location = new System.Drawing.Point(-2, 301);
             this.membersContiener.MaximumSize = new System.Drawing.Size(255, 274);
             this.membersContiener.MinimumSize = new System.Drawing.Size(255, 62);
             this.membersContiener.Name = "membersContiener";
@@ -189,7 +190,6 @@
             this.panelTitle.Controls.Add(this.btnLogOut);
             this.panelTitle.Controls.Add(this.picBoxHome);
             this.panelTitle.Controls.Add(this.btnMinimize);
-            this.panelTitle.Controls.Add(this.btnSettings);
             this.panelTitle.Controls.Add(this.btnNotification);
             this.panelTitle.Controls.Add(this.btnClose);
             this.panelTitle.Controls.Add(this.lblTitle);
@@ -263,7 +263,7 @@
             this.penelHome.Location = new System.Drawing.Point(55, 74);
             this.penelHome.Margin = new System.Windows.Forms.Padding(0);
             this.penelHome.Name = "penelHome";
-            this.penelHome.Size = new System.Drawing.Size(1215, 628);
+            this.penelHome.Size = new System.Drawing.Size(1227, 628);
             this.penelHome.TabIndex = 0;
             this.penelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.penelHome_Paint);
             // 
@@ -297,7 +297,7 @@
             this.panelStaticsClasses.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelStaticsClasses.FillColor3 = System.Drawing.Color.Transparent;
             this.panelStaticsClasses.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsClasses.Location = new System.Drawing.Point(30, 162);
+            this.panelStaticsClasses.Location = new System.Drawing.Point(28, 162);
             this.panelStaticsClasses.Name = "panelStaticsClasses";
             this.panelStaticsClasses.Size = new System.Drawing.Size(771, 67);
             this.panelStaticsClasses.TabIndex = 205;
@@ -582,7 +582,7 @@
             this.lblClasses.BackColor = System.Drawing.Color.Transparent;
             this.lblClasses.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClasses.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblClasses.Location = new System.Drawing.Point(552, 29);
+            this.lblClasses.Location = new System.Drawing.Point(550, 29);
             this.lblClasses.Name = "lblClasses";
             this.lblClasses.Size = new System.Drawing.Size(205, 30);
             this.lblClasses.TabIndex = 192;
@@ -594,7 +594,7 @@
             this.lblAdmins.BackColor = System.Drawing.Color.Transparent;
             this.lblAdmins.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdmins.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAdmins.Location = new System.Drawing.Point(306, 30);
+            this.lblAdmins.Location = new System.Drawing.Point(304, 30);
             this.lblAdmins.Name = "lblAdmins";
             this.lblAdmins.Size = new System.Drawing.Size(170, 30);
             this.lblAdmins.TabIndex = 191;
@@ -606,7 +606,7 @@
             this.lblUsers.BackColor = System.Drawing.Color.Transparent;
             this.lblUsers.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsers.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblUsers.Location = new System.Drawing.Point(51, 30);
+            this.lblUsers.Location = new System.Drawing.Point(49, 30);
             this.lblUsers.Name = "lblUsers";
             this.lblUsers.Size = new System.Drawing.Size(164, 28);
             this.lblUsers.TabIndex = 190;
@@ -616,7 +616,7 @@
             // panelClasses
             // 
             this.panelClasses.BackColor = System.Drawing.Color.White;
-            this.panelClasses.Location = new System.Drawing.Point(551, 62);
+            this.panelClasses.Location = new System.Drawing.Point(549, 62);
             this.panelClasses.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelClasses.Name = "panelClasses";
             this.panelClasses.Size = new System.Drawing.Size(243, 2);
@@ -625,7 +625,7 @@
             // panelAdmins
             // 
             this.panelAdmins.BackColor = System.Drawing.Color.White;
-            this.panelAdmins.Location = new System.Drawing.Point(302, 62);
+            this.panelAdmins.Location = new System.Drawing.Point(300, 62);
             this.panelAdmins.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelAdmins.Name = "panelAdmins";
             this.panelAdmins.Size = new System.Drawing.Size(243, 2);
@@ -634,7 +634,7 @@
             // panelUsers
             // 
             this.panelUsers.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panelUsers.Location = new System.Drawing.Point(53, 62);
+            this.panelUsers.Location = new System.Drawing.Point(51, 62);
             this.panelUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelUsers.Name = "panelUsers";
             this.panelUsers.Size = new System.Drawing.Size(243, 2);
@@ -670,7 +670,7 @@
             this.panelStaticsPersons.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelStaticsPersons.FillColor3 = System.Drawing.Color.Transparent;
             this.panelStaticsPersons.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsPersons.Location = new System.Drawing.Point(27, 81);
+            this.panelStaticsPersons.Location = new System.Drawing.Point(25, 81);
             this.panelStaticsPersons.Name = "panelStaticsPersons";
             this.panelStaticsPersons.Size = new System.Drawing.Size(772, 62);
             this.panelStaticsPersons.TabIndex = 140;
@@ -1000,7 +1000,7 @@
             this.btnMyAcc.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnMyAcc.Image = global::Fitness_Club.Properties.Resources.usersMengment2;
             this.btnMyAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyAcc.Location = new System.Drawing.Point(-6, 146);
+            this.btnMyAcc.Location = new System.Drawing.Point(-8, 146);
             this.btnMyAcc.Margin = new System.Windows.Forms.Padding(4);
             this.btnMyAcc.Name = "btnMyAcc";
             this.btnMyAcc.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
@@ -1074,6 +1074,27 @@
             this.btnClients.UseVisualStyleBackColor = false;
             this.btnClients.Click += new System.EventHandler(this.btnClients_Click_1);
             // 
+            // btnUserMengement
+            // 
+            this.btnUserMengement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnUserMengement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserMengement.FlatAppearance.BorderSize = 0;
+            this.btnUserMengement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserMengement.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnUserMengement.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUserMengement.Image = global::Fitness_Club.Properties.Resources._management_business_2;
+            this.btnUserMengement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserMengement.Location = new System.Drawing.Point(-2, 0);
+            this.btnUserMengement.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUserMengement.Name = "btnUserMengement";
+            this.btnUserMengement.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnUserMengement.Size = new System.Drawing.Size(269, 62);
+            this.btnUserMengement.TabIndex = 6;
+            this.btnUserMengement.Text = "        Management  ▼";
+            this.btnUserMengement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUserMengement.UseVisualStyleBackColor = false;
+            this.btnUserMengement.Click += new System.EventHandler(this.btnUserMengement_Click);
+            // 
             // btnAddUser
             // 
             this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -1094,26 +1115,6 @@
             this.btnAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(861, -3);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(264, 70);
-            this.btnSettings.TabIndex = 3;
-            this.btnSettings.Text = "        Settings";
-            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnSideManu
             // 
@@ -1143,7 +1144,7 @@
             this.btnCalendar.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCalendar.Image = global::Fitness_Club.Properties.Resources.calendar;
             this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendar.Location = new System.Drawing.Point(1, 224);
+            this.btnCalendar.Location = new System.Drawing.Point(-1, 224);
             this.btnCalendar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
@@ -1195,7 +1196,7 @@
             this.guna2PictureBox4.Image = global::Fitness_Club.Properties.Resources.swimmer;
             this.guna2PictureBox4.ImageRotate = 0F;
             this.guna2PictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.InitialImage")));
-            this.guna2PictureBox4.Location = new System.Drawing.Point(770, 31);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(768, 31);
             this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.Size = new System.Drawing.Size(31, 28);
@@ -1209,7 +1210,7 @@
             this.guna2PictureBox3.Image = global::Fitness_Club.Properties.Resources.manager;
             this.guna2PictureBox3.ImageRotate = 0F;
             this.guna2PictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.InitialImage")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(514, 32);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(512, 32);
             this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(31, 28);
@@ -1217,26 +1218,25 @@
             this.guna2PictureBox3.TabIndex = 194;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // btnUserMengement
+            // btnSettings
             // 
-            this.btnUserMengement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnUserMengement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserMengement.FlatAppearance.BorderSize = 0;
-            this.btnUserMengement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserMengement.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnUserMengement.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUserMengement.Image = global::Fitness_Club.Properties.Resources._management_business_2;
-            this.btnUserMengement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserMengement.Location = new System.Drawing.Point(-2, 0);
-            this.btnUserMengement.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUserMengement.Name = "btnUserMengement";
-            this.btnUserMengement.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnUserMengement.Size = new System.Drawing.Size(269, 62);
-            this.btnUserMengement.TabIndex = 6;
-            this.btnUserMengement.Text = "        Management  ▼";
-            this.btnUserMengement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUserMengement.UseVisualStyleBackColor = false;
-            this.btnUserMengement.Click += new System.EventHandler(this.btnUserMengement_Click);
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(-6, 422);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(264, 70);
+            this.btnSettings.TabIndex = 3;
+            this.btnSettings.Text = "        Settings";
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // guna2PictureBox2
             // 
@@ -1244,7 +1244,7 @@
             this.guna2PictureBox2.Image = global::Fitness_Club.Properties.Resources.users;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.InitialImage")));
-            this.guna2PictureBox2.Location = new System.Drawing.Point(247, 31);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(245, 31);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(53, 29);
@@ -1269,10 +1269,9 @@
             // 
             // pictureInidcation
             // 
-            this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources._20943798;
-            this.pictureInidcation.Location = new System.Drawing.Point(807, 0);
+            this.pictureInidcation.Location = new System.Drawing.Point(805, 0);
             this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(404, 622);
+            this.pictureInidcation.Size = new System.Drawing.Size(419, 622);
             this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureInidcation.TabIndex = 91;
             this.pictureInidcation.TabStop = false;

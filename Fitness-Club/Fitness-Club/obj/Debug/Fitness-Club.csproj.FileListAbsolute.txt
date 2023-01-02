@@ -43,7 +43,6 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness-Club.csproj.CopyComplete
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness-Club.exe
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness-Club.pdb
-C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.addMember.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.DeleteAndUpdateFrom.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.FormMembers.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Resources.FormsLogin.ForgetPassword.resources
@@ -68,7 +67,6 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\bin\Debug\System.
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\bin\Debug\System.Text.Json.xml
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\bin\Debug\System.ValueTuple.xml
-C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Calandar.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.UserControlDays.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.UserControlEmpty.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.AdminScreen.resources
@@ -83,3 +81,5 @@ C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.BubbleOfTweet.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.About.resources
 C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.ForgetPassword1.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Calandar.resources
+C:\Users\roei6\Desktop\Final-Project\Fitness-Club\Fitness-Club\obj\Debug\Fitness_Club.Error.resources

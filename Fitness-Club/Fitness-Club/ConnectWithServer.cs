@@ -231,22 +231,27 @@ namespace Fitness_Club
         //pic
         public static Image getPicById(string userId, List<profilePicture> list)
         {
-            foreach (profilePicture picture in list)
+            if (list != null)
             {
-                if (picture.UserId == userId)
-                    return picture.Img;
+                foreach (profilePicture picture in list)
+                {
+                    if (picture.UserId == userId)
+                        return picture.Img;
+                }
+               
             }
             return Properties.Resources.defult_pro_pic2;
+
         }
 
         public static List<profilePicture> getListOfAllPics(string commend)
         {
-            SqlConnection conn = new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
+         
             List<profilePicture> list = new List<profilePicture>();
             try
             {
-                SqlCommand cmd = new SqlCommand(commend, conn);
-                conn.Open();
+                SqlCommand cmd = new SqlCommand(commend, LogIn.static_conn);
+                LogIn.static_conn.Open();  
                 SqlDataReader reader = cmd.ExecuteReader();
                 if(reader.HasRows)
                 {
@@ -266,7 +271,7 @@ namespace Fitness_Club
                         }
                     }                   
                 }
-                conn.Close();
+                LogIn.static_conn.Close();
                 return list;
             }
             catch

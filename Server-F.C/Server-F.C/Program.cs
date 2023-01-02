@@ -73,8 +73,8 @@ namespace Server_F.C
 
         static void Main(string[] args)
         {
-            
-            openingTheServerToReceiveCalls();
+
+             openingTheServerToReceiveCalls();
             Console.ReadKey();
 
 

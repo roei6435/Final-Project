@@ -99,8 +99,8 @@ namespace Server_F.C
                     for (int i = 0; rdr.Read(); i++)
                     {
                         string lastConn = "null";
-                        if (rdr[15].GetType() != typeof(DBNull))
-                            lastConn = rdr[15].ToString();
+                        if (rdr[14].GetType() != typeof(DBNull))
+                            lastConn = rdr[14].ToString();
                         data += rdr[0] + Program.separationKey;   //id
                         data += rdr[1] + Program.separationKey;    //fname
                         data += rdr[2] + Program.separationKey;   //lname

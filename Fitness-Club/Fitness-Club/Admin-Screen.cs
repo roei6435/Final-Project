@@ -214,14 +214,22 @@ namespace Fitness_Club
 
         private void btnCalandar_Click(object sender, EventArgs e)
         {
-            if (!membersCollapse)
+            try
             {
-                MembersTimer.Start();
-                btnUserMengement.BackColor = btnSideManu.BackColor;
-                openChildForm(new Calandar(), sender);
+                if (!membersCollapse)
+                {
+                    MembersTimer.Start();
+                    btnUserMengement.BackColor = btnSideManu.BackColor;
+                    openChildForm(new Calandar(), sender);
+                }
+                else
+                    openChildForm(new Calandar(), sender);
             }
-            else
-                openChildForm(new Calandar(), sender);
+            catch 
+            {
+                openChildForm(new Error(), sender);
+            }
+
         }     //open form calandar
 
         private void btnUserMengement_Click(object sender, EventArgs e)
@@ -402,6 +410,16 @@ namespace Fitness_Club
 
             userLogged =getLoggedUserNowByPersonId(static_userId,listP);
             putUsersDataInDashboard(listP);
+
+            try
+            {
+                pictureInidcation.Image = Properties.Resources._20943798;
+            }
+            catch
+            {
+
+                pictureInidcation.Image = Properties.Resources.testD2;
+            }
                 
 
         }

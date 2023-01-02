@@ -743,6 +743,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Error {
+            get {
+                object obj = ResourceManager.GetObject("Error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap error_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("error_icon (1)", resourceCulture);
@@ -1216,6 +1226,16 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap swimmer {
             get {
                 object obj = ResourceManager.GetObject("swimmer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap testD2 {
+            get {
+                object obj = ResourceManager.GetObject("testD2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

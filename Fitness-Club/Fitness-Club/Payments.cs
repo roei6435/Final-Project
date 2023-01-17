@@ -57,6 +57,17 @@ namespace Fitness_Club
             set { date = value; }
         }
 
+        public static string getSumOfPaymentsOfLastMonth()
+        {
+            string response = ConnectWithServer.callToServer(AdminsStaticts.controller, "getSumOfPaymentsOfLastMonth#", "");
+            if (response == string.Empty)
+            {
+                return null;
+            }
+            return response;
+
+        }
+
 
 
 

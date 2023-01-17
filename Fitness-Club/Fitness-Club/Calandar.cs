@@ -73,7 +73,7 @@ namespace Fitness_Club
         }                                                                 
 
 
-        Dictionary<string, string> DicMonth =new Dictionary<string, string>(){
+       public static Dictionary<string, string> DicMonth =new Dictionary<string, string>(){
             {"ינואר", "January "},
             {"פברואר", "February"},
             {"מרץ", "March"},

@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
-
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Data;
-using System.Globalization;
-using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 namespace Server_F.C
 {
-
 
     internal class Program
     {
@@ -44,7 +37,8 @@ namespace Server_F.C
                     countReq++;
                     string ipClient = client.Client.RemoteEndPoint.ToString();
                     string dateCon = DateTime.Now.ToString();
-                    Console.WriteLine($"New call to server from: {ipClient} in {dateCon}, numbur requset:{countReq}");
+                    Console.WriteLine($"New call to server from: {ipClient} in {dateCon},\n" +
+                        $" numbur requset in this session:{countReq} ");
                     saveLogInTextFile(ipClient, dateCon);
                     // resev from client
                     NetworkStream stream = client.GetStream();// input data
@@ -70,15 +64,41 @@ namespace Server_F.C
             }
 
         }
+        public static string CityStateCountByIp(string IP)
+        {
+            //var url = "http://freegeoip.net/json/" + IP;
+            //var url = "http://freegeoip.net/json/" + IP;
+            string url = "http://api.ipstack.com/" + IP + "?access_key=[KEY]";
+            var request = System.Net.WebRequest.Create(url);
+
+            using (WebResponse wrs = request.GetResponse())
+            {
+                using (Stream stream = wrs.GetResponseStream())
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        string json = reader.ReadToEnd();
+                        var obj = JObject.Parse(json);
+                        string City = (string)obj["city"];
+                        string Country = (string)obj["region_name"];
+                        string CountryCode = (string)obj["country_code"];
+
+                        return (CountryCode + " - " + Country + "," + City);
+                    }
+                }
+            }
+
+
+            return "";
+
+        }
 
         static void Main(string[] args)
         {
-
-             openingTheServerToReceiveCalls();
+            openingTheServerToReceiveCalls();
             Console.ReadKey();
-
-
         }
+
 
         //Saving all the logged to system in txt file.
         static void saveLogInTextFile(string ip, string date)
@@ -201,6 +221,14 @@ namespace Server_F.C
             else if (functionName == "getAllDataClasses")
             {
                 return Dashboard.getAllDataClasses();
+            }
+            else if(functionName== "getUserIdOfMostActiveAdminByTweest")
+            {
+                return Dashboard.getUserIdOfMostActiveAdminByTweest();
+            }
+            else if(functionName == "getSumOfPaymentsOfLastMonth")
+            {
+                return Dashboard.getSumOfPaymentsOfLastMonth();
             }
             return "Function not found.";
         }
@@ -358,9 +386,8 @@ namespace Server_F.C
             return "Function not found.";
         }
 
-
-
-
-
     }
+
+
+
 }

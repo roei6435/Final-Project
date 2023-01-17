@@ -86,7 +86,7 @@ namespace Fitness_Club
         }
         private void like()
         {
-            string likeToTweet = ConnectWithServer.callToServer(Forms_admin.AdministratorCenter.controller, "likeToTweet#", AdminScreen.static_userId + "#" + nowSelectdTweet.MessageId);
+            string likeToTweet = ConnectWithServer.callToServer(Forms_admin.Feed.controller, "likeToTweet#", AdminScreen.static_userId + "#" + nowSelectdTweet.MessageId);
             if (bool.Parse(likeToTweet))
             {
                 picLikeOn.Visible = true;
@@ -103,7 +103,7 @@ namespace Fitness_Club
         }
         private void unlike()
         {
-            string unlikeToTweet = ConnectWithServer.callToServer(Forms_admin.AdministratorCenter.controller, "unlikeToTweet#", AdminScreen.static_userId + "#" + nowSelectdTweet.MessageId);
+            string unlikeToTweet = ConnectWithServer.callToServer(Forms_admin.Feed.controller, "unlikeToTweet#", AdminScreen.static_userId + "#" + nowSelectdTweet.MessageId);
             if (bool.Parse(unlikeToTweet))
             {
                

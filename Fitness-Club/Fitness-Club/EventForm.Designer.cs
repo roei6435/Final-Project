@@ -52,6 +52,10 @@
             this.comboBoxHourFrom = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dataEvents = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.eventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelAllEvent = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblNotEvents = new System.Windows.Forms.Label();
             this.btnDeleteEvent = new System.Windows.Forms.Button();
@@ -59,10 +63,6 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBoxUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.eventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelAddEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEvents)).BeginInit();
             this.panelAllEvent.SuspendLayout();
@@ -110,7 +110,7 @@
             this.txtBoxDate.Size = new System.Drawing.Size(202, 31);
             this.txtBoxDate.TabIndex = 24;
             // 
-            // lblEvent                                                 
+            // lblEvent
             // 
             this.lblEvent.BackColor = System.Drawing.Color.Transparent;
             this.lblEvent.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,7 +150,6 @@
             this.txtBoxEvent.Name = "txtBoxEvent";
             this.txtBoxEvent.Size = new System.Drawing.Size(211, 31);
             this.txtBoxEvent.TabIndex = 27;
-            this.txtBoxEvent.Text = "Lasson Rabbi Sandro";
             // 
             // lblDate
             // 
@@ -498,6 +497,38 @@
             this.dataEvents.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dataEvents.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             // 
+            // eventName
+            // 
+            this.eventName.HeaderText = "";
+            this.eventName.MinimumWidth = 220;
+            this.eventName.Name = "eventName";
+            this.eventName.ReadOnly = true;
+            this.eventName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "";
+            this.Time.MinimumWidth = 140;
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            this.Time.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Location
+            // 
+            this.Location.HeaderText = "";
+            this.Location.MinimumWidth = 180;
+            this.Location.Name = "Location";
+            this.Location.ReadOnly = true;
+            this.Location.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // idEvent
+            // 
+            this.idEvent.HeaderText = "idEvent";
+            this.idEvent.MinimumWidth = 20;
+            this.idEvent.Name = "idEvent";
+            this.idEvent.ReadOnly = true;
+            this.idEvent.Visible = false;
+            // 
             // panelAllEvent
             // 
             this.panelAllEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -514,9 +545,9 @@
             this.panelAllEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panelAllEvent.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panelAllEvent.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.panelAllEvent.Location = new System.Drawing.Point(6, 17);
+            this.panelAllEvent.Location = new System.Drawing.Point(4, 5);
             this.panelAllEvent.Name = "panelAllEvent";
-            this.panelAllEvent.Size = new System.Drawing.Size(729, 398);
+            this.panelAllEvent.Size = new System.Drawing.Size(731, 410);
             this.panelAllEvent.TabIndex = 146;
             this.panelAllEvent.Visible = false;
             // 
@@ -605,38 +636,6 @@
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 33;
             this.guna2PictureBox2.TabStop = false;
-            // 
-            // eventName
-            // 
-            this.eventName.HeaderText = "";
-            this.eventName.MinimumWidth = 220;
-            this.eventName.Name = "eventName";
-            this.eventName.ReadOnly = true;
-            this.eventName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "";
-            this.Time.MinimumWidth = 140;
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            this.Time.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Location
-            // 
-            this.Location.HeaderText = "";
-            this.Location.MinimumWidth = 180;
-            this.Location.Name = "Location";
-            this.Location.ReadOnly = true;
-            this.Location.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // idEvent
-            // 
-            this.idEvent.HeaderText = "idEvent";
-            this.idEvent.MinimumWidth = 20;
-            this.idEvent.Name = "idEvent";
-            this.idEvent.ReadOnly = true;
-            this.idEvent.Visible = false;
             // 
             // EventForm
             // 

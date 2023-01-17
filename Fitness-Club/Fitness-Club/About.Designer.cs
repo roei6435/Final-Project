@@ -29,36 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
-            this.picBox = new System.Windows.Forms.PictureBox();
             this.panelStatisicsData = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblExprinceCountDays = new System.Windows.Forms.Label();
             this.fullContiner = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.fullLbl = new System.Windows.Forms.Label();
+            this.lblSettings = new System.Windows.Forms.Label();
+            this.lblMenegment = new System.Windows.Forms.Label();
+            this.panelSettings = new System.Windows.Forms.Panel();
+            this.panelMengment = new System.Windows.Forms.Panel();
             this.lblMyAcc = new System.Windows.Forms.Label();
             this.lblCalandar = new System.Windows.Forms.Label();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.panelCalendar = new System.Windows.Forms.Panel();
             this.panelMyAcc = new System.Windows.Forms.Panel();
             this.panelDashboard = new System.Windows.Forms.Panel();
-            this.panelSettings = new System.Windows.Forms.Panel();
-            this.panelMengment = new System.Windows.Forms.Panel();
-            this.lblMenegment = new System.Windows.Forms.Label();
-            this.lblSettings = new System.Windows.Forms.Label();
-            this.fullLbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelStatisicsData.SuspendLayout();
             this.fullContiner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picBox
-            // 
-            this.picBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picBox.Image = global::Fitness_Club.Properties.Resources._5274708;
-            this.picBox.Location = new System.Drawing.Point(903, 0);
-            this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(488, 656);
-            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBox.TabIndex = 101;
-            this.picBox.TabStop = false;
             // 
             // panelStatisicsData
             // 
@@ -111,6 +100,59 @@
             this.fullContiner.Size = new System.Drawing.Size(812, 507);
             this.fullContiner.TabIndex = 146;
             // 
+            // fullLbl
+            // 
+            this.fullLbl.BackColor = System.Drawing.Color.Transparent;
+            this.fullLbl.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.fullLbl.ForeColor = System.Drawing.Color.Gainsboro;
+            this.fullLbl.Location = new System.Drawing.Point(59, 77);
+            this.fullLbl.Name = "fullLbl";
+            this.fullLbl.Size = new System.Drawing.Size(693, 408);
+            this.fullLbl.TabIndex = 208;
+            this.fullLbl.Text = resources.GetString("fullLbl.Text");
+            // 
+            // lblSettings
+            // 
+            this.lblSettings.BackColor = System.Drawing.Color.Transparent;
+            this.lblSettings.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettings.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblSettings.Location = new System.Drawing.Point(648, 22);
+            this.lblSettings.Name = "lblSettings";
+            this.lblSettings.Size = new System.Drawing.Size(111, 30);
+            this.lblSettings.TabIndex = 207;
+            this.lblSettings.Text = "About";
+            this.lblSettings.Click += new System.EventHandler(this.lblSettings_Click);
+            // 
+            // lblMenegment
+            // 
+            this.lblMenegment.BackColor = System.Drawing.Color.Transparent;
+            this.lblMenegment.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenegment.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblMenegment.Location = new System.Drawing.Point(492, 22);
+            this.lblMenegment.Name = "lblMenegment";
+            this.lblMenegment.Size = new System.Drawing.Size(139, 28);
+            this.lblMenegment.TabIndex = 206;
+            this.lblMenegment.Text = "Area classes";
+            this.lblMenegment.Click += new System.EventHandler(this.lblMenegment_Click);
+            // 
+            // panelSettings
+            // 
+            this.panelSettings.BackColor = System.Drawing.Color.White;
+            this.panelSettings.Location = new System.Drawing.Point(637, 56);
+            this.panelSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelSettings.Name = "panelSettings";
+            this.panelSettings.Size = new System.Drawing.Size(136, 2);
+            this.panelSettings.TabIndex = 205;
+            // 
+            // panelMengment
+            // 
+            this.panelMengment.BackColor = System.Drawing.Color.White;
+            this.panelMengment.Location = new System.Drawing.Point(488, 56);
+            this.panelMengment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelMengment.Name = "panelMengment";
+            this.panelMengment.Size = new System.Drawing.Size(143, 2);
+            this.panelMengment.TabIndex = 204;
+            // 
             // lblMyAcc
             // 
             this.lblMyAcc.BackColor = System.Drawing.Color.Transparent;
@@ -142,9 +184,9 @@
             this.lblDashboard.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblDashboard.Location = new System.Drawing.Point(59, 24);
             this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(142, 28);
+            this.lblDashboard.Size = new System.Drawing.Size(148, 28);
             this.lblDashboard.TabIndex = 198;
-            this.lblDashboard.Text = "Dashboard ";
+            this.lblDashboard.Text = "Data analysis";
             this.lblDashboard.Click += new System.EventHandler(this.lblDashboard_Click);
             // 
             // panelCalendar
@@ -174,58 +216,15 @@
             this.panelDashboard.Size = new System.Drawing.Size(143, 2);
             this.panelDashboard.TabIndex = 195;
             // 
-            // panelSettings
+            // pictureBox1
             // 
-            this.panelSettings.BackColor = System.Drawing.Color.White;
-            this.panelSettings.Location = new System.Drawing.Point(637, 56);
-            this.panelSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(136, 2);
-            this.panelSettings.TabIndex = 205;
-            // 
-            // panelMengment
-            // 
-            this.panelMengment.BackColor = System.Drawing.Color.White;
-            this.panelMengment.Location = new System.Drawing.Point(488, 56);
-            this.panelMengment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelMengment.Name = "panelMengment";
-            this.panelMengment.Size = new System.Drawing.Size(143, 2);
-            this.panelMengment.TabIndex = 204;
-            // 
-            // lblMenegment
-            // 
-            this.lblMenegment.BackColor = System.Drawing.Color.Transparent;
-            this.lblMenegment.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenegment.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMenegment.Location = new System.Drawing.Point(492, 22);
-            this.lblMenegment.Name = "lblMenegment";
-            this.lblMenegment.Size = new System.Drawing.Size(150, 28);
-            this.lblMenegment.TabIndex = 206;
-            this.lblMenegment.Text = "Mengement";
-            this.lblMenegment.Click += new System.EventHandler(this.lblMenegment_Click);
-            // 
-            // lblSettings
-            // 
-            this.lblSettings.BackColor = System.Drawing.Color.Transparent;
-            this.lblSettings.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblSettings.Location = new System.Drawing.Point(648, 22);
-            this.lblSettings.Name = "lblSettings";
-            this.lblSettings.Size = new System.Drawing.Size(111, 30);
-            this.lblSettings.TabIndex = 207;
-            this.lblSettings.Text = "Settings";
-            this.lblSettings.Click += new System.EventHandler(this.lblSettings_Click);
-            // 
-            // fullLbl
-            // 
-            this.fullLbl.BackColor = System.Drawing.Color.Transparent;
-            this.fullLbl.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.fullLbl.ForeColor = System.Drawing.Color.Gainsboro;
-            this.fullLbl.Location = new System.Drawing.Point(59, 77);
-            this.fullLbl.Name = "fullLbl";
-            this.fullLbl.Size = new System.Drawing.Size(693, 408);
-            this.fullLbl.TabIndex = 208;
-            this.fullLbl.Text = resources.GetString("fullLbl.Text");
+            this.pictureBox1.Image = global::Fitness_Club.Properties.Resources._20943401;
+            this.pictureBox1.Location = new System.Drawing.Point(940, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(452, 658);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 147;
+            this.pictureBox1.TabStop = false;
             // 
             // About
             // 
@@ -233,22 +232,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1391, 656);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.fullContiner);
             this.Controls.Add(this.panelStatisicsData);
-            this.Controls.Add(this.picBox);
             this.Name = "About";
             this.Text = "About";
             this.Load += new System.EventHandler(this.About_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.panelStatisicsData.ResumeLayout(false);
             this.fullContiner.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picBox;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStatisicsData;
         private System.Windows.Forms.Label lblExprinceCountDays;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel fullContiner;
@@ -263,5 +260,6 @@
         private System.Windows.Forms.Label lblMenegment;
         private System.Windows.Forms.Label lblSettings;
         private System.Windows.Forms.Label fullLbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

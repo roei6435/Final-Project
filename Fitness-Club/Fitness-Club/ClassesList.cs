@@ -41,6 +41,17 @@ namespace Fitness_Club
             }
             return null;
         }
+
+        public int getCountActiveClasses()
+        {
+            int counter = 0;
+            foreach(Classes classs in listC)
+            {
+                if(classs.Activity)
+                    counter++;
+            }
+            return counter;
+        }
         public Classes theMostPopulerOrNotPopulerClass(string key)
         {
             if (!checkIfKeyIsProper(key))return null;
@@ -83,45 +94,46 @@ namespace Fitness_Club
 
         }
         
-        public string theLowestAndHighstAvgGrade(string key)
+        public Classes theLowestAndHighstAvgGrade(string key)
         {
-            if (!checkIfKeyIsProper(key)) return null;
-            float max = 0f, min = 6f;
-            string nameClassLower=null, nameClassUpper=null;   
-            for(int i = 0;i < listC.Count; i++)
+            float maxRating=0,minRating=6;
+            Classes maxC=listC[0],minC=maxC;
+            foreach (Classes c in listC)
             {
-                float sum = 0;
-                if(listC[i].ArrayReviews!= null)
+                if (c.ArrayReviews != null)
                 {
-                    for(int j = 0; j < listC[i].ArrayReviews.Length; j++)
+                    int sumRating = 0;float avgNow;
+                    for (int i = 0; i < c.ArrayReviews.Length; i++)
                     {
-                        int rating = int.Parse(listC[i].ArrayReviews[j].Rating);
-                        sum+=rating;
+                        sumRating+=int.Parse(c.ArrayReviews[i].Rating);
                     }
-                    if (sum / listC[i].ArrayReviews.Length < min)
+                    avgNow= sumRating / (float)c.ArrayReviews.Length;
+                    if(avgNow > maxRating)
                     {
-                        min = sum / (float)listC[i].ArrayReviews.Length;
-                        nameClassLower=listC[i].NameClass;    
+                        maxRating = avgNow;
+                        maxC= c;
+
                     }
-                    else if(sum / listC[i].ArrayReviews.Length > max)
+                    else if(avgNow < minRating)
                     {
-                        max = sum / (float)listC[i].ArrayReviews.Length;
-                        nameClassUpper = listC[i].NameClass;
+                        minRating = avgNow;
+                        minC= c;    
                     }
-                }
+                }            
             }
             switch (key)
             {
-                case "low":
-                    return nameClassLower + "#" + min.ToString("0.#");
                 case "high":
-                    return nameClassUpper + "#" + max.ToString("0.#");
-                default:return null;
+                    maxC.Pic.Tag = maxRating.ToString("0.#");
+                    return maxC;
+                case "low":
+                    minC.Pic.Tag = minRating.ToString("0.#");
+                    return minC;
+                default: return null;
             }
-
         }
 
-        public string theLowestAndHighstReviews(string key)
+        public Classes getLowestAndHighstReviews(string key)
         {
             if (!checkIfKeyIsProper(key)) return null;
             int maxReviews=0, minReviews=int.MaxValue;
@@ -130,7 +142,7 @@ namespace Fitness_Club
             {
                 if (key == lowKey && listC[i].ArrayReviews is null)  //if have class not reviews
                 {
-                    return listC[i].NameClass + "#" + 0;
+                    return listC[i];
                 }
                 else if (listC[i].ArrayReviews != null && listC[i].ArrayReviews.Length > maxReviews)
                 {
@@ -146,9 +158,9 @@ namespace Fitness_Club
             switch (key)
             {
                 case "high":
-                    return cMax.NameClass + "#" + maxReviews;
+                    return cMax;
                 case "low":
-                    return cMin.NameClass + "#" + minReviews;
+                    return cMin;
                 default: return null;
             }
 
@@ -156,6 +168,75 @@ namespace Fitness_Club
 
               
         }
+
+        public int getActiveClassesPercent()
+        {
+            float active = 0;
+            foreach (Classes c in listC)
+            {
+                if (c.Activity)
+                    active = active + 1.0f;
+            }
+            return (int)(active / listC.Count() * 100);
+        }
+
+        public string getAvgRaitingAllClasses()
+        {
+            float sumAllAvgRaitings = 0;
+            foreach (Classes c in listC)
+            {
+                if (c.ArrayReviews != null)
+                {
+                    int sumRating = 0;
+                    for (int i = 0; i < c.ArrayReviews.Length; i++)
+                    {
+                        sumRating += int.Parse(c.ArrayReviews[i].Rating);
+                    }
+                    sumAllAvgRaitings += sumRating / (float)c.ArrayReviews.Length;
+                }
+
+            }
+           return (sumAllAvgRaitings/(float)listC.Count()).ToString("#.0");
+        }
+
+        public Classes getMostOrLeastFriendsClass(string key)
+        {
+            int maxFriends = 0,minFriends=int.MaxValue;Classes cMax=null,cMin=null;
+            for(int i = 0; i < listC.Count; i++)
+            {
+                if (listC[i].ArrayRegisteredUsersThisClass != null)
+                {
+                    if(listC[i].ArrayRegisteredUsersThisClass.Length > maxFriends)
+                    {
+                        maxFriends = listC[i].ArrayRegisteredUsersThisClass.Length;
+                        cMax = listC[i];
+                    }
+                    else if(listC[i].ArrayRegisteredUsersThisClass.Length < minFriends)
+                    {
+                        minFriends = listC[i].ArrayRegisteredUsersThisClass.Length;
+                        cMin = listC[i];
+                    }
+                }
+                else
+                {
+                    if(key==lowKey)
+                        return listC[i];
+                }
+            }
+            switch (key)
+            {
+                case "high":
+                    return cMax;
+                case "low":
+                    return cMin;
+                default: return null;
+
+
+            }
+
+        }
+
+
 
     }
 }

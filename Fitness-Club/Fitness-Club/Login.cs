@@ -126,6 +126,7 @@ namespace Fitness_Club
             }
             else if(splitResponse[0] == "true" && admin == "False")
             {
+                ConnectWithServer.callToServer(controller, "updateLastConn#", splitResponse[1]);
                 DeleteAndUpdateFrom pf=new DeleteAndUpdateFrom();
                 pf.Show();
                 this.Hide();

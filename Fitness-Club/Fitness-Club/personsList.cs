@@ -42,11 +42,11 @@ namespace Fitness_Club
             Person hidden= PL.findPersonById(this.Tag.ToString());
             if (!showOrHideTweetsFromThisAdmin.Checked)
             {
-                Forms_admin.AdministratorCenter.hideList.Add(hidden);                
+                Forms_admin.Feed.hideList.Add(hidden);                
             }
             else
             {
-                Forms_admin.AdministratorCenter.hideList.Remove(hidden);
+                Forms_admin.Feed.hideList.Remove(hidden);
             }
             needRefresh = true;
 

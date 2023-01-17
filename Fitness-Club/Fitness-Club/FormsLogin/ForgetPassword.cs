@@ -277,8 +277,9 @@ namespace Fitness_Club.Resources.FormsLogin
             Application.Exit();
         }
 
+        private void panelTitle_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
+        }
     }
 }

@@ -177,6 +177,7 @@
       <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Diagnostics.EventLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.EventLog.6.0.0\lib\net461\System.Diagnostics.EventLog.dll</HintPath>
     </Reference>
@@ -352,7 +353,19 @@
     </Compile>
     <Compile Include="Classes.cs" />
     <Compile Include="ClassesList.cs" />
+    <Compile Include="ClassesStatistics.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassesStatistics.cs.Designer.cs">
+      <DependentUpon>ClassesStatistics.cs.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectWithServer.cs" />
+    <Compile Include="AdminsStaticts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminsStaticts.Designer.cs">
+      <DependentUpon>AdminsStaticts.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventCalandarcs.cs" />
     <Compile Include="EventForm.cs">
       <SubType>Form</SubType>
@@ -360,29 +373,29 @@
     <Compile Include="EventForm.Designer.cs">
       <DependentUpon>EventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForgetPassword1.cs">
+    <Compile Include="ClientsStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgetPassword1.Designer.cs">
-      <DependentUpon>ForgetPassword1.cs</DependentUpon>
+    <Compile Include="ClientsStatistics.Designer.cs">
+      <DependentUpon>ClientsStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms-admin\addMember.cs">
+    <Compile Include="Forms-admin\Error.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms-admin\addMember.Designer.cs">
-      <DependentUpon>addMember.cs</DependentUpon>
+    <Compile Include="Forms-admin\Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms-admin\AdministratorCenter.cs">
+    <Compile Include="Forms-admin\Feed.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms-admin\AdministratorCenter.Designer.cs">
-      <DependentUpon>AdministratorCenter.cs</DependentUpon>
+    <Compile Include="Forms-admin\Feed.Designer.cs">
+      <DependentUpon>Feed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms-admin\ClassesForm.cs">
+    <Compile Include="Forms-admin\AreaClasses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms-admin\ClassesForm.Designer.cs">
-      <DependentUpon>ClassesForm.cs</DependentUpon>
+    <Compile Include="Forms-admin\AreaClasses.Designer.cs">
+      <DependentUpon>AreaClasses.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms-admin\DeleteAndUpdateFrom.cs">
       <SubType>Form</SubType>
@@ -395,6 +408,11 @@
     </Compile>
     <Compile Include="likeList.Designer.cs">
       <DependentUpon>likeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Tweets.cs" />
     <Compile Include="Payments.cs" />
@@ -411,11 +429,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms-admin\FormMembers.cs">
+    <Compile Include="Forms-admin\Rregistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms-admin\FormMembers.Designer.cs">
-      <DependentUpon>FormMembers.cs</DependentUpon>
+    <Compile Include="Forms-admin\Rregistration.Designer.cs">
+      <DependentUpon>Rregistration.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginANDRegister.cs">
       <SubType>Form</SubType>
@@ -451,11 +469,6 @@
     <Compile Include="FormsLogin\ForgetPassword.Designer.cs">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Reviews.cs" />
     <Compile Include="ReviewsList.cs" />
     <Compile Include="ThemColor.cs" />
@@ -486,20 +499,26 @@
     <EmbeddedResource Include="Calandar.resx">
       <DependentUpon>Calandar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminsStaticts.resx">
+      <DependentUpon>AdminsStaticts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassesStatistics.cs.resx">
+      <DependentUpon>ClassesStatistics.cs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgetPassword1.resx">
-      <DependentUpon>ForgetPassword1.cs</DependentUpon>
+    <EmbeddedResource Include="ClientsStatistics.resx">
+      <DependentUpon>ClientsStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms-admin\addMember.resx">
-      <DependentUpon>addMember.cs</DependentUpon>
+    <EmbeddedResource Include="Forms-admin\Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms-admin\AdministratorCenter.resx">
-      <DependentUpon>AdministratorCenter.cs</DependentUpon>
+    <EmbeddedResource Include="Forms-admin\Feed.resx">
+      <DependentUpon>Feed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms-admin\ClassesForm.resx">
-      <DependentUpon>ClassesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms-admin\AreaClasses.resx">
+      <DependentUpon>AreaClasses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms-admin\DeleteAndUpdateFrom.resx">
       <DependentUpon>DeleteAndUpdateFrom.cs</DependentUpon>
@@ -510,8 +529,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms-admin\FormMembers.resx">
-      <DependentUpon>FormMembers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms-admin\Rregistration.resx">
+      <DependentUpon>Rregistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginANDRegister.resx">
       <DependentUpon>LoginANDRegister.cs</DependentUpon>
@@ -954,6 +973,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\testD21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\average_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeAndStatics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userStattics.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userStattics2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\average_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finance1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userStattics21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoUserssta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\103716_statistics_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics22m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4658134_chart_curve_electronic_graph_statistics_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TWOSta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MANAGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3533397_clients_customer_market_marketing_segment_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NEWANALITCS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\315755_soccer_court_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JOMEiCON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGOUTT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CONTINUETOPROFILE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ContinueToProfile2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feeD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feed %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8401.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20943401.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starsLevelIn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

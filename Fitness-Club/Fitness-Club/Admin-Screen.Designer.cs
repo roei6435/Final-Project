@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminScreen));
             this.panelManu = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -37,109 +41,65 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.penelHome = new System.Windows.Forms.Panel();
-            this.panelStaticsClasses = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.lblLeastActiveUserData = new System.Windows.Forms.Label();
-            this.lblLowAvgGrade = new System.Windows.Forms.Label();
-            this.lblFewestReviewsData = new System.Windows.Forms.Label();
-            this.circularIsNotPopuler = new CircularProgressBar.CircularProgressBar();
-            this.lblTitleStaticsClasses = new System.Windows.Forms.Label();
-            this.lblMostReviewsData = new System.Windows.Forms.Label();
-            this.lblOfNameHighGradeAvg = new System.Windows.Forms.Label();
-            this.lblTitleFewestReviews = new System.Windows.Forms.Label();
-            this.lblMostActiveUserData = new System.Windows.Forms.Label();
-            this.lblLeastActiveUserTitle = new System.Windows.Forms.Label();
-            this.LblAvgHigeGrade = new System.Windows.Forms.Label();
-            this.circularIsPopuler = new CircularProgressBar.CircularProgressBar();
-            this.lblDataHighAvg = new System.Windows.Forms.Label();
-            this.lblNameOfPopulerClass = new System.Windows.Forms.Label();
-            this.lblTitleMostReviews = new System.Windows.Forms.Label();
-            this.lblMostActiveUserTitle = new System.Windows.Forms.Label();
-            this.lblDataLowAvg = new System.Windows.Forms.Label();
-            this.LblPopulerData = new System.Windows.Forms.Label();
-            this.LblNotPopulerData = new System.Windows.Forms.Label();
-            this.lblOfNameLowGradeAvg = new System.Windows.Forms.Label();
-            this.lblNameOfNotPopulerClass = new System.Windows.Forms.Label();
-            this.lblClasses = new System.Windows.Forms.Label();
-            this.lblAdmins = new System.Windows.Forms.Label();
-            this.lblUsers = new System.Windows.Forms.Label();
-            this.panelClasses = new System.Windows.Forms.Panel();
-            this.panelAdmins = new System.Windows.Forms.Panel();
-            this.panelUsers = new System.Windows.Forms.Panel();
-            this.panelStaticsPersons = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.LblMostOlder = new System.Windows.Forms.Label();
-            this.lblMostYounger = new System.Windows.Forms.Label();
-            this.lblMostYoungerTitle = new System.Windows.Forms.Label();
-            this.lblMostExprince = new System.Windows.Forms.Label();
-            this.lblLeastExprinceTitle = new System.Windows.Forms.Label();
-            this.lblLeastExprince = new System.Windows.Forms.Label();
-            this.LblMostOlderTitle = new System.Windows.Forms.Label();
-            this.LblAVG = new System.Windows.Forms.Label();
-            this.lblAvgData = new System.Windows.Forms.Label();
-            this.lblAvgAgesTitle = new System.Windows.Forms.Label();
-            this.lblMostExprinceTitle = new System.Windows.Forms.Label();
-            this.LblEmailFavData = new System.Windows.Forms.Label();
-            this.LblGenderData = new System.Windows.Forms.Label();
-            this.lblIsBlockData = new System.Windows.Forms.Label();
-            this.lblTitleStatics = new System.Windows.Forms.Label();
-            this.lblEmailFav = new System.Windows.Forms.Label();
-            this.lblIsBlock = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.circleGender = new CircularProgressBar.CircularProgressBar();
-            this.circularIsBlocked = new CircularProgressBar.CircularProgressBar();
-            this.circuleEmailPpoular = new CircularProgressBar.CircularProgressBar();
+            this.btnSenderObject = new System.Windows.Forms.Button();
+            this.circleTimer = new CircularProgressBar.CircularProgressBar();
+            this.lblTitleWellcome = new System.Windows.Forms.Label();
             this.timerSideManu = new System.Windows.Forms.Timer(this.components);
             this.MembersTimer = new System.Windows.Forms.Timer(this.components);
-            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnMyAcc = new System.Windows.Forms.Button();
-            this.btnTraning = new System.Windows.Forms.Button();
-            this.btnAdmins = new System.Windows.Forms.Button();
-            this.btnClients = new System.Windows.Forms.Button();
-            this.btnUserMengement = new System.Windows.Forms.Button();
+            this.panelSearch = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelNotFound = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxFind = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.DataViewPersons = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ProPic = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.picBoxError = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxSharch = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnAreaClasses = new System.Windows.Forms.Button();
+            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnSideManu = new System.Windows.Forms.Button();
-            this.btnCalendar = new System.Windows.Forms.Button();
+            this.btnMyAcc = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
-            this.picBoxStatics = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnClassesStat = new System.Windows.Forms.Button();
+            this.btnDataAnalysis = new System.Windows.Forms.Button();
+            this.btnAdminStatistics = new System.Windows.Forms.Button();
+            this.btnClientsStat = new System.Windows.Forms.Button();
+            this.btnCalendar = new System.Windows.Forms.Button();
             this.pictureInidcation = new System.Windows.Forms.PictureBox();
-            this.btnLogOut = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxHome = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnNotification = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelManu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.membersContiener.SuspendLayout();
             this.panelTitle.SuspendLayout();
             this.penelHome.SuspendLayout();
-            this.panelStaticsClasses.SuspendLayout();
-            this.panelStaticsPersons.SuspendLayout();
+            this.panelSearch.SuspendLayout();
+            this.panelNotFound.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataViewPersons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSharch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxStatics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // panelManu
             // 
-            this.panelManu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelManu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelManu.Controls.Add(this.btnHome);
+            this.panelManu.Controls.Add(this.btnAreaClasses);
             this.panelManu.Controls.Add(this.panelLogo);
-            this.panelManu.Controls.Add(this.btnMyAcc);
-            this.panelManu.Controls.Add(this.membersContiener);
-            this.panelManu.Controls.Add(this.btnSettings);
+            this.panelManu.Controls.Add(this.btnLogOut);
             this.panelManu.Controls.Add(this.btnSideManu);
-            this.panelManu.Controls.Add(this.btnCalendar);
+            this.panelManu.Controls.Add(this.btnMyAcc);
             this.panelManu.Controls.Add(this.btnAbout);
+            this.panelManu.Controls.Add(this.membersContiener);
+            this.panelManu.Controls.Add(this.btnCalendar);
             this.panelManu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.panelManu.Location = new System.Drawing.Point(0, 0);
             this.panelManu.Margin = new System.Windows.Forms.Padding(4);
@@ -172,30 +132,25 @@
             // membersContiener
             // 
             this.membersContiener.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.membersContiener.Controls.Add(this.btnTraning);
-            this.membersContiener.Controls.Add(this.btnAdmins);
-            this.membersContiener.Controls.Add(this.btnClients);
-            this.membersContiener.Controls.Add(this.btnUserMengement);
-            this.membersContiener.Controls.Add(this.btnAddUser);
-            this.membersContiener.Location = new System.Drawing.Point(-2, 301);
+            this.membersContiener.Controls.Add(this.btnClassesStat);
+            this.membersContiener.Controls.Add(this.btnDataAnalysis);
+            this.membersContiener.Controls.Add(this.btnAdminStatistics);
+            this.membersContiener.Controls.Add(this.btnClientsStat);
+            this.membersContiener.Location = new System.Drawing.Point(2, 277);
             this.membersContiener.MaximumSize = new System.Drawing.Size(255, 274);
             this.membersContiener.MinimumSize = new System.Drawing.Size(255, 62);
             this.membersContiener.Name = "membersContiener";
-            this.membersContiener.Size = new System.Drawing.Size(255, 62);
+            this.membersContiener.Size = new System.Drawing.Size(255, 79);
             this.membersContiener.TabIndex = 88;
             // 
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelTitle.Controls.Add(this.btnLogOut);
-            this.panelTitle.Controls.Add(this.picBoxHome);
             this.panelTitle.Controls.Add(this.btnMinimize);
-            this.panelTitle.Controls.Add(this.btnNotification);
             this.panelTitle.Controls.Add(this.btnClose);
-            this.panelTitle.Controls.Add(this.lblTitle);
-            this.panelTitle.Location = new System.Drawing.Point(57, 0);
+            this.panelTitle.Location = new System.Drawing.Point(73, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(1212, 83);
+            this.panelTitle.Size = new System.Drawing.Size(1190, 76);
             this.panelTitle.TabIndex = 1;
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
             // 
@@ -207,9 +162,9 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(1104, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1072, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(54, 83);
+            this.btnMinimize.Size = new System.Drawing.Size(64, 76);
             this.btnMinimize.TabIndex = 5;
             this.btnMinimize.Text = "-";
             this.btnMinimize.UseVisualStyleBackColor = true;
@@ -223,751 +178,91 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1158, 0);
+            this.btnClose.Location = new System.Drawing.Point(1136, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(54, 83);
+            this.btnClose.Size = new System.Drawing.Size(54, 76);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "x";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(541, 18);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(178, 45);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Dashboard";
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
-            // 
             // penelHome
             // 
             this.penelHome.AutoSize = true;
             this.penelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.penelHome.Controls.Add(this.panelStaticsClasses);
-            this.penelHome.Controls.Add(this.guna2PictureBox4);
-            this.penelHome.Controls.Add(this.guna2PictureBox3);
-            this.penelHome.Controls.Add(this.guna2PictureBox2);
-            this.penelHome.Controls.Add(this.lblClasses);
-            this.penelHome.Controls.Add(this.lblAdmins);
-            this.penelHome.Controls.Add(this.lblUsers);
-            this.penelHome.Controls.Add(this.panelClasses);
-            this.penelHome.Controls.Add(this.panelAdmins);
-            this.penelHome.Controls.Add(this.panelUsers);
-            this.penelHome.Controls.Add(this.panelStaticsPersons);
+            this.penelHome.Controls.Add(this.label2);
+            this.penelHome.Controls.Add(this.btnSenderObject);
+            this.penelHome.Controls.Add(this.circleTimer);
+            this.penelHome.Controls.Add(this.lblTitleWellcome);
             this.penelHome.Controls.Add(this.pictureInidcation);
-            this.penelHome.Location = new System.Drawing.Point(55, 74);
+            this.penelHome.Location = new System.Drawing.Point(55, 76);
             this.penelHome.Margin = new System.Windows.Forms.Padding(0);
             this.penelHome.Name = "penelHome";
-            this.penelHome.Size = new System.Drawing.Size(1227, 628);
+            this.penelHome.Size = new System.Drawing.Size(1659, 803);
             this.penelHome.TabIndex = 0;
-            this.penelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.penelHome_Paint);
-            // 
-            // panelStaticsClasses
-            // 
-            this.panelStaticsClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.panelStaticsClasses.BorderRadius = 30;
-            this.panelStaticsClasses.Controls.Add(this.lblLeastActiveUserData);
-            this.panelStaticsClasses.Controls.Add(this.lblLowAvgGrade);
-            this.panelStaticsClasses.Controls.Add(this.lblFewestReviewsData);
-            this.panelStaticsClasses.Controls.Add(this.circularIsNotPopuler);
-            this.panelStaticsClasses.Controls.Add(this.lblTitleStaticsClasses);
-            this.panelStaticsClasses.Controls.Add(this.lblMostReviewsData);
-            this.panelStaticsClasses.Controls.Add(this.lblOfNameHighGradeAvg);
-            this.panelStaticsClasses.Controls.Add(this.lblTitleFewestReviews);
-            this.panelStaticsClasses.Controls.Add(this.lblMostActiveUserData);
-            this.panelStaticsClasses.Controls.Add(this.lblLeastActiveUserTitle);
-            this.panelStaticsClasses.Controls.Add(this.picBoxStatics);
-            this.panelStaticsClasses.Controls.Add(this.LblAvgHigeGrade);
-            this.panelStaticsClasses.Controls.Add(this.circularIsPopuler);
-            this.panelStaticsClasses.Controls.Add(this.lblDataHighAvg);
-            this.panelStaticsClasses.Controls.Add(this.lblNameOfPopulerClass);
-            this.panelStaticsClasses.Controls.Add(this.lblTitleMostReviews);
-            this.panelStaticsClasses.Controls.Add(this.lblMostActiveUserTitle);
-            this.panelStaticsClasses.Controls.Add(this.lblDataLowAvg);
-            this.panelStaticsClasses.Controls.Add(this.LblPopulerData);
-            this.panelStaticsClasses.Controls.Add(this.LblNotPopulerData);
-            this.panelStaticsClasses.Controls.Add(this.lblOfNameLowGradeAvg);
-            this.panelStaticsClasses.Controls.Add(this.lblNameOfNotPopulerClass);
-            this.panelStaticsClasses.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsClasses.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsClasses.FillColor3 = System.Drawing.Color.Transparent;
-            this.panelStaticsClasses.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsClasses.Location = new System.Drawing.Point(28, 162);
-            this.panelStaticsClasses.Name = "panelStaticsClasses";
-            this.panelStaticsClasses.Size = new System.Drawing.Size(771, 67);
-            this.panelStaticsClasses.TabIndex = 205;
-            this.panelStaticsClasses.Visible = false;
-            this.panelStaticsClasses.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStaticsClasses_Paint);
-            // 
-            // lblLeastActiveUserData
-            // 
-            this.lblLeastActiveUserData.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeastActiveUserData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeastActiveUserData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblLeastActiveUserData.Location = new System.Drawing.Point(4, 379);
-            this.lblLeastActiveUserData.Name = "lblLeastActiveUserData";
-            this.lblLeastActiveUserData.Size = new System.Drawing.Size(328, 54);
-            this.lblLeastActiveUserData.TabIndex = 174;
-            this.lblLeastActiveUserData.Text = "Maor bar asher, actively registered \r\nfor 5 classes.\r\n\r\n";
-            // 
-            // lblLowAvgGrade
-            // 
-            this.lblLowAvgGrade.BackColor = System.Drawing.Color.Transparent;
-            this.lblLowAvgGrade.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLowAvgGrade.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblLowAvgGrade.Location = new System.Drawing.Point(445, 135);
-            this.lblLowAvgGrade.Name = "lblLowAvgGrade";
-            this.lblLowAvgGrade.Size = new System.Drawing.Size(93, 66);
-            this.lblLowAvgGrade.TabIndex = 173;
-            this.lblLowAvgGrade.Text = "2.1";
-            // 
-            // lblFewestReviewsData
-            // 
-            this.lblFewestReviewsData.BackColor = System.Drawing.Color.Transparent;
-            this.lblFewestReviewsData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFewestReviewsData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblFewestReviewsData.Location = new System.Drawing.Point(4, 472);
-            this.lblFewestReviewsData.Name = "lblFewestReviewsData";
-            this.lblFewestReviewsData.Size = new System.Drawing.Size(335, 33);
-            this.lblFewestReviewsData.TabIndex = 170;
-            this.lblFewestReviewsData.Text = "Tennis, with 3 reviews.";
-            // 
-            // circularIsNotPopuler
-            // 
-            this.circularIsNotPopuler.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularIsNotPopuler.AnimationSpeed = 500;
-            this.circularIsNotPopuler.BackColor = System.Drawing.Color.Transparent;
-            this.circularIsNotPopuler.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsNotPopuler.ForeColor = System.Drawing.Color.Gainsboro;
-            this.circularIsNotPopuler.InnerColor = System.Drawing.Color.Transparent;
-            this.circularIsNotPopuler.InnerMargin = 2;
-            this.circularIsNotPopuler.InnerWidth = -1;
-            this.circularIsNotPopuler.Location = new System.Drawing.Point(19, 103);
-            this.circularIsNotPopuler.MarqueeAnimationSpeed = 2000;
-            this.circularIsNotPopuler.Name = "circularIsNotPopuler";
-            this.circularIsNotPopuler.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.circularIsNotPopuler.OuterMargin = -26;
-            this.circularIsNotPopuler.OuterWidth = 26;
-            this.circularIsNotPopuler.ProgressColor = System.Drawing.Color.Tomato;
-            this.circularIsNotPopuler.ProgressWidth = 12;
-            this.circularIsNotPopuler.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsNotPopuler.Size = new System.Drawing.Size(135, 135);
-            this.circularIsNotPopuler.StartAngle = 270;
-            this.circularIsNotPopuler.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsNotPopuler.SubscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circularIsNotPopuler.SubscriptText = "";
-            this.circularIsNotPopuler.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsNotPopuler.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.circularIsNotPopuler.SuperscriptText = "";
-            this.circularIsNotPopuler.TabIndex = 144;
-            this.circularIsNotPopuler.Text = "22%";
-            this.circularIsNotPopuler.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.circularIsNotPopuler.Value = 22;
-            // 
-            // lblTitleStaticsClasses
-            // 
-            this.lblTitleStaticsClasses.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleStaticsClasses.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleStaticsClasses.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleStaticsClasses.Location = new System.Drawing.Point(231, 8);
-            this.lblTitleStaticsClasses.Name = "lblTitleStaticsClasses";
-            this.lblTitleStaticsClasses.Size = new System.Drawing.Size(404, 52);
-            this.lblTitleStaticsClasses.TabIndex = 155;
-            this.lblTitleStaticsClasses.Text = "Statistics of classes";
-            // 
-            // lblMostReviewsData
-            // 
-            this.lblMostReviewsData.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostReviewsData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostReviewsData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMostReviewsData.Location = new System.Drawing.Point(441, 472);
-            this.lblMostReviewsData.Name = "lblMostReviewsData";
-            this.lblMostReviewsData.Size = new System.Drawing.Size(335, 33);
-            this.lblMostReviewsData.TabIndex = 171;
-            this.lblMostReviewsData.Text = "Football, with 16 reviews.";
-            // 
-            // lblOfNameHighGradeAvg
-            // 
-            this.lblOfNameHighGradeAvg.BackColor = System.Drawing.Color.Transparent;
-            this.lblOfNameHighGradeAvg.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOfNameHighGradeAvg.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblOfNameHighGradeAvg.Location = new System.Drawing.Point(605, 63);
-            this.lblOfNameHighGradeAvg.Name = "lblOfNameHighGradeAvg";
-            this.lblOfNameHighGradeAvg.Size = new System.Drawing.Size(148, 33);
-            this.lblOfNameHighGradeAvg.TabIndex = 172;
-            this.lblOfNameHighGradeAvg.Text = "Yoga";
-            // 
-            // lblTitleFewestReviews
-            // 
-            this.lblTitleFewestReviews.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleFewestReviews.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleFewestReviews.ForeColor = System.Drawing.Color.Tomato;
-            this.lblTitleFewestReviews.Location = new System.Drawing.Point(3, 439);
-            this.lblTitleFewestReviews.Name = "lblTitleFewestReviews";
-            this.lblTitleFewestReviews.Size = new System.Drawing.Size(329, 33);
-            this.lblTitleFewestReviews.TabIndex = 169;
-            this.lblTitleFewestReviews.Text = "The class with fewest reviews ";
-            // 
-            // lblMostActiveUserData
-            // 
-            this.lblMostActiveUserData.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostActiveUserData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostActiveUserData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMostActiveUserData.Location = new System.Drawing.Point(440, 377);
-            this.lblMostActiveUserData.Name = "lblMostActiveUserData";
-            this.lblMostActiveUserData.Size = new System.Drawing.Size(328, 54);
-            this.lblMostActiveUserData.TabIndex = 167;
-            this.lblMostActiveUserData.Text = "Ben bokobza, actively registered \r\nfor 5 classes.\r\n\r\n";
-            // 
-            // lblLeastActiveUserTitle
-            // 
-            this.lblLeastActiveUserTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeastActiveUserTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeastActiveUserTitle.ForeColor = System.Drawing.Color.Tomato;
-            this.lblLeastActiveUserTitle.Location = new System.Drawing.Point(3, 341);
-            this.lblLeastActiveUserTitle.Name = "lblLeastActiveUserTitle";
-            this.lblLeastActiveUserTitle.Size = new System.Drawing.Size(356, 33);
-            this.lblLeastActiveUserTitle.TabIndex = 165;
-            this.lblLeastActiveUserTitle.Text = "The least active user";
-            // 
-            // LblAvgHigeGrade
-            // 
-            this.LblAvgHigeGrade.BackColor = System.Drawing.Color.Transparent;
-            this.LblAvgHigeGrade.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAvgHigeGrade.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblAvgHigeGrade.Location = new System.Drawing.Point(608, 138);
-            this.LblAvgHigeGrade.Name = "LblAvgHigeGrade";
-            this.LblAvgHigeGrade.Size = new System.Drawing.Size(93, 66);
-            this.LblAvgHigeGrade.TabIndex = 162;
-            this.LblAvgHigeGrade.Text = "4.7";
-            // 
-            // circularIsPopuler
-            // 
-            this.circularIsPopuler.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularIsPopuler.AnimationSpeed = 500;
-            this.circularIsPopuler.BackColor = System.Drawing.Color.Transparent;
-            this.circularIsPopuler.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsPopuler.ForeColor = System.Drawing.Color.Gainsboro;
-            this.circularIsPopuler.InnerColor = System.Drawing.Color.Transparent;
-            this.circularIsPopuler.InnerMargin = 2;
-            this.circularIsPopuler.InnerWidth = -1;
-            this.circularIsPopuler.Location = new System.Drawing.Point(229, 103);
-            this.circularIsPopuler.MarqueeAnimationSpeed = 2000;
-            this.circularIsPopuler.Name = "circularIsPopuler";
-            this.circularIsPopuler.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.circularIsPopuler.OuterMargin = -26;
-            this.circularIsPopuler.OuterWidth = 26;
-            this.circularIsPopuler.ProgressColor = System.Drawing.Color.LimeGreen;
-            this.circularIsPopuler.ProgressWidth = 12;
-            this.circularIsPopuler.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsPopuler.Size = new System.Drawing.Size(140, 135);
-            this.circularIsPopuler.StartAngle = 270;
-            this.circularIsPopuler.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsPopuler.SubscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circularIsPopuler.SubscriptText = "";
-            this.circularIsPopuler.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsPopuler.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.circularIsPopuler.SuperscriptText = "";
-            this.circularIsPopuler.TabIndex = 145;
-            this.circularIsPopuler.Text = "93%";
-            this.circularIsPopuler.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.circularIsPopuler.Value = 93;
-            // 
-            // lblDataHighAvg
-            // 
-            this.lblDataHighAvg.BackColor = System.Drawing.Color.Transparent;
-            this.lblDataHighAvg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataHighAvg.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDataHighAvg.Location = new System.Drawing.Point(596, 241);
-            this.lblDataHighAvg.Name = "lblDataHighAvg";
-            this.lblDataHighAvg.Size = new System.Drawing.Size(165, 106);
-            this.lblDataHighAvg.TabIndex = 161;
-            this.lblDataHighAvg.Text = "The class with the highest average reviews grade.\r\n";
-            // 
-            // lblNameOfPopulerClass
-            // 
-            this.lblNameOfPopulerClass.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameOfPopulerClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameOfPopulerClass.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNameOfPopulerClass.Location = new System.Drawing.Point(45, 67);
-            this.lblNameOfPopulerClass.Name = "lblNameOfPopulerClass";
-            this.lblNameOfPopulerClass.Size = new System.Drawing.Size(138, 33);
-            this.lblNameOfPopulerClass.TabIndex = 160;
-            this.lblNameOfPopulerClass.Text = "Soccer";
-            // 
-            // lblTitleMostReviews
-            // 
-            this.lblTitleMostReviews.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleMostReviews.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleMostReviews.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblTitleMostReviews.Location = new System.Drawing.Point(439, 432);
-            this.lblTitleMostReviews.Name = "lblTitleMostReviews";
-            this.lblTitleMostReviews.Size = new System.Drawing.Size(364, 40);
-            this.lblTitleMostReviews.TabIndex = 168;
-            this.lblTitleMostReviews.Text = "The class with most reviews";
-            // 
-            // lblMostActiveUserTitle
-            // 
-            this.lblMostActiveUserTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostActiveUserTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostActiveUserTitle.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblMostActiveUserTitle.Location = new System.Drawing.Point(440, 341);
-            this.lblMostActiveUserTitle.Name = "lblMostActiveUserTitle";
-            this.lblMostActiveUserTitle.Size = new System.Drawing.Size(305, 36);
-            this.lblMostActiveUserTitle.TabIndex = 164;
-            this.lblMostActiveUserTitle.Text = "The most active user\r\n";
-            // 
-            // lblDataLowAvg
-            // 
-            this.lblDataLowAvg.BackColor = System.Drawing.Color.Transparent;
-            this.lblDataLowAvg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataLowAvg.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDataLowAvg.Location = new System.Drawing.Point(411, 241);
-            this.lblDataLowAvg.Name = "lblDataLowAvg";
-            this.lblDataLowAvg.Size = new System.Drawing.Size(170, 94);
-            this.lblDataLowAvg.TabIndex = 159;
-            this.lblDataLowAvg.Text = "The class with the lowest average reviews grade.\r\n\r\n\r\n\r\n";
-            // 
-            // LblPopulerData
-            // 
-            this.LblPopulerData.BackColor = System.Drawing.Color.Transparent;
-            this.LblPopulerData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPopulerData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblPopulerData.Location = new System.Drawing.Point(12, 241);
-            this.LblPopulerData.Name = "LblPopulerData";
-            this.LblPopulerData.Size = new System.Drawing.Size(185, 94);
-            this.LblPopulerData.TabIndex = 158;
-            this.LblPopulerData.Text = "The most popular class with 32% of members.\r\n\r\n\r\n";
-            // 
-            // LblNotPopulerData
-            // 
-            this.LblNotPopulerData.BackColor = System.Drawing.Color.Transparent;
-            this.LblNotPopulerData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNotPopulerData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblNotPopulerData.Location = new System.Drawing.Point(213, 241);
-            this.LblNotPopulerData.Name = "LblNotPopulerData";
-            this.LblNotPopulerData.Size = new System.Drawing.Size(195, 84);
-            this.LblNotPopulerData.TabIndex = 157;
-            this.LblNotPopulerData.Text = "The least popular class with only 12% of members.\r\n\r\n";
-            // 
-            // lblOfNameLowGradeAvg
-            // 
-            this.lblOfNameLowGradeAvg.BackColor = System.Drawing.Color.Transparent;
-            this.lblOfNameLowGradeAvg.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOfNameLowGradeAvg.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblOfNameLowGradeAvg.Location = new System.Drawing.Point(431, 63);
-            this.lblOfNameLowGradeAvg.Name = "lblOfNameLowGradeAvg";
-            this.lblOfNameLowGradeAvg.Size = new System.Drawing.Size(128, 33);
-            this.lblOfNameLowGradeAvg.TabIndex = 154;
-            this.lblOfNameLowGradeAvg.Text = "Swimmer";
-            // 
-            // lblNameOfNotPopulerClass
-            // 
-            this.lblNameOfNotPopulerClass.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameOfNotPopulerClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameOfNotPopulerClass.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNameOfNotPopulerClass.Location = new System.Drawing.Point(242, 66);
-            this.lblNameOfNotPopulerClass.Name = "lblNameOfNotPopulerClass";
-            this.lblNameOfNotPopulerClass.Size = new System.Drawing.Size(168, 33);
-            this.lblNameOfNotPopulerClass.TabIndex = 153;
-            this.lblNameOfNotPopulerClass.Text = "Basketball";
-            // 
-            // lblClasses
-            // 
-            this.lblClasses.BackColor = System.Drawing.Color.Transparent;
-            this.lblClasses.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClasses.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblClasses.Location = new System.Drawing.Point(550, 29);
-            this.lblClasses.Name = "lblClasses";
-            this.lblClasses.Size = new System.Drawing.Size(205, 30);
-            this.lblClasses.TabIndex = 192;
-            this.lblClasses.Text = "Classes";
-            this.lblClasses.Click += new System.EventHandler(this.lblClasses_Click);
-            // 
-            // lblAdmins
-            // 
-            this.lblAdmins.BackColor = System.Drawing.Color.Transparent;
-            this.lblAdmins.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmins.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAdmins.Location = new System.Drawing.Point(304, 30);
-            this.lblAdmins.Name = "lblAdmins";
-            this.lblAdmins.Size = new System.Drawing.Size(170, 30);
-            this.lblAdmins.TabIndex = 191;
-            this.lblAdmins.Text = "Administrators";
-            this.lblAdmins.Click += new System.EventHandler(this.lblAdmins_Click);
-            // 
-            // lblUsers
-            // 
-            this.lblUsers.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsers.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsers.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblUsers.Location = new System.Drawing.Point(49, 30);
-            this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(164, 28);
-            this.lblUsers.TabIndex = 190;
-            this.lblUsers.Text = "Users";
-            this.lblUsers.Click += new System.EventHandler(this.lblUsers_Click);
-            // 
-            // panelClasses
-            // 
-            this.panelClasses.BackColor = System.Drawing.Color.White;
-            this.panelClasses.Location = new System.Drawing.Point(549, 62);
-            this.panelClasses.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelClasses.Name = "panelClasses";
-            this.panelClasses.Size = new System.Drawing.Size(243, 2);
-            this.panelClasses.TabIndex = 189;
-            // 
-            // panelAdmins
-            // 
-            this.panelAdmins.BackColor = System.Drawing.Color.White;
-            this.panelAdmins.Location = new System.Drawing.Point(300, 62);
-            this.panelAdmins.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelAdmins.Name = "panelAdmins";
-            this.panelAdmins.Size = new System.Drawing.Size(243, 2);
-            this.panelAdmins.TabIndex = 188;
-            // 
-            // panelUsers
-            // 
-            this.panelUsers.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panelUsers.Location = new System.Drawing.Point(51, 62);
-            this.panelUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelUsers.Name = "panelUsers";
-            this.panelUsers.Size = new System.Drawing.Size(243, 2);
-            this.panelUsers.TabIndex = 187;
-            // 
-            // panelStaticsPersons
-            // 
-            this.panelStaticsPersons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.panelStaticsPersons.BorderRadius = 30;
-            this.panelStaticsPersons.Controls.Add(this.guna2PictureBox1);
-            this.panelStaticsPersons.Controls.Add(this.LblMostOlder);
-            this.panelStaticsPersons.Controls.Add(this.lblMostYounger);
-            this.panelStaticsPersons.Controls.Add(this.lblMostYoungerTitle);
-            this.panelStaticsPersons.Controls.Add(this.lblMostExprince);
-            this.panelStaticsPersons.Controls.Add(this.lblLeastExprinceTitle);
-            this.panelStaticsPersons.Controls.Add(this.lblLeastExprince);
-            this.panelStaticsPersons.Controls.Add(this.LblMostOlderTitle);
-            this.panelStaticsPersons.Controls.Add(this.LblAVG);
-            this.panelStaticsPersons.Controls.Add(this.lblAvgData);
-            this.panelStaticsPersons.Controls.Add(this.lblAvgAgesTitle);
-            this.panelStaticsPersons.Controls.Add(this.lblMostExprinceTitle);
-            this.panelStaticsPersons.Controls.Add(this.LblEmailFavData);
-            this.panelStaticsPersons.Controls.Add(this.LblGenderData);
-            this.panelStaticsPersons.Controls.Add(this.lblIsBlockData);
-            this.panelStaticsPersons.Controls.Add(this.lblTitleStatics);
-            this.panelStaticsPersons.Controls.Add(this.lblEmailFav);
-            this.panelStaticsPersons.Controls.Add(this.lblIsBlock);
-            this.panelStaticsPersons.Controls.Add(this.lblGender);
-            this.panelStaticsPersons.Controls.Add(this.circleGender);
-            this.panelStaticsPersons.Controls.Add(this.circularIsBlocked);
-            this.panelStaticsPersons.Controls.Add(this.circuleEmailPpoular);
-            this.panelStaticsPersons.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsPersons.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsPersons.FillColor3 = System.Drawing.Color.Transparent;
-            this.panelStaticsPersons.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelStaticsPersons.Location = new System.Drawing.Point(25, 81);
-            this.panelStaticsPersons.Name = "panelStaticsPersons";
-            this.panelStaticsPersons.Size = new System.Drawing.Size(772, 62);
-            this.panelStaticsPersons.TabIndex = 140;
-            // 
-            // LblMostOlder
-            // 
-            this.LblMostOlder.BackColor = System.Drawing.Color.Transparent;
-            this.LblMostOlder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMostOlder.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblMostOlder.Location = new System.Drawing.Point(436, 463);
-            this.LblMostOlder.Name = "LblMostOlder";
-            this.LblMostOlder.Size = new System.Drawing.Size(335, 33);
-            this.LblMostOlder.TabIndex = 171;
-            this.LblMostOlder.Text = "Shlomi Amar, is 57 years old.";
-            // 
-            // lblMostYounger
-            // 
-            this.lblMostYounger.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostYounger.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostYounger.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMostYounger.Location = new System.Drawing.Point(10, 456);
-            this.lblMostYounger.Name = "lblMostYounger";
-            this.lblMostYounger.Size = new System.Drawing.Size(335, 33);
-            this.lblMostYounger.TabIndex = 170;
-            this.lblMostYounger.Text = "Avi Hazan, is 7 years old.";
-            // 
-            // lblMostYoungerTitle
-            // 
-            this.lblMostYoungerTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostYoungerTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.lblMostYoungerTitle.ForeColor = System.Drawing.Color.Tomato;
-            this.lblMostYoungerTitle.Location = new System.Drawing.Point(9, 423);
-            this.lblMostYoungerTitle.Name = "lblMostYoungerTitle";
-            this.lblMostYoungerTitle.Size = new System.Drawing.Size(317, 33);
-            this.lblMostYoungerTitle.TabIndex = 169;
-            this.lblMostYoungerTitle.Text = "The youngest user";
-            // 
-            // lblMostExprince
-            // 
-            this.lblMostExprince.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostExprince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostExprince.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMostExprince.Location = new System.Drawing.Point(436, 397);
-            this.lblMostExprince.Name = "lblMostExprince";
-            this.lblMostExprince.Size = new System.Drawing.Size(354, 33);
-            this.lblMostExprince.TabIndex = 167;
-            this.lblMostExprince.Text = "Liraz Gazit, registed to system 07/12/2019.\r\n";
-            // 
-            // lblLeastExprinceTitle
-            // 
-            this.lblLeastExprinceTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeastExprinceTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.lblLeastExprinceTitle.ForeColor = System.Drawing.Color.Tomato;
-            this.lblLeastExprinceTitle.Location = new System.Drawing.Point(3, 353);
-            this.lblLeastExprinceTitle.Name = "lblLeastExprinceTitle";
-            this.lblLeastExprinceTitle.Size = new System.Drawing.Size(356, 33);
-            this.lblLeastExprinceTitle.TabIndex = 165;
-            this.lblLeastExprinceTitle.Text = "The least experienced user";
-            // 
-            // lblLeastExprince
-            // 
-            this.lblLeastExprince.BackColor = System.Drawing.Color.Transparent;
-            this.lblLeastExprince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeastExprince.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblLeastExprince.Location = new System.Drawing.Point(4, 390);
-            this.lblLeastExprince.Name = "lblLeastExprince";
-            this.lblLeastExprince.Size = new System.Drawing.Size(341, 33);
-            this.lblLeastExprince.TabIndex = 166;
-            this.lblLeastExprince.Text = "Noy palas, registed to system 20/01/2022.";
-            // 
-            // LblMostOlderTitle
-            // 
-            this.LblMostOlderTitle.BackColor = System.Drawing.Color.Transparent;
-            this.LblMostOlderTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.LblMostOlderTitle.ForeColor = System.Drawing.Color.LimeGreen;
-            this.LblMostOlderTitle.Location = new System.Drawing.Point(423, 430);
-            this.LblMostOlderTitle.Name = "LblMostOlderTitle";
-            this.LblMostOlderTitle.Size = new System.Drawing.Size(320, 40);
-            this.LblMostOlderTitle.TabIndex = 168;
-            this.LblMostOlderTitle.Text = " The oldest user";
-            // 
-            // LblAVG
-            // 
-            this.LblAVG.BackColor = System.Drawing.Color.Transparent;
-            this.LblAVG.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.LblAVG.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblAVG.Location = new System.Drawing.Point(630, 151);
-            this.LblAVG.Name = "LblAVG";
-            this.LblAVG.Size = new System.Drawing.Size(104, 66);
-            this.LblAVG.TabIndex = 162;
-            this.LblAVG.Text = "27.4";
-            // 
-            // lblAvgData
-            // 
-            this.lblAvgData.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvgData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvgData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAvgData.Location = new System.Drawing.Point(616, 247);
-            this.lblAvgData.Name = "lblAvgData";
-            this.lblAvgData.Size = new System.Drawing.Size(155, 84);
-            this.lblAvgData.TabIndex = 161;
-            this.lblAvgData.Text = "Average age of system.";
-            // 
-            // lblAvgAgesTitle
-            // 
-            this.lblAvgAgesTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvgAgesTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvgAgesTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAvgAgesTitle.Location = new System.Drawing.Point(615, 79);
-            this.lblAvgAgesTitle.Name = "lblAvgAgesTitle";
-            this.lblAvgAgesTitle.Size = new System.Drawing.Size(158, 33);
-            this.lblAvgAgesTitle.TabIndex = 160;
-            this.lblAvgAgesTitle.Text = "Average ages";
-            // 
-            // lblMostExprinceTitle
-            // 
-            this.lblMostExprinceTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblMostExprinceTitle.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.lblMostExprinceTitle.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblMostExprinceTitle.Location = new System.Drawing.Point(435, 353);
-            this.lblMostExprinceTitle.Name = "lblMostExprinceTitle";
-            this.lblMostExprinceTitle.Size = new System.Drawing.Size(335, 42);
-            this.lblMostExprinceTitle.TabIndex = 164;
-            this.lblMostExprinceTitle.Text = "The most experienced user";
-            // 
-            // LblEmailFavData
-            // 
-            this.LblEmailFavData.BackColor = System.Drawing.Color.Transparent;
-            this.LblEmailFavData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEmailFavData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblEmailFavData.Location = new System.Drawing.Point(436, 250);
-            this.LblEmailFavData.Name = "LblEmailFavData";
-            this.LblEmailFavData.Size = new System.Drawing.Size(163, 97);
-            this.LblEmailFavData.TabIndex = 159;
-            this.LblEmailFavData.Text = " is the most popular email for users.";
-            // 
-            // LblGenderData
-            // 
-            this.LblGenderData.BackColor = System.Drawing.Color.Transparent;
-            this.LblGenderData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblGenderData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LblGenderData.Location = new System.Drawing.Point(14, 247);
-            this.LblGenderData.Name = "LblGenderData";
-            this.LblGenderData.Size = new System.Drawing.Size(185, 74);
-            this.LblGenderData.TabIndex = 158;
-            this.LblGenderData.Text = "Of the users is men,\r\n32% is women.\r\n";
-            // 
-            // lblIsBlockData
-            // 
-            this.lblIsBlockData.BackColor = System.Drawing.Color.Transparent;
-            this.lblIsBlockData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsBlockData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblIsBlockData.Location = new System.Drawing.Point(215, 247);
-            this.lblIsBlockData.Name = "lblIsBlockData";
-            this.lblIsBlockData.Size = new System.Drawing.Size(195, 84);
-            this.lblIsBlockData.TabIndex = 157;
-            this.lblIsBlockData.Text = "The percentage of people blocked from the system now.";
-            // 
-            // lblTitleStatics
-            // 
-            this.lblTitleStatics.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleStatics.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleStatics.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleStatics.Location = new System.Drawing.Point(241, 9);
-            this.lblTitleStatics.Name = "lblTitleStatics";
-            this.lblTitleStatics.Size = new System.Drawing.Size(393, 52);
-            this.lblTitleStatics.TabIndex = 155;
-            this.lblTitleStatics.Text = "Users statistics";
-            // 
-            // lblEmailFav
-            // 
-            this.lblEmailFav.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmailFav.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailFav.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblEmailFav.Location = new System.Drawing.Point(477, 76);
-            this.lblEmailFav.Name = "lblEmailFav";
-            this.lblEmailFav.Size = new System.Drawing.Size(85, 33);
-            this.lblEmailFav.TabIndex = 154;
-            this.lblEmailFav.Text = "Email";
-            // 
-            // lblIsBlock
-            // 
-            this.lblIsBlock.BackColor = System.Drawing.Color.Transparent;
-            this.lblIsBlock.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsBlock.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblIsBlock.Location = new System.Drawing.Point(244, 79);
-            this.lblIsBlock.Name = "lblIsBlock";
-            this.lblIsBlock.Size = new System.Drawing.Size(168, 33);
-            this.lblIsBlock.TabIndex = 153;
-            this.lblIsBlock.Text = "Blocked status";
-            // 
-            // lblGender
-            // 
-            this.lblGender.BackColor = System.Drawing.Color.Transparent;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblGender.Location = new System.Drawing.Point(61, 79);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(104, 33);
-            this.lblGender.TabIndex = 152;
-            this.lblGender.Text = "Gender";
-            // 
-            // circleGender
-            // 
-            this.circleGender.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circleGender.AnimationSpeed = 500;
-            this.circleGender.BackColor = System.Drawing.Color.Transparent;
-            this.circleGender.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circleGender.ForeColor = System.Drawing.Color.Gainsboro;
-            this.circleGender.InnerColor = System.Drawing.Color.Transparent;
-            this.circleGender.InnerMargin = 2;
-            this.circleGender.InnerWidth = -1;
-            this.circleGender.Location = new System.Drawing.Point(30, 112);
-            this.circleGender.MarqueeAnimationSpeed = 2000;
-            this.circleGender.Name = "circleGender";
-            this.circleGender.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.circleGender.OuterMargin = -26;
-            this.circleGender.OuterWidth = 26;
-            this.circleGender.ProgressColor = System.Drawing.Color.DodgerBlue;
-            this.circleGender.ProgressWidth = 12;
-            this.circleGender.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circleGender.Size = new System.Drawing.Size(135, 135);
-            this.circleGender.StartAngle = 270;
-            this.circleGender.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circleGender.SubscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circleGender.SubscriptText = "";
-            this.circleGender.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circleGender.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.circleGender.SuperscriptText = "";
-            this.circleGender.TabIndex = 142;
-            this.circleGender.Text = "68%";
-            this.circleGender.TextMargin = new System.Windows.Forms.Padding(0);
-            this.circleGender.Value = 68;
-            // 
-            // circularIsBlocked
-            // 
-            this.circularIsBlocked.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularIsBlocked.AnimationSpeed = 500;
-            this.circularIsBlocked.BackColor = System.Drawing.Color.Transparent;
-            this.circularIsBlocked.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsBlocked.ForeColor = System.Drawing.Color.Gainsboro;
-            this.circularIsBlocked.InnerColor = System.Drawing.Color.Transparent;
-            this.circularIsBlocked.InnerMargin = 2;
-            this.circularIsBlocked.InnerWidth = -1;
-            this.circularIsBlocked.Location = new System.Drawing.Point(234, 112);
-            this.circularIsBlocked.MarqueeAnimationSpeed = 2000;
-            this.circularIsBlocked.Name = "circularIsBlocked";
-            this.circularIsBlocked.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.circularIsBlocked.OuterMargin = -26;
-            this.circularIsBlocked.OuterWidth = 26;
-            this.circularIsBlocked.ProgressColor = System.Drawing.Color.Crimson;
-            this.circularIsBlocked.ProgressWidth = 12;
-            this.circularIsBlocked.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularIsBlocked.Size = new System.Drawing.Size(135, 135);
-            this.circularIsBlocked.StartAngle = 270;
-            this.circularIsBlocked.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsBlocked.SubscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circularIsBlocked.SubscriptText = "";
-            this.circularIsBlocked.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularIsBlocked.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.circularIsBlocked.SuperscriptText = "";
-            this.circularIsBlocked.TabIndex = 144;
-            this.circularIsBlocked.Text = "22%";
-            this.circularIsBlocked.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.circularIsBlocked.Value = 22;
-            // 
-            // circuleEmailPpoular
-            // 
-            this.circuleEmailPpoular.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circuleEmailPpoular.AnimationSpeed = 500;
-            this.circuleEmailPpoular.BackColor = System.Drawing.Color.Transparent;
-            this.circuleEmailPpoular.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circuleEmailPpoular.ForeColor = System.Drawing.Color.Gainsboro;
-            this.circuleEmailPpoular.InnerColor = System.Drawing.Color.Transparent;
-            this.circuleEmailPpoular.InnerMargin = 2;
-            this.circuleEmailPpoular.InnerWidth = -1;
-            this.circuleEmailPpoular.Location = new System.Drawing.Point(437, 112);
-            this.circuleEmailPpoular.MarqueeAnimationSpeed = 2000;
-            this.circuleEmailPpoular.Name = "circuleEmailPpoular";
-            this.circuleEmailPpoular.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.circuleEmailPpoular.OuterMargin = -26;
-            this.circuleEmailPpoular.OuterWidth = 26;
-            this.circuleEmailPpoular.ProgressColor = System.Drawing.Color.DarkOrchid;
-            this.circuleEmailPpoular.ProgressWidth = 12;
-            this.circuleEmailPpoular.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circuleEmailPpoular.Size = new System.Drawing.Size(135, 135);
-            this.circuleEmailPpoular.StartAngle = 270;
-            this.circuleEmailPpoular.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circuleEmailPpoular.SubscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circuleEmailPpoular.SubscriptText = "";
-            this.circuleEmailPpoular.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circuleEmailPpoular.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.circuleEmailPpoular.SuperscriptText = "";
-            this.circuleEmailPpoular.TabIndex = 145;
-            this.circuleEmailPpoular.Text = "93%";
-            this.circuleEmailPpoular.TextMargin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.circuleEmailPpoular.Value = 93;
+
+            // 
+            // btnSenderObject
+            // 
+            this.btnSenderObject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnSenderObject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSenderObject.FlatAppearance.BorderSize = 0;
+            this.btnSenderObject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSenderObject.Font = new System.Drawing.Font("Segoe UI", 11.8F);
+            this.btnSenderObject.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSenderObject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSenderObject.Location = new System.Drawing.Point(50, 492);
+            this.btnSenderObject.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSenderObject.Name = "btnSenderObject";
+            this.btnSenderObject.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnSenderObject.Size = new System.Drawing.Size(45, 70);
+            this.btnSenderObject.TabIndex = 258;
+            this.btnSenderObject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSenderObject.UseVisualStyleBackColor = false;
+            this.btnSenderObject.Visible = false;
+            // 
+            // circleTimer
+            // 
+            this.circleTimer.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.CubicEaseInOut;
+            this.circleTimer.AnimationSpeed = 2500;
+            this.circleTimer.BackColor = System.Drawing.Color.Transparent;
+            this.circleTimer.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.circleTimer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.circleTimer.InnerColor = System.Drawing.Color.Transparent;
+            this.circleTimer.InnerMargin = 2;
+            this.circleTimer.InnerWidth = -1;
+            this.circleTimer.Location = new System.Drawing.Point(344, 224);
+            this.circleTimer.MarqueeAnimationSpeed = 2500;
+            this.circleTimer.Name = "circleTimer";
+            this.circleTimer.OuterColor = System.Drawing.Color.Transparent;
+            this.circleTimer.OuterMargin = 0;
+            this.circleTimer.OuterWidth = 0;
+            this.circleTimer.ProgressColor = System.Drawing.Color.Gainsboro;
+            this.circleTimer.ProgressWidth = 6;
+            this.circleTimer.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circleTimer.Size = new System.Drawing.Size(136, 134);
+            this.circleTimer.StartAngle = 270;
+            this.circleTimer.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.circleTimer.SubscriptColor = System.Drawing.Color.Transparent;
+            this.circleTimer.SubscriptMargin = new System.Windows.Forms.Padding(0);
+            this.circleTimer.SubscriptText = "";
+            this.circleTimer.SuperscriptColor = System.Drawing.Color.Transparent;
+            this.circleTimer.SuperscriptMargin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.circleTimer.SuperscriptText = "";
+            this.circleTimer.TabIndex = 256;
+            this.circleTimer.TextMargin = new System.Windows.Forms.Padding(0);
+            this.circleTimer.Value = 100;
+            // 
+            // lblTitleWellcome
+            // 
+            this.lblTitleWellcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleWellcome.Font = new System.Drawing.Font("Segoe UI", 34.8F, System.Drawing.FontStyle.Bold);
+            this.lblTitleWellcome.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleWellcome.Location = new System.Drawing.Point(179, 14);
+            this.lblTitleWellcome.Name = "lblTitleWellcome";
+            this.lblTitleWellcome.Size = new System.Drawing.Size(511, 89);
+            this.lblTitleWellcome.TabIndex = 254;
+            this.lblTitleWellcome.Text = "Wellcome Roei!";
             // 
             // timerSideManu
             // 
@@ -978,6 +273,305 @@
             // 
             this.MembersTimer.Interval = 1;
             this.MembersTimer.Tick += new System.EventHandler(this.MembersTimer_Tick);
+            // 
+            // panelSearch
+            // 
+            this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelSearch.BorderColor = System.Drawing.Color.White;
+            this.panelSearch.BorderRadius = 40;
+            this.panelSearch.Controls.Add(this.panelNotFound);
+            this.panelSearch.Controls.Add(this.picBoxSharch);
+            this.panelSearch.Controls.Add(this.textBoxFind);
+            this.panelSearch.Controls.Add(this.panel1);
+            this.panelSearch.Controls.Add(this.DataViewPersons);
+            this.panelSearch.Controls.Add(this.btnAddUser);
+            this.panelSearch.CustomizableEdges.BottomLeft = false;
+            this.panelSearch.CustomizableEdges.BottomRight = false;
+            this.panelSearch.CustomizableEdges.TopLeft = false;
+            this.panelSearch.CustomizableEdges.TopRight = false;
+            this.panelSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelSearch.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelSearch.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelSearch.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelSearch.Location = new System.Drawing.Point(234, 6);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Size = new System.Drawing.Size(447, 62);
+            this.panelSearch.TabIndex = 207;
+            // 
+            // panelNotFound
+            // 
+            this.panelNotFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.panelNotFound.Controls.Add(this.picBoxError);
+            this.panelNotFound.Controls.Add(this.label1);
+            this.panelNotFound.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelNotFound.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelNotFound.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelNotFound.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelNotFound.Location = new System.Drawing.Point(10, 100);
+            this.panelNotFound.Name = "panelNotFound";
+            this.panelNotFound.Size = new System.Drawing.Size(413, 140);
+            this.panelNotFound.TabIndex = 169;
+            this.panelNotFound.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(149, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 117);
+            this.label1.TabIndex = 173;
+            this.label1.Text = "Sorry, The user has not been identified...\r\n";
+            // 
+            // textBoxFind
+            // 
+            this.textBoxFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.textBoxFind.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFind.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.textBoxFind.ForeColor = System.Drawing.Color.Gainsboro;
+            this.textBoxFind.Location = new System.Drawing.Point(10, 8);
+            this.textBoxFind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxFind.Name = "textBoxFind";
+            this.textBoxFind.Size = new System.Drawing.Size(372, 31);
+            this.textBoxFind.TabIndex = 159;
+            this.textBoxFind.Text = "Search";
+            this.textBoxFind.Click += new System.EventHandler(this.textBoxFind_Click);
+            this.textBoxFind.TextChanged += new System.EventHandler(this.textBoxFind_TextChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(3, 47);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(389, 1);
+            this.panel1.TabIndex = 158;
+            // 
+            // DataViewPersons
+            // 
+            this.DataViewPersons.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DataViewPersons.AllowUserToAddRows = false;
+            this.DataViewPersons.AllowUserToDeleteRows = false;
+            this.DataViewPersons.AllowUserToResizeColumns = false;
+            this.DataViewPersons.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.DataViewPersons.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.DataViewPersons.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataViewPersons.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.DataViewPersons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataViewPersons.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataViewPersons.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataViewPersons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.DataViewPersons.ColumnHeadersHeight = 5;
+            this.DataViewPersons.ColumnHeadersVisible = false;
+            this.DataViewPersons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProPic,
+            this.fullName,
+            this.userId,
+            this.lastUpdate});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataViewPersons.DefaultCellStyle = dataGridViewCellStyle11;
+            this.DataViewPersons.EnableHeadersVisualStyles = false;
+            this.DataViewPersons.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.DataViewPersons.Location = new System.Drawing.Point(10, 86);
+            this.DataViewPersons.MultiSelect = false;
+            this.DataViewPersons.Name = "DataViewPersons";
+            this.DataViewPersons.ReadOnly = true;
+            this.DataViewPersons.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataViewPersons.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.DataViewPersons.RowHeadersVisible = false;
+            this.DataViewPersons.RowHeadersWidth = 51;
+            this.DataViewPersons.RowTemplate.Height = 50;
+            this.DataViewPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataViewPersons.Size = new System.Drawing.Size(413, 342);
+            this.DataViewPersons.TabIndex = 157;
+            this.DataViewPersons.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataViewPersons.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.DataViewPersons.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DataViewPersons.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.DataViewPersons.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
+            this.DataViewPersons.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.DataViewPersons.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.DataViewPersons.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataViewPersons.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataViewPersons.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataViewPersons.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataViewPersons.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataViewPersons.ThemeStyle.HeaderStyle.Height = 5;
+            this.DataViewPersons.ThemeStyle.ReadOnly = true;
+            this.DataViewPersons.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataViewPersons.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataViewPersons.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataViewPersons.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataViewPersons.ThemeStyle.RowsStyle.Height = 50;
+            this.DataViewPersons.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.DataViewPersons.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
+            this.DataViewPersons.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataViewPersons_CellClick);
+            // 
+            // ProPic
+            // 
+            this.ProPic.FillWeight = 37.78442F;
+            this.ProPic.HeaderText = "";
+            this.ProPic.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ProPic.MinimumWidth = 6;
+            this.ProPic.Name = "ProPic";
+            this.ProPic.ReadOnly = true;
+            this.ProPic.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // fullName
+            // 
+            this.fullName.FillWeight = 150.4193F;
+            this.fullName.HeaderText = "";
+            this.fullName.MinimumWidth = 6;
+            this.fullName.Name = "fullName";
+            this.fullName.ReadOnly = true;
+            this.fullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // userId
+            // 
+            this.userId.HeaderText = "Column1";
+            this.userId.MinimumWidth = 6;
+            this.userId.Name = "userId";
+            this.userId.ReadOnly = true;
+            this.userId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.userId.Visible = false;
+            // 
+            // lastUpdate
+            // 
+            this.lastUpdate.FillWeight = 92.93832F;
+            this.lastUpdate.HeaderText = "";
+            this.lastUpdate.MinimumWidth = 6;
+            this.lastUpdate.Name = "lastUpdate";
+            this.lastUpdate.ReadOnly = true;
+            this.lastUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(186, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(470, 113);
+            this.label2.TabIndex = 259;
+            this.label2.Text = "We will start working right away!\r\nBefore that we wish you a pleasant work from o" +
+    "ur fitness center!";
+            // 
+            // picBoxError
+            // 
+            this.picBoxError.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxError.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxError.Image = global::Fitness_Club.Properties.Resources._9054327_bx_comment_error_icon__1_;
+            this.picBoxError.ImageRotate = 0F;
+            this.picBoxError.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxError.InitialImage")));
+            this.picBoxError.Location = new System.Drawing.Point(16, 21);
+            this.picBoxError.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxError.Name = "picBoxError";
+            this.picBoxError.Size = new System.Drawing.Size(127, 117);
+            this.picBoxError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxError.TabIndex = 169;
+            this.picBoxError.TabStop = false;
+            // 
+            // picBoxSharch
+            // 
+            this.picBoxSharch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxSharch.Image = global::Fitness_Club.Properties.Resources.serch;
+            this.picBoxSharch.ImageRotate = 0F;
+            this.picBoxSharch.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxSharch.InitialImage")));
+            this.picBoxSharch.Location = new System.Drawing.Point(398, 5);
+            this.picBoxSharch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxSharch.Name = "picBoxSharch";
+            this.picBoxSharch.Size = new System.Drawing.Size(46, 41);
+            this.picBoxSharch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxSharch.TabIndex = 160;
+            this.picBoxSharch.TabStop = false;
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddUser.FlatAppearance.BorderSize = 0;
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnAddUser.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAddUser.Image = global::Fitness_Club.Properties.Resources._2202248_account_add_avatar_human_man_icon;
+            this.btnAddUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddUser.Location = new System.Drawing.Point(3, 428);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnAddUser.Size = new System.Drawing.Size(439, 53);
+            this.btnAddUser.TabIndex = 7;
+            this.btnAddUser.Text = "    Register a new user for the fitness center";
+            this.btnAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnHome.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHome.Image = global::Fitness_Club.Properties.Resources.JOMEiCON;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(148, 76);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(79, 51);
+            this.btnHome.TabIndex = 207;
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnAreaClasses
+            // 
+            this.btnAreaClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnAreaClasses.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAreaClasses.FlatAppearance.BorderSize = 0;
+            this.btnAreaClasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAreaClasses.Font = new System.Drawing.Font("Segoe UI", 11.8F);
+            this.btnAreaClasses.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAreaClasses.Image = global::Fitness_Club.Properties.Resources.Clients2;
+            this.btnAreaClasses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAreaClasses.Location = new System.Drawing.Point(-4, 355);
+            this.btnAreaClasses.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAreaClasses.Name = "btnAreaClasses";
+            this.btnAreaClasses.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnAreaClasses.Size = new System.Drawing.Size(264, 73);
+            this.btnAreaClasses.TabIndex = 207;
+            this.btnAreaClasses.Text = "        Area classes";
+            this.btnAreaClasses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAreaClasses.UseVisualStyleBackColor = false;
+            this.btnAreaClasses.Click += new System.EventHandler(this.btnAreaClasses_Click);
             // 
             // profilePic
             // 
@@ -991,133 +585,29 @@
             this.profilePic.TabIndex = 88;
             this.profilePic.TabStop = false;
             // 
-            // btnMyAcc
+            // btnLogOut
             // 
-            this.btnMyAcc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMyAcc.FlatAppearance.BorderSize = 0;
-            this.btnMyAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyAcc.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnMyAcc.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMyAcc.Image = global::Fitness_Club.Properties.Resources.usersMengment2;
-            this.btnMyAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyAcc.Location = new System.Drawing.Point(-8, 146);
-            this.btnMyAcc.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMyAcc.Name = "btnMyAcc";
-            this.btnMyAcc.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnMyAcc.Size = new System.Drawing.Size(276, 70);
-            this.btnMyAcc.TabIndex = 91;
-            this.btnMyAcc.Text = "      My account";
-            this.btnMyAcc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMyAcc.UseVisualStyleBackColor = true;
-            this.btnMyAcc.Click += new System.EventHandler(this.btnMyAcc_Click);
-            // 
-            // btnTraning
-            // 
-            this.btnTraning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnTraning.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTraning.FlatAppearance.BorderSize = 0;
-            this.btnTraning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraning.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnTraning.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTraning.Image = global::Fitness_Club.Properties.Resources.swimmer;
-            this.btnTraning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTraning.Location = new System.Drawing.Point(-5, 164);
-            this.btnTraning.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTraning.Name = "btnTraning";
-            this.btnTraning.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnTraning.Size = new System.Drawing.Size(267, 55);
-            this.btnTraning.TabIndex = 10;
-            this.btnTraning.Text = "         Area classes";
-            this.btnTraning.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTraning.UseVisualStyleBackColor = false;
-            this.btnTraning.Click += new System.EventHandler(this.btnTraning_Click);
-            // 
-            // btnAdmins
-            // 
-            this.btnAdmins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmins.FlatAppearance.BorderSize = 0;
-            this.btnAdmins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmins.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnAdmins.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdmins.Image = global::Fitness_Club.Properties.Resources.tweet3;
-            this.btnAdmins.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmins.Location = new System.Drawing.Point(-8, 219);
-            this.btnAdmins.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdmins.Name = "btnAdmins";
-            this.btnAdmins.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnAdmins.Size = new System.Drawing.Size(267, 55);
-            this.btnAdmins.TabIndex = 9;
-            this.btnAdmins.Text = "        Tweets room";
-            this.btnAdmins.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdmins.UseVisualStyleBackColor = false;
-            this.btnAdmins.Click += new System.EventHandler(this.btnAdmins_Click);
-            // 
-            // btnClients
-            // 
-            this.btnClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnClients.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClients.FlatAppearance.BorderSize = 0;
-            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClients.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnClients.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClients.Image = global::Fitness_Club.Properties.Resources.Clients2;
-            this.btnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClients.Location = new System.Drawing.Point(-8, 112);
-            this.btnClients.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClients.Name = "btnClients";
-            this.btnClients.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnClients.Size = new System.Drawing.Size(267, 55);
-            this.btnClients.TabIndex = 8;
-            this.btnClients.Text = "         Area clients";
-            this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClients.UseVisualStyleBackColor = false;
-            this.btnClients.Click += new System.EventHandler(this.btnClients_Click_1);
-            // 
-            // btnUserMengement
-            // 
-            this.btnUserMengement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnUserMengement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserMengement.FlatAppearance.BorderSize = 0;
-            this.btnUserMengement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserMengement.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnUserMengement.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUserMengement.Image = global::Fitness_Club.Properties.Resources._management_business_2;
-            this.btnUserMengement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserMengement.Location = new System.Drawing.Point(-2, 0);
-            this.btnUserMengement.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUserMengement.Name = "btnUserMengement";
-            this.btnUserMengement.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnUserMengement.Size = new System.Drawing.Size(269, 62);
-            this.btnUserMengement.TabIndex = 6;
-            this.btnUserMengement.Text = "        Management  ▼";
-            this.btnUserMengement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUserMengement.UseVisualStyleBackColor = false;
-            this.btnUserMengement.Click += new System.EventHandler(this.btnUserMengement_Click);
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddUser.FlatAppearance.BorderSize = 0;
-            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnAddUser.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAddUser.Image = global::Fitness_Club.Properties.Resources._2202248_account_add_avatar_human_man_icon;
-            this.btnAddUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddUser.Location = new System.Drawing.Point(0, 58);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnAddUser.Size = new System.Drawing.Size(267, 55);
-            this.btnAddUser.TabIndex = 7;
-            this.btnAddUser.Text = "         Registration";
-            this.btnAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddUser.UseVisualStyleBackColor = false;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLogOut.Image = global::Fitness_Club.Properties.Resources.LOGOUTT;
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.Location = new System.Drawing.Point(78, 75);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(72, 52);
+            this.btnLogOut.TabIndex = 208;
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnSideManu
             // 
+            this.btnSideManu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnSideManu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSideManu.FlatAppearance.BorderSize = 0;
             this.btnSideManu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1125,46 +615,48 @@
             this.btnSideManu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSideManu.Image = global::Fitness_Club.Properties.Resources.manu2;
             this.btnSideManu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSideManu.Location = new System.Drawing.Point(2, 78);
+            this.btnSideManu.Location = new System.Drawing.Point(0, 75);
             this.btnSideManu.Margin = new System.Windows.Forms.Padding(4);
             this.btnSideManu.Name = "btnSideManu";
             this.btnSideManu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnSideManu.Size = new System.Drawing.Size(266, 70);
+            this.btnSideManu.Size = new System.Drawing.Size(80, 52);
             this.btnSideManu.TabIndex = 90;
             this.btnSideManu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSideManu.UseVisualStyleBackColor = true;
+            this.btnSideManu.UseVisualStyleBackColor = false;
             this.btnSideManu.Click += new System.EventHandler(this.btnSideManu_Click);
             // 
-            // btnCalendar
+            // btnMyAcc
             // 
-            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalendar.FlatAppearance.BorderSize = 0;
-            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnCalendar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCalendar.Image = global::Fitness_Club.Properties.Resources.calendar;
-            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendar.Location = new System.Drawing.Point(-1, 224);
-            this.btnCalendar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnCalendar.Size = new System.Drawing.Size(266, 70);
-            this.btnCalendar.TabIndex = 89;
-            this.btnCalendar.Text = "        Calendar";
-            this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalendar.UseVisualStyleBackColor = true;
-            this.btnCalendar.Click += new System.EventHandler(this.btnCalandar_Click);
+            this.btnMyAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnMyAcc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMyAcc.FlatAppearance.BorderSize = 0;
+            this.btnMyAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyAcc.Font = new System.Drawing.Font("Segoe UI", 11.8F);
+            this.btnMyAcc.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMyAcc.Image = global::Fitness_Club.Properties.Resources.usersMengment2;
+            this.btnMyAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyAcc.Location = new System.Drawing.Point(-4, 129);
+            this.btnMyAcc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMyAcc.Name = "btnMyAcc";
+            this.btnMyAcc.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnMyAcc.Size = new System.Drawing.Size(276, 70);
+            this.btnMyAcc.TabIndex = 91;
+            this.btnMyAcc.Text = "      My account";
+            this.btnMyAcc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMyAcc.UseVisualStyleBackColor = false;
+            this.btnMyAcc.Click += new System.EventHandler(this.btnMyAcc_Click);
             // 
             // btnAbout
             // 
+            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAbout.FlatAppearance.BorderSize = 0;
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnAbout.Font = new System.Drawing.Font("Segoe UI", 11.8F);
             this.btnAbout.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
             this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbout.Location = new System.Drawing.Point(-4, 360);
+            this.btnAbout.Location = new System.Drawing.Point(0, 432);
             this.btnAbout.Margin = new System.Windows.Forms.Padding(4);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
@@ -1172,153 +664,122 @@
             this.btnAbout.TabIndex = 4;
             this.btnAbout.Text = "        About";
             this.btnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.UseVisualStyleBackColor = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
-            // picBoxStatics
+            // btnClassesStat
             // 
-            this.picBoxStatics.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxStatics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxStatics.Image = global::Fitness_Club.Properties.Resources._2427699_statistics_analysis_statistic_icon__1_;
-            this.picBoxStatics.ImageRotate = 0F;
-            this.picBoxStatics.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxStatics.InitialImage")));
-            this.picBoxStatics.Location = new System.Drawing.Point(312, 329);
-            this.picBoxStatics.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxStatics.Name = "picBoxStatics";
-            this.picBoxStatics.Size = new System.Drawing.Size(123, 204);
-            this.picBoxStatics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxStatics.TabIndex = 163;
-            this.picBoxStatics.TabStop = false;
+            this.btnClassesStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnClassesStat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClassesStat.FlatAppearance.BorderSize = 0;
+            this.btnClassesStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClassesStat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnClassesStat.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClassesStat.Image = global::Fitness_Club.Properties.Resources._315755_soccer_court_icon;
+            this.btnClassesStat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClassesStat.Location = new System.Drawing.Point(-2, 213);
+            this.btnClassesStat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClassesStat.Name = "btnClassesStat";
+            this.btnClassesStat.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnClassesStat.Size = new System.Drawing.Size(266, 70);
+            this.btnClassesStat.TabIndex = 209;
+            this.btnClassesStat.Text = "       Classes";
+            this.btnClassesStat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClassesStat.UseVisualStyleBackColor = false;
+            this.btnClassesStat.Click += new System.EventHandler(this.btnClassesStat_Click);
             // 
-            // guna2PictureBox4
+            // btnDataAnalysis
             // 
-            this.guna2PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox4.Image = global::Fitness_Club.Properties.Resources.swimmer;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.InitialImage")));
-            this.guna2PictureBox4.Location = new System.Drawing.Point(768, 31);
-            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(31, 28);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 195;
-            this.guna2PictureBox4.TabStop = false;
+            this.btnDataAnalysis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnDataAnalysis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDataAnalysis.FlatAppearance.BorderSize = 0;
+            this.btnDataAnalysis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDataAnalysis.Font = new System.Drawing.Font("Segoe UI", 11.8F);
+            this.btnDataAnalysis.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDataAnalysis.Image = global::Fitness_Club.Properties.Resources.NEWANALITCS;
+            this.btnDataAnalysis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDataAnalysis.Location = new System.Drawing.Point(-3, 0);
+            this.btnDataAnalysis.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDataAnalysis.Name = "btnDataAnalysis";
+            this.btnDataAnalysis.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnDataAnalysis.Size = new System.Drawing.Size(266, 75);
+            this.btnDataAnalysis.TabIndex = 6;
+            this.btnDataAnalysis.Text = "        Data analysis ▼";
+            this.btnDataAnalysis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDataAnalysis.UseVisualStyleBackColor = false;
+            this.btnDataAnalysis.Click += new System.EventHandler(this.btnUserMengement_Click);
             // 
-            // guna2PictureBox3
+            // btnAdminStatistics
             // 
-            this.guna2PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox3.Image = global::Fitness_Club.Properties.Resources.manager;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.InitialImage")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(512, 32);
-            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(31, 28);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 194;
-            this.guna2PictureBox3.TabStop = false;
+            this.btnAdminStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnAdminStatistics.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminStatistics.FlatAppearance.BorderSize = 0;
+            this.btnAdminStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminStatistics.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnAdminStatistics.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAdminStatistics.Image = global::Fitness_Club.Properties.Resources.MANAGE;
+            this.btnAdminStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdminStatistics.Location = new System.Drawing.Point(-2, 74);
+            this.btnAdminStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdminStatistics.Name = "btnAdminStatistics";
+            this.btnAdminStatistics.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnAdminStatistics.Size = new System.Drawing.Size(266, 70);
+            this.btnAdminStatistics.TabIndex = 207;
+            this.btnAdminStatistics.Text = "       Administrators";
+            this.btnAdminStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdminStatistics.UseVisualStyleBackColor = false;
+            this.btnAdminStatistics.Click += new System.EventHandler(this.btnAdminStatistics_Click);
             // 
-            // btnSettings
+            // btnClientsStat
             // 
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(-6, 422);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(264, 70);
-            this.btnSettings.TabIndex = 3;
-            this.btnSettings.Text = "        Settings";
-            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnClientsStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnClientsStat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientsStat.FlatAppearance.BorderSize = 0;
+            this.btnClientsStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientsStat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnClientsStat.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClientsStat.Image = global::Fitness_Club.Properties.Resources._3533397_clients_customer_market_marketing_segment_icon;
+            this.btnClientsStat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientsStat.Location = new System.Drawing.Point(-2, 144);
+            this.btnClientsStat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClientsStat.Name = "btnClientsStat";
+            this.btnClientsStat.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnClientsStat.Size = new System.Drawing.Size(266, 70);
+            this.btnClientsStat.TabIndex = 208;
+            this.btnClientsStat.Text = "       Clients";
+            this.btnClientsStat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClientsStat.UseVisualStyleBackColor = false;
+            this.btnClientsStat.Click += new System.EventHandler(this.btnClientsStat_Click);
             // 
-            // guna2PictureBox2
+            // btnCalendar
             // 
-            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox2.Image = global::Fitness_Club.Properties.Resources.users;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.InitialImage")));
-            this.guna2PictureBox2.Location = new System.Drawing.Point(245, 31);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(53, 29);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 193;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.Image = global::Fitness_Club.Properties.Resources._2427699_statistics_analysis_statistic_icon__1_;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(307, 331);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(123, 204);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 172;
-            this.guna2PictureBox1.TabStop = false;
+            this.btnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalendar.FlatAppearance.BorderSize = 0;
+            this.btnCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalendar.Font = new System.Drawing.Font("Segoe UI", 11.8F);
+            this.btnCalendar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCalendar.Image = global::Fitness_Club.Properties.Resources.calendar;
+            this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendar.Location = new System.Drawing.Point(-1, 203);
+            this.btnCalendar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnCalendar.Size = new System.Drawing.Size(266, 70);
+            this.btnCalendar.TabIndex = 89;
+            this.btnCalendar.Text = "        Calendar";
+            this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCalendar.UseVisualStyleBackColor = false;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalandar_Click);
             // 
             // pictureInidcation
             // 
-            this.pictureInidcation.Location = new System.Drawing.Point(805, 0);
+            this.pictureInidcation.Location = new System.Drawing.Point(759, -1);
             this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(419, 622);
+            this.pictureInidcation.Size = new System.Drawing.Size(449, 625);
             this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureInidcation.TabIndex = 91;
             this.pictureInidcation.TabStop = false;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLogOut.Image = global::Fitness_Club.Properties.Resources._3005766_account_door_exit_logout_icon;
-            this.btnLogOut.ImageRotate = 0F;
-            this.btnLogOut.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.InitialImage")));
-            this.btnLogOut.Location = new System.Drawing.Point(215, 18);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(43, 34);
-            this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLogOut.TabIndex = 91;
-            this.btnLogOut.TabStop = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // picBoxHome
-            // 
-            this.picBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxHome.Image = global::Fitness_Club.Properties.Resources.dashboard;
-            this.picBoxHome.ImageRotate = 0F;
-            this.picBoxHome.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxHome.InitialImage")));
-            this.picBoxHome.Location = new System.Drawing.Point(297, 18);
-            this.picBoxHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxHome.Name = "picBoxHome";
-            this.picBoxHome.Size = new System.Drawing.Size(43, 34);
-            this.picBoxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxHome.TabIndex = 90;
-            this.picBoxHome.TabStop = false;
-            this.picBoxHome.Click += new System.EventHandler(this.picBoxHome_Click);
-            // 
-            // btnNotification
-            // 
-            this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNotification.Image = global::Fitness_Club.Properties.Resources.ring2;
-            this.btnNotification.ImageRotate = 0F;
-            this.btnNotification.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnNotification.InitialImage")));
-            this.btnNotification.Location = new System.Drawing.Point(257, 18);
-            this.btnNotification.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.Size = new System.Drawing.Size(38, 34);
-            this.btnNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNotification.TabIndex = 86;
-            this.btnNotification.TabStop = false;
             // 
             // AdminScreen
             // 
@@ -1326,6 +787,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1264, 694);
+            this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelManu);
             this.Controls.Add(this.penelHome);
             this.Controls.Add(this.panelTitle);
@@ -1342,20 +804,15 @@
             this.panelLogo.ResumeLayout(false);
             this.membersContiener.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
-            this.panelTitle.PerformLayout();
             this.penelHome.ResumeLayout(false);
-            this.panelStaticsClasses.ResumeLayout(false);
-            this.panelStaticsPersons.ResumeLayout(false);
+            this.panelSearch.ResumeLayout(false);
+            this.panelSearch.PerformLayout();
+            this.panelNotFound.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataViewPersons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSharch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxStatics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNotification)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1364,85 +821,44 @@
         #endregion
 
         private System.Windows.Forms.Panel panelManu;
-        private System.Windows.Forms.Button btnUserMengement;
+        private System.Windows.Forms.Button btnDataAnalysis;
         private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
-        private Guna.UI2.WinForms.Guna2PictureBox btnNotification;
         private System.Windows.Forms.Panel penelHome;
         private Guna.UI2.WinForms.Guna2CirclePictureBox profilePic;
         private System.Windows.Forms.Label lblUserNameAndStatus;
         private System.Windows.Forms.Timer timerSideManu;
         private System.Windows.Forms.Panel panelLogo;
-        private Guna.UI2.WinForms.Guna2PictureBox picBoxHome;
         private System.Windows.Forms.Panel membersContiener;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Timer MembersTimer;
-        private System.Windows.Forms.Button btnAdmins;
-        private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.Button btnCalendar;
-        private System.Windows.Forms.Button btnSideManu;
         private System.Windows.Forms.Button btnMyAcc;
+        private System.Windows.Forms.Button btnClassesStat;
+        private System.Windows.Forms.Button btnClientsStat;
+        private System.Windows.Forms.Button btnAdminStatistics;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelSearch;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelNotFound;
+        private Guna.UI2.WinForms.Guna2PictureBox picBoxError;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox picBoxSharch;
+        private System.Windows.Forms.TextBox textBoxFind;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2DataGridView DataViewPersons;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnSideManu;
+        private System.Windows.Forms.Button btnAreaClasses;
+        private System.Windows.Forms.DataGridViewImageColumn ProPic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdate;
+        private System.Windows.Forms.Label lblTitleWellcome;
+        private CircularProgressBar.CircularProgressBar circleTimer;
+        private System.Windows.Forms.Button btnSenderObject;
         private System.Windows.Forms.PictureBox pictureInidcation;
-        private System.Windows.Forms.Button btnTraning;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsPersons;
-        private System.Windows.Forms.Label LblAVG;
-        private System.Windows.Forms.Label lblAvgData;
-        private System.Windows.Forms.Label lblAvgAgesTitle;
-        private System.Windows.Forms.Label LblEmailFavData;
-        private System.Windows.Forms.Label LblGenderData;
-        private System.Windows.Forms.Label lblIsBlockData;
-        private System.Windows.Forms.Label lblTitleStatics;
-        private System.Windows.Forms.Label lblEmailFav;
-        private System.Windows.Forms.Label lblIsBlock;
-        private System.Windows.Forms.Label lblGender;
-        private CircularProgressBar.CircularProgressBar circleGender;
-        private CircularProgressBar.CircularProgressBar circularIsBlocked;
-        private CircularProgressBar.CircularProgressBar circuleEmailPpoular;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private System.Windows.Forms.Label lblClasses;
-        private System.Windows.Forms.Label lblAdmins;
-        private System.Windows.Forms.Label lblUsers;
-        private System.Windows.Forms.Panel panelClasses;
-        private System.Windows.Forms.Panel panelAdmins;
-        private System.Windows.Forms.Panel panelUsers;
-        private System.Windows.Forms.Label LblMostOlder;
-        private System.Windows.Forms.Label lblMostYounger;
-        private System.Windows.Forms.Label lblMostYoungerTitle;
-        private System.Windows.Forms.Label LblMostOlderTitle;
-        private System.Windows.Forms.Label lblMostExprince;
-        private System.Windows.Forms.Label lblLeastExprince;
-        private System.Windows.Forms.Label lblLeastExprinceTitle;
-        private System.Windows.Forms.Label lblMostExprinceTitle;
-        private Guna.UI2.WinForms.Guna2PictureBox btnLogOut;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelStaticsClasses;
-        private System.Windows.Forms.Label lblLeastActiveUserData;
-        private System.Windows.Forms.Label lblLowAvgGrade;
-        private System.Windows.Forms.Label lblFewestReviewsData;
-        private System.Windows.Forms.Label lblTitleStaticsClasses;
-        private System.Windows.Forms.Label lblMostReviewsData;
-        private System.Windows.Forms.Label lblOfNameHighGradeAvg;
-        private System.Windows.Forms.Label lblTitleFewestReviews;
-        private System.Windows.Forms.Label lblMostActiveUserData;
-        private System.Windows.Forms.Label lblLeastActiveUserTitle;
-        private Guna.UI2.WinForms.Guna2PictureBox picBoxStatics;
-        private System.Windows.Forms.Label LblAvgHigeGrade;
-        private System.Windows.Forms.Label lblDataHighAvg;
-        private System.Windows.Forms.Label lblNameOfPopulerClass;
-        private System.Windows.Forms.Label lblTitleMostReviews;
-        private System.Windows.Forms.Label lblMostActiveUserTitle;
-        private System.Windows.Forms.Label lblDataLowAvg;
-        private System.Windows.Forms.Label LblPopulerData;
-        private System.Windows.Forms.Label LblNotPopulerData;
-        private System.Windows.Forms.Label lblOfNameLowGradeAvg;
-        private System.Windows.Forms.Label lblNameOfNotPopulerClass;
-        private CircularProgressBar.CircularProgressBar circularIsNotPopuler;
-        private CircularProgressBar.CircularProgressBar circularIsPopuler;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

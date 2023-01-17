@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.IO;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using ServiceStack;
+
+using System.Windows.Threading;
+using System.Drawing.Drawing2D;
+
 
 namespace Fitness_Club
 {
@@ -24,16 +19,28 @@ namespace Fitness_Club
         private int tmp;
         private Form activeForm;
         private bool sideBarExpand=false;
-        private bool membersCollapse=true;
+        private bool DataAnalysisCollapse = true;
         public static string static_userId;
         public static string controller = "Dashboard#";
         public static Person userLogged = null;
         private List<Person> listP = null;
+        private List<Person> listUsers = null;
+        private List<Person> listAdmins = null;
         private List<Classes> listC;
-
+        public string data = null;
+        public int tenSecound = 5;
+        private DispatcherTimer dispatcherTimer;
+        private bool firstLoad = true;
 
         public AdminScreen(string userId)
         {
+            if (firstLoad)
+            {
+                DispatcherTimer dispatcherTimer = new DispatcherTimer();
+                dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+                dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+                dispatcherTimer.Start();
+            }
             static_userId = userId; 
             InitializeComponent();
             random = new Random();
@@ -42,29 +49,66 @@ namespace Fitness_Club
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
  
         }
-       
 
 
+
+        private void AdminScreen_Load(object sender, EventArgs e)
+        {
+
+            btnAddUser.BackColor = panelTitle.BackColor;
+            dispatcherTimer = new DispatcherTimer();                //CREATE TIMER
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+
+            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataAboutPersonsInSystem#", "");
+
+            listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
+
+
+
+            responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataClasses#", "");
+            listC = ConnectWithServer.ConvartDataToListOfClasses(responseFromServer, listP);
+
+            PersonList PL = new PersonList(listP);
+            listUsers = PL.getOnlyUsersOrAdminsFromListPerson("users");
+            listAdmins = PL.getOnlyUsersOrAdminsFromListPerson("admins");
+
+            listUsers = ConnectWithServer.addArraysClassesAndPaymentsToPersonList(listUsers, listC);
+
+
+            userLogged = getLoggedUserNowByPersonId(static_userId, listAdmins,true);
+            lblTitleWellcome.Text = $"Wellcome {userLogged.FirstName}!";
+            try
+            {
+                pictureInidcation.Image = Properties.Resources._8401;
+            }
+            catch
+            {
+
+                pictureInidcation.Image = Properties.Resources.testD2;
+            }
+
+
+            dispatcherTimer.Start();
+        }
         //------------------------------------------------------------------------------------------------------------------------------
-        //------------------------------------------------------------------------------------------------------------------------------
+
+        //manu intarective functiouns
 
 
 
         //mouse moving functions
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")] 
-        private extern static void ReleaseCapture();                               
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]        
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam); //send position window
 
         private void panelTitle_MouseDown(object sender, MouseEventArgs e)             //moving from panel title
         {
-            ReleaseCapture(); 
+            ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
-
 
         //------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------
@@ -72,26 +116,13 @@ namespace Fitness_Club
 
         //manu activity functions
 
-        public static void activePanel(Label lblActive, Panel panelActive)
-        {
-            lblActive.ForeColor = Color.DodgerBlue;
-            lblActive.Font = new Font("Segoe UI", 14f, FontStyle.Bold);
-            panelActive.Height = 3;
-            panelActive.BackColor = Color.DodgerBlue;
-        }
-        public static void inactivePanel(Label lblActive, Panel panelActive)
-        {
-            lblActive.ForeColor = Color.Gainsboro;
-            lblActive.Font = new Font("Segoe UI", 14f, FontStyle.Regular);
-            panelActive.Height = 2;
-            panelActive.BackColor = Color.Gainsboro;
-        }
+
         private Color SelectThemeColor()          //function return color theme
         {
             int index = random.Next(ThemColor.ColorList.Count);  //next in list
             while (tmp == index)      //if color has alredy,again choose.
             {
-              index= random.Next(ThemColor.ColorList.Count);
+                index = random.Next(ThemColor.ColorList.Count);
             }
             tmp = index;            //tmp get index color in list
             string color = ThemColor.ColorList[index];  //the color from list-string
@@ -101,81 +132,89 @@ namespace Fitness_Club
 
         private void ActiveButton(object btnSender)             //Activity button
         {
-            if(btnSender != null)               
+            if (btnSender != null)
             {
-                if(currentButton != (Button)btnSender)           //if currrent button is not button gettin in function
+                if (currentButton != (Button)btnSender)           //if currrent button is not button gettin in function
                 {
-                    DisableButton();                          
-                    Color color=SelectThemeColor();                  //get color from function(from list)
-                    currentButton=(Button)btnSender;       //set current button
-                    currentButton.BackColor=color;                  //change backcolor,font.
+                    DisableButton();
+                    Color color = SelectThemeColor();                  //get color from function(from list)
+                    currentButton = (Button)btnSender;       //set current button
+                    currentButton.BackColor = color;                  //change backcolor,font.
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font=new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-                    panelTitle.BackColor=color;
+                    currentButton.Font = new System.Drawing.Font("Segoe UI", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+                    panelTitle.BackColor = color; btnMinimize.BackColor = color;
+                    panelSearch.FillColor = color; panelSearch.FillColor2 = color; panelSearch.FillColor3 = color; panelSearch.FillColor4 = color;
+                    picBoxSharch.BackColor = color;
+                    panelNotFound.FillColor = color; panelNotFound.FillColor2 = color; panelNotFound.FillColor3 = color; panelNotFound.FillColor4 = color;
+                    textBoxFind.BackColor = color; DataViewPersons.BackgroundColor = color;
+                    DataViewPersons.AlternatingRowsDefaultCellStyle.BackColor = color;
+                    DataViewPersons.RowsDefaultCellStyle.BackColor = color;
+                    DataViewPersons.ColumnHeadersDefaultCellStyle.BackColor = color;
+                    DataViewPersons.DefaultCellStyle.BackColor = color;
+                    DataViewPersons.RowHeadersDefaultCellStyle.BackColor = color;
+                    DataViewPersons.DefaultCellStyle.BackColor = color;
+                    btnAddUser.BackColor = color;
                     panelLogo.BackColor = ThemColor.ChangeColorBrightness(color, -0.3f);
-                    ThemColor.primaryColor=color;   
-                    ThemColor.secondColor= ThemColor.ChangeColorBrightness(color, -0.3f);
-                    
+                    ThemColor.primaryColor = color;
+                    ThemColor.secondColor = ThemColor.ChangeColorBrightness(color, -0.3f);
+
                 }
-            }   
+            }
         }
 
         private void DisableButton()                            //nonActivity button
         {
-            foreach(Control prvBtn in panelManu.Controls)
+            foreach (Control prvBtn in panelManu.Controls)
             {
-                if(prvBtn.GetType() == typeof(Button))        //if btn prv is button
+                if (prvBtn.GetType() == typeof(Button))        //if btn prv is button
                 {
-                    prvBtn.BackColor = Color.FromArgb(51, 51, 76);   
-                    prvBtn.ForeColor = Color.Gainsboro; 
-                    prvBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+                    prvBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    prvBtn.ForeColor = Color.Gainsboro;
+                    prvBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
                 }
             }
         }
-          
-        protected virtual void openChildForm(Form childFrom,object btnSender)       //open child form in manu screen
+
+        protected virtual void openChildForm(Form childFrom, object btnSender)       //open child form in manu screen
         {
-            if(activeForm!=null)
+            if (activeForm != null)
                 activeForm.Close();
             ActiveButton(btnSender);                                     //apply function activity button
             activeForm = childFrom;                                         //set activity
-            childFrom.TopLevel = false; 
+            childFrom.TopLevel = false;
             childFrom.FormBorderStyle = FormBorderStyle.None;             //chenge ralevante proprty for form
             childFrom.Dock = DockStyle.Fill;
-            this.penelHome.Controls.Add(childFrom);                  
-            this.penelHome.Tag = childFrom;                          
+            this.penelHome.Controls.Add(childFrom);
+            this.penelHome.Tag = childFrom;
             childFrom.BringToFront();
             childFrom.Show();
-            lblTitle.Text = childFrom.Text;                         //change title 
-            
+            //lblTitle.Text = childFrom.Text;                         //change title 
+
 
         }
 
 
         private void Reset()                              //back to start mode
         {
+
             DisableButton();
-            lblTitle.Text = "Dashboard";
-            panelTitle.BackColor = Color.FromArgb(51, 51, 76);
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            Color color = Color.FromArgb(51, 51, 76);
+            panelTitle.BackColor = color;
+            panelSearch.FillColor = color; panelSearch.FillColor2 = color; panelSearch.FillColor3 = color; panelSearch.FillColor4 = color;
+            picBoxSharch.BackColor = color;
+            panelNotFound.FillColor = color; panelNotFound.FillColor2 = color; panelNotFound.FillColor3 = color; panelNotFound.FillColor4 = color;
+            textBoxFind.BackColor = color; DataViewPersons.BackgroundColor = color;
+            DataViewPersons.AlternatingRowsDefaultCellStyle.BackColor = color;
+            DataViewPersons.RowsDefaultCellStyle.BackColor = color;
+            DataViewPersons.ColumnHeadersDefaultCellStyle.BackColor = color;
+            DataViewPersons.DefaultCellStyle.BackColor = color;
+            DataViewPersons.RowHeadersDefaultCellStyle.BackColor = color;
+            DataViewPersons.DefaultCellStyle.BackColor = color;
             currentButton = null;
+            openChildForm(new Forms_admin.Feed(listAdmins), btnSenderObject);
 
         }
-
-        private void picBoxHome_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            if (btnUserMengement.BackColor != Color.FromArgb(51, 51, 76))
-            {
-                MembersTimer.Start();
-                timerSideManu.Start();
-                btnUserMengement.BackColor = Color.FromArgb(51, 51, 76);
-            }              
-            AdminScreen_Load(sender, e);    
-            Reset();
-        }         //return to dashboard
-
 
         private void btnClose_Click(object sender, EventArgs e)                 //close
         {
@@ -191,134 +230,6 @@ namespace Fitness_Club
 
         //------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------
-
-        //buttons options
-
-        private void btnSideManu_Click(object sender, EventArgs e)              //open/close side menu
-        {
-            timerSideManu.Start();
-        }
-
-        private void btnMyAcc_Click(object sender, EventArgs e)
-        {
-            if (!membersCollapse)
-            {
-                MembersTimer.Start();
-                btnUserMengement.BackColor = btnSideManu.BackColor;
-                openChildForm(new MyAccount(userLogged), sender);
-            }
-            else
-                openChildForm(new MyAccount(userLogged), sender);
-
-        }         //open form my-account
-
-        private void btnCalandar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!membersCollapse)
-                {
-                    MembersTimer.Start();
-                    btnUserMengement.BackColor = btnSideManu.BackColor;
-                    openChildForm(new Calandar(), sender);
-                }
-                else
-                    openChildForm(new Calandar(), sender);
-            }
-            catch 
-            {
-                openChildForm(new Error(), sender);
-            }
-
-        }     //open form calandar
-
-        private void btnUserMengement_Click(object sender, EventArgs e)
-        {
-
-            if (btnUserMengement.BackColor == Color.FromArgb(51, 51, 76))
-            {
-                ActiveButton(btnAddUser);
-                openChildForm(new FormMembers(), sender);
-                MembersTimer.Start();
-            }
-            if (!sideBarExpand)
-            {
-                panelManu.Width = panelManu.MaximumSize.Width;
-                sideBarExpand = true;
-            }
-        }     //open child manu-menegment users
-
-        private void btnAddUser_Click(object sender, EventArgs e)             //open form add member(registion)
-        {
-            if(btnAddUser.BackColor == Color.FromArgb(34, 36, 49))
-            {
-                openChildForm(new FormMembers(), sender);
-                btnClients.BackColor = Color.FromArgb(34, 36, 49);
-                btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
-                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
-            }
-                
-
-        }
-        private void btnClients_Click_1(object sender, EventArgs e)
-        {
-            if (btnClients.BackColor == Color.FromArgb(34, 36, 49))
-            {
-                openChildForm(new Clients(listP,listC), sender);
-                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
-                btnAdmins.BackColor=Color.FromArgb(34, 36, 49);
-                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
-            }
-               
-        }
-        private void btnAdmins_Click(object sender, EventArgs e)
-        {
-            if (btnAdmins.BackColor == Color.FromArgb(34, 36, 49))
-            {
-                openChildForm(new Forms_admin.AdministratorCenter(listP), sender);
-                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
-                btnClients.BackColor = Color.FromArgb(34, 36, 49);
-                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
-            }
-        }
-
-        private void btnTraning_Click(object sender, EventArgs e)
-        {
-            if (btnTraning.BackColor == Color.FromArgb(34, 36, 49))
-            { 
-                openChildForm(new Forms_admin.ClassesForm(listP,listC), sender);
-                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
-                btnClients.BackColor = Color.FromArgb(34, 36, 49);
-                btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
-            }
-
-
-        }
-
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            if (!membersCollapse)
-            {
-                MembersTimer.Start();
-                btnUserMengement.BackColor = btnSideManu.BackColor;
-                openChildForm(new DeleteAndUpdateFrom(), sender);
-            }
-            else
-                openChildForm(new DeleteAndUpdateFrom(), sender);
-        }        //open form settings
-
-        private void btnAbout_Click(object sender, EventArgs e)
-        {
-            if (!membersCollapse)
-            {
-                MembersTimer.Start();
-                btnUserMengement.BackColor = btnSideManu.BackColor;
-                openChildForm(new About(), sender);
-            }
-            else
-                openChildForm(new About(), sender);
-        }           //open form about
 
 
 
@@ -353,273 +264,58 @@ namespace Fitness_Club
                     timerSideManu.Stop();
                 }
             }
-        }       
+        }
 
         private void MembersTimer_Tick(object sender, EventArgs e)
         {
-            if (membersCollapse)
+            if (DataAnalysisCollapse)
             {
 
                 membersContiener.Height += 10;
-                btnAbout.Location = new Point(-6, 567);
-                btnSettings.Location = new Point(-6, 629);
-                btnUserMengement.Text = "     Management  ▲";
+                btnAreaClasses.Location = new Point(-4, 558);
+                btnAbout.Location = new Point(-1, 632);
+                btnDataAnalysis.Text = "     Data analysis ▲";
                 if (membersContiener.Height == membersContiener.MaximumSize.Height)
                 {
-                    membersCollapse = false;
+                    DataAnalysisCollapse = false;
                     MembersTimer.Stop();
                 }
             }
             else
             {
-                btnTraning.BackColor = Color.FromArgb(34, 36, 49);
-                btnAddUser.BackColor = Color.FromArgb(34, 36, 49);
-                btnClients.BackColor = Color.FromArgb(34, 36, 49);
-                btnAdmins.BackColor = Color.FromArgb(34, 36, 49);
-                btnAbout.Location = new Point(5, 360);
-                btnSettings.Location = new Point(5, 423);
+                btnClassesStat.BackColor = Color.FromArgb(34, 36, 49);
+                btnClientsStat.BackColor = Color.FromArgb(34, 36, 49);
+                btnAdminStatistics.BackColor = Color.FromArgb(34, 36, 49);
+                btnAreaClasses.Location = new Point(-4, 343);
+                btnAbout.Location = new Point(-1, 420);
                 membersContiener.Height -= 10;
-                btnUserMengement.Text = "     Management  ▼";
-                if (membersContiener.Height== membersContiener.MinimumSize.Height)
+                btnDataAnalysis.Text = "     Data analysis ▼";
+                if (membersContiener.Height == membersContiener.MinimumSize.Height)
                 {
-                    membersCollapse=true;
+                    DataAnalysisCollapse = true;
                     MembersTimer.Stop();
                 }
             }
         }    //open/close mengment members menu
 
-   
+        //buttons options
 
-        //loading the data and putting on dashboard. 
-        private void AdminScreen_Load(object sender, EventArgs e)
+
+        private void btnHome_Click(object sender, EventArgs e)
         {
-            string responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataAboutPersonsInSystem#", "");
-            panelStaticsPersons.Size = new Size(778, 523);
-            panelStaticsClasses.Location = panelStaticsPersons.Location;
-            panelStaticsClasses.Size = new Size(778, 523);
-            listP = ConnectWithServer.ConvartDataToListOfPersons(responseFromServer);
-
-
-            responseFromServer = ConnectWithServer.callToServer(controller, "getAllDataClasses#", "");
-            listC = ConnectWithServer.ConvartDataToListOfClasses(responseFromServer, listP);
-
-            listP=ConnectWithServer.addArraysClassesAndPaymentsToPersonList(listP, listC);
-
-
-           putClassesDataInDashboard(listC,listP);
-
-            userLogged =getLoggedUserNowByPersonId(static_userId,listP);
-            putUsersDataInDashboard(listP);
-
-            try
+            if (activeForm != null)
+                activeForm.Close();
+            if (btnDataAnalysis.BackColor != Color.FromArgb(51, 51, 76))
             {
-                pictureInidcation.Image = Properties.Resources._20943798;
+                MembersTimer.Start();
+                timerSideManu.Start();
+                Color color = Color.FromArgb(51, 51, 76);
+                btnDataAnalysis.BackColor = color;
+
             }
-            catch
-            {
-
-                pictureInidcation.Image = Properties.Resources.testD2;
-            }
-                
-
+            AdminScreen_Load(sender, e);
+            Reset();
         }
-
-        private void putClassesDataInDashboard(List<Classes> listClasses,List<Person>listPerson)
-        {
-            PersonList PL = new PersonList(listPerson);
-            ClassesList CL=new ClassesList(listClasses);
-            lblClasses.Text = $"Classes {listC.Count}";
-
-            Classes ClassNow;
-            string variable;   //%
-
-
-            ClassNow = CL.theMostPopulerOrNotPopulerClass(ClassesList.highKey);
-            lblNameOfPopulerClass.Text = ClassNow.NameClass;        
-            variable= (ClassNow.ArrayRegisteredUsersThisClass.Length / (float)listC.Count * 100).ToString("0.#");
-            circularIsPopuler.Text = variable+"%";
-            circularIsPopuler.Value = int.Parse(variable.Split('.')[0]);
-            LblPopulerData.Text = $"The most popular class with {variable}% of members.";
-
-
-            ClassNow = CL.theMostPopulerOrNotPopulerClass(ClassesList.lowKey);
-            lblNameOfNotPopulerClass.Text = ClassNow.NameClass;
-            variable = (ClassNow.ArrayRegisteredUsersThisClass.Length / (float)listC.Count * 100).ToString("0.#");
-            circularIsNotPopuler.Text=variable+"%";
-            circularIsNotPopuler.Value = int.Parse(variable.Split('.')[0]);
-            LblNotPopulerData.Text = $"The least popular class with only {variable}% of members.";
-
-
-
-            variable = CL.theLowestAndHighstAvgGrade(ClassesList.lowKey);
-            lblOfNameLowGradeAvg.Text = variable.Split('#')[0];
-            lblLowAvgGrade.Text = variable.Split('#')[1];
-
-            variable = CL.theLowestAndHighstAvgGrade(ClassesList.highKey);
-            lblOfNameHighGradeAvg.Text = variable.Split('#')[0];
-            LblAvgHigeGrade.Text = variable.Split('#')[1];
-
-
-
-            Person personNow = PL.theLeastOrMustActiveUser(ClassesList.lowKey);
-            variable = "0";
-            if (personNow != null && personNow.ClassesArray != null) 
-                variable = personNow.ClassesArray.Length.ToString();
-            lblLeastActiveUserData.Text = $"{personNow.FullName}, actively registered for {variable} classes.";
-
-
-            personNow = PL.theLeastOrMustActiveUser(ClassesList.highKey);
-            variable = personNow.ClassesArray.Length.ToString();
-            lblMostActiveUserData.Text = $"{personNow.FullName}, actively registered for {variable} classes.";
-
-
-            variable = CL.theLowestAndHighstReviews(ClassesList.lowKey);
-            lblFewestReviewsData.Text = $"{variable.Split('#')[0]}, with {variable.Split('#')[1]} reviews.";
-
-            variable = CL.theLowestAndHighstReviews(ClassesList.highKey);
-            lblMostReviewsData.Text = $"{variable.Split('#')[0]}, with {variable.Split('#')[1]} reviews.";
-
-
-
-
-
-
-        }
-
-
-        private void putUsersDataInDashboard(List<Person> listP)
-        {
-
-            //3.CREATE OF PERSON LIST OBJECT, WITH ALL FUNCTIONS..
-            PersonList PL = new PersonList(listP);
-
-
-            lblTitleStatics.Text = "Users statistics ";
-            lblUsers.Text = "Users  " + PL.CountAdminsANDUsersInSystem(PL.adminKey);
-            lblAdmins.Text = "Administrators  " + PL.CountAdminsANDUsersInSystem(PL.userKey);
-
-            //PUTTING THE INFORMATION IN THE APPROPRIATE PLACES ON THE SCREEN
-
-
-            //circule gender
-            circleGender.Value = PL.PercentageGenderForUserORAdmins(PL.userKey);
-            circleGender.Text = circleGender.Value + "%";
-            LblGenderData.Text = $"{circleGender.Value}% of the users is men,\n{100 - circleGender.Value}% is women.";
-
-
-            //circule isBlocked
-            circularIsBlocked.Value = PL.PercentageIsBlockedForUser();
-            circularIsBlocked.Text = circularIsBlocked.Value + "%";
-
-            //circule email favorite users
-            string[] str = null;
-            str = PL.GetFavoriteEmailAndHowMatchPercent(PL.userKey).Split(' ');
-            circuleEmailPpoular.Value = int.Parse(str[1]);   //put percent.
-            circuleEmailPpoular.Text = str[1] + "%";
-            LblEmailFavData.Text = str[0] + " is the most popular email for users.";    //put name of most populer email.
-
-            //circule AVG ages users.
-            LblAVG.Text = PL.getAvgForListOfAdminsOrUsers(PL.userKey).ToString("0.#");
-            lblAvgData.Text = $"Average ages of\n {PL.userKey} system.";
-
-            //The most experienced userAndAdmin
-            lblMostExprinceTitle.Text = "The most experienced user";
-            lblLeastExprinceTitle.Text = "The least experienced user";
-            listP = PL.theMostAndLeastExperiencedUserOrAdmins(PL.userKey);
-            lblLeastExprince.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, registed to system in {listP[1].DateRegistion}.";
-            lblMostExprince.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, registed to system in {listP[0].DateRegistion}.";
-
-            //The most younger and older userAndAdmin
-            LblMostOlderTitle.Text = " The oldest user";
-            lblMostYoungerTitle.Text = " The younger user";
-            listP = PL.theMostOlderAndMostYoungerUserOrAdmin(PL.userKey);
-            lblMostYounger.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, is {PersonList.GetAge(listP[1].DateBorn).ToString("0")} years old. ";
-            LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
-        }
-
-        private void putAdminsDataInDashboard(List<Person> listP)
-        {
-
-
-            PersonList PL = new PersonList(listP);
-
-            lblTitleStatics.Text = "Administrators statistics ";
-            lblUsers.Text = "Users  " + PL.CountAdminsANDUsersInSystem(PL.adminKey);
-            lblAdmins.Text = "Administrators  " + PL.CountAdminsANDUsersInSystem(PL.userKey);
-
-            circleGender.Value = PL.PercentageGenderForUserORAdmins(PL.adminKey);
-            circleGender.Text = circleGender.Value + "%";
-            LblGenderData.Text = $"{circleGender.Value}% of the administrators is men, {100 - circleGender.Value}% is women.";
-
-            //circule email favorite administrators
-
-            string[] str = null;
-            str = PL.GetFavoriteEmailAndHowMatchPercent(PL.adminKey).Split(' ');
-            circuleEmailPpoular.Value = int.Parse(str[1]);   //put percent.
-            circuleEmailPpoular.Text = str[1] + "%";
-            LblEmailFavData.Text = str[0] + " is the most popular email for administrators.";    //put name of most populer email.
-
-            //circule AVG ages administrators.
-            LblAVG.Text = PL.getAvgForListOfAdminsOrUsers(PL.adminKey).ToString("0.#");
-            lblAvgData.Text = $"Average ages of administrator system.";
-
-            //The most experienced userAndAdmin
-            lblMostExprinceTitle.Text = "The most experienced administrator";
-            lblLeastExprinceTitle.Text = "The least experienced administrator";
-            listP = PL.theMostAndLeastExperiencedUserOrAdmins(PL.adminKey);
-            lblLeastExprince.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, registed to system in {listP[1].DateRegistion}.";
-            lblMostExprince.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, registed to system in {listP[0].DateRegistion}.";
-
-            //The most younger and older userAndAdmin
-            LblMostOlderTitle.Text = " The oldest administrator";
-            lblMostYoungerTitle.Text = " The younger administrator";
-            listP = PL.theMostOlderAndMostYoungerUserOrAdmin(PL.adminKey);
-            lblMostYounger.Text = $"{listP[1].FirstName + " " + listP[1].LastName}, is {PersonList.GetAge(listP[1].DateBorn).ToString("0")} years old. ";
-            LblMostOlder.Text = $"{listP[0].FirstName + " " + listP[0].LastName}, is {PersonList.GetAge(listP[0].DateBorn).ToString("0")} years old.";
-        }
-
-        //getDataPersonLoggedNow
-        private Person getLoggedUserNowByPersonId(string id, List<Person> listP)
-        {
-
-            PersonList PL = new PersonList(listP);
-
-            Person loggedUser = PL.findPersonById(id);
-            if (loggedUser.IsAdmin)
-                lblUserNameAndStatus.Text = loggedUser.FirstName + " " + loggedUser.LastName + "\n" + "administrator.";
-            else lblUserNameAndStatus.Text = loggedUser.FirstName + " " + loggedUser.LastName + "\n" + "user.";
-            profilePic.Image = loggedUser.ProfilePic;
-            return loggedUser;
-        }
-
-
-
-        private void lblUsers_Click(object sender, EventArgs e)
-        {
-            activePanel(lblUsers,panelUsers);
-            inactivePanel(lblAdmins,panelAdmins);
-            inactivePanel(lblClasses,panelClasses);
-            putUsersDataInDashboard(listP);
-            panelStaticsClasses.Visible = false; panelStaticsPersons.Visible = true;
-        }
-
-        private void lblAdmins_Click(object sender, EventArgs e)
-        {
-            activePanel(lblAdmins, panelAdmins);
-            inactivePanel(lblUsers, panelUsers);
-            inactivePanel(lblClasses, panelClasses);
-            putAdminsDataInDashboard(listP);
-            panelStaticsClasses.Visible = false; panelStaticsPersons.Visible = true;
-        }
-
-        private void lblClasses_Click(object sender, EventArgs e)
-        {
-            activePanel(lblClasses, panelClasses);
-            inactivePanel(lblUsers, panelUsers);
-            inactivePanel(lblAdmins, panelAdmins);
-            panelStaticsClasses.Visible = true; panelStaticsPersons.Visible = false;
-        }
-
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             LogIn login = new LogIn();
@@ -627,19 +323,271 @@ namespace Fitness_Club
             this.Hide();
         }
 
-        private void penelHome_Paint(object sender, PaintEventArgs e)
+        private void btnAddUser_Click(object sender, EventArgs e)
         {
+            openChildForm(new Rregistration(), sender);
+        }
+        private void btnSideManu_Click(object sender, EventArgs e)              //open/close side menu
+        {
+            timerSideManu.Start();
+        }
+
+        private void btnMyAcc_Click(object sender, EventArgs e)
+        {
+            if (!DataAnalysisCollapse)
+            {
+                MembersTimer.Start();
+                btnDataAnalysis.BackColor = btnSideManu.BackColor;
+                openChildForm(new MyAccount(userLogged), sender);
+            }
+            else
+                openChildForm(new MyAccount(userLogged), sender);
 
         }
 
-        private void lblTitle_Click(object sender, EventArgs e)
+        private void btnCalandar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (!DataAnalysisCollapse)
+                {
+                    MembersTimer.Start();
+                    btnDataAnalysis.BackColor = btnSideManu.BackColor;
+                    openChildForm(new Calandar(), sender);
+                }
+                else
+                    openChildForm(new Calandar(), sender);
+            }
+            catch
+            {
+                openChildForm(new Error(), sender);
+            }
 
         }
 
-        private void panelStaticsClasses_Paint(object sender, PaintEventArgs e)
+        private void btnUserMengement_Click(object sender, EventArgs e)
         {
 
+            if (btnDataAnalysis.BackColor == Color.FromArgb(51, 51, 76))
+            {
+                ActiveButton(btnAdminStatistics);
+                openChildForm(new AdminsStaticts(listAdmins), sender);
+                MembersTimer.Start();
+            }
+            if (!sideBarExpand)
+            {
+                panelManu.Width = panelManu.MaximumSize.Width;
+                sideBarExpand = true;
+            }
         }
+
+        private void btnAdminStatistics_Click(object sender, EventArgs e)
+        {
+            if (btnAdminStatistics.BackColor == Color.FromArgb(34, 36, 49))
+            {
+                openChildForm(new AdminsStaticts(listAdmins), sender);
+                btnClientsStat.BackColor = Color.FromArgb(34, 36, 49);
+                btnClassesStat.BackColor = Color.FromArgb(34, 36, 49);
+
+            }
+        }
+
+        private void btnClientsStat_Click(object sender, EventArgs e)
+        {
+            if (btnClientsStat.BackColor == Color.FromArgb(34, 36, 49))
+            {
+                openChildForm(new ClientsStatistics(listUsers), sender);
+                btnAdminStatistics.BackColor = Color.FromArgb(34, 36, 49);
+                btnClassesStat.BackColor = Color.FromArgb(34, 36, 49);
+
+            }
+        }
+
+        private void btnClassesStat_Click(object sender, EventArgs e)
+        {
+            if (btnClassesStat.BackColor == Color.FromArgb(34, 36, 49))
+            {
+                openChildForm(new ClassesStatistics(listC, listUsers), sender);
+                btnClientsStat.BackColor = Color.FromArgb(34, 36, 49);
+                btnAdminStatistics.BackColor = Color.FromArgb(34, 36, 49);
+            }
+        }
+
+        private void btnAreaClasses_Click(object sender, EventArgs e)
+        {
+            if (!DataAnalysisCollapse)
+            {
+                MembersTimer.Start();
+                btnDataAnalysis.BackColor = btnSideManu.BackColor;
+                openChildForm(new Forms_admin.AreaClasses(listP, listC), sender);
+            }
+            else
+                openChildForm(new Forms_admin.AreaClasses(listP, listC), sender);
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            if (!DataAnalysisCollapse)
+            {
+                MembersTimer.Start();
+                btnDataAnalysis.BackColor = btnSideManu.BackColor;
+                openChildForm(new About(), sender);
+            }
+            else
+                openChildForm(new About(), sender);
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+
+        public void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            if (firstLoad)
+            {
+                if (tenSecound > 0)
+                {
+                    //TIMER WORK
+                    tenSecound--;
+                    int minutes = tenSecound / 60, sec = tenSecound - (minutes * 60);
+                    float percent = ((minutes * 60 + sec) / 300f) * 100;
+                    circleTimer.Value = Convert.ToInt32(percent);
+                }
+                else
+                {                          //RESET TIMER
+                                           //tenSecound = 10;
+                    firstLoad = false;
+                    openChildForm(new Forms_admin.Feed(listAdmins), btnSenderObject);
+                    dispatcherTimer.Stop();
+                }
+            }
+
+
+        }
+
+
+        //getDataPersonLoggedNow
+        private Person getLoggedUserNowByPersonId(string id, List<Person> listP,bool flag)
+        {
+
+            PersonList PL = new PersonList(listP);
+            Person loggedUser = PL.findPersonById(id);
+            if (flag)
+            {
+                if (loggedUser.IsAdmin)
+                    lblUserNameAndStatus.Text = loggedUser.FirstName + " " + loggedUser.LastName + "\n" + "administrator.";
+                profilePic.Image = loggedUser.ProfilePic;
+            }
+            return loggedUser;
+        }
+
+
+
+
+        ///================================================================================================
+
+        ///================================================================================================
+        ///TXT BOX SEARCH FUNCTIONS
+
+        private void SearchAlguritem()
+        {
+
+            if (textBoxFind.Text != "")
+            {
+                string str = LoginANDRegister.uppercaseFirstLetter(textBoxFind.Text);
+                DataViewPersons.Rows.Clear();
+                for (int i = 0; i < listUsers.Count; i++)
+                {
+                    string lastConn = LoginANDRegister.lastConnectDiff(listUsers[i].LastConnect);
+                    string fullName = listUsers[i].FullName;
+                    if (fullName.Contains(str))
+                    {
+                        DataViewPersons.Rows.Add(
+                        clipToCircle(listUsers[i].ProfilePic, new PointF(listUsers[i].ProfilePic.Width / 2, listUsers[i].ProfilePic.Height / 2), listUsers[i].ProfilePic.Width / 2, panelTitle.BackColor),
+                         listUsers[i].FirstName + " " + listUsers[i].LastName+"       ", listUsers[i].UserId, LoginANDRegister.lastConnectDiff(listUsers[i].LastConnect)
+                        );
+                    }
+                }
+            }
+        }
+        public static Image clipToCircle(Image srcImage, PointF center, float radius, Color backGround)
+        {
+            Image dstImage = new Bitmap(srcImage.Width, srcImage.Height, srcImage.PixelFormat);
+
+            using (Graphics g = Graphics.FromImage(dstImage))
+            {
+                RectangleF r = new RectangleF(center.X - radius, center.Y - radius,
+                                                         radius * 2, radius * 2);
+
+                // enables smoothing of the edge of the circle (less pixelated)
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+
+                // fills background color
+                using (Brush br = new SolidBrush(backGround))
+                {
+                    g.FillRectangle(br, 0, 0, dstImage.Width, dstImage.Height);
+                }
+
+                // adds the new ellipse & draws the image again 
+                GraphicsPath path = new GraphicsPath();
+                path.AddEllipse(r);
+                g.SetClip(path);
+                g.DrawImage(srcImage, 0, 0);
+
+                return dstImage;
+            }
+        }
+
+        private void textBoxFind_TextChanged(object sender, EventArgs e)
+        {
+            if (panelSearch.Height == 62)
+            {
+                panelSearch.Height = 490;
+                panelSearch.BorderThickness = 1;
+            }
+            else
+            {
+                if (textBoxFind.Text == string.Empty)
+                {
+                    panelSearch.Height = 62;
+                    panelSearch.BorderThickness = 0;
+                }
+
+            }
+            SearchAlguritem();
+            if (DataViewPersons.RowCount == 0)
+                panelNotFound.Visible = true;
+            else
+                panelNotFound.Visible = false;
+        }
+
+        private void DataViewPersons_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in DataViewPersons.SelectedRows)
+            {
+
+                string userId = row.Cells[2].Value.ToString();
+                openChildForm(new Clients(listUsers,listC,userId), btnSenderObject);
+
+            }
+        }
+
+        private void textBoxFind_Click(object sender, EventArgs e)
+        {
+            if(textBoxFind.Text == "Search")
+            {
+                textBoxFind.Text = "";
+            }
+        }
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }

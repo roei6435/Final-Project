@@ -63,6 +63,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _103716_statistics_icon {
+            get {
+                object obj = ResourceManager.GetObject("103716_statistics_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap _1465154896woman_doing_yoga_simple {
             get {
                 object obj = ResourceManager.GetObject("1465154896woman-doing-yoga-simple", resourceCulture);
@@ -86,6 +96,16 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap _19333424 {
             get {
                 object obj = ResourceManager.GetObject("19333424", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _20943401 {
+            get {
+                object obj = ResourceManager.GetObject("20943401", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +176,36 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap _3005766_account_door_exit_logout_icon {
             get {
                 object obj = ResourceManager.GetObject("3005766_account_door_exit_logout_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _315755_soccer_court_icon {
+            get {
+                object obj = ResourceManager.GetObject("315755_soccer_court_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _3533397_clients_customer_market_marketing_segment_icon {
+            get {
+                object obj = ResourceManager.GetObject("3533397_clients_customer_market_marketing_segment_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _4658134_chart_curve_electronic_graph_statistics_icon {
+            get {
+                object obj = ResourceManager.GetObject("4658134_chart_curve_electronic_graph_statistics_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +336,16 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap _71596211 {
             get {
                 object obj = ResourceManager.GetObject("71596211", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _8401 {
+            get {
+                object obj = ResourceManager.GetObject("8401", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,6 +553,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap average_icon {
+            get {
+                object obj = ResourceManager.GetObject("average_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap back_icon {
             get {
                 object obj = ResourceManager.GetObject("back_icon", resourceCulture);
@@ -616,6 +686,26 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap Completed {
             get {
                 object obj = ResourceManager.GetObject("Completed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap CONTINUETOPROFILE {
+            get {
+                object obj = ResourceManager.GetObject("CONTINUETOPROFILE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ContinueToProfile2 {
+            get {
+                object obj = ResourceManager.GetObject("ContinueToProfile2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -763,6 +853,46 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap feed {
+            get {
+                object obj = ResourceManager.GetObject("feed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap feed__1_ {
+            get {
+                object obj = ResourceManager.GetObject("feed (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap feeD2 {
+            get {
+                object obj = ResourceManager.GetObject("feeD2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Finance {
+            get {
+                object obj = ResourceManager.GetObject("Finance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap firstScreen {
             get {
                 object obj = ResourceManager.GetObject("firstScreen", resourceCulture);
@@ -776,6 +906,16 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap HIDE {
             get {
                 object obj = ResourceManager.GetObject("HIDE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap JOMEiCON {
+            get {
+                object obj = ResourceManager.GetObject("JOMEiCON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -873,9 +1013,39 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap logoUserssta {
+            get {
+                object obj = ResourceManager.GetObject("logoUserssta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGOUTT {
+            get {
+                object obj = ResourceManager.GetObject("LOGOUTT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap man_workout_in_gym {
             get {
                 object obj = ResourceManager.GetObject("man-workout-in-gym", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MANAGE {
+            get {
+                object obj = ResourceManager.GetObject("MANAGE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -936,6 +1106,16 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap messenger__2_ {
             get {
                 object obj = ResourceManager.GetObject("messenger (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap NEWANALITCS {
+            get {
+                object obj = ResourceManager.GetObject("NEWANALITCS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1213,6 +1393,26 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap starsLevelIn {
+            get {
+                object obj = ResourceManager.GetObject("starsLevelIn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap statistics22m {
+            get {
+                object obj = ResourceManager.GetObject("statistics22m", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap stock_vector_thinking_man_with_question_marks_vector_illustration_2162774881 {
             get {
                 object obj = ResourceManager.GetObject("stock-vector-thinking-man-with-question-marks-vector-illustration-2162774881", resourceCulture);
@@ -1293,6 +1493,16 @@ namespace Fitness_Club.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap TWOSta {
+            get {
+                object obj = ResourceManager.GetObject("TWOSta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap unlock_icon {
             get {
                 object obj = ResourceManager.GetObject("unlock_icon", resourceCulture);
@@ -1366,6 +1576,16 @@ namespace Fitness_Club.Properties {
         public static System.Drawing.Bitmap usersMengment2 {
             get {
                 object obj = ResourceManager.GetObject("usersMengment2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap userStattics2 {
+            get {
+                object obj = ResourceManager.GetObject("userStattics2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -50,9 +50,9 @@
             // pictureInidcation
             // 
             this.pictureInidcation.Image = global::Fitness_Club.Properties.Resources.Error;
-            this.pictureInidcation.Location = new System.Drawing.Point(926, -5);
+            this.pictureInidcation.Location = new System.Drawing.Point(874, -5);
             this.pictureInidcation.Name = "pictureInidcation";
-            this.pictureInidcation.Size = new System.Drawing.Size(512, 667);
+            this.pictureInidcation.Size = new System.Drawing.Size(564, 667);
             this.pictureInidcation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureInidcation.TabIndex = 92;
             this.pictureInidcation.TabStop = false;

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
+
 
 namespace Server_F.C
 {
+
+
     internal class Dashboard
     {
         //FUNCTION FOR CONVARTION STRING TO BOOLEAN
@@ -73,6 +72,103 @@ namespace Server_F.C
                 return null;
             }
         }
+
+        //public static string getTheUserLocation()
+        //{
+
+        //}
+
+        public static string getUserIdOfMostActiveAdminByTweest()
+        {
+            string data = "";int i = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                //GET ALL USER ID POSTED TWEETS FROM LAST WEEK
+                cmd.CommandText = "select userId from tweets WHERE CAST(fullDate as date) between CAST(DATEADD(dd, -7, GETDATE()) as date) and CAST(GETDATE() AS DATE)";
+                cmd.Connection = Program.conn;
+                Program.conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.HasRows)
+                {                  
+                    for (i = 0; rdr.Read(); i++)
+                    {
+                        data += rdr[0] + Program.separationKey;   //userId
+                    }
+                }
+
+                Program.conn.Close();
+                if(i == 1)
+                {
+                    string[] arr = (data.Split(new string[] { Program.separationKey}, StringSplitOptions.RemoveEmptyEntries));
+                    return data = arr[0]+"#"+i;
+                }               //IF ONLY ONE TWEET ON THIS WEEK
+                else if (data != string.Empty)
+                {
+                    string[] arr = (data.Split(new string[] { Program.separationKey }, StringSplitOptions.RemoveEmptyEntries));
+                    int max = 0;
+                    //GET MOST ACTIVE USERID 
+                    for (i = 0; i < arr.Length; i++)
+                    {
+                        int counter = 0;
+                        for (int j = 0; j < arr.Length - 1; j++)
+                        {
+                            if (arr[j] == arr[i])
+                            {
+                                counter++;
+                            }
+                        }
+                        if (counter > max)
+                        {
+                            max = counter;
+                            data = arr[i];
+                        }
+                    }
+                    return data + "#" + max;
+                }
+                return data;           //IF NOT HAVE A TWEETS
+            }
+            catch
+            {
+                Program.conn.Close();
+                return "";
+            }
+        }
+
+        public static string getSumOfPaymentsOfLastMonth()
+        {
+            int fullSumPaymentsLastMonth=0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "select sum from payments WHERE CAST(date as date) between CAST(DATEADD(dd, -30, GETDATE()) as date) and CAST(GETDATE() AS DATE)";
+                cmd.Connection = Program.conn;
+                Program.conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.HasRows)
+                {
+                    for (int i = 0; rdr.Read(); i++)
+                    {
+                        fullSumPaymentsLastMonth += int.Parse(rdr[0].ToString());   //SUM OF PAYMENT
+                    }
+
+                }
+
+                Program.conn.Close();
+                return fullSumPaymentsLastMonth.ToString();
+
+            }
+            catch
+            {
+                Program.conn.Close();
+                return "";
+            }
+        }
+
+
+ 
 
         public static string getAllDataClasses()
         {

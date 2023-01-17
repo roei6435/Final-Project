@@ -23,9 +23,11 @@ namespace Fitness_Club
         private int jump = 8;
         private Person personSelected=null;
         private bool needRefresh = false;
+        private string idUser;
 
-        public Clients(List<Person>listP,List<Classes>listC)
+        public Clients(List<Person>listP,List<Classes>listC,string idUser)
         {
+            this.idUser = idUser;
             this.listP = listP;
             this.listC = listC;
             InitializeComponent();
@@ -82,6 +84,7 @@ namespace Fitness_Club
           //  displayDataListOfPayments(listP[0].PaymentsArray);
             PL = new PersonList(listP);
             displayDataListOfUser(indicator, jump);
+            openProfilePanel(idUser);
             loadTheme();
             
         }
@@ -169,7 +172,7 @@ namespace Fitness_Club
                 btnNext.Visible = false;
             }               
         }
-        private void sharchAlguritem()
+        private void SearchAlguritem()
         {
             
             if (textBoxFind.Text != "")
@@ -230,56 +233,60 @@ namespace Fitness_Club
 
         }
 
-
+        private void openProfilePanel(string userId)
+        {
+            DataPaymentsView.Rows.Clear();
+            DataGridViewClassMember.Rows.Clear();
+            panelAllPerons.Visible = false;
+            panelUserData.Visible = true;
+            btnSendMess.BackColor = btnNext.BackColor;
+            personSelected = PL.findPersonById((userId).ToString());
+            btnBloked.Tag = personSelected.UserId;
+            lblFullName.Text = personSelected.FullName;
+            lblFullName.Tag = personSelected.UserId;
+            lblDateBornAndAge.Text = personSelected.DateBorn + ", " + PersonList.GetAge(personSelected.DateBorn).ToString("0");
+            lblEmail.Text = personSelected.Email;
+            lblPhone.Text = personSelected.Phone;
+            profilePic.Image = personSelected.ProfilePic;
+            if (!personSelected.IsBlocked)
+            {
+                isBlockStatus.Visible = false;
+                btnBloked.Text = "Blocked";
+                btnBloked.Image = Properties.Resources._9110980_circle_block_icon;
+            }
+            else
+            {
+                isBlockStatus.Visible = true;
+                btnBloked.Text = "Unblock";
+                btnBloked.Image = Properties.Resources.unlock_icon;
+            }
+            if (personSelected.PaymentsArray != null)
+            {
+                btnAddPaymentTwo.Visible = true;
+                DataPaymentsView.Visible = true;
+                displayDataListOfPayments(personSelected.PaymentsArray);
+            }
+            else
+            {
+                btnAddPaymentTwo.Visible = false;
+                DataPaymentsView.Visible = false;
+            }
+            if (personSelected.ClassesArray != null)
+            {
+                displayDataListOfClasses(personSelected.ClassesArray);
+                DataGridViewClassMember.Visible = true;
+            }
+            else
+            {
+                DataGridViewClassMember.Visible = false;
+            }
+        }
 
         private void dataEvents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewRow row in DataUsersView.SelectedRows)
             {
-                DataPaymentsView.Rows.Clear();
-                DataGridViewClassMember.Rows.Clear();   
-                panelAllPerons.Visible = false;
-                panelUserData.Visible = true;
-                btnSendMess.BackColor=btnNext.BackColor;
-                personSelected = PL.findPersonById((row.Cells[3].Value).ToString());
-                btnBloked.Tag = personSelected.UserId;
-                lblFullName.Text = personSelected.FullName;
-                lblDateBornAndAge.Text = personSelected.DateBorn + ", " + PersonList.GetAge(personSelected.DateBorn).ToString("0");
-                lblEmail.Text= personSelected.Email; 
-                lblPhone.Text= personSelected.Phone;
-                profilePic.Image = personSelected.ProfilePic;
-                if (!personSelected.IsBlocked)
-                {
-                    isBlockStatus.Visible = false;
-                    btnBloked.Text = "Blocked";
-                    btnBloked.Image = Properties.Resources._9110980_circle_block_icon;
-                }
-                else
-                {
-                    isBlockStatus.Visible = true;
-                    btnBloked.Text = "Unblock";
-                    btnBloked.Image = Properties.Resources.unlock_icon;
-                }
-                if (personSelected.PaymentsArray != null)
-                {
-                    btnAddPaymentTwo.Visible = true;
-                    DataPaymentsView.Visible = true;
-                    displayDataListOfPayments(personSelected.PaymentsArray);
-                }
-                else
-                {
-                    btnAddPaymentTwo.Visible = false;
-                    DataPaymentsView.Visible = false;
-                }
-                if (personSelected.ClassesArray != null)
-                {
-                    displayDataListOfClasses(personSelected.ClassesArray);
-                    DataGridViewClassMember.Visible = true;
-                }
-                else
-                {
-                    DataGridViewClassMember.Visible = false;
-                }
+                openProfilePanel(row.Cells[3].Value + "");           
             }
         }
 
@@ -331,8 +338,8 @@ namespace Fitness_Club
 
         private void textBoxFind_TextChanged(object sender, EventArgs e)
         {
-           
-            sharchAlguritem();
+
+            SearchAlguritem();
             if(DataUsersView.RowCount==0)
                 panelNotFound.Visible = true;
             else
@@ -346,16 +353,16 @@ namespace Fitness_Club
 
         private void lblPayments_Click(object sender, EventArgs e)
         {
-            AdminScreen.activePanel(lblPayments, panelPayments);
-            AdminScreen.inactivePanel(lblMemberOfClass, panelMember);
+            LoginANDRegister.activePanel(lblPayments, panelPayments);
+            LoginANDRegister.inactivePanel(lblMemberOfClass, panelMember);
             panelLastPayments.Visible = true;
             panelMemberOfClass.Visible = false;
         }
 
         private void lblMemberOfClass_Click(object sender, EventArgs e)
         {
-            AdminScreen.activePanel( lblMemberOfClass, panelMember);
-            AdminScreen.inactivePanel(lblPayments, panelPayments);
+            LoginANDRegister.activePanel( lblMemberOfClass, panelMember);
+            LoginANDRegister.inactivePanel(lblPayments, panelPayments);
             panelLastPayments.Visible = false;
             panelMemberOfClass.Visible = true;
         }
@@ -363,7 +370,7 @@ namespace Fitness_Club
 
         private void btnAddPayment_Click_1(object sender, EventArgs e)
         {
-            personSelected = PL.findPersonById(DataUsersView.CurrentRow.Cells[3].Value.ToString());
+            personSelected = PL.findPersonById(lblFullName.Tag + "");
             addPayment ap = new addPayment(personSelected);
             ap.FormClosed += addPayment_FormClosed;
             ap.Show();
@@ -371,7 +378,7 @@ namespace Fitness_Club
 
         private void btnAddPaymentTwo_Click(object sender, EventArgs e)
         {
-            personSelected = PL.findPersonById(DataUsersView.CurrentRow.Cells[3].Value.ToString());
+            personSelected = PL.findPersonById(lblFullName.Tag+"");
             addPayment ap = new addPayment(personSelected);
             ap.FormClosed += addPayment_FormClosed;
             ap.Show();
@@ -393,10 +400,6 @@ namespace Fitness_Club
                 displayDataListOfPayments(list.ToArray());
                 this.Refresh();
                
-            }
-            else
-            {
-                MessageBox.Show("Sorry, payment not sucsses.");
             }
         }
     }

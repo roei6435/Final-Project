@@ -49,7 +49,14 @@ namespace Fitness_Club
             {
                 ClassesList CL = new ClassesList(userPay.ClassesArray.ToList());
                 Classes classPaid = CL.findClassByName(comboBoxClasses.SelectedItem.ToString());
-                string fullInputFromClient = userPay.UserId + "#" + classPaid.ClassId + "#" + txtBoxDate.Text + "#" + comboBoxPaidVia.SelectedItem + "#" + textBoxAmount.Text + "#";
+                //03/01/2023
+                
+                string [] fullDateInArray = txtBoxDate.Text.Split('/');
+                string fullDate= $"{fullDateInArray[1]}/{fullDateInArray[0]}/{fullDateInArray[2]}";
+
+                txtBoxDate.Text= DateTime.Now.ToShortDateString();
+
+                string fullInputFromClient = userPay.UserId + "#" + classPaid.ClassId + "#" + fullDate + "#" + comboBoxPaidVia.SelectedItem + "#" + textBoxAmount.Text + "#";
                 paymentDone = ConnectWithServer.callToServer(Clients.controller, "addPaymentByUserAndClassId#", fullInputFromClient);
                 if (bool.Parse(paymentDone))
                 {

@@ -18,18 +18,20 @@ namespace Fitness_Club
         public string data = null;
         public DeleteAndUpdateFrom()
         {
+           
+            
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
             InitializeComponent();
+            data = "dd";
 
 
 
         }
         public void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            secounds++; 
-            if(secounds == 1)
-            {
-                data = "data";
-            }
             if (data == null)
             {
                 panelLoading.Visible = true;
@@ -44,10 +46,6 @@ namespace Fitness_Club
         {
             panelLoading.Size = new Size(1399, 658);
             circleLoading.Location = new Point(522, 224);
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-            dispatcherTimer.Start();
             loadTheme();
         }
         private void loadTheme()

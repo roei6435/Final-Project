@@ -106,7 +106,7 @@ namespace Fitness_Club
                     MessageBox.Show("The event has been successfully added");
                     this.Close();
                 }
-                else MessageBox.Show("You already have another event at this time....");             
+                else MessageBox.Show("You already have another event at this time....", "Hours not available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else 
                 MessageBox.Show("Plese enter name, loacation and normal hours. ");

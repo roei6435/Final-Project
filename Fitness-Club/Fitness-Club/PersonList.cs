@@ -12,6 +12,7 @@ namespace Fitness_Club
         List<Person> listP;
         public string adminKey = "admins";
         public string userKey = "users";
+       
         public PersonList(List<Person> listP)
         {
             this.listP = listP;
@@ -162,6 +163,7 @@ namespace Fitness_Club
         }
 
 
+
         //A FUNCTION THAT RETURNS THE MOST EXPERIENCED USER OR ADMINS AND ALSO THE LEAST EXPERIENCED.
         public List<Person> theMostAndLeastExperiencedUserOrAdmins(string key)
         {
@@ -246,6 +248,239 @@ namespace Fitness_Club
                 default: return null;
             }
         }
+
+
+
+
+        //--------------------------------------------------------------------------
+        public float getAvgForList()
+        {
+            float sum = 0f;
+            foreach (Person person in listP)
+            {
+                sum += GetAge(person.DateBorn);
+            }
+            return sum / listP.Count();
+        }
+        public int getCountConnectInLastWeek()
+        {
+            int counter = 0;
+            foreach (Person person in listP)
+            {
+                var prevDate = Convert.ToDateTime(person.LastConnect);
+                var today = DateTime.Now;
+
+                var connectBefore = today - prevDate;
+                if (connectBefore.Days<8)
+                {
+                    counter++;  
+                }
+            }
+            return counter;
+
+        }
+
+        public int getPercentageGender()
+        {
+            float male = 0;
+            foreach (Person person in listP)
+            {
+                if (person.Gender)
+                    male = male + 1.0f;
+            }
+            return (int)(male / listP.Count() * 100);
+        }
+        public int getPercentageIsBlocked()
+        {
+            float isBlocked = 0;
+            foreach (Person person in listP)
+            {
+                if (person.IsBlocked)
+                    isBlocked = isBlocked + 1.0f;
+            }
+            return (int)(isBlocked / listP.Count() * 100);
+        }
+
+
+
+        public Person getMostActiveAdminByTweets()
+        {
+            try
+            {
+                string response = ConnectWithServer.callToServer(AdminsStaticts.controller, "getUserIdOfMostActiveAdminByTweest#", "");
+                if (response == string.Empty)
+                {
+                    return null;
+                }
+                Person p = findPersonById(response.Split('#')[0]);
+                p.Email = response.Split('#')[1];     //(SET IN EMAIL FEILD THE COUNT OF TWEET)
+                return p;
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+        public Person getMostOlderOrMostYounger(string key)
+        {
+            Person older=listP[0], younger=listP[0];
+            float max = GetAge(listP[0].DateBorn), min = max;
+            for(int i = 1;i < listP.Count; i++)
+            {
+                float ageNow=GetAge(listP[i].DateBorn);
+                if (ageNow> max)
+                {
+                    max = ageNow;
+                    older = listP[i];
+                }
+                if (ageNow < min)
+                {
+                    min = ageNow;
+                    younger = listP[i];
+                }
+            }
+            if (key == "low")
+            {
+                return younger;
+            }
+            else if (key == "high")
+            {
+                return older;
+            }
+            return null;
+        }
+
+        public Person getMostAndLeastExperiencedAdmins(string key)
+        {
+            Person senior = listP[0], younger = listP[0];
+            float max = LoginANDRegister.diffFromDatesInWeek(listP[0].DateRegistion), min = max;
+            for (int i = 1; i < listP.Count; i++)
+            {
+                float diffNow = LoginANDRegister.diffFromDatesInWeek(listP[i].DateRegistion);
+                if (diffNow > max)
+                {
+                    max = diffNow;
+                    senior = listP[i];
+                }
+                if (diffNow < min)
+                {
+                    min = diffNow;
+                    younger = listP[i];
+                }
+            }
+            if (key == "low")
+            {
+                return younger;
+            }
+            else if (key == "high")
+            {
+                return senior;
+            }
+            return null;
+        }
+
+        public Person getMostActiveClientByClasses()
+        {
+
+            int i = 0;
+            while (listP[i].ClassesArray is null)
+            {
+                i++;
+            }
+            Person active = listP[i]; int max = listP[i].ClassesArray.Length;
+            while (i < listP.Count)
+            {
+                if (listP[i].ClassesArray != null && listP[i].ClassesArray.Length > max)
+                {
+                    max = listP[i].ClassesArray.Length;
+                    active = listP[i];
+                }
+                i++;
+            }
+            return active;
+
+        }
+
+        public Person getTheUserPaidMax()
+        {
+            int i = 0;
+            while (listP[i].ClassesArray is null)
+            {
+                i++;
+            }
+            Person paidMax = listP[i]; int max = listP[i].getSumOfPaidInTheLastMonth(), paidThisMonth;
+            while (i < listP.Count)
+            {
+                 paidThisMonth = listP[i].getSumOfPaidInTheLastMonth();
+                if (paidThisMonth != 0 && paidThisMonth > max)
+                {
+                    max = paidThisMonth;
+                    paidMax = listP[i];
+                }
+                i++;
+            }
+            paidMax.Email = max.ToString();
+            return paidMax;
+
+        }
+
+
+        private List<Payments> getTheListOfPaymentsLastMonth()
+        {
+            List<Payments> paymentsFromLastMonth = new List<Payments>();
+            foreach(Person person in listP)
+            {
+                if (person.PaymentsArray != null)
+                {
+                    for(int j = 0; j < person.PaymentsArray.Length; j++)
+                    {
+                        if (person.PaymentsArray[j].Date.Month == DateTime.Now.Month)
+                        {
+                            paymentsFromLastMonth.Add(person.PaymentsArray[j]);
+                        }
+                    }
+                }
+                
+            }
+            return paymentsFromLastMonth;
+        }
+        public Classes getTheMostIncomeClassInLastMonth()
+        {
+            List<Payments>list=getTheListOfPaymentsLastMonth();
+            int max = 0;
+            Classes cMax = null;
+            for (int i = 0; i < list.Count; i++)
+            {
+                int counter = 0;
+                for (int j = 0; j < list.Count; j++)
+                {
+                    if (list[i].ClassP.ClassId == list[j].ClassP.ClassId)
+                    {
+                        counter++;
+                    }
+                }
+                if (counter > max)
+                {
+                    max = counter;
+                    cMax = list[i].ClassP;
+                }
+
+            }
+            max = 0;
+            foreach (Payments pay in list)
+            {
+                if (pay.ClassP == cMax)
+                    max += int.Parse(pay.Sum);
+            }
+            cMax.About = max + "";
+            return cMax;
+
+        }
+
+
+
+
 
 
 

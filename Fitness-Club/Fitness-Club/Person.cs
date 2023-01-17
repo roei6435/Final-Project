@@ -140,5 +140,19 @@ namespace Fitness_Club
             set { paymentsArray = value; }
         }
 
+        public int getSumOfPaidInTheLastMonth()
+        {
+           if(paymentsArray is null) return 0;
+            int monthNow = DateTime.Now.Month, sum = 0;
+           foreach (Payments payments in paymentsArray)
+            {
+                if (payments.Date.Month == monthNow)
+                {
+                    sum += int.Parse(payments.Sum);
+                }
+            }
+           return sum;
+        }
+
     }
 }

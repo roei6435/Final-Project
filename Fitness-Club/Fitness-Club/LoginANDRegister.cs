@@ -183,6 +183,21 @@ namespace Fitness_Club
             return "-";
 
         }
+        public static int diffFromDatesInWeek(string date)
+        {
+            var prevDate = Convert.ToDateTime(date);
+            var today = DateTime.Now;
+
+            var diffOfDates = today - prevDate;
+
+            if (diffOfDates.Days < 7)
+            {
+                return 0;
+            }
+            return diffOfDates.Days / 7;
+
+        }
+
 
         public static string uppercaseFirstLetter(string str)
         {
@@ -195,6 +210,20 @@ namespace Fitness_Club
                     res += char.ToLower(str[i]);
             }
             return res;
+        }
+        public static void activePanel(Label lblActive, Panel panelActive)
+        {
+            lblActive.ForeColor = Color.DodgerBlue;
+            lblActive.Font = new Font("Segoe UI", 14f, FontStyle.Bold);
+            panelActive.Height = 3;
+            panelActive.BackColor = Color.DodgerBlue;
+        }
+        public static void inactivePanel(Label lblActive, Panel panelActive)
+        {
+            lblActive.ForeColor = Color.Gainsboro;
+            lblActive.Font = new Font("Segoe UI", 14f, FontStyle.Regular);
+            panelActive.Height = 2;
+            panelActive.BackColor = Color.Gainsboro;
         }
 
 

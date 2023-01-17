@@ -318,9 +318,10 @@ namespace Fitness_Club
         }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+
             LogIn login = new LogIn();
             login.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -336,33 +337,57 @@ namespace Fitness_Club
         {
             if (!DataAnalysisCollapse)
             {
-                MembersTimer.Start();
-                btnDataAnalysis.BackColor = btnSideManu.BackColor;
-                openChildForm(new MyAccount(userLogged), sender);
+                try
+                {
+                    MembersTimer.Start();
+                    btnDataAnalysis.BackColor = btnSideManu.BackColor;
+                    openChildForm(new MyAccount(userLogged), sender);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
             }
             else
-                openChildForm(new MyAccount(userLogged), sender);
-
+            {
+                try
+                {
+                    openChildForm(new MyAccount(userLogged), sender);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
+            }
         }
 
         private void btnCalandar_Click(object sender, EventArgs e)
         {
-            try
+
+            if (!DataAnalysisCollapse)
             {
-                if (!DataAnalysisCollapse)
+                try
                 {
                     MembersTimer.Start();
                     btnDataAnalysis.BackColor = btnSideManu.BackColor;
                     openChildForm(new Calandar(), sender);
                 }
-                else
-                    openChildForm(new Calandar(), sender);
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
             }
-            catch
+            else
             {
-                openChildForm(new Error(), sender);
+                try
+                {
+                    openChildForm(new Calandar(), sender);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
             }
-
         }
 
         private void btnUserMengement_Click(object sender, EventArgs e)
@@ -370,9 +395,17 @@ namespace Fitness_Club
 
             if (btnDataAnalysis.BackColor == Color.FromArgb(51, 51, 76))
             {
-                ActiveButton(btnAdminStatistics);
-                openChildForm(new AdminsStaticts(listAdmins), sender);
-                MembersTimer.Start();
+                try
+                {
+                    ActiveButton(btnAdminStatistics);
+                    openChildForm(new AdminsStaticts(listAdmins), sender);
+                    MembersTimer.Start();
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
+
             }
             if (!sideBarExpand)
             {
@@ -385,10 +418,16 @@ namespace Fitness_Club
         {
             if (btnAdminStatistics.BackColor == Color.FromArgb(34, 36, 49))
             {
-                openChildForm(new AdminsStaticts(listAdmins), sender);
-                btnClientsStat.BackColor = Color.FromArgb(34, 36, 49);
-                btnClassesStat.BackColor = Color.FromArgb(34, 36, 49);
-
+                try
+                {
+                    openChildForm(new AdminsStaticts(listAdmins), sender);
+                    btnClientsStat.BackColor = Color.FromArgb(34, 36, 49);
+                    btnClassesStat.BackColor = Color.FromArgb(34, 36, 49);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
             }
         }
 
@@ -396,9 +435,18 @@ namespace Fitness_Club
         {
             if (btnClientsStat.BackColor == Color.FromArgb(34, 36, 49))
             {
-                openChildForm(new ClientsStatistics(listUsers), sender);
-                btnAdminStatistics.BackColor = Color.FromArgb(34, 36, 49);
-                btnClassesStat.BackColor = Color.FromArgb(34, 36, 49);
+
+                try
+                {
+                    openChildForm(new ClientsStatistics(listUsers), sender);
+                    btnAdminStatistics.BackColor = Color.FromArgb(34, 36, 49);
+                    btnClassesStat.BackColor = Color.FromArgb(34, 36, 49);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
+
 
             }
         }
@@ -407,9 +455,18 @@ namespace Fitness_Club
         {
             if (btnClassesStat.BackColor == Color.FromArgb(34, 36, 49))
             {
-                openChildForm(new ClassesStatistics(listC, listUsers), sender);
-                btnClientsStat.BackColor = Color.FromArgb(34, 36, 49);
-                btnAdminStatistics.BackColor = Color.FromArgb(34, 36, 49);
+                try
+                {
+                    openChildForm(new ClassesStatistics(listC, listUsers), sender);
+                    btnClientsStat.BackColor = Color.FromArgb(34, 36, 49);
+                    btnAdminStatistics.BackColor = Color.FromArgb(34, 36, 49);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
+
+
             }
         }
 
@@ -417,24 +474,57 @@ namespace Fitness_Club
         {
             if (!DataAnalysisCollapse)
             {
-                MembersTimer.Start();
-                btnDataAnalysis.BackColor = btnSideManu.BackColor;
-                openChildForm(new Forms_admin.AreaClasses(listP, listC), sender);
+                try
+                {
+                    MembersTimer.Start();
+                    btnDataAnalysis.BackColor = btnSideManu.BackColor;
+                    openChildForm(new Forms_admin.AreaClasses(listP, listC), sender);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
             }
             else
-                openChildForm(new Forms_admin.AreaClasses(listP, listC), sender);
+            {
+                try
+                {
+                    openChildForm(new Forms_admin.AreaClasses(listP, listC), sender);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
+            }
+               
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
             if (!DataAnalysisCollapse)
             {
-                MembersTimer.Start();
-                btnDataAnalysis.BackColor = btnSideManu.BackColor;
-                openChildForm(new About(), sender);
+                try
+                {
+                    MembersTimer.Start();
+                    btnDataAnalysis.BackColor = btnSideManu.BackColor;
+                    openChildForm(new About(), sender);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
             }
             else
-                openChildForm(new About(), sender);
+            {
+                try
+                {
+                    openChildForm(new About(), sender);
+                }
+                catch
+                {
+                    openChildForm(new Error(), btnSenderObject);
+                }
+            }
         }
         //------------------------------------------------------------------------------------------------------------------------------
 

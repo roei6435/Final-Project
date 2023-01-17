@@ -24,14 +24,41 @@ namespace Server_F.C
             return sb.ToString();
         }
 
+        public static string encryptPassword(string password)
+        {
+            try
+            {
+                byte[] encData_byte = new byte[password.Length];
+                encData_byte = System.Text.Encoding.UTF8.GetBytes(password);
+                string encodedData = Convert.ToBase64String(encData_byte);
+                return encodedData;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in base64Encode" + ex.Message);
+            }
+        }
+
+        public static string decryptPassword(string encodedData)
+        {
+            System.Text.UTF8Encoding encoder = new System.Text.UTF8Encoding();
+            System.Text.Decoder utf8Decode = encoder.GetDecoder();
+            byte[] todecode_byte = Convert.FromBase64String(encodedData);
+            int charCount = utf8Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
+            char[] decoded_char = new char[charCount];
+            utf8Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
+            string result = new String(decoded_char);
+            return result;
+        }
+
         //Check if user exist in system.
         public static string tryLogIn(string email, string password,string admin)           
         {
             try
             {
-
+                string passwordEncrypt=encryptPassword(password);
                 conn.Open();            
-                String sql = "SELECT (userId) from users where password = '" + password+"' AND email='"+email+"' AND admin='"+admin+"'";
+                String sql = "SELECT (userId) from users where password = '" + passwordEncrypt + "' AND email='"+email+"' AND admin='"+admin+"'";
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sql;
                 SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
@@ -96,7 +123,7 @@ namespace Server_F.C
                 cmd.Parameters.AddWithValue("@lName", Program.uppercaseFirstLetter(lname));
                 cmd.Parameters.AddWithValue("@email", Program.uppercaseFirstLetter(email));
                 cmd.Parameters.AddWithValue("@phone", phone);
-                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@password", encryptPassword(password));
                 cmd.Parameters.AddWithValue("@dateBorn", dateBorn);
                 cmd.Parameters.AddWithValue("@gender", bool.Parse(gender));
                 cmd.Parameters.AddWithValue("@admin", bool.Parse(isAdmin));

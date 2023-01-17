@@ -161,7 +161,7 @@ namespace Server_F.C
 
         public static string GetPasswordAndLastUpdateByUserId(string userId)
         {
-            string password = null;
+            string password = null, lastUpdate = null;
             try
             {
                 SqlCommand cmd = new SqlCommand();
@@ -173,11 +173,12 @@ namespace Server_F.C
                 if (rdr.HasRows)
                 {
                     rdr.Read();
-                    password=rdr[0]+" "+rdr[1];
+                    password = rdr[0] + "";
+                    lastUpdate = rdr[1] + "";
                 }
 
                 Program.conn.Close();
-                return password;
+                return Login.decryptPassword(password)+" "+lastUpdate;
 
             }
             catch (Exception err)
@@ -192,9 +193,10 @@ namespace Server_F.C
         {
             try
             {
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = Program.conn;
-                cmd.CommandText = $"update users set password = '{newPassword}', lastUpdateOfPassword = '{DateTime.Today.ToString().Split(' ')[0]}' where userId = '{userId}';";
+                cmd.CommandText = $"update users set password = '{Login.encryptPassword(newPassword)}', lastUpdateOfPassword = '{DateTime.Today.ToString().Split(' ')[0]}' where userId = '{userId}';";
                 Program.conn.Open();
                 int updeted=cmd.ExecuteNonQuery();
                 Program.conn.Close();

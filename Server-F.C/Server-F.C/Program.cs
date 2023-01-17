@@ -4,13 +4,13 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using Newtonsoft.Json.Linq;
 
 namespace Server_F.C
 {
 
     internal class Program
     {
+
         public static SqlConnection conn = new SqlConnection("Data Source=LAPTOPRBD\\SQLEXPRESS02;Initial Catalog=RoeiDB;Integrated Security=True");
         public static int port = 13000;// number port
         public static IPAddress localAddress = IPAddress.Parse("127.0.0.1");
@@ -64,38 +64,13 @@ namespace Server_F.C
             }
 
         }
-        public static string CityStateCountByIp(string IP)
-        {
-            //var url = "http://freegeoip.net/json/" + IP;
-            //var url = "http://freegeoip.net/json/" + IP;
-            string url = "http://api.ipstack.com/" + IP + "?access_key=[KEY]";
-            var request = System.Net.WebRequest.Create(url);
-
-            using (WebResponse wrs = request.GetResponse())
-            {
-                using (Stream stream = wrs.GetResponseStream())
-                {
-                    using (StreamReader reader = new StreamReader(stream))
-                    {
-                        string json = reader.ReadToEnd();
-                        var obj = JObject.Parse(json);
-                        string City = (string)obj["city"];
-                        string Country = (string)obj["region_name"];
-                        string CountryCode = (string)obj["country_code"];
-
-                        return (CountryCode + " - " + Country + "," + City);
-                    }
-                }
-            }
-
-
-            return "";
-
-        }
 
         static void Main(string[] args)
         {
             openingTheServerToReceiveCalls();
+            //string password = "Z2hmaGpnamtn";
+            //Console.WriteLine("dycrypt:" + Login.decryptPassword(password));
+
             Console.ReadKey();
         }
 

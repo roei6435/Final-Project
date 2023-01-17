@@ -1,20 +1,11 @@
 ﻿using Fitness_Club.Resources.FormsLogin;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 //using System.Data;
 using System.Data.SqlClient;
 
-using System.Net;
-using System.Net.Sockets;
-using System.IO;
 
 
 namespace Fitness_Club
@@ -75,11 +66,6 @@ namespace Fitness_Club
             textBox2.UseSystemPasswordChar = false;
         }
 
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogIn_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -97,10 +83,6 @@ namespace Fitness_Club
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void picBoxPass_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lblForgotPass_Click(object sender, EventArgs e)
         {

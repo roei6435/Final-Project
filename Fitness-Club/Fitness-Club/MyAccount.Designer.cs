@@ -30,20 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyAccount));
             this.panelFullOfDatlis = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lblTitleWellcome = new System.Windows.Forms.Label();
+            this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxEditPicPropfile = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnSaveChenge = new Guna.UI2.WinForms.Guna2Button();
             this.lblTitelePassSettings = new System.Windows.Forms.Label();
+            this.lblLevel = new System.Windows.Forms.Label();
             this.BtnChengeThePass = new Guna.UI2.WinForms.Guna2Button();
             this.panelProPic = new System.Windows.Forms.Panel();
+            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lblProfilrPic = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblExprinceCountDays = new System.Windows.Forms.Label();
             this.panelPass = new System.Windows.Forms.Panel();
             this.txtBoxNewPass = new System.Windows.Forms.TextBox();
             this.txtBoxPass = new System.Windows.Forms.TextBox();
             this.lblNotStrong = new System.Windows.Forms.Label();
             this.lblNotCorrect = new System.Windows.Forms.Label();
             this.lblStrongPassAndLastUpdate = new System.Windows.Forms.Label();
+            this.picBoxNewPassIsStrong = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxPassCorrect = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnUpdatePass = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblMyDatlis = new System.Windows.Forms.Label();
             this.BtnSaveDatlis = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSaveChenge = new Guna.UI2.WinForms.Guna2Button();
-            this.lblProfilrPic = new System.Windows.Forms.Label();
+            this.picBoxEditDatlis = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelDatlis = new System.Windows.Forms.Panel();
+            this.picBoxDateBornVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxPhoneVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxEmailVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxLnameVOn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBoxFnameVOn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.textBoxDateBorn = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.txtBoxFname = new System.Windows.Forms.TextBox();
@@ -54,34 +70,18 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblLname = new System.Windows.Forms.Label();
             this.lblFname = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblLevel = new System.Windows.Forms.Label();
-            this.lblExprinceCountDays = new System.Windows.Forms.Label();
-            this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxEditPicPropfile = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.picBoxNewPassIsStrong = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxPassCorrect = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnUpdatePass = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxEditDatlis = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxDateBornVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxPhoneVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxEmailVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxLnameVOn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picBoxFnameVOn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBox = new System.Windows.Forms.PictureBox();
-            this.lblTitleWellcome = new System.Windows.Forms.Label();
             this.panelFullOfDatlis.SuspendLayout();
-            this.panelProPic.SuspendLayout();
-            this.panelPass.SuspendLayout();
-            this.panelDatlis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditPicPropfile)).BeginInit();
+            this.panelProPic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
+            this.panelPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNewPassIsStrong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassCorrect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdatePass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditDatlis)).BeginInit();
+            this.panelDatlis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDateBornVOn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPhoneVOn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEmailVOn)).BeginInit();
@@ -119,6 +119,73 @@
             this.panelFullOfDatlis.Size = new System.Drawing.Size(877, 632);
             this.panelFullOfDatlis.TabIndex = 141;
             // 
+            // lblTitleWellcome
+            // 
+            this.lblTitleWellcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleWellcome.Font = new System.Drawing.Font("Segoe UI", 34.8F, System.Drawing.FontStyle.Bold);
+            this.lblTitleWellcome.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleWellcome.Location = new System.Drawing.Point(45, 5);
+            this.lblTitleWellcome.Name = "lblTitleWellcome";
+            this.lblTitleWellcome.Size = new System.Drawing.Size(357, 89);
+            this.lblTitleWellcome.TabIndex = 255;
+            this.lblTitleWellcome.Text = "My account";
+            // 
+            // arrowsPic
+            // 
+            this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
+            this.arrowsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.starsLevelIn;
+            this.arrowsPic.ImageRotate = 0F;
+            this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
+            this.arrowsPic.Location = new System.Drawing.Point(390, 141);
+            this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.arrowsPic.Name = "arrowsPic";
+            this.arrowsPic.Size = new System.Drawing.Size(132, 81);
+            this.arrowsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.arrowsPic.TabIndex = 152;
+            this.arrowsPic.TabStop = false;
+            // 
+            // picBoxEditPicPropfile
+            // 
+            this.picBoxEditPicPropfile.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxEditPicPropfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxEditPicPropfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxEditPicPropfile.Image = global::Fitness_Club.Properties.Resources.pen;
+            this.picBoxEditPicPropfile.ImageRotate = 0F;
+            this.picBoxEditPicPropfile.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditPicPropfile.InitialImage")));
+            this.picBoxEditPicPropfile.Location = new System.Drawing.Point(846, 43);
+            this.picBoxEditPicPropfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxEditPicPropfile.Name = "picBoxEditPicPropfile";
+            this.picBoxEditPicPropfile.Size = new System.Drawing.Size(24, 28);
+            this.picBoxEditPicPropfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxEditPicPropfile.TabIndex = 92;
+            this.picBoxEditPicPropfile.TabStop = false;
+            this.picBoxEditPicPropfile.Click += new System.EventHandler(this.picBoxEditPicPropfile_Click);
+            // 
+            // btnSaveChenge
+            // 
+            this.btnSaveChenge.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveChenge.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnSaveChenge.BorderRadius = 6;
+            this.btnSaveChenge.BorderThickness = 1;
+            this.btnSaveChenge.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveChenge.DialogResult = System.Windows.Forms.DialogResult.Retry;
+            this.btnSaveChenge.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveChenge.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveChenge.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaveChenge.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaveChenge.FillColor = System.Drawing.Color.Transparent;
+            this.btnSaveChenge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChenge.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSaveChenge.Location = new System.Drawing.Point(667, 228);
+            this.btnSaveChenge.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveChenge.Name = "btnSaveChenge";
+            this.btnSaveChenge.Size = new System.Drawing.Size(176, 42);
+            this.btnSaveChenge.TabIndex = 100;
+            this.btnSaveChenge.Text = "Change picture";
+            this.btnSaveChenge.Visible = false;
+            this.btnSaveChenge.Click += new System.EventHandler(this.btnSaveChenge_Click_1);
+            // 
             // lblTitelePassSettings
             // 
             this.lblTitelePassSettings.BackColor = System.Drawing.Color.Transparent;
@@ -129,6 +196,17 @@
             this.lblTitelePassSettings.Size = new System.Drawing.Size(262, 49);
             this.lblTitelePassSettings.TabIndex = 111;
             this.lblTitelePassSettings.Text = "Password settings";
+            // 
+            // lblLevel
+            // 
+            this.lblLevel.BackColor = System.Drawing.Color.Transparent;
+            this.lblLevel.Font = new System.Drawing.Font("Segoe UI", 27.8F, System.Drawing.FontStyle.Bold);
+            this.lblLevel.ForeColor = System.Drawing.Color.Peru;
+            this.lblLevel.Location = new System.Drawing.Point(183, 147);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(244, 56);
+            this.lblLevel.TabIndex = 151;
+            this.lblLevel.Text = "Master";
             // 
             // BtnChengeThePass
             // 
@@ -163,6 +241,52 @@
             this.panelProPic.Name = "panelProPic";
             this.panelProPic.Size = new System.Drawing.Size(176, 197);
             this.panelProPic.TabIndex = 109;
+            // 
+            // profilePic
+            // 
+            this.profilePic.BackColor = System.Drawing.Color.Transparent;
+            this.profilePic.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
+            this.profilePic.ImageRotate = 0F;
+            this.profilePic.Location = new System.Drawing.Point(9, 47);
+            this.profilePic.Name = "profilePic";
+            this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.profilePic.Size = new System.Drawing.Size(147, 147);
+            this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePic.TabIndex = 94;
+            this.profilePic.TabStop = false;
+            // 
+            // lblProfilrPic
+            // 
+            this.lblProfilrPic.BackColor = System.Drawing.Color.Transparent;
+            this.lblProfilrPic.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfilrPic.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblProfilrPic.Location = new System.Drawing.Point(4, 16);
+            this.lblProfilrPic.Name = "lblProfilrPic";
+            this.lblProfilrPic.Size = new System.Drawing.Size(169, 28);
+            this.lblProfilrPic.TabIndex = 96;
+            this.lblProfilrPic.Text = "Profile picture";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(62, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 40);
+            this.label3.TabIndex = 143;
+            this.label3.Text = "Your level:";
+            // 
+            // lblExprinceCountDays
+            // 
+            this.lblExprinceCountDays.BackColor = System.Drawing.Color.Transparent;
+            this.lblExprinceCountDays.Font = new System.Drawing.Font("Segoe UI", 12.2F);
+            this.lblExprinceCountDays.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblExprinceCountDays.Location = new System.Drawing.Point(59, 227);
+            this.lblExprinceCountDays.Name = "lblExprinceCountDays";
+            this.lblExprinceCountDays.Size = new System.Drawing.Size(592, 37);
+            this.lblExprinceCountDays.TabIndex = 150;
+            this.lblExprinceCountDays.Text = "You registered in the administrative system before \r\n";
             // 
             // panelPass
             // 
@@ -247,6 +371,53 @@
             this.lblStrongPassAndLastUpdate.Text = "You last updated your password 24 days ago. level \r\n strong your password is: goo" +
     "d.\r\n";
             // 
+            // picBoxNewPassIsStrong
+            // 
+            this.picBoxNewPassIsStrong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxNewPassIsStrong.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxNewPassIsStrong.ImageRotate = 0F;
+            this.picBoxNewPassIsStrong.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxNewPassIsStrong.Location = new System.Drawing.Point(264, 132);
+            this.picBoxNewPassIsStrong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxNewPassIsStrong.Name = "picBoxNewPassIsStrong";
+            this.picBoxNewPassIsStrong.Size = new System.Drawing.Size(37, 36);
+            this.picBoxNewPassIsStrong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxNewPassIsStrong.TabIndex = 116;
+            this.picBoxNewPassIsStrong.TabStop = false;
+            this.picBoxNewPassIsStrong.Visible = false;
+            // 
+            // picBoxPassCorrect
+            // 
+            this.picBoxPassCorrect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxPassCorrect.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxPassCorrect.ImageRotate = 0F;
+            this.picBoxPassCorrect.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxPassCorrect.Location = new System.Drawing.Point(264, 88);
+            this.picBoxPassCorrect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxPassCorrect.Name = "picBoxPassCorrect";
+            this.picBoxPassCorrect.Size = new System.Drawing.Size(37, 36);
+            this.picBoxPassCorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPassCorrect.TabIndex = 115;
+            this.picBoxPassCorrect.TabStop = false;
+            this.picBoxPassCorrect.Visible = false;
+            // 
+            // btnUpdatePass
+            // 
+            this.btnUpdatePass.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdatePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdatePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdatePass.Image = global::Fitness_Club.Properties.Resources.pen;
+            this.btnUpdatePass.ImageRotate = 0F;
+            this.btnUpdatePass.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnUpdatePass.InitialImage")));
+            this.btnUpdatePass.Location = new System.Drawing.Point(819, 319);
+            this.btnUpdatePass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdatePass.Name = "btnUpdatePass";
+            this.btnUpdatePass.Size = new System.Drawing.Size(24, 28);
+            this.btnUpdatePass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnUpdatePass.TabIndex = 105;
+            this.btnUpdatePass.TabStop = false;
+            this.btnUpdatePass.Click += new System.EventHandler(this.btnUpdatePass_Click);
+            // 
             // lblMyDatlis
             // 
             this.lblMyDatlis.BackColor = System.Drawing.Color.Transparent;
@@ -282,40 +453,22 @@
             this.BtnSaveDatlis.Visible = false;
             this.BtnSaveDatlis.Click += new System.EventHandler(this.BtnSaveDatlis_Click);
             // 
-            // btnSaveChenge
+            // picBoxEditDatlis
             // 
-            this.btnSaveChenge.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveChenge.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnSaveChenge.BorderRadius = 6;
-            this.btnSaveChenge.BorderThickness = 1;
-            this.btnSaveChenge.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveChenge.DialogResult = System.Windows.Forms.DialogResult.Retry;
-            this.btnSaveChenge.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveChenge.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSaveChenge.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSaveChenge.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveChenge.FillColor = System.Drawing.Color.Transparent;
-            this.btnSaveChenge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveChenge.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSaveChenge.Location = new System.Drawing.Point(667, 228);
-            this.btnSaveChenge.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSaveChenge.Name = "btnSaveChenge";
-            this.btnSaveChenge.Size = new System.Drawing.Size(176, 42);
-            this.btnSaveChenge.TabIndex = 100;
-            this.btnSaveChenge.Text = "Change picture";
-            this.btnSaveChenge.Visible = false;
-            this.btnSaveChenge.Click += new System.EventHandler(this.btnSaveChenge_Click_1);
-            // 
-            // lblProfilrPic
-            // 
-            this.lblProfilrPic.BackColor = System.Drawing.Color.Transparent;
-            this.lblProfilrPic.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfilrPic.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblProfilrPic.Location = new System.Drawing.Point(4, 16);
-            this.lblProfilrPic.Name = "lblProfilrPic";
-            this.lblProfilrPic.Size = new System.Drawing.Size(169, 28);
-            this.lblProfilrPic.TabIndex = 96;
-            this.lblProfilrPic.Text = "Profile picture";
+            this.picBoxEditDatlis.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxEditDatlis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxEditDatlis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxEditDatlis.Image = global::Fitness_Club.Properties.Resources.pen;
+            this.picBoxEditDatlis.ImageRotate = 0F;
+            this.picBoxEditDatlis.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditDatlis.InitialImage")));
+            this.picBoxEditDatlis.Location = new System.Drawing.Point(341, 320);
+            this.picBoxEditDatlis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxEditDatlis.Name = "picBoxEditDatlis";
+            this.picBoxEditDatlis.Size = new System.Drawing.Size(24, 28);
+            this.picBoxEditDatlis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxEditDatlis.TabIndex = 105;
+            this.picBoxEditDatlis.TabStop = false;
+            this.picBoxEditDatlis.Click += new System.EventHandler(this.picBoxEditDatlis_Click);
             // 
             // panelDatlis
             // 
@@ -339,6 +492,81 @@
             this.panelDatlis.Name = "panelDatlis";
             this.panelDatlis.Size = new System.Drawing.Size(317, 213);
             this.panelDatlis.TabIndex = 97;
+            // 
+            // picBoxDateBornVOn
+            // 
+            this.picBoxDateBornVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxDateBornVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxDateBornVOn.ImageRotate = 0F;
+            this.picBoxDateBornVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxDateBornVOn.Location = new System.Drawing.Point(268, 164);
+            this.picBoxDateBornVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxDateBornVOn.Name = "picBoxDateBornVOn";
+            this.picBoxDateBornVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxDateBornVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxDateBornVOn.TabIndex = 110;
+            this.picBoxDateBornVOn.TabStop = false;
+            this.picBoxDateBornVOn.Visible = false;
+            // 
+            // picBoxPhoneVOn
+            // 
+            this.picBoxPhoneVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxPhoneVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxPhoneVOn.ImageRotate = 0F;
+            this.picBoxPhoneVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxPhoneVOn.Location = new System.Drawing.Point(268, 126);
+            this.picBoxPhoneVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxPhoneVOn.Name = "picBoxPhoneVOn";
+            this.picBoxPhoneVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxPhoneVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPhoneVOn.TabIndex = 109;
+            this.picBoxPhoneVOn.TabStop = false;
+            this.picBoxPhoneVOn.Visible = false;
+            // 
+            // picBoxEmailVOn
+            // 
+            this.picBoxEmailVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxEmailVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxEmailVOn.ImageRotate = 0F;
+            this.picBoxEmailVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxEmailVOn.Location = new System.Drawing.Point(268, 88);
+            this.picBoxEmailVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxEmailVOn.Name = "picBoxEmailVOn";
+            this.picBoxEmailVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxEmailVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEmailVOn.TabIndex = 108;
+            this.picBoxEmailVOn.TabStop = false;
+            this.picBoxEmailVOn.Visible = false;
+            // 
+            // picBoxLnameVOn
+            // 
+            this.picBoxLnameVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxLnameVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxLnameVOn.ImageRotate = 0F;
+            this.picBoxLnameVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxLnameVOn.Location = new System.Drawing.Point(268, 44);
+            this.picBoxLnameVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxLnameVOn.Name = "picBoxLnameVOn";
+            this.picBoxLnameVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxLnameVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxLnameVOn.TabIndex = 107;
+            this.picBoxLnameVOn.TabStop = false;
+            this.picBoxLnameVOn.Visible = false;
+            // 
+            // picBoxFnameVOn
+            // 
+            this.picBoxFnameVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxFnameVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
+            this.picBoxFnameVOn.ImageRotate = 0F;
+            this.picBoxFnameVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
+            this.picBoxFnameVOn.Location = new System.Drawing.Point(271, 4);
+            this.picBoxFnameVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxFnameVOn.Name = "picBoxFnameVOn";
+            this.picBoxFnameVOn.Size = new System.Drawing.Size(37, 36);
+            this.picBoxFnameVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxFnameVOn.TabIndex = 106;
+            this.picBoxFnameVOn.TabStop = false;
+            this.picBoxFnameVOn.Visible = false;
             // 
             // textBoxDateBorn
             // 
@@ -465,220 +693,6 @@
             this.lblFname.TabIndex = 79;
             this.lblFname.Text = "First name";
             // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(62, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 40);
-            this.label3.TabIndex = 143;
-            this.label3.Text = "Your level:";
-            // 
-            // lblLevel
-            // 
-            this.lblLevel.BackColor = System.Drawing.Color.Transparent;
-            this.lblLevel.Font = new System.Drawing.Font("Segoe UI", 27.8F, System.Drawing.FontStyle.Bold);
-            this.lblLevel.ForeColor = System.Drawing.Color.Peru;
-            this.lblLevel.Location = new System.Drawing.Point(183, 147);
-            this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(244, 56);
-            this.lblLevel.TabIndex = 151;
-            this.lblLevel.Text = "Master";
-            // 
-            // lblExprinceCountDays
-            // 
-            this.lblExprinceCountDays.BackColor = System.Drawing.Color.Transparent;
-            this.lblExprinceCountDays.Font = new System.Drawing.Font("Segoe UI", 12.2F);
-            this.lblExprinceCountDays.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblExprinceCountDays.Location = new System.Drawing.Point(59, 227);
-            this.lblExprinceCountDays.Name = "lblExprinceCountDays";
-            this.lblExprinceCountDays.Size = new System.Drawing.Size(592, 37);
-            this.lblExprinceCountDays.TabIndex = 150;
-            this.lblExprinceCountDays.Text = "You registered in the administrative system before \r\n";
-            // 
-            // arrowsPic
-            // 
-            this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
-            this.arrowsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.starsLevelIn;
-            this.arrowsPic.ImageRotate = 0F;
-            this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
-            this.arrowsPic.Location = new System.Drawing.Point(390, 141);
-            this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.arrowsPic.Name = "arrowsPic";
-            this.arrowsPic.Size = new System.Drawing.Size(132, 81);
-            this.arrowsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.arrowsPic.TabIndex = 152;
-            this.arrowsPic.TabStop = false;
-            // 
-            // picBoxEditPicPropfile
-            // 
-            this.picBoxEditPicPropfile.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxEditPicPropfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxEditPicPropfile.Image = global::Fitness_Club.Properties.Resources.pen;
-            this.picBoxEditPicPropfile.ImageRotate = 0F;
-            this.picBoxEditPicPropfile.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditPicPropfile.InitialImage")));
-            this.picBoxEditPicPropfile.Location = new System.Drawing.Point(846, 43);
-            this.picBoxEditPicPropfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxEditPicPropfile.Name = "picBoxEditPicPropfile";
-            this.picBoxEditPicPropfile.Size = new System.Drawing.Size(24, 28);
-            this.picBoxEditPicPropfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxEditPicPropfile.TabIndex = 92;
-            this.picBoxEditPicPropfile.TabStop = false;
-            this.picBoxEditPicPropfile.Click += new System.EventHandler(this.picBoxEditPicPropfile_Click);
-            // 
-            // profilePic
-            // 
-            this.profilePic.BackColor = System.Drawing.Color.Transparent;
-            this.profilePic.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
-            this.profilePic.ImageRotate = 0F;
-            this.profilePic.Location = new System.Drawing.Point(9, 47);
-            this.profilePic.Name = "profilePic";
-            this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profilePic.Size = new System.Drawing.Size(147, 147);
-            this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePic.TabIndex = 94;
-            this.profilePic.TabStop = false;
-            // 
-            // picBoxNewPassIsStrong
-            // 
-            this.picBoxNewPassIsStrong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxNewPassIsStrong.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxNewPassIsStrong.ImageRotate = 0F;
-            this.picBoxNewPassIsStrong.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxNewPassIsStrong.Location = new System.Drawing.Point(264, 132);
-            this.picBoxNewPassIsStrong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxNewPassIsStrong.Name = "picBoxNewPassIsStrong";
-            this.picBoxNewPassIsStrong.Size = new System.Drawing.Size(37, 36);
-            this.picBoxNewPassIsStrong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxNewPassIsStrong.TabIndex = 116;
-            this.picBoxNewPassIsStrong.TabStop = false;
-            this.picBoxNewPassIsStrong.Visible = false;
-            // 
-            // picBoxPassCorrect
-            // 
-            this.picBoxPassCorrect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPassCorrect.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxPassCorrect.ImageRotate = 0F;
-            this.picBoxPassCorrect.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxPassCorrect.Location = new System.Drawing.Point(264, 88);
-            this.picBoxPassCorrect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxPassCorrect.Name = "picBoxPassCorrect";
-            this.picBoxPassCorrect.Size = new System.Drawing.Size(37, 36);
-            this.picBoxPassCorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPassCorrect.TabIndex = 115;
-            this.picBoxPassCorrect.TabStop = false;
-            this.picBoxPassCorrect.Visible = false;
-            // 
-            // btnUpdatePass
-            // 
-            this.btnUpdatePass.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdatePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpdatePass.Image = global::Fitness_Club.Properties.Resources.pen;
-            this.btnUpdatePass.ImageRotate = 0F;
-            this.btnUpdatePass.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnUpdatePass.InitialImage")));
-            this.btnUpdatePass.Location = new System.Drawing.Point(819, 319);
-            this.btnUpdatePass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUpdatePass.Name = "btnUpdatePass";
-            this.btnUpdatePass.Size = new System.Drawing.Size(24, 28);
-            this.btnUpdatePass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnUpdatePass.TabIndex = 105;
-            this.btnUpdatePass.TabStop = false;
-            this.btnUpdatePass.Click += new System.EventHandler(this.btnUpdatePass_Click);
-            // 
-            // picBoxEditDatlis
-            // 
-            this.picBoxEditDatlis.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxEditDatlis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxEditDatlis.Image = global::Fitness_Club.Properties.Resources.pen;
-            this.picBoxEditDatlis.ImageRotate = 0F;
-            this.picBoxEditDatlis.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditDatlis.InitialImage")));
-            this.picBoxEditDatlis.Location = new System.Drawing.Point(341, 320);
-            this.picBoxEditDatlis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxEditDatlis.Name = "picBoxEditDatlis";
-            this.picBoxEditDatlis.Size = new System.Drawing.Size(24, 28);
-            this.picBoxEditDatlis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxEditDatlis.TabIndex = 105;
-            this.picBoxEditDatlis.TabStop = false;
-            this.picBoxEditDatlis.Click += new System.EventHandler(this.picBoxEditDatlis_Click);
-            // 
-            // picBoxDateBornVOn
-            // 
-            this.picBoxDateBornVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxDateBornVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxDateBornVOn.ImageRotate = 0F;
-            this.picBoxDateBornVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxDateBornVOn.Location = new System.Drawing.Point(268, 164);
-            this.picBoxDateBornVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxDateBornVOn.Name = "picBoxDateBornVOn";
-            this.picBoxDateBornVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxDateBornVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxDateBornVOn.TabIndex = 110;
-            this.picBoxDateBornVOn.TabStop = false;
-            this.picBoxDateBornVOn.Visible = false;
-            // 
-            // picBoxPhoneVOn
-            // 
-            this.picBoxPhoneVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPhoneVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxPhoneVOn.ImageRotate = 0F;
-            this.picBoxPhoneVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxPhoneVOn.Location = new System.Drawing.Point(268, 126);
-            this.picBoxPhoneVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxPhoneVOn.Name = "picBoxPhoneVOn";
-            this.picBoxPhoneVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxPhoneVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPhoneVOn.TabIndex = 109;
-            this.picBoxPhoneVOn.TabStop = false;
-            this.picBoxPhoneVOn.Visible = false;
-            // 
-            // picBoxEmailVOn
-            // 
-            this.picBoxEmailVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxEmailVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxEmailVOn.ImageRotate = 0F;
-            this.picBoxEmailVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxEmailVOn.Location = new System.Drawing.Point(268, 88);
-            this.picBoxEmailVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxEmailVOn.Name = "picBoxEmailVOn";
-            this.picBoxEmailVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxEmailVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxEmailVOn.TabIndex = 108;
-            this.picBoxEmailVOn.TabStop = false;
-            this.picBoxEmailVOn.Visible = false;
-            // 
-            // picBoxLnameVOn
-            // 
-            this.picBoxLnameVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxLnameVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxLnameVOn.ImageRotate = 0F;
-            this.picBoxLnameVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxLnameVOn.Location = new System.Drawing.Point(268, 44);
-            this.picBoxLnameVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxLnameVOn.Name = "picBoxLnameVOn";
-            this.picBoxLnameVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxLnameVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxLnameVOn.TabIndex = 107;
-            this.picBoxLnameVOn.TabStop = false;
-            this.picBoxLnameVOn.Visible = false;
-            // 
-            // picBoxFnameVOn
-            // 
-            this.picBoxFnameVOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxFnameVOn.Image = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon;
-            this.picBoxFnameVOn.ImageRotate = 0F;
-            this.picBoxFnameVOn.InitialImage = global::Fitness_Club.Properties.Resources._4879883_achievement_check_mark_ok_success_icon__1_1;
-            this.picBoxFnameVOn.Location = new System.Drawing.Point(271, 4);
-            this.picBoxFnameVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picBoxFnameVOn.Name = "picBoxFnameVOn";
-            this.picBoxFnameVOn.Size = new System.Drawing.Size(37, 36);
-            this.picBoxFnameVOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxFnameVOn.TabIndex = 106;
-            this.picBoxFnameVOn.TabStop = false;
-            this.picBoxFnameVOn.Visible = false;
-            // 
             // picBox
             // 
             this.picBox.Image = global::Fitness_Club.Properties.Resources.man_workout_in_gym;
@@ -688,17 +702,6 @@
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 100;
             this.picBox.TabStop = false;
-            // 
-            // lblTitleWellcome
-            // 
-            this.lblTitleWellcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleWellcome.Font = new System.Drawing.Font("Segoe UI", 34.8F, System.Drawing.FontStyle.Bold);
-            this.lblTitleWellcome.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleWellcome.Location = new System.Drawing.Point(45, 5);
-            this.lblTitleWellcome.Name = "lblTitleWellcome";
-            this.lblTitleWellcome.Size = new System.Drawing.Size(357, 89);
-            this.lblTitleWellcome.TabIndex = 255;
-            this.lblTitleWellcome.Text = "My account";
             // 
             // MyAccount
             // 
@@ -713,18 +716,18 @@
             this.Text = "MyAccount";
             this.Load += new System.EventHandler(this.MyAccount_Load);
             this.panelFullOfDatlis.ResumeLayout(false);
-            this.panelProPic.ResumeLayout(false);
-            this.panelPass.ResumeLayout(false);
-            this.panelPass.PerformLayout();
-            this.panelDatlis.ResumeLayout(false);
-            this.panelDatlis.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.arrowsPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditPicPropfile)).EndInit();
+            this.panelProPic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
+            this.panelPass.ResumeLayout(false);
+            this.panelPass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNewPassIsStrong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPassCorrect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdatePass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEditDatlis)).EndInit();
+            this.panelDatlis.ResumeLayout(false);
+            this.panelDatlis.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDateBornVOn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPhoneVOn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEmailVOn)).EndInit();

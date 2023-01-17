@@ -17,7 +17,7 @@ namespace Fitness_Club
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminScreen("16"));
+            Application.Run(new LogIn());
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Fitness_Club
 
             //PERCENT OF IS BLOCKED
             percent = PLActiveNow.getPercentageIsBlocked();
-            lblIsBlocked.Text = $"Blocked {percent}% Not blocked {100 - percent}%";
+            lblIMail.Text = $"Blocked {percent}% Not blocked {100 - percent}%";
             circularProgressBarIsBlocled.Value = percent;
 
             //GET MOST ACTIVE CLIENT
@@ -96,6 +96,7 @@ namespace Fitness_Club
                 lblLeastExprinceUser.Text = $"{nowPerson.FullName}, before {LoginANDRegister.lastConnectDiff(nowPerson.DateRegistion)} ";
                 picLeastExprinceAdmin.Image = nowPerson.ProfilePic;
             }
+
 
 
         }

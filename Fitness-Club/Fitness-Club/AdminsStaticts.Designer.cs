@@ -537,11 +537,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(102, 121);
+            this.label3.Location = new System.Drawing.Point(99, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 60);
+            this.label3.Size = new System.Drawing.Size(119, 110);
             this.label3.TabIndex = 182;
-            this.label3.Text = "Women 32%\r\nMen 68%\r\n\r\n";
+            this.label3.Text = "Walla is most populer mail with 62%.";
             // 
             // circularProgressBar1
             // 
@@ -573,7 +573,7 @@
             this.circularProgressBar1.SuperscriptText = "";
             this.circularProgressBar1.TabIndex = 181;
             this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(0);
-            this.circularProgressBar1.Value = 55;
+            this.circularProgressBar1.Value = 62;
             // 
             // lblGenderAdmins
             // 

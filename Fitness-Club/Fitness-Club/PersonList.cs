@@ -130,9 +130,17 @@ namespace Fitness_Club
            foreach(Person person in newList)
            {
                 string email = person.Email;  //Roei6435@gmail.com
-                email = email.Split('@')[1];     //gmail.com
-                email = email.Split('.')[0];    //gmail
-                emailsList.Add(email);  
+                try
+                {
+                    email = email.Split('@')[1];     //gmail.com
+                    email = email.Split('.')[0];    //gmail
+                    emailsList.Add(email);
+                }
+                catch
+                {
+
+                }
+
            }
            return CheckFavoriteMailANDPercentForOneList(emailsList);
         }

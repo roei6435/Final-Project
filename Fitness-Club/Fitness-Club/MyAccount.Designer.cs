@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyAccount));
             this.panelFullOfDatlis = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.lblTitleWellcome = new System.Windows.Forms.Label();
             this.arrowsPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picBoxEditPicPropfile = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnSaveChenge = new Guna.UI2.WinForms.Guna2Button();
@@ -39,7 +38,6 @@
             this.BtnChengeThePass = new Guna.UI2.WinForms.Guna2Button();
             this.panelProPic = new System.Windows.Forms.Panel();
             this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.lblProfilrPic = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblExprinceCountDays = new System.Windows.Forms.Label();
             this.panelPass = new System.Windows.Forms.Panel();
@@ -94,10 +92,7 @@
             // 
             this.panelFullOfDatlis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panelFullOfDatlis.BorderRadius = 30;
-            this.panelFullOfDatlis.Controls.Add(this.lblTitleWellcome);
             this.panelFullOfDatlis.Controls.Add(this.arrowsPic);
-            this.panelFullOfDatlis.Controls.Add(this.picBoxEditPicPropfile);
-            this.panelFullOfDatlis.Controls.Add(this.btnSaveChenge);
             this.panelFullOfDatlis.Controls.Add(this.lblTitelePassSettings);
             this.panelFullOfDatlis.Controls.Add(this.lblLevel);
             this.panelFullOfDatlis.Controls.Add(this.BtnChengeThePass);
@@ -119,17 +114,6 @@
             this.panelFullOfDatlis.Size = new System.Drawing.Size(877, 632);
             this.panelFullOfDatlis.TabIndex = 141;
             // 
-            // lblTitleWellcome
-            // 
-            this.lblTitleWellcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleWellcome.Font = new System.Drawing.Font("Segoe UI", 34.8F, System.Drawing.FontStyle.Bold);
-            this.lblTitleWellcome.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleWellcome.Location = new System.Drawing.Point(45, 5);
-            this.lblTitleWellcome.Name = "lblTitleWellcome";
-            this.lblTitleWellcome.Size = new System.Drawing.Size(357, 89);
-            this.lblTitleWellcome.TabIndex = 255;
-            this.lblTitleWellcome.Text = "My account";
-            // 
             // arrowsPic
             // 
             this.arrowsPic.BackColor = System.Drawing.Color.Transparent;
@@ -137,7 +121,7 @@
             this.arrowsPic.Image = global::Fitness_Club.Properties.Resources.starsLevelIn;
             this.arrowsPic.ImageRotate = 0F;
             this.arrowsPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("arrowsPic.InitialImage")));
-            this.arrowsPic.Location = new System.Drawing.Point(390, 141);
+            this.arrowsPic.Location = new System.Drawing.Point(266, 28);
             this.arrowsPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.arrowsPic.Name = "arrowsPic";
             this.arrowsPic.Size = new System.Drawing.Size(132, 81);
@@ -153,7 +137,7 @@
             this.picBoxEditPicPropfile.Image = global::Fitness_Club.Properties.Resources.pen;
             this.picBoxEditPicPropfile.ImageRotate = 0F;
             this.picBoxEditPicPropfile.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditPicPropfile.InitialImage")));
-            this.picBoxEditPicPropfile.Location = new System.Drawing.Point(846, 43);
+            this.picBoxEditPicPropfile.Location = new System.Drawing.Point(176, 6);
             this.picBoxEditPicPropfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picBoxEditPicPropfile.Name = "picBoxEditPicPropfile";
             this.picBoxEditPicPropfile.Size = new System.Drawing.Size(24, 28);
@@ -177,10 +161,10 @@
             this.btnSaveChenge.FillColor = System.Drawing.Color.Transparent;
             this.btnSaveChenge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChenge.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSaveChenge.Location = new System.Drawing.Point(667, 228);
+            this.btnSaveChenge.Location = new System.Drawing.Point(14, 194);
             this.btnSaveChenge.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveChenge.Name = "btnSaveChenge";
-            this.btnSaveChenge.Size = new System.Drawing.Size(176, 42);
+            this.btnSaveChenge.Size = new System.Drawing.Size(171, 42);
             this.btnSaveChenge.TabIndex = 100;
             this.btnSaveChenge.Text = "Change picture";
             this.btnSaveChenge.Visible = false;
@@ -191,7 +175,7 @@
             this.lblTitelePassSettings.BackColor = System.Drawing.Color.Transparent;
             this.lblTitelePassSettings.Font = new System.Drawing.Font("Segoe UI", 20.8F, System.Drawing.FontStyle.Bold);
             this.lblTitelePassSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitelePassSettings.Location = new System.Drawing.Point(534, 299);
+            this.lblTitelePassSettings.Location = new System.Drawing.Point(541, 273);
             this.lblTitelePassSettings.Name = "lblTitelePassSettings";
             this.lblTitelePassSettings.Size = new System.Drawing.Size(262, 49);
             this.lblTitelePassSettings.TabIndex = 111;
@@ -202,7 +186,7 @@
             this.lblLevel.BackColor = System.Drawing.Color.Transparent;
             this.lblLevel.Font = new System.Drawing.Font("Segoe UI", 27.8F, System.Drawing.FontStyle.Bold);
             this.lblLevel.ForeColor = System.Drawing.Color.Peru;
-            this.lblLevel.Location = new System.Drawing.Point(183, 147);
+            this.lblLevel.Location = new System.Drawing.Point(394, 53);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(244, 56);
             this.lblLevel.TabIndex = 151;
@@ -223,7 +207,7 @@
             this.BtnChengeThePass.FillColor = System.Drawing.Color.Transparent;
             this.BtnChengeThePass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnChengeThePass.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnChengeThePass.Location = new System.Drawing.Point(538, 576);
+            this.BtnChengeThePass.Location = new System.Drawing.Point(545, 550);
             this.BtnChengeThePass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnChengeThePass.Name = "BtnChengeThePass";
             this.BtnChengeThePass.Size = new System.Drawing.Size(305, 42);
@@ -235,11 +219,12 @@
             // panelProPic
             // 
             this.panelProPic.BackColor = System.Drawing.Color.Transparent;
+            this.panelProPic.Controls.Add(this.picBoxEditPicPropfile);
             this.panelProPic.Controls.Add(this.profilePic);
-            this.panelProPic.Controls.Add(this.lblProfilrPic);
-            this.panelProPic.Location = new System.Drawing.Point(667, 27);
+            this.panelProPic.Controls.Add(this.btnSaveChenge);
+            this.panelProPic.Location = new System.Drawing.Point(57, 28);
             this.panelProPic.Name = "panelProPic";
-            this.panelProPic.Size = new System.Drawing.Size(176, 197);
+            this.panelProPic.Size = new System.Drawing.Size(203, 243);
             this.panelProPic.TabIndex = 109;
             // 
             // profilePic
@@ -247,44 +232,33 @@
             this.profilePic.BackColor = System.Drawing.Color.Transparent;
             this.profilePic.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
             this.profilePic.ImageRotate = 0F;
-            this.profilePic.Location = new System.Drawing.Point(9, 47);
+            this.profilePic.Location = new System.Drawing.Point(14, 6);
             this.profilePic.Name = "profilePic";
             this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profilePic.Size = new System.Drawing.Size(147, 147);
+            this.profilePic.Size = new System.Drawing.Size(177, 181);
             this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePic.TabIndex = 94;
             this.profilePic.TabStop = false;
-            // 
-            // lblProfilrPic
-            // 
-            this.lblProfilrPic.BackColor = System.Drawing.Color.Transparent;
-            this.lblProfilrPic.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfilrPic.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblProfilrPic.Location = new System.Drawing.Point(4, 16);
-            this.lblProfilrPic.Name = "lblProfilrPic";
-            this.lblProfilrPic.Size = new System.Drawing.Size(169, 28);
-            this.lblProfilrPic.TabIndex = 96;
-            this.lblProfilrPic.Text = "Profile picture";
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(62, 167);
+            this.label3.Location = new System.Drawing.Point(400, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 40);
+            this.label3.Size = new System.Drawing.Size(58, 31);
             this.label3.TabIndex = 143;
-            this.label3.Text = "Your level:";
+            this.label3.Text = "level";
             // 
             // lblExprinceCountDays
             // 
             this.lblExprinceCountDays.BackColor = System.Drawing.Color.Transparent;
             this.lblExprinceCountDays.Font = new System.Drawing.Font("Segoe UI", 12.2F);
             this.lblExprinceCountDays.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblExprinceCountDays.Location = new System.Drawing.Point(59, 227);
+            this.lblExprinceCountDays.Location = new System.Drawing.Point(282, 117);
             this.lblExprinceCountDays.Name = "lblExprinceCountDays";
-            this.lblExprinceCountDays.Size = new System.Drawing.Size(592, 37);
+            this.lblExprinceCountDays.Size = new System.Drawing.Size(572, 37);
             this.lblExprinceCountDays.TabIndex = 150;
             this.lblExprinceCountDays.Text = "You registered in the administrative system before \r\n";
             // 
@@ -298,7 +272,7 @@
             this.panelPass.Controls.Add(this.lblStrongPassAndLastUpdate);
             this.panelPass.Controls.Add(this.picBoxNewPassIsStrong);
             this.panelPass.Controls.Add(this.picBoxPassCorrect);
-            this.panelPass.Location = new System.Drawing.Point(538, 356);
+            this.panelPass.Location = new System.Drawing.Point(545, 330);
             this.panelPass.Name = "panelPass";
             this.panelPass.Size = new System.Drawing.Size(305, 213);
             this.panelPass.TabIndex = 108;
@@ -409,7 +383,7 @@
             this.btnUpdatePass.Image = global::Fitness_Club.Properties.Resources.pen;
             this.btnUpdatePass.ImageRotate = 0F;
             this.btnUpdatePass.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnUpdatePass.InitialImage")));
-            this.btnUpdatePass.Location = new System.Drawing.Point(819, 319);
+            this.btnUpdatePass.Location = new System.Drawing.Point(826, 293);
             this.btnUpdatePass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdatePass.Name = "btnUpdatePass";
             this.btnUpdatePass.Size = new System.Drawing.Size(24, 28);
@@ -423,7 +397,7 @@
             this.lblMyDatlis.BackColor = System.Drawing.Color.Transparent;
             this.lblMyDatlis.Font = new System.Drawing.Font("Segoe UI", 20.8F, System.Drawing.FontStyle.Bold);
             this.lblMyDatlis.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMyDatlis.Location = new System.Drawing.Point(49, 300);
+            this.lblMyDatlis.Location = new System.Drawing.Point(56, 274);
             this.lblMyDatlis.Name = "lblMyDatlis";
             this.lblMyDatlis.Size = new System.Drawing.Size(223, 48);
             this.lblMyDatlis.TabIndex = 107;
@@ -444,7 +418,7 @@
             this.BtnSaveDatlis.FillColor = System.Drawing.Color.Transparent;
             this.BtnSaveDatlis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSaveDatlis.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSaveDatlis.Location = new System.Drawing.Point(57, 577);
+            this.BtnSaveDatlis.Location = new System.Drawing.Point(64, 551);
             this.BtnSaveDatlis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnSaveDatlis.Name = "BtnSaveDatlis";
             this.BtnSaveDatlis.Size = new System.Drawing.Size(317, 42);
@@ -461,7 +435,7 @@
             this.picBoxEditDatlis.Image = global::Fitness_Club.Properties.Resources.pen;
             this.picBoxEditDatlis.ImageRotate = 0F;
             this.picBoxEditDatlis.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxEditDatlis.InitialImage")));
-            this.picBoxEditDatlis.Location = new System.Drawing.Point(341, 320);
+            this.picBoxEditDatlis.Location = new System.Drawing.Point(348, 294);
             this.picBoxEditDatlis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picBoxEditDatlis.Name = "picBoxEditDatlis";
             this.picBoxEditDatlis.Size = new System.Drawing.Size(24, 28);
@@ -488,7 +462,7 @@
             this.panelDatlis.Controls.Add(this.lblEmail);
             this.panelDatlis.Controls.Add(this.lblLname);
             this.panelDatlis.Controls.Add(this.lblFname);
-            this.panelDatlis.Location = new System.Drawing.Point(57, 357);
+            this.panelDatlis.Location = new System.Drawing.Point(64, 331);
             this.panelDatlis.Name = "panelDatlis";
             this.panelDatlis.Size = new System.Drawing.Size(317, 213);
             this.panelDatlis.TabIndex = 97;
@@ -741,7 +715,6 @@
         #endregion
         private System.Windows.Forms.PictureBox picBox;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelFullOfDatlis;
-        private System.Windows.Forms.Label lblProfilrPic;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxEditPicPropfile;
         private System.Windows.Forms.Panel panelDatlis;
         private Guna.UI2.WinForms.Guna2PictureBox picBoxEditDatlis;
@@ -780,6 +753,5 @@
         private System.Windows.Forms.Label lblNotCorrect;
         private System.Windows.Forms.Label lblLevel;
         private Guna.UI2.WinForms.Guna2PictureBox arrowsPic;
-        private System.Windows.Forms.Label lblTitleWellcome;
     }
 }

@@ -31,67 +31,67 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsStatistics));
             this.panelAdminstrators = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblActiveClasses = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblCountUsers = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblMostExprinceUser = new System.Windows.Forms.Label();
             this.lblMostExprinceTitle = new System.Windows.Forms.Label();
+            this.picExprinceAdmin = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblLeastExprinceUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.picLeastExprinceAdmin = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblYoungerUser = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.picYoungerAdminstor = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblOldestUser = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.picOlderAdminstor = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblIcomeData = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblIncome = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblAvgUsersData = new System.Windows.Forms.Label();
             this.LblAVGUsers = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblIsBlocked = new System.Windows.Forms.Label();
+            this.lblIMail = new System.Windows.Forms.Label();
             this.circularProgressBarIsBlocled = new CircularProgressBar.CircularProgressBar();
             this.lblGenderUsers = new System.Windows.Forms.Label();
             this.circularGenderAdmins = new CircularProgressBar.CircularProgressBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMostActive = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picExprinceAdmin = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.picLeastExprinceAdmin = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.picYoungerAdminstor = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.picOlderAdminstor = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picMostActive = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pictureInidcation = new System.Windows.Forms.PictureBox();
             this.panelAdminstrators.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExprinceAdmin)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeastExprinceAdmin)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picYoungerAdminstor)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOlderAdminstor)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExprinceAdmin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLeastExprinceAdmin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picYoungerAdminstor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOlderAdminstor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostActive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).BeginInit();
             this.SuspendLayout();
@@ -132,6 +132,21 @@
             this.panel1.Size = new System.Drawing.Size(456, 84);
             this.panel1.TabIndex = 178;
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox2.Image = global::Fitness_Club.Properties.Resources.active;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.InitialImage")));
+            this.guna2PictureBox2.Location = new System.Drawing.Point(7, 33);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(16, 17);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 181;
+            this.guna2PictureBox2.TabStop = false;
+            // 
             // lblActiveClasses
             // 
             this.lblActiveClasses.BackColor = System.Drawing.Color.Transparent;
@@ -165,6 +180,20 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(456, 84);
             this.panel10.TabIndex = 177;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox3.Image = global::Fitness_Club.Properties.Resources.logoUserssta;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.InitialImage")));
+            this.guna2PictureBox3.Location = new System.Drawing.Point(8, 14);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(43, 52);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 195;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // lblCountUsers
             // 
@@ -233,6 +262,20 @@
             this.lblMostExprinceTitle.TabIndex = 173;
             this.lblMostExprinceTitle.Text = "Senior client";
             // 
+            // picExprinceAdmin
+            // 
+            this.picExprinceAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.picExprinceAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picExprinceAdmin.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
+            this.picExprinceAdmin.ImageRotate = 0F;
+            this.picExprinceAdmin.Location = new System.Drawing.Point(3, 3);
+            this.picExprinceAdmin.Name = "picExprinceAdmin";
+            this.picExprinceAdmin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picExprinceAdmin.Size = new System.Drawing.Size(63, 63);
+            this.picExprinceAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picExprinceAdmin.TabIndex = 172;
+            this.picExprinceAdmin.TabStop = false;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -266,6 +309,20 @@
             this.label2.Size = new System.Drawing.Size(382, 30);
             this.label2.TabIndex = 174;
             this.label2.Text = "Junior client";
+            // 
+            // picLeastExprinceAdmin
+            // 
+            this.picLeastExprinceAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.picLeastExprinceAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLeastExprinceAdmin.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
+            this.picLeastExprinceAdmin.ImageRotate = 0F;
+            this.picLeastExprinceAdmin.Location = new System.Drawing.Point(3, 3);
+            this.picLeastExprinceAdmin.Name = "picLeastExprinceAdmin";
+            this.picLeastExprinceAdmin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picLeastExprinceAdmin.Size = new System.Drawing.Size(63, 63);
+            this.picLeastExprinceAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLeastExprinceAdmin.TabIndex = 172;
+            this.picLeastExprinceAdmin.TabStop = false;
             // 
             // panel7
             // 
@@ -301,6 +358,20 @@
             this.label5.TabIndex = 175;
             this.label5.Text = "Younger client";
             // 
+            // picYoungerAdminstor
+            // 
+            this.picYoungerAdminstor.BackColor = System.Drawing.Color.Transparent;
+            this.picYoungerAdminstor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picYoungerAdminstor.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
+            this.picYoungerAdminstor.ImageRotate = 0F;
+            this.picYoungerAdminstor.Location = new System.Drawing.Point(3, 3);
+            this.picYoungerAdminstor.Name = "picYoungerAdminstor";
+            this.picYoungerAdminstor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picYoungerAdminstor.Size = new System.Drawing.Size(63, 63);
+            this.picYoungerAdminstor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picYoungerAdminstor.TabIndex = 172;
+            this.picYoungerAdminstor.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -335,6 +406,20 @@
             this.label4.TabIndex = 174;
             this.label4.Text = "Oldest client";
             // 
+            // picOlderAdminstor
+            // 
+            this.picOlderAdminstor.BackColor = System.Drawing.Color.Transparent;
+            this.picOlderAdminstor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picOlderAdminstor.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
+            this.picOlderAdminstor.ImageRotate = 0F;
+            this.picOlderAdminstor.Location = new System.Drawing.Point(3, 3);
+            this.picOlderAdminstor.Name = "picOlderAdminstor";
+            this.picOlderAdminstor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picOlderAdminstor.Size = new System.Drawing.Size(63, 63);
+            this.picOlderAdminstor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picOlderAdminstor.TabIndex = 172;
+            this.picOlderAdminstor.TabStop = false;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -358,6 +443,21 @@
             this.lblIcomeData.TabIndex = 178;
             this.lblIcomeData.Text = "Data not available now.\r\n";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(96, 166);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(38, 38);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 173;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // lblIncome
             // 
             this.lblIncome.BackColor = System.Drawing.Color.Transparent;
@@ -380,6 +480,21 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(220, 220);
             this.panel4.TabIndex = 169;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.InitialImage")));
+            this.guna2PictureBox5.Location = new System.Drawing.Point(86, 164);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(38, 38);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 180;
+            this.guna2PictureBox5.TabStop = false;
             // 
             // lblAvgUsersData
             // 
@@ -407,7 +522,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.lblIsBlocked);
+            this.panel3.Controls.Add(this.lblIMail);
             this.panel3.Controls.Add(this.circularProgressBarIsBlocled);
             this.panel3.Controls.Add(this.lblGenderUsers);
             this.panel3.Controls.Add(this.circularGenderAdmins);
@@ -416,16 +531,16 @@
             this.panel3.Size = new System.Drawing.Size(220, 220);
             this.panel3.TabIndex = 168;
             // 
-            // lblIsBlocked
+            // lblIMail
             // 
-            this.lblIsBlocked.BackColor = System.Drawing.Color.Transparent;
-            this.lblIsBlocked.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblIsBlocked.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblIsBlocked.Location = new System.Drawing.Point(97, 121);
-            this.lblIsBlocked.Name = "lblIsBlocked";
-            this.lblIsBlocked.Size = new System.Drawing.Size(116, 83);
-            this.lblIsBlocked.TabIndex = 182;
-            this.lblIsBlocked.Text = "Women 32%\r\nMen 68%\r\n\r\n";
+            this.lblIMail.BackColor = System.Drawing.Color.Transparent;
+            this.lblIMail.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.lblIMail.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblIMail.Location = new System.Drawing.Point(106, 109);
+            this.lblIMail.Name = "lblIMail";
+            this.lblIMail.Size = new System.Drawing.Size(112, 107);
+            this.lblIMail.TabIndex = 182;
+            this.lblIMail.Text = "Gmail is most populer mail with 56%.";
             // 
             // circularProgressBarIsBlocled
             // 
@@ -457,7 +572,7 @@
             this.circularProgressBarIsBlocled.SuperscriptText = "";
             this.circularProgressBarIsBlocled.TabIndex = 181;
             this.circularProgressBarIsBlocled.TextMargin = new System.Windows.Forms.Padding(0);
-            this.circularProgressBarIsBlocled.Value = 55;
+            this.circularProgressBarIsBlocled.Value = 56;
             // 
             // lblGenderUsers
             // 
@@ -536,121 +651,6 @@
             this.label11.TabIndex = 175;
             this.label11.Text = "Most active ";
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox2.Image = global::Fitness_Club.Properties.Resources.active;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.InitialImage")));
-            this.guna2PictureBox2.Location = new System.Drawing.Point(7, 33);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(16, 17);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 181;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox3.Image = global::Fitness_Club.Properties.Resources.logoUserssta;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.InitialImage")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(8, 14);
-            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(43, 52);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 195;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // picExprinceAdmin
-            // 
-            this.picExprinceAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.picExprinceAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picExprinceAdmin.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
-            this.picExprinceAdmin.ImageRotate = 0F;
-            this.picExprinceAdmin.Location = new System.Drawing.Point(3, 3);
-            this.picExprinceAdmin.Name = "picExprinceAdmin";
-            this.picExprinceAdmin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picExprinceAdmin.Size = new System.Drawing.Size(63, 63);
-            this.picExprinceAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picExprinceAdmin.TabIndex = 172;
-            this.picExprinceAdmin.TabStop = false;
-            // 
-            // picLeastExprinceAdmin
-            // 
-            this.picLeastExprinceAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.picLeastExprinceAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLeastExprinceAdmin.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
-            this.picLeastExprinceAdmin.ImageRotate = 0F;
-            this.picLeastExprinceAdmin.Location = new System.Drawing.Point(3, 3);
-            this.picLeastExprinceAdmin.Name = "picLeastExprinceAdmin";
-            this.picLeastExprinceAdmin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picLeastExprinceAdmin.Size = new System.Drawing.Size(63, 63);
-            this.picLeastExprinceAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLeastExprinceAdmin.TabIndex = 172;
-            this.picLeastExprinceAdmin.TabStop = false;
-            // 
-            // picYoungerAdminstor
-            // 
-            this.picYoungerAdminstor.BackColor = System.Drawing.Color.Transparent;
-            this.picYoungerAdminstor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picYoungerAdminstor.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
-            this.picYoungerAdminstor.ImageRotate = 0F;
-            this.picYoungerAdminstor.Location = new System.Drawing.Point(3, 3);
-            this.picYoungerAdminstor.Name = "picYoungerAdminstor";
-            this.picYoungerAdminstor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picYoungerAdminstor.Size = new System.Drawing.Size(63, 63);
-            this.picYoungerAdminstor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picYoungerAdminstor.TabIndex = 172;
-            this.picYoungerAdminstor.TabStop = false;
-            // 
-            // picOlderAdminstor
-            // 
-            this.picOlderAdminstor.BackColor = System.Drawing.Color.Transparent;
-            this.picOlderAdminstor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picOlderAdminstor.Image = global::Fitness_Club.Properties.Resources.defult_pro_pic2;
-            this.picOlderAdminstor.ImageRotate = 0F;
-            this.picOlderAdminstor.Location = new System.Drawing.Point(3, 3);
-            this.picOlderAdminstor.Name = "picOlderAdminstor";
-            this.picOlderAdminstor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picOlderAdminstor.Size = new System.Drawing.Size(63, 63);
-            this.picOlderAdminstor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picOlderAdminstor.TabIndex = 172;
-            this.picOlderAdminstor.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(96, 166);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(38, 38);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 173;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.InitialImage")));
-            this.guna2PictureBox5.Location = new System.Drawing.Point(86, 164);
-            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(38, 38);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 180;
-            this.guna2PictureBox5.TabStop = false;
-            // 
             // picMostActive
             // 
             this.picMostActive.BackColor = System.Drawing.Color.Transparent;
@@ -688,23 +688,23 @@
             this.Load += new System.EventHandler(this.ClientsStatistics_Load);
             this.panelAdminstrators.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picExprinceAdmin)).EndInit();
             this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLeastExprinceAdmin)).EndInit();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picYoungerAdminstor)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picOlderAdminstor)).EndInit();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExprinceAdmin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLeastExprinceAdmin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picYoungerAdminstor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOlderAdminstor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostActive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInidcation)).EndInit();
             this.ResumeLayout(false);
@@ -748,7 +748,7 @@
         private System.Windows.Forms.Label lblAvgUsersData;
         private System.Windows.Forms.Label LblAVGUsers;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblIsBlocked;
+        private System.Windows.Forms.Label lblIMail;
         private CircularProgressBar.CircularProgressBar circularProgressBarIsBlocled;
         private System.Windows.Forms.Label lblGenderUsers;
         private CircularProgressBar.CircularProgressBar circularGenderAdmins;
